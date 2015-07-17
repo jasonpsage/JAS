@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>sys_flagjasrow.jas</title>
+  </head>
+  <body>
+<!--SECTION MAIN BEGIN-->
+<!--PAGETITLE "Flag JAS Rows"-->
+    <center>
+      <h1>Flag Rows as JAS Rows</h1>
+      
+      <p>This function flags approriate tables as JAS_Row_b=true so that
+      upgrades can be extracted and brand new databases built; both
+      completely new JAS databases and the lesser Jet databases.</p>
+
+      <h2>SET JAS FLAGS</h2>
+      <table>
+      <tr>
+        <td>
+          <form enctype="multipart/form-data" action=".?action=flagjasrow" method="POST">
+          <input type="hidden" name="value" value="true" />
+          <input type="submit" value="Set JAS Flags to TRUE" />
+          </form>
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+          <form enctype="multipart/form-data" action=".?action=flagjasrow" method="POST">
+          <input type="hidden" name="value" value="false" />
+          <input type="submit" value="Set JAS Flags to FALSE" />
+          </form>
+        </td>
+      </tr>
+      <tr><td colspan="3">&nbsp;</td></tr>
+      <tr>
+        <td colspan="3"><center><input type="submit" value="Abort" onclick="self.close();"/></center></td>
+      </tr>
+      </table>
+      <br />
+      <br />
+    </center>
+<!--SECTION MAIN END-->
+  </body>
+</html>

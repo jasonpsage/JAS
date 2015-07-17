@@ -1,0 +1,6 @@
+<!--jcompany - project-->
+<div id="project" style="display: none;">
+[@CAPTION@]<br />
+<a href=".?screen=jproject+Search&FBLOK2012042817001326674=[@UID@]" target="_blank" title="View Projects">Projects</a><br />
+</div>
+<script>if([@UID@]>0){ var el=document.getElementById('project'); el.style.display="";};</script>

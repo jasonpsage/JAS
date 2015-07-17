@@ -1,0 +1,15 @@
+<script>
+  function callbackQuickLinksOff(doc){
+    if(doc.errorCode!=0){alert(doc);}else{window.location.reload();}
+  };
+
+  function QuickLinksOff(){
+    var sURL='.?jasapi=setdisplayquicklinks&value=off';
+    try{
+      iwfRequestSync(sURL,null,null,callbackQuickLinksOff);
+    }catch(eX){
+      alert('JAS Server appears to be offline.');
+    };
+  };
+</script>
+

@@ -1,0 +1,46 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012271523 jassig -->
+<center><div id="jas-quicklinks"></div></center>
+<table align="center" width="100%" class="jas-page-footer">
+<tr  class="jas-page-footer">
+  <td align="left" width="33%" class="jas-page-footer">
+    Server: <b>[@JASNAME@]</b>  &nbsp;&nbsp; User: <b>[@USERNAME@]</b>
+  </td>
+  <td align="center" width="33%" class="jas-page-footer">
+    <p  class="jas-page-footer" style="margin-bottom: 2px;" >Powered by <a target="_blank" href="http://www.jegas.com"><img class="image" style="position: relative; top: 14px;" src="<? echo $JASDIRWEBSHARE; ?>img/logo/jegas/Logo.png" title="Jegas, LLC Homepage Link" /></a> Software</p>
+	  <p  class="jas-page-footer">Copyright&copy;2012 Jegas, LLC - All Rights Reserved.</p>
+  </td>
+  <td align="right" width="33%"  class="jas-page-footer">
+    Page Serve in Milli Seconds: <b>[@PTMILLI@]</b> &nbsp;&nbsp; Time: <b>[@NOW@]</b><br />
+  </td>
+</tr>
+<tr><td colspan="3">Best viewed with: Firefox, Google Chrome, Safari, Sea-Monkey and Opera</td></tr>
+<tr>
+  <td colspan="3">
+    <script type="text/javascript" src="http://jk.revolvermaps.com/r.js"></script>
+    <script type="text/javascript">rm_f1st('0','220','true','false','000000','amf7xndz55y','true','ff0000');</script>
+    <noscript>
+      <applet codebase="http://rk.revolvermaps.com/j" code="core.RE" width="220" height="220" archive="g.jar">
+        <param name="cabbase" value="g.cab" />
+        <param name="r" value="true" />
+        <param name="n" value="false" />
+        <param name="i" value="amf7xndz55y" />
+        <param name="m" value="0" />
+        <param name="s" value="220" />
+        <param name="c" value="ff0000" />
+        <param name="v" value="true" />
+        <param name="b" value="000000" />
+        <param name="rfc" value="true" />
+      </applet>
+    </noscript>
+  </td>
+</tr>
+</table>
+<script>
+  function callbackajax_quicklinks(doc){try{document.getElementById('jas-quicklinks').innerHTML=decodeURIComponent(String(doc.QuickLinks[0].getText()));}catch(eX){};};
+  function ajax_quicklinks(){var sURL='[@ALIAS@].?jasapi=renderquicklinks';iwfRequest(sURL,null,null,callbackajax_quicklinks,false);};
+  ajax_quicklinks();
+</script>
+<div style="display: none;"><input id="ftrcal" type="text" /></div>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<br />

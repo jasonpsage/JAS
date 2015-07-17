@@ -1,0 +1,93 @@
+<html><body>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--SECTION MAIN BEGIN-->
+<!-- JASCID: 201012271711 sys -->
+  <form name="JASFORM" id="JASFORM" method="POST" action=".?SCREENID=[@SCREENID@]">
+  <input type="hidden" name="EDIT_ACTION" id="EDIT_ACTION" value="[@EDIT_ACTION@]" />
+  <input type="hidden" name="EDIT_JBLOK_JBLOK_UID" id="EDIT_JBLOK_JBLOK_UID" value="[@EDIT_JBLOK_JBLOK_UID@]" />
+  <input type="hidden" name="EDITSCREEN" value="on" />
+  <script>
+    function SubmitForm(){document.getElementById("JASFORM").submit();};
+    function Add(){
+      document.getElementById('EDIT_ACTION').value='ADD';
+      document.getElementById('EDIT_JBLOK_JBLOK_UID').value=document.getElementById('EDIT_JBLOK_JBLOK_UID').value;
+      SubmitForm();
+    };
+    function Cancel(){
+      document.getElementById('EDIT_ACTION').value='';
+      document.getElementById('EDIT_JBLOK_JBLOK_UID').value='';
+      SubmitForm();
+    };
+  </script>
+
+   <!-- <img src="<? echo $JASDIRICONTHEME; ?>64/categories/preferences-desktop.png" /> -->
+
+
+  <div class="jas-layout-row jas-content">
+    <div class="jas-post">
+      <div class="jas-post-tl"></div>
+      <div class="jas-post-tr"></div>
+      <div class="jas-post-bl"></div>
+      <div class="jas-post-br"></div>
+      <div class="jas-post-tc"></div>
+
+      <div class="jas-post-bc"></div>
+      <div class="jas-post-cl"></div>
+      <div class="jas-post-cr"></div>
+      <div class="jas-post-cc"></div>
+      <div class="jas-post-body">
+        <div class="jas-post-inner jas-article">
+          <h2 class="jas-postheader"><a href="#" title="[@SCREENCAPTION@]" ><img class="image" src="[@JSCRN_ICONLARGE@]" title="[@SCREENCAPTION@]" />&nbsp;[@SCREENCAPTION@]</a>&nbsp;&nbsp;&nbsp;&nbsp;<font size="4">Adding To [@JBLOK_NAME@]</font></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <table>
+  <tr><td>
+  <div class="jas-layout-row jas-content">
+    <div class="jas-post">
+      <div class="jas-post-tl"></div>
+      <div class="jas-post-tr"></div>
+      <div class="jas-post-bl"></div>
+      <div class="jas-post-br"></div>
+      <div class="jas-post-tc"></div>
+
+      <div class="jas-post-bc"></div>
+      <div class="jas-post-cl"></div>
+      <div class="jas-post-cr"></div>
+      <div class="jas-post-cc"></div>
+      <div class="jas-post-body">
+        <div class="jas-post-inner jas-article">
+          <div class="jas-postcontent">
+            [#ADDBLOKFIELD#]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <td valign="top">
+      <ul style="list-style-type: none;">
+        <li><a href="javascript: Add();"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/document-save.png" /><span class="jasbutspan">Add</span></a></li>
+        <li><a href="javascript: Cancel();"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/dialog-cancel.png" /><span class="jasbutspan">Cancel</span></a></li>
+      </ul>
+  </td>
+  </tr>
+  </table>
+
+
+
+
+
+<!--SECTION MAIN END-->
+</body></html>
+

@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>This is the iframe doc</title>
+		<script type='text/javascript'>
+			window.name = 'iframe window';
+		</script>
+	</head>
+	<body onload='javascript:window.parent._iwfIframeCallback("iwfFileUpload0", document.body.innerHTML);'>
+		<response>
+			<action type='javascript'>
+				<!-- alert(window.name + ' 1'); -->
+			</action>
+		</response>
+	</body>
+</html>

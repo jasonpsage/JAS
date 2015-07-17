@@ -1,0 +1,44 @@
+<script>
+  var JScrn_JScreen_UID[@JScrn_JScreen_UID@]="[@JScrn_JScreen_UID@]";
+  var sDestName[@JScrn_JScreen_UID@]="";
+
+
+  function callbackCopyScreen[@JScrn_JScreen_UID@](doc){
+    elcopystatus[@JScrn_JScreen_UID@].style.display="";
+    elcopyprogress[@JScrn_JScreen_UID@].style.display="none";
+    if(doc.errorCode!=0){
+      alert(doc.errorCode+": "+doc.errorMessage);
+    }else{
+      alert("Success! Your new screen "+sDestName[@JScrn_JScreen_UID@]+" has been created as a copy of [@JScrn_Name@].");
+    };
+  };
+  function CopyScreen[@JScrn_JScreen_UID@](){
+    sDestName[@JScrn_JScreen_UID@]=document.getElementById("destname[@JScrn_JScreen_UID@]").value;
+    if(sDestName[@JScrn_JScreen_UID@].length>0){
+      elcopystatus[@JScrn_JScreen_UID@].style.display="none";
+      elcopyprogress[@JScrn_JScreen_UID@].style.display="";
+      document.getElementById("copystatus[@JScrn_JScreen_UID@]").innerText="Copying screen...";
+      //var sURL=".?jasapi=copyscreen";
+      var sURL=".?jasapi=copyscreen&JScrn_JScreen_UID=[@JScrn_JScreen_UID@]&DestScreenName="+encodeURI(sDestName[@JScrn_JScreen_UID@]);
+      try{
+        //iwfRequestPost(sURL,null,callbackCopyScreen[@JScrn_JScreen_UID@],true,"&JScrn_JScreen_UID=[@JScrn_JScreen_UID@]&DestScreenName="+encodeURI(sDestName[@JScrn_JScreen_UID@]));
+        iwfRequest(sURL,null,null,callbackCopyScreen[@JScrn_JScreen_UID@],false);
+      }catch(eX){
+        elcopystatus[@JScrn_JScreen_UID@].style.display="";
+        elcopyprogress[@JScrn_JScreen_UID@].style.display="none";
+        alert("JAS Server appears to be offline. Exception: " + eX);
+      };
+    }else{
+      alert("Please enter a system wide unique destination screen name before attempting to copy an existing screen.");
+    };
+  };
+</script>
+<div name="copystatus[@JScrn_JScreen_UID@]" id="copystatus[@JScrn_JScreen_UID@]">
+<a title="Enter New Target Screen Name Here first, then click this icon to carry it out." href="javascript: CopyScreen[@JScrn_JScreen_UID@]();"><img src="/jws/img/icon/themes/CrystalClear/16/actions/edit-copy.png" /></a>
+<input type="text" maxlength="50" name="destname[@JScrn_JScreen_UID@]" id="destname[@JScrn_JScreen_UID@]" value="" />
+</div>
+<div name="copyprogress[@JScrn_JScreen_UID@]" id="copyprogress[@JScrn_JScreen_UID@]" style="display: none;"><img src="/jws/img/working.gif" /></div>
+<script>
+  var elcopystatus[@JScrn_JScreen_UID@] = document.getElementById("copystatus[@JScrn_JScreen_UID@]");
+  var elcopyprogress[@JScrn_JScreen_UID@] = document.getElementById("copyprogress[@JScrn_JScreen_UID@]");
+</script>

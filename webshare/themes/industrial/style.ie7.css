@@ -1,0 +1,259 @@
+/* begin Box, Sheet */
+
+.jas-sheet-body
+{
+  zoom: 1;
+}
+/* end Box, Sheet */
+
+/* begin Menu */
+.jas-nav .r
+{
+  clip: rect(auto auto auto 998px);
+}
+
+/* end Menu */
+
+/* begin MenuItem */
+.jas-menu a .r
+{
+  clip: rect(auto auto auto 400px);
+}
+/* end MenuItem */
+
+/* begin Layout */
+div.jas-content-layout
+{
+  display: block;
+  zoom: 1;
+  overflow: hidden;
+}
+/* end Layout */
+
+/* begin Box, Block, VMenuBlock */
+.jas-vmenublock-tl
+{
+  clip: rect(auto 1px 1px auto);
+}
+
+.jas-vmenublock-tr
+{
+  clip: rect(auto auto 1px 1px);
+}
+
+.jas-vmenublock-bl
+{
+  clip: rect(1px 1px auto auto);
+}
+
+.jas-vmenublock-br
+{
+  clip: rect(1px auto auto 1px);
+}
+
+.jas-vmenublock-tc
+{
+  clip: rect(auto auto 1px auto);
+}
+
+.jas-vmenublock-bc
+{
+  clip: rect(1px auto auto auto);
+}
+
+.jas-vmenublock-cr
+{
+  clip: rect(auto auto auto 1px);
+}
+
+.jas-vmenublock-cl
+{
+  clip: rect(auto 1px auto auto);
+}
+
+.jas-vmenublock-body
+{
+  zoom: 1;
+}
+/* end Box, Block, VMenuBlock */
+
+/* begin Box, Box, VMenuBlockContent */
+
+.jas-vmenublockcontent-body
+{
+  zoom: 1;
+}
+
+.jas-vmenublockcontent-body
+{
+  zoom: 1;
+}
+/* end Box, Box, VMenuBlockContent */
+
+/* begin VMenuItem */
+ul.jas-vmenu .jas-vmenu-separator, ul.jas-vmenu .jas-vmenu-separator-span, ul.jas-vmenu li.jas-vsubmenu-separator, ul.jas-vmenu .jas-vsubmenu-separator-span
+{
+  zoom: 1;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+}
+
+.jas-vmenu ul, .jas-vmenu li
+{
+  zoom: 1;
+}
+
+ul.jas-vmenu a .r
+{
+  clip: rect(auto auto auto 1003px);
+}
+/* end VMenuItem */
+
+/* begin Box, Block */
+.jas-block-tl
+{
+  clip: rect(auto 9px 9px auto);
+}
+
+.jas-block-tr
+{
+  clip: rect(auto auto 9px 9px);
+}
+
+.jas-block-bl
+{
+  clip: rect(9px 9px auto auto);
+}
+
+.jas-block-br
+{
+  clip: rect(9px auto auto 9px);
+}
+
+.jas-block-tc
+{
+  clip: rect(auto auto 9px auto);
+}
+
+.jas-block-bc
+{
+  clip: rect(9px auto auto auto);
+}
+
+.jas-block-cr
+{
+  clip: rect(auto auto auto 9px);
+}
+
+.jas-block-cl
+{
+  clip: rect(auto 9px auto auto);
+}
+
+.jas-block-body
+{
+  zoom: 1;
+}
+/* end Box, Block */
+
+/* begin Box, BlockContent */
+
+.jas-blockcontent-body
+{
+  zoom: 1;
+}
+/* end Box, BlockContent */
+
+/* begin Button */
+.jas-button-wrapper .r
+{
+  clip: rect(auto auto auto 398px);
+}
+/* end Button */
+
+/* begin Box, Post */
+.jas-post-tl
+{
+  clip: rect(auto 16px 16px auto);
+}
+
+.jas-post-tr
+{
+  clip: rect(auto auto 16px 16px);
+}
+
+.jas-post-bl
+{
+  clip: rect(16px 16px auto auto);
+}
+
+.jas-post-br
+{
+  clip: rect(16px auto auto 16px);
+}
+
+.jas-post-tc
+{
+  clip: rect(auto auto 16px auto);
+}
+
+.jas-post-bc
+{
+  clip: rect(16px auto auto auto);
+}
+
+.jas-post-cr
+{
+  clip: rect(auto auto auto 16px);
+}
+
+.jas-post-cl
+{
+  clip: rect(auto 16px auto auto);
+}
+
+.jas-post-body
+{
+  zoom: 1;
+}
+/* end Box, Post */
+
+/* begin PostContent */
+.jas-postcontent
+{
+  height: 1%;
+}
+/* end PostContent */
+
+/* begin Footer */
+.jas-footer-r
+{
+  clip: rect(auto auto auto 5px);
+}
+
+/* end Footer */
+
+/* begin LayoutCell, content */
+div.jas-sidebar2
+{
+  width: auto;
+}
+
+div.jas-content-layout div.jas-layout-cell, div.jas-content-layout div.jas-layout-cell div.jas-content-layout div.jas-layout-cell
+{
+  display: block;
+  overflow: hidden;
+  float: left;
+  clear: right;
+  margin-bottom: -32000px;
+  padding-bottom: 32000px;
+}
+
+div.jas-layout-cell div.jas-layout-cell
+{
+  float: none;
+  clear: both;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}/* end LayoutCell, content */

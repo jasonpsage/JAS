@@ -1,0 +1,88 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--This MESSAGE Template causes a refresh of the calling page upon close-->
+<!--SECTION MESSAGE BEGIN-->
+<!-- JASCID: 201203122100 SYS -->
+<div class="jas-layout-row jas-content">
+  <div class="jas-post">
+    <div class="jas-post-tl"></div>
+    <div class="jas-post-tr"></div>
+    <div class="jas-post-bl"></div>
+    <div class="jas-post-br"></div>
+    <div class="jas-post-tc"></div>
+
+    <div class="jas-post-bc"></div>
+    <div class="jas-post-cl"></div>
+    <div class="jas-post-cr"></div>
+    <div class="jas-post-cc"></div>
+    <div class="jas-post-body">
+      <div class="jas-post-inner jas-article">
+        <table>
+        <tr>
+          <td>
+            <h2 class="jas-postheader">
+              <img class="image" src="[@PAGEICON@]" title="[@PAGETITLE@]" />&nbsp;
+              [@PAGETITLE@]
+            </h2>
+          </td>
+          <!--
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <a target="_blank" href="[@ALIAS@].?action=help&helpid=0" title="[@PAGETITLE@] Help">
+              <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+            </a>
+          </td>
+          -->
+        </tr>
+        </table>
+        <div class="jas-postcontent">
+          <p></p>
+          <div class="jas-post-body">
+            <div class="jas-post-inner jas-article">
+              <div class="jas-postcontent">
+                <!-- article-content -->
+                [@MESSAGE@]
+                <!-- /article-content -->
+              </div>
+            </div>
+            <div class="cleared"></div>
+          </div>
+        </div><!-- end row -->
+
+
+        <div class="jas-postcontent">
+          <p></p>
+          <div class="jas-post-body">
+            <div class="jas-post-inner jas-article">
+              <div class="jas-postcontent">
+                <!-- article-content -->
+                <a href="javascript: self.opener.location.reload(true);self.close();" title="Close this window or tab.">
+                  <table>
+                  <tr>
+                    <td><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/document-close.png" /></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><font size="4">Close Window</font></td>
+                  </tr>
+                  </table>
+                </a>
+                <!-- /article-content -->
+              </div>
+            </div>
+            <div class="cleared"></div>
+          </div>
+        </div><!-- end row -->
+      </div><!-- end table -->
+      <!-- /article-content -->
+    </div>
+    <div clas="cleared"></div>
+  </div>
+  <div class="cleared"></div>
+</div><br />
+<!--SECTION MESSAGE END-->

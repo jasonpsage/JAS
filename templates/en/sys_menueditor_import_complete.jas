@@ -1,0 +1,30 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012291900 SYS -->
+
+<!--SECTION MAIN BEGIN-->
+<!-- SECTION MAIN ./templates/en/sys_menueditor_import_complete.jas -->
+<br />
+<div class="panel" align="left">
+  <div class="panelheader"><h1>Import Successful</h1></div>
+  <div class="panelcontent">
+    <p>You have imported your menu xml file successfully. You will want to refresh the Menu Editor Page so that it redraws with all the new information.</p>
+	    <script>
+	      try{
+	        if(opener.document.location==opener.document.location){
+	          window.open('','_parent','');
+	          document.write('<p><a href="javascript: window.close();">Click here to close this window.</a></p>');      
+	        };
+	      }catch(e){
+	      };
+	    </script>
+  </div>
+</div>
+<!--SECTION MAIN END-->

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link rel='stylesheet' href='iwf.css' />
+
+		<script type='text/javascript' src='iwfcore.js'></script>
+		<script type='text/javascript' src='iwfxml.js'></script>
+
+		<script type='text/javascript'>
+		function doIt(){
+
+			var doc = new iwfXmlDoc("<?xml version='1.0' encoding='UTF-8'?> <SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>  <SOAP-ENV:Body>    <ns:BrowseNodeLookup    xmlns:ns='http://webservices.amazon.com/AWSECommerceService/2006-05-17'>                        <!--Optional:-->      <ns:MarketplaceDomain>string</ns:MarketplaceDomain>                        <!--Optional:-->      <ns:AWSAccessKeyId>string</ns:AWSAccessKeyId>                        <!--Optional:-->      <ns:SubscriptionId>string</ns:SubscriptionId>                        <!--Optional:-->      <ns:AssociateTag>string</ns:AssociateTag>                        <!--Optional:-->      <ns:Validate>string</ns:Validate>                        <!--Optional:-->      <ns:XMLEscaping>string</ns:XMLEscaping>                        <!--Optional:-->      <ns:Shared>                                <!--Zero or more repetitions:-->        <ns:BrowseNodeId>string</ns:BrowseNodeId>                                <!--Zero or more repetitions:-->        <ns:ResponseGroup>string</ns:ResponseGroup>      </ns:Shared>                        <!--Zero or more repetitions:-->      <ns:Request>                                <!--Zero or more repetitions:-->        <ns:BrowseNodeId>string</ns:BrowseNodeId>                                <!--Zero or more repetitions:-->        <ns:ResponseGroup>string</ns:ResponseGroup>      </ns:Request>    </ns:BrowseNodeLookup>  </SOAP-ENV:Body> </SOAP-ENV:Envelope>");
+
+			alert(doc);
+
+			alert(doc.SOAP_ENV__Envelope.xmlns__SOAP_ENV);
+		}
+
+		</script>
+
+	</head>
+	<body onload=''>
+
+	<a href='javascript:doIt();'>Do it</a>
+
+		<script type='text/javascript' src='../iwfconfig.js'></script>
+
+	</body>
+</html>

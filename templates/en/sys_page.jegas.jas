@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <title>sys_page.jas</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+</head>
+<body>
+<!--SECTION MAIN BEGIN-->
+<!--JASCID 201211270247-->
+  <div id="jaslogodiv">
+  <center><h2>Welcome to [@JASNAME@]</h2>
+  <!--<center><img class="image" src="/jws/img/icon/JAS/products/jas/256/jas_logo.png" /></center>-->
+    <table width="100%">
+    <tr>
+      <td valign="top" align="left" width="20%">
+        <ul class="jas-blok-buttons">
+          <li>
+            <a href="[@ALIAS@].?MT=1&MID=2012050412133433523">
+              <table><tr><td><img class="image" src="[@JASDIRICON@]JAS/jegas/64/J_logo_vector_64.png" /></td>
+              <td><span class="jasbutspan">&nbsp;Jegas CRM</span></td></table>
+            </a>
+          </li>
+          <li>
+            <a href="http://jegas.net">
+              <img class="image" src="[@JASDIRICON@]LGPL/CrystalProject/64x64/devices/Globe.png" />
+              <span class="jasbutspan">&nbsp;Hosting</span>
+            </a>
+          </li>
+          <li>
+            <a href="[@ALIAS@].?MT=1&MID=2012050517231293161">
+              <img class="image" src="[@JASDIRICON@]LGPL/CrystalProject/64x64/apps/Community%20Help.png" />
+              <span class="jasbutspan">&nbsp;Consulting</span>
+            </a>
+          </li>
+          <li>
+            <a href="[@ALIAS@]?page=products/products">
+              <img class="image" src="[@JASDIRICON@]LGPL/CrystalProject/64x64/apps/blockdevice.png" />
+              <span class="jasbutspan">&nbsp;Products</span>
+            </a>
+          </li>
+        </ul>
+      </td>
+      <td align="center" width="60%">
+        <script>
+        if('[@SESSIONVALID@]'!=='No '){
+          document.write('<center><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/jasjet6.png" /></center>');
+        }else{
+          document.write('<center><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/Jjet3_ReadyForWebCircle.png" /></center>');
+        };
+        </script>
+      </td>
+      <td valign="top" width="20%">
+        <ul class="jas-blok-buttons">
+          <li>
+            <a href="[@ALIAS@].?MT=1&MID=2012050310521060778">
+              <img width="64px" class="image" src="[@ALIAS@]img/lighthead_tn.jpg" alt="Jegas.tv" />
+              <span class="jasbutspan">&nbsp;Jegas.tv</span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="http://www.youtube.com/user/JegasLLC">
+              <img class="image" src="[@JASDIRICON@]logo/youtube/Youtube_64x64.png" />
+              <span class="jasbutspan">&nbsp;YouTube&reg;</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://www.bbb.org/connecticut/business-reviews/computer-software-publishers-and-developers/jegas-in-ellington-ct-87070681" target="_blank">
+              <img width="64px" class="image" src="[@JASDIRWEBSHARE@]img/logo/bbb/accred_bus_black_04.png" alt="Click to see our BBB Rating" />
+              <span class="jasbutspan">&nbsp;Rating</span>
+            </a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    </table>
+  </center>
+  </div>
+  <script>
+    var el=document.getElementById("jaslogodiv");
+    if ('[@JASHASPANELS@]'=='TRUE'){el.style.display="none";};
+  </script>
+<!--SECTION MAIN END-->
+
+<!--SECTION BLANK BEGIN-->
+<!--SECTION BLANK END-->
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012271523 jassig -->
+<center><div id="jas-quicklinks"></div></center>
+<table align="center" width="100%" class="jas-page-footer">
+<tr  class="jas-page-footer">
+  <td align="left" width="33%" class="jas-page-footer">Server: <b>[@JASNAME@]</b></td>
+  <td align="center" width="33%" class="jas-page-footer">
+    <p  class="jas-page-footer" style="margin-bottom: 2px;" >Powered by <a target="_blank" href="http://www.jegas.com"><img class="image" style="position: relative; top: 14px;" src="<? echo $JASDIRWEBSHARE; ?>img/logo/jegas/Logo.png" title="Jegas, LLC Homepage Link" /></a> Software</p>
+	  <p  class="jas-page-footer">Copyright&copy;2012 Jegas, LLC - All Rights Reserved.</p>
+  </td>
+  <td align="right" width="33%"  class="jas-page-footer">
+    Page Serve in Milli Seconds: <b>[@PTMILLI@]</b> &nbsp;&nbsp; Time: <b>[@NOW@]</b><br />
+  </td>
+</tr>
+<tr><td colspan="3">Best viewed with: Firefox, Google Chrome, Safari, Sea-Monkey and Opera</td></tr>
+</table>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<br />

@@ -1,0 +1,150 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- ./templates/en/sys_jtableeditor.jas -->
+<!--SECTION CONFIRMDELETE BEGIN-->
+<!-- JASCID: 201012291908 SYS -->
+
+
+<div id="jas-main">
+<table >
+<tr>
+  <td colspan="2">
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article">
+            <h2 class="jas-postheader">
+              <img class="image" src="<? echo $JASDIRICONTHEME; ?>64/actions/help-contents.png " title="Confirm JTable Deletion" />
+              <font size="6">&nbsp;Confirm JTable Deletion</font>
+              <a target="_blank" href="[@ALIAS@].?action=help&helpid=0" title="Delete Table Help">
+                <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+              </a>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+</td></tr>
+<tr>
+  <td>
+    <table>
+    <tr>
+      <td>
+        <div class="jas-layout-row jas-content">
+          <div class="jas-post">
+            <div class="jas-post-tl"></div>
+            <div class="jas-post-tr"></div>
+            <div class="jas-post-bl"></div>
+            <div class="jas-post-br"></div>
+            <div class="jas-post-tc"></div>
+
+            <div class="jas-post-bc"></div>
+            <div class="jas-post-cl"></div>
+            <div class="jas-post-cr"></div>
+            <div class="jas-post-cc"></div>
+            <div class="jas-post-body">
+              <div class="jas-post-inner jas-article">
+                <h2 class="jas-postheader">
+                  <div class="panelheader">Delete [@JTABL_NAME@]?</div>
+                </h2>
+                <div class="jas-postcontent">
+                  <!-- BLOKDETAIL BEGIN-->
+                  <h3>Are you sure you wish to entirely delete this table from the system?</h3>
+                  <p>Note: JAS will be instructed to forget everything about the table... but it doesn't delete the table itself; just any knowledge of it so screens will not work right if they are pointed to it etc.</p>
+                  <div class="jasgrid">
+                    <table>
+                    <caption>JTable Slated for Deletion</caption>
+                    <tr class="r1"><td>JTabl_JTable_UID</td><td>[@JTABL_JTABLE_UID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_Name</td><td>[@JTABL_NAME@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_Desc</td><td>[@JTABL_DESC@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_JDConnection_ID</td><td>[@JTABL_JDCONNECTION_ID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_JTableType_ID</td><td>[@JTABL_JTABLETYPE_ID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_ColumnPrefix</td><td>[@JTABL_COLUMNPREFIX@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_JAS_b</td><td>[@JTABL_JAS_B@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_CreatedBy_JUser_ID</td><td>[@JTABL_CREATEDBY_JUSER_ID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_Created_DT</td><td>[@JTABL_CREATED_DT@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_ModifiedBy_JUser_ID</td><td>[@JTABL_MODIFIEDBY_JUSER_ID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_Modified_DT</td><td>[@JTABL_MODIFIED_DT@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_DeletedBy_JUser_ID</td><td>[@JTABL_DELETEDBY_JUSER_ID@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JTabl_Deleted_DT</td><td>[@JTABL_DELETED_DT@]</td><td>&nbsp;</td></tr>
+                    <tr class="r2"><td>JTabl_Deleted_b</td><td>[@JTABL_DELETED_B@]</td><td>&nbsp;</td></tr>
+                    <tr class="r1"><td>JAS_Row_b</td><td>[@JAS_ROW_B@]</td><td>&nbsp;</td></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </table>
+  </td>
+  <td align="left" valign="top">
+    <ul class="jas-blok-buttons">
+      <li><a href=".?ACTION=JTableEditor&UNLOCK=[@JTABL_JTABLE_UID@]"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/document-close.png" title="Cancel Button" /><span class="jasbutspan">Cancel</span></a></li>
+      <li><a href=".?ACTION=JTableEditor&DELETE=[@JTABL_JTABLE_UID@]"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/edit-delete.png" title="Delete JTable Button" /><span class="jasbutspan">Delete</span></a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+<!--SECTION CONFIRMDELETE END-->
+
+
+<!--SECTION DELETESUCCESS BEGIN-->
+<!-- SECTION DELETESUCCESS ./templates/en/sys_jtableeditor.jas -->
+<table>
+<tr>
+  <td>
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article">
+            <h2 class="jas-postheader">
+              <a href="#" title="test Data" >
+                <img class="image" src="<? echo $JASDIRICONTHEME; ?>64/places/user-trash.png" title="[@JTABL_NAME@] was deleted successfully." />&nbsp;
+                [@JTABL_NAME@] was deleted successfully.
+              </a>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td>
+    <ul class="jas-blok-buttons">
+      <li><a href="javascript: opener.document.location.reload();window.close();"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/dialog-apply.png" title="Continue Button" /><span class="jasbutspan">Continue</span></a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+<!--SECTION DELETESUCCESS END-->
+  

@@ -1,0 +1,41 @@
+<script>
+  var JSGrp_JSecGrp_UID[@JSGrp_JSecGrp_UID@]="[@JSGrp_JSecGrp_UID@]";
+  var sDestName[@JSGrp_JSecGrp_UID@]="";
+
+  function callbackCopySecGrp[@JSGrp_JSecGrp_UID@](doc){
+    elcopystatus[@JSGrp_JSecGrp_UID@].style.display="";
+    elcopyprogress[@JSGrp_JSecGrp_UID@].style.display="none";
+    if(doc.errorCode!=0){
+      alert(doc.errorCode+": "+doc.errorMessage);
+    }else{
+      alert("Success! Your new security group "+sDestName[@JSGrp_JSecGrp_UID@]+" has been created as a copy of [@JSGrp_Name@].");
+    };
+  };
+  function CopySecGrp[@JSGrp_JSecGrp_UID@](){
+    sDestName[@JSGrp_JSecGrp_UID@]=document.getElementById("destname[@JSGrp_JSecGrp_UID@]").value;
+    if(sDestName[@JSGrp_JSecGrp_UID@].length>0){
+      elcopystatus[@JSGrp_JSecGrp_UID@].style.display="none";
+      elcopyprogress[@JSGrp_JSecGrp_UID@].style.display="";
+      document.getElementById("copystatus[@JSGrp_JSecGrp_UID@]").innerText="Copying security group...";
+      var sURL=".?action=copysecuritygroup";
+      try{
+        iwfRequestPost(sURL,null,callbackCopySecGrp[@JSGrp_JSecGrp_UID@],true,"&JSGrp_JSecGrp_UID=[@JSGrp_JSecGrp_UID@]&DestSecGrp="+encodeURI(sDestName[@JSGrp_JSecGrp_UID@]));
+      }catch(eX){
+        elcopystatus[@JSGrp_JSecGrp_UID@].style.display="";
+        elcopyprogress[@JSGrp_JSecGrp_UID@].style.display="none";
+        alert("JAS Server appears to be offline. Exception: " + eX);
+      };
+    }else{
+      alert("Please enter a system wide unique security group name before attempting a copy.");
+    };
+  };
+</script>
+<div name="copystatus[@JSGrp_JSecGrp_UID@]" id="copystatus[@JSGrp_JSecGrp_UID@]">
+<a title="Enter New Target Security Group Name Here first, then click this icon to carry it out." href="javascript: CopySecGrp[@JSGrp_JSecGrp_UID@]();"><img src="[@JASDIRICONTHEME@]16/actions/edit-copy.png" /></a>
+<input type="text" maxlength="50" name="destname[@JSGrp_JSecGrp_UID@]" id="destname[@JSGrp_JSecGrp_UID@]" value="" />
+</div>
+<div name="copyprogress[@JSGrp_JSecGrp_UID@]" id="copyprogress[@JSGrp_JSecGrp_UID@]" style="display: none;"><img src="/jws/img/working.gif" /></div>
+<script>
+  var elcopystatus[@JSGrp_JSecGrp_UID@] = document.getElementById("copystatus[@JSGrp_JSecGrp_UID@]");
+  var elcopyprogress[@JSGrp_JSecGrp_UID@] = document.getElementById("copyprogress[@JSGrp_JSecGrp_UID@]");
+</script>

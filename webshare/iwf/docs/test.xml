@@ -1,0 +1,10 @@
+<response>
+	<action type='debug'>
+		<Test:A>test text</Test:A>
+	</action>
+	<action type='debug'>
+		<SOAP:Envelope>
+			Namespacing test here
+		</SOAP:Envelope>
+	</action>
+</response>

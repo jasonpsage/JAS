@@ -1,0 +1,47 @@
+<!--jproject - tasks-->
+<div id="tasks" style="display: none;">
+<table>
+<tr><td colspan="2">[@CAPTION@]</td></tr>
+<tr>
+  <td>
+<script language="javascript">
+  function maketask(p_s){
+    var s='[@SERVERURL@]/.?screen=jtask+Data&DBLOK1757=[@UID@]&DBLOK1751=3'+
+          '&DBLOK1753=4&DBLOK2012041414283135031=107&DBLOK2012041414283140324=[@UID@]';
+    if(p_s=='new'){s=s+'&DBLOK1756=1&DBLOK1758=1';}else
+    if(p_s=='meet'){s=s+'&DBLOK1756=6&DBLOK1758=2';}else
+    if(p_s=='call'){s=s+'&DBLOK1756=6&DBLOK1758=3';}else
+    if(p_s=='logcall'){
+      s=s+'&DBLOK1756=3&DBLOK1758=3&DBLOK2012040500412020433=';
+      var dt=new Date();s=s+encodeURIComponent(JDate(dt,11,0));
+    };
+    s = s + '&DBLOK1737='+encodeURIComponent('[@SERVERURL@]/.?screen=jproject+Data&UID=[@UID@]');
+    NewWindow(s);
+  };
+</script>
+
+<a href="javascript: maketask('new');">New Task</a><br />
+<a href="javascript: maketask('meet');">Schedule Meeting</a><br />
+<a href="javascript: maketask('call');">Schedule Call</a><br />
+<a href="javascript: maketask('logcall');">Log Call</a><br />
+  </td>
+  <td>
+
+<script language="javascript">
+  function viewtask(p_s){
+    var s='[@SERVERURL@]/.?screen=jtask+Search&BFS1103U=2&BFS1103P=3&FBLOK1693=[@UID@]';
+    if(p_s=='pending'){ s=s+'&FBLOK1692=3&FBLOK1692FT=NOT';}else
+    if(p_s=='complete'){s=s+'&FBLOK1692=3';}else
+    if(p_s=='all'){};
+    NewWindow(s);
+  };
+</script>
+    <a href="javascript: viewtask('pending');">View Pending</a><br />
+    <a href="javascript: viewtask('complete');">View Completed</a><br />
+    <a href="javascript: viewtask('all');">View All</a><br />
+  </td>
+</tr>
+</table>
+</div>
+<script>if(parseInt('[@UID@]')>0){ var el=document.getElementById('tasks'); el.style.display="";};</script>
+

@@ -1,0 +1,1038 @@
+// =========================================================================
+/// IWF - Interactive Website Framework.  Javascript library for creating
+/// responsive thin client interfaces.
+///
+/// Copyright (C) 2005 Brock Weaver brockweaver@users.sourceforge.net
+///
+///     This library is free software; you can redistribute it and/or modify
+/// it under the terms of the GNU Lesser General Public License as published
+/// by the Free Software Foundation; either version 2.1 of the License, or
+/// (at your option) any later version.
+///
+///     This library is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+/// or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+/// License for more details.
+///
+///    You should have received a copy of the GNU Lesser General Public License
+/// along with this library; if not, write to the Free Software Foundation,
+/// Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+///
+/// Brock Weaver
+/// brockweaver@users.sourceforge.net
+/// 8772 NE 94th Ave
+/// Bondurant, IA 50035
+///
+//! http://iwf.sourceforge.net/
+// --------------------------------------------------------------------------
+//! NOTE: To minimize file size, strip all fluffy comments (except the LGPL, of course!)
+//! using the following regex (global flag and multiline on):
+//!            ^\t*//([^/!].*|$)
+//!  To rip out all comments (LGPL or otherwise):
+//!            ^\t*//(.*|$)
+//!  To rip out only logging statements (commented or uncommented):
+//!            ^/{0,2}iwfLog.*
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+//
+//! iwfajax.js
+//
+// Thread-safe background xml request via XmlHttpRequest object
+//
+//! Dependencies:
+//! iwfxml.js
+//! iwfcore.js
+//! iwfgui.js (optional -- pretty progress bar)
+//
+//! Brock Weaver - brockweaver@users.sourceforge.net
+// --------------------------------------------------------------------------
+//! v 0.4 - 2006-05-25
+//! Added rudimentary support for uploading files via an iframe request
+//! Currently only works with Firefox though, still trying to rectify that.
+//! This is for you, smeaggie
+//!
+//! Fixed bug causing select tag values to not be submitted
+//! Thanks Richard
+// --------------------------------------------------------------------------
+//! v 0.3 - 2006-02-26
+//! ajax bug patch - misnamed request variable caused spurious timer behavior
+//! Thank you marbie!
+// --------------------------------------------------------------------------
+//! v 0.2 - 2005-11-14
+//! core bug patch
+// --------------------------------------------------------------------------
+//! v 0.1 - 2005-06-05
+//! Initial release.
+//
+//! Known Issues:
+//!  AddToHistory does not work
+//!  Iframe not implemented
+//
+// =========================================================================
+
+
+
+
+// show progress bar if they included iwfgui.js, window.status otherwise.
+var _iwfShowGuiProgress = iwfExists(window.iwfShow);
+
+
+
+
+
+
+// -----------------------------------
+// Begin: Dependency Check
+// -----------------------------------
+
+if (!__iwfCoreIncluded || !__iwfXmlIncluded){
+	iwfLogFatal("IWF Dependency Error: iwfajax.js is dependent upon both iwfcore.js and iwfxml.js, " +
+		"so you *must* reference those files first.\n\nExample:\n\n" +
+		"<" + "script type='text/javascript' src='iwfcore.js'></" + "script>\n" +
+		"<" + "script type='text/javascript' src='iwfxml.js'></" + "script>\n<script type='text/javascript' src='iwfajax.js'></script>",
+		 true);
+}
+
+// -----------------------------------
+// End: Dependency Check
+// -----------------------------------
+
+var __iwfAjaxIncluded = true;
+
+// -----------------------------------
+// Begin: AJAX Request and Response
+// -----------------------------------
+
+
+
+//-------------------------------------
+// BEGIN- JEGAS LCC - LEAN POST VERSION
+//-------------------------------------
+function iwfRequestPost(p_sUrl, targetElementOnResponse, callback, synchronously, p_sPostData){
+	// we use a javascript feature here called "inner functions"
+	// using these means the local variables retain their values after the outer function
+	// has returned.  this is useful for thread safety, so
+	// reassigning the onreadystatechange function doesn't stomp over earlier requests.
+	function iwfBindCallback(){
+		if (req && req.readyState == 4) {
+			// was an xmlhttp request
+			_iwfOnRequestEnd();
+			if (req.status == 200 || req.status == 0) {
+	//iwfLog('exact response from server:\n\n' + req.responseText, true);
+				_iwfResponseHandler(req.responseText, localCallback, localTarget);
+			} else {
+				_iwfOnRequestError(req.status, req.statusText, req.responseText);
+			}
+			return;
+		}
+	}
+
+	if (!iwfExists(synchronously)){
+		synchronously = false;
+	}
+
+	// determine how to hit the server...
+	var url = p_sUrl;
+	var method = 'POST';
+	var postdata = "\r\n"+p_sPostData;
+	var contentType = 'application/x-www-form-urlencoded';
+
+	// use a local variable to hold our callback and target until the inner function is called...
+	var localCallback = callback;
+	var localTarget = targetElementOnResponse;
+	// prevent any browser caching of our url by requesting a unique url everytime...
+	if (location.href.indexOf('file://') > -1){
+		// hack for allowing non-IIS hosted shares in IE7
+		// make sure it's fully pathed and ignore timestamp parameter
+		var pos = location.href.lastIndexOf('/');
+		url = location.href.substring(0,pos+1) + url;
+	} else {
+		url += ((url.indexOf('?') > -1) ? '&' : '?') + 'iwfRequestId=' + new Date().valueOf();
+	}
+
+	//iwfLog("url = " + url);
+	//iwfLog("method = " + method);
+	//iwfLog("postdata = " + postdata);
+	//iwfLog("contenttype = " + contentType);
+
+        //confirm("url = " + url);
+        //confirm("method = " + method);
+        //confirm("postdata = " + postdata);
+        //confirm("contenttype = " + contentType);
+
+
+
+	var req = null;
+	//iwfLog("using XHR to perform request...");
+	// use XHR to perform the request, as this will
+	// prevent the browser from adding it to history.
+	req = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  // bind our callback
+	req.onreadystatechange = iwfBindCallback;
+
+	// show progress if it's not already visible...
+	_iwfOnRequestStart();
+
+	// hit the server
+  //iwfLog("opening connection...", true);
+  //iwfLog('synchronously=' + synchronously);
+	req.open(method, url, !synchronously);
+  //iwfLog("setting header...", true);
+	req.setRequestHeader('Content-Type', contentType);
+  //iwfLog("sending request...", true);
+	req.send(postdata);
+  //iwfLog("request sent.", true);
+
+	// if synchronously, the inner function is not called.  call it here.
+	if (synchronously){
+    //iwfLog('sync, response=\n' + req.responseText + '\n\n\n  calling ResponseHandler...');
+		_iwfOnRequestEnd();
+		_iwfResponseHandler(req.responseText, localCallback, localTarget);
+	}
+
+	// if this is called from the form.onsubmit event, make sure the form doesn't submit...
+	// return absolutely nothing so anchor tags don't hork the current page
+}
+//-------------------------------------
+// END--- JEGAS LCC - LEAN POST VERSION
+//-------------------------------------
+
+
+
+function iwfRequestSync(urlOrForm, targetElementOnResponse, addToHistory, callback){
+	return iwfRequest(urlOrForm, targetElementOnResponse, addToHistory, callback, true);
+}
+
+function iwfRequest(urlOrForm, targetElementOnResponse, addToHistory, callback, synchronously){
+
+	// we use a javascript feature here called "inner functions"
+	// using these means the local variables retain their values after the outer function
+	// has returned.  this is useful for thread safety, so
+	// reassigning the onreadystatechange function doesn't stomp over earlier requests.
+
+	function iwfBindCallback(){
+		if (req && req.readyState == 4) {
+			// was an xmlhttp request
+			_iwfOnRequestEnd();
+			if (req.status == 200 || req.status == 0) {
+	//iwfLog('exact response from server:\n\n' + req.responseText, true);
+				_iwfResponseHandler(req.responseText, localCallback, localTarget);
+			} else {
+				_iwfOnRequestError(req.status, req.statusText, req.responseText);
+			}
+			return;
+		}
+	}
+
+	if (!iwfExists(synchronously)){
+		synchronously = false;
+	}
+
+	// determine how to hit the server...
+	var url = null;
+	var method = 'GET';
+	var postdata = null;
+	var isFromForm = true;
+	var contentType = 'application/x-www-form-urlencoded';
+  if (iwfIsString(urlOrForm)){
+		// if we get here, they either specified the url or the name of the form.
+		// either way, flag so we return nothing.
+		isFromForm = false;
+
+		var frm = iwfGetForm(urlOrForm);
+		if (!frm){
+			// is a url.
+			url = urlOrForm;
+			method = 'GET';
+			postdata = null;
+		} else {
+			// is name of a form.
+			// fill with the form object.
+			urlOrForm = frm;
+		}
+    
+
+
+	}
+
+	// use a local variable to hold our callback and target until the inner function is called...
+	var localCallback = callback;
+	var localTarget = targetElementOnResponse;
+  if (!iwfIsString(urlOrForm)){
+    confirm('!iwfIsString(urlOrForm)');
+		var ctl = null;
+
+
+		// is a form or a control in the form.
+		if (iwfExists(urlOrForm.form)){
+			// is a control in the form. jump up to the form.
+			ctl = urlOrForm;
+			urlOrForm = urlOrForm.form;
+		}
+
+
+		// if they passed a form and no local target, lookup the form.iwfTarget attribute and use it if possible
+		if (!localTarget){
+				localTarget = iwfAttribute(urlOrForm, 'iwfTarget');
+		}
+
+		if (localTarget){
+			var elTgt = iwfGetOrCreateByNameWithinForm(urlOrForm, 'iwfTarget', 'input', 'hidden');
+			if (elTgt){
+				iwfAttribute(elTgt, 'value', localTarget);
+				iwfRemoveAttribute(elTgt, 'disabled');
+			}
+		}
+
+
+		url = urlOrForm.action;
+		method = urlOrForm.method.toUpperCase();
+
+
+		// if there are any files to upload, do them using the traditional
+		// file upload via a hidden iframe tag...
+		var iframe = _iwfUploadFiles(urlOrForm, localCallback, localTarget);
+		if (!iframe){
+			switch(method){
+				case "POST":
+
+					postdata = _iwfGetFormData(urlOrForm, url, ctl);
+
+					// we also need to properly set the content-type header...
+					var frm = iwfGetForm(urlOrForm);
+					if (frm){
+						var enc = iwfAttribute(frm, 'encoding');
+						if (!enc){
+							enc = iwfAttribute(frm, 'enctype');
+						}
+						if (enc){
+							contentType = enc;
+						}
+					}
+
+					break;
+				case "GET":
+				default:
+					url = _iwfGetFormData(urlOrForm, url, ctl);
+					break;
+			}
+		} else {
+			// we uploaded via the iframe. nothing to do
+		}
+
+	}
+
+	if (iframe){
+		// form contained a <input type='file'> element, so
+		// we already created an iframe and posted it.
+
+	} else {
+		// prevent any browser caching of our url by requesting a unique url everytime...
+		if (location.href.indexOf('file://') > -1){
+			// hack for allowing non-IIS hosted shares in IE7
+			// make sure it's fully pathed and ignore timestamp parameter
+			var pos = location.href.lastIndexOf('/');
+			url = location.href.substring(0,pos+1) + url;
+		} else {
+			url += ((url.indexOf('?') > -1) ? '&' : '?') + 'iwfRequestId=' + new Date().valueOf();
+		}
+
+	//iwfLog("url = " + url);
+	//iwfLog("method = " + method);
+	//iwfLog("postdata = " + postdata);
+	//iwfLog("contenttype = " + contentType);
+
+        //confirm("url = " + url);
+        //confirm("method = " + method);
+        //confirm("postdata = " + postdata);
+        //confirm("contenttype = " + contentType);
+
+
+
+		var req = null;
+		if (!addToHistory){
+	//iwfLog("using XHR to perform request...");
+			// use XHR to perform the request, as this will
+			// prevent the browser from adding it to history.
+			req = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+			// bind our callback
+			req.onreadystatechange = iwfBindCallback;
+
+			// show progress if it's not already visible...
+			_iwfOnRequestStart();
+
+			// hit the server
+//iwfLog("opening connection...", true);
+//iwfLog('synchronously=' + synchronously);
+			req.open(method, url, !synchronously);
+//iwfLog("setting header...", true);
+			req.setRequestHeader('Content-Type', contentType);
+//iwfLog("sending request...", true);
+			req.send(postdata);
+//iwfLog("request sent.", true);
+
+			// if synchronously, the inner function is not called.  call it here.
+			if (synchronously){
+//iwfLog('sync, response=\n' + req.responseText + '\n\n\n  calling ResponseHandler...');
+				_iwfOnRequestEnd();
+				_iwfResponseHandler(req.responseText, localCallback, localTarget);
+			}
+
+		} else {
+			// use an IFRAME element to perform the request,
+			// as this will cause the browser to add it to history.
+			// TODO: make this work!!!
+iwfLog("using IFRAME to perform request...");
+iwfLog('request and add to history not implemented yet!!!', true);
+			return;
+
+			var el = iwfGetById("iwfHistoryFrame");
+			if (!el){
+				iwfLogFatal("To enable history tracking in IWF, you must add an invisible IFRAME element to your page:\n<IFRAME id='iwfHistoryFrame' style='display:none'></IFRAME>", true);
+			}
+
+			el.src = url;
+
+			// show progress if it's not already visible...
+			_iwfOnRequestStart();
+
+
+		}
+
+	}
+
+	// if this is called from the form.onsubmit event, make sure the form doesn't submit...
+	if (isFromForm){
+		return false;
+	} else {
+		// return absolutely nothing so anchor tags don't hork the current page
+	}
+
+}
+
+function _iwfGetFormData(form, url, ctl){
+
+	var method = form.method;
+	if (!method) { method = "get"; }
+
+	var output = null;
+
+	if (method == 'get'){
+		output = url + ((url.indexOf('?') > -1) ? '&' : '?');
+	} else {
+		output = '';
+	}
+
+
+	// if there is a target specified in the <form> tag,
+	// copy its contents to a hidden <input type='hidden'> tag.
+
+//iwfLog("total elements in form named '" + form.name + "': " + form.elements.length);
+	for(var i=0;i<form.elements.length;i++){
+		var el = form.elements[i];
+		var nm = iwfAttribute(el, 'name');
+		var val = null;
+		if (!iwfAttribute(el, 'disabled') && nm){
+			switch (el.tagName.toLowerCase()){
+				case 'input':
+					switch(iwfAttribute(el, 'type')){
+						case 'checkbox':
+						case 'radio':
+							if (iwfAttribute(el, 'checked')){
+								val = iwfAttribute(el, 'value');
+							}
+							break;
+						case 'button':
+							if (el == ctl){
+								val = iwfAttribute(el, 'value');
+							}
+							break;
+						case 'submit':
+							if (el == ctl){
+								val = iwfAttribute(el, 'value');
+							}
+							break;
+						case 'text':
+						default:
+							val = iwfAttribute(el, 'value');
+							break;
+						case 'file':
+							// note: see the _iwfUploadFiles() method that is called before we enter this loop!
+//							iwfLog('TODO: implement <input type="file"> in _iwfGetFormData', true);
+							val = iwfAttribute(el, 'value');
+							break;
+						case 'image':
+							iwfLogFatal('TODO: implement <input type="image"> in _iwfGetFormData', true);
+							val = iwfAttribute(el, 'value');
+							break;
+						case 'reset':
+							iwfLogFatal('TODO: implement <input type="reset"> in _iwfGetFormData', true);
+							break;
+						case 'hidden':
+							val = iwfAttribute(el, 'value');
+							break;
+					}
+					break;
+				case 'textarea':
+					val = iwfAttribute(el, 'innerText');
+					break;
+				case 'button':
+					if (el == ctl){
+						val = iwfAttribute(el, 'innerText');
+					}
+					break;
+				case 'select':
+					for(var j=0;j<el.options.length;j++){
+						// 2006-05-25 fixed this if check, thanks Richard
+						if (iwfAttribute(el.options[j], 'selected')){
+							if (!val){
+								val = iwfAttribute(el.options[j], 'value');
+							} else {
+								val += '+' + iwfAttribute(el.options[j], 'value');
+							}
+						}
+					}
+			}
+
+			if (val){
+				if (output.length > 0){
+					output += '&';
+				}
+				output += escape(nm) + '=' + escape(val);
+			}
+		}
+	}
+//iwfLog('sending via xmlhttp:\n' + output, true);
+	if (output.length == 0){
+		return null;
+	} else {
+		return output;
+	}
+}
+
+function _iwfResponseReceived(doc){
+iwfLog('iframeloaded');
+	var xmlDoc = new iwfXmlDoc(doc.innerHTML);
+}
+
+function _iwfResponseHandler(origText, callback, tgt){
+	var doc = new iwfXmlDoc(origText);
+	iwfLog(doc.outerXml(true));
+	if (!doc.response){
+		// not in our default xml format.
+		// just throw out the xml to the callback, if any
+		if (callback){
+			callback(doc);
+		} else {
+			iwfLogFatal("IWF Ajax Error: No callback defined for non-standard response:\n" + origText, true);
+		}
+	} else {
+		if (doc.response.debugging == 'true'){
+			iwfLoggingEnabled = true;
+			iwfLog("IWF Ajax Debugging:\nParsed response:\n\n" + doc.response.outerXml(true), true);
+			iwfShowLog();
+		}
+
+		// 2006-02-28 Thanks to Colin, targets are now properly reset on each iteration...
+		var origTgt = tgt;
+
+		for(var i=0; i< doc.response.childNodes.length; i++){
+			var node = doc.response.childNodes[i];
+			tgt = origTgt;
+			if (node.nodeName.indexOf("#") != 0){
+//iwfLog('node.target=' + node.target + '\ntgt=' + tgt);
+				if (!tgt) {
+					// server target is ignored if a client target exists.
+					tgt = node.target;
+				}
+        //------------------------------
+        // BEGIN --JEGAS - trying handling errors on client side in callback
+        // so we comment these lines out
+        //------------------------------
+        //if (node.errorCode && iwfToInt(node.errorCode, true) != 0){
+				//	// an error occurred.
+        //  _iwfOnRequestError(node.errorCode, node.errorMessage);
+				//} else
+        //------------------------------
+        // END --JEGAS - don't forget to pull up bracket below to the else we commented out.
+        //------------------------------
+        {
+					if (!node.type){
+						node.type = "";
+					}
+					switch(node.type.toLowerCase()){
+						case "html":
+						case "xhtml":
+							var innerHtml = node.innerHtml();
+//iwfLog('parsed html response:\n\n' + innerHtml);
+							_iwfInsertHtml(innerHtml, tgt);
+							break;
+						case "javascript":
+						case "js":
+							var bomb = true;
+							if (node.childNodes.length == 1){
+								var js = node.childNodes[0];
+								if (js.nodeName == '#cdata' || js.nodeName == '#comment'){
+									bomb = false;
+									var code = js.getText();
+									eval(code);
+								}
+							}
+							if (bomb){
+								iwfLogFatal("IWF Ajax Error: When an <action> is defined of type javascript, it content must be contained by either a Comment (<!-- -->) or CDATA (<![CDATA[  ]]>).\nCDATA is the more appropriate manner, as this is the xml-compliant one.\nHowever, COMMENT is also allowed as this is html-compliant, such as within a <script> element.\n\n<action> xml returned:\n\n" + node.outerXml(), true);
+							}
+							break;
+						case "xml":
+							if (callback){
+								callback(node);
+							}
+							break;
+						case "debug":
+							iwfLogFatal("IWF Debug: <action> type identified as 'debug'.\nXml received for current action:\n\n" + node.outerXml(), true);
+							break;
+						default:
+							iwfLogFatal('IWF Ajax Error: <action> type of "' + node.type + '" is not a valid option.\n\nValid options:\n\'html\' or \'xhtml\' = parse as html and inject into element with the id specified by the target attribute\n\'javascript\' or \'js\' = parse as javascript and execute\n\'xml\' = parse as xml and call the callback specified when iwfRequest() was called\n\'debug\' = parse as xml and log/alert the result\n\n<action> xml returned:\n\n' + node.outerXml(), true);
+							break;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+function _iwfInsertHtml(html, parentNodeId){
+	if(!parentNodeId){
+		parentNodeId = 'iwfContent';
+		iwfLog("IWF Ajax Warning: <action> with a type of 'html' does not have its target attribute specified, so using the default of 'iwfContent'.");
+	}
+
+	if(!parentNodeId){
+			iwfLogFatal("IWF Ajax Error: <action> node with a type of 'html' does not have its target attribute specified to a valid element.\nPlease specify the id of the element into which the contents of the <action> node should be placed.\nTo fill the entire page, simply specify 'body'.", true);
+	} else {
+		var el = iwfGetById(parentNodeId);
+		if (!el){
+			if (parentNodeId == 'body'){
+				el = iwfGetByTagName('body');
+				if (!el || el.length == 0){
+					iwfLogFatal("IWF Ajax Error: Could not locate the tag named 'body'", true);
+					return;
+				} else {
+					el = el[0];
+				}
+			} else {
+					iwfLogFatal('IWF Ajax Error: Could not locate element with id of ' + parentNodeId + ' into which the following html should be placed:\n\n' + html, true);
+					return;
+			}
+		}
+
+//iwfLog(iwfElementToString(el));
+//iwfLog(html);
+
+		// trying to shove a <form> node inside another <form> node is a bad thing.
+		// make sure we don't do that here.
+		var re = /<form/i;
+		var match = re.exec(html);
+		if (match && document.forms.length > 0){
+			// our html to inject contains a form node.
+			// bubble up the chain until we find a <form> node, or we have no parents
+			var elParent = el;
+			while (elParent && elParent.tagName.toLowerCase() != 'form'){
+				elParent = iwfGetParent(elParent);
+			}
+
+			if (elParent && elParent.tagName.toLowerCase() == 'form'){
+				iwfLogFatal('IWF Ajax Error: Attempting to inject html which contains a <form> node into a target element which is itself a <form> node, or is already contained by a <form> node.\nThis is bad html, and will not work appropriately on some major browsers.', true);
+			}
+		}
+
+
+		el.innerHTML = html;
+
+
+		// if there is a script element, we have to explicitly add it to the body element,
+		// as IE and firefox just don't like it when you try to add it as part of the innerHTML
+		// property.  Go figure.
+
+		var i = 0;
+		// don't stomp on any existing scripts...
+		while (iwfGetById('iwfScript' + i)){
+			i++;
+		}
+
+		var scriptStart = html.indexOf("<script");
+		while(scriptStart > -1){
+			scriptStart = html.indexOf(">", scriptStart) + 1;
+
+			// copy contents of script into a default holder
+			var scriptEnd = html.indexOf("</script>", scriptStart);
+			var scriptHtml = html.substr(scriptStart, scriptEnd - scriptStart);
+
+			var re = /^\s*<!--/;
+			var match = re.exec(scriptHtml);
+			if (!match){
+				iwfLogFatal("IWF Ajax Error: Developer, you *must* put the <!-- and /" + "/--> 'safety net' around your script within all <script> tags.\nThe offending <script> tag contains the following code:\n\n" + scriptHtml + "\n\nThis requirement is due to how IWF injects the html so the browser is able to actually parse the script and make its contents available for execution.", true);
+			}
+
+			// this code is the worst hack in this entire framework.
+			// the code in the try portion should work anywhere -- but
+			// IE barfs when you try to set the innerHTML on a script element.
+			// not only that, but IE won't parse script unless a visible element
+			// is contained in the innerHTML when it is set, so we need the <code>IE hack here</code>
+			// and it cannot be removed.
+			// I don't understand why creating a new node and setting its innerHTML causes the browsers
+			// to parse and execute the script, but it does.
+			// Note there is a major leak here, as we do not try to reuse existing iwfScriptXXXX elements
+			// in case they are in use by other targets.  To clean these up, simply call iwfCleanScripts
+			// periodically.  This is so app-dependent, I didn't want to try to keep track of everything
+			// and possibly miss a case, causing really weird results that only show up occassionally.
+			//
+			// Plus I'm getting lazy. :)
+			//
+			try {
+				//! moz (DOM)
+				var elScript = iwfGetOrCreateById('iwfScript' + i, 'script');
+				elScript.type = 'text/javascript';
+				elScript.defer = 'true';
+				elScript.innerHTML = scriptHtml;
+
+				iwfAppendChild('body', elScript);
+
+			} catch(e){
+iwfLog("IE Hack for injecting script tag...", true);
+				//! IE hack
+				// IE needs a visible tag within a non-script element to have scripting apply... Don't ask me why, ask the IE team why.
+				// My guess is the visible element causes the page to at least partially re-render, which in turn kicks off any script parsing
+				// code in IE.
+				var elDiv = iwfGetOrCreateById('iwfScript' + i, '<div style="display:none"></div>', 'body');
+				elDiv.innerHTML = '<code>IE hack here</code><script id="iwfScript' + i + '" defer="true">' + scriptHtml + '</script' + '>';
+			}
+
+			i++;
+
+			scriptStart = html.indexOf("<script", scriptEnd+8);
+		}
+	}
+}
+
+function iwfCleanScripts(){
+	var i = 0;
+	while(iwfRemoveNode('iwfScript' + (i++)));
+
+}
+
+function _iwfIframeCallback(frameName, xml){
+	var div = iwfGetById(frameName + "_callback");
+
+	var localCallback = iwfAttribute(div, 'iwfFileUploadCallback');
+	var localTarget = iwfAttribute(div, 'iwfFileUploadTarget');
+
+	_iwfOnRequestEnd();
+	_iwfResponseHandler(xml, localCallback, localTarget);
+
+
+}
+
+function _iwfUploadFiles(frm, callback, target){
+	// Extra nasty hack here!
+	// spin through all the form elements, copying all
+	// the <input type='file'> ones into a new iframe so
+	// we can post those using 'normal' web posting functionality.
+	// once this is done,
+
+	var fileCount = 0;
+
+	// note form is hard-coded to appropriate ENCTYPE and METHOD for uploading a file
+
+	var i = 0;
+	// don't stomp on any existing iframes...
+	while (iwfGetById('iwfFileUpload' + i)){
+		// blow away the iframe if we've done this before (suppress history!)
+//			iwfRemoveNode('iwfFileUpload' + i);
+//			if (window.frames['iwfFileUpload' + i]) window.frames['iwfFileUpload' + i] = null;
+		i++;
+	}
+
+	var frameName = 'iwfFileUpload' + i;
+
+	var js = '';
+
+	var formName = iwfAttribute(frm, 'name');
+	if (!formName) { formName = iwfAttribute(frm, 'id'); }
+
+
+	var formElements = "<input type='hidden' name='iwfIframeName' id='iwfIframeName' value='" + frameName + "' />";
+	for(var i=0;i<frm.elements.length;i++){
+			var el = frm.elements[i];
+			var elString = iwfElementToString(el);
+			if (el.tagName.toLowerCase() == 'input' && iwfAttribute(el, 'type').toLowerCase() == 'file' && iwfAttribute(el, 'value')){
+				// is a file input control.
+				// extra special hack from 7th level of hell to get this to work.
+				fileCount++;
+				// clone the node from the source document into our current document
+				js += "document.forms[0].appendChild(window.parent.document.forms['" + formName + "']." + iwfAttribute(el, 'name') + ".cloneNode(true)); ";
+//				js += 'document.forms[0]["' + iwfAttribute(el, 'name') + '"].value = "' + iwfAttribute(el, 'value') + '"; ';
+			} else {
+				// copy this element
+//			iwfLog('element=' + elString, true);
+				formElements += elString;
+			}
+	}
+
+	var startFormTag = "<form name='" + formName +
+								"' id='" + formName +
+								"' action='" + iwfAttribute(frm, 'action');
+
+	if (fileCount > 0){
+		// hard code the enctype and method
+		startFormTag += "' method='post' enctype='multipart/form-data'>";
+	} else {
+		startFormTag += "' method='" + iwfAttribute(frm, 'method') +
+							 "' enctype='" + iwfAttribute(frm, 'enctype') + "'>";
+	}
+
+
+	var html = "<html><body ";
+	if (js && js.length > 0){
+		html += 'onload="javascript:';
+		html += js;
+		// yep, another horrible hack!  Submitting the form on body load doesn't work in FF.
+		// so add a 100 ms delay and it works.  Go figure.
+		html += "; setTimeout('document.forms[0].submit()', 100);";
+		html += '">';
+	} else {
+		html += '>';
+	}
+	html += startFormTag;
+	html += formElements;
+	html += "<input type='submit' value='Go' name='iwfHiddenGo' id='iwfHiddenGo'/>";
+	html += "</form></body></html>";
+
+
+
+//iwfLog('html to write to hidden iframe:\n' + html, true);
+	if (fileCount > 0){
+
+		iwfLog("submitting via iframe named " + frameName + ": " + html);
+
+
+		// create a div to hold all the iframes we may create (so we can hide them!)
+		var elUploadDiv = iwfGetOrCreateById('iwfFileUploadFrameHolder', 'div', 'body');
+
+//		if (!iwfIsHidden(elUploadDiv)) { iwfHide(elUploadDiv); }
+
+		// create a div just to hold the event handler (for async callbacks)
+		var elCallback = iwfGetOrCreateById(frameName + '_callback', 'div', elUploadDiv);
+		iwfAttribute(elCallback, 'iwfFileUploadCallback', callback);
+		iwfAttribute(elCallback, 'iwfFileUploadTarget', target);
+
+		// now, we have a new IFrame tag containing the html to post.
+		var elUpload =  iwfGetOrCreateById(frameName, 'iframe', elUploadDiv);
+		// hack here.  both FF and IE require a reference to the object
+		// via the frames collection.  Don't ask me why, I just know this works...
+
+		elUpload = window.frames[frameName];
+
+		// show progress if it's not already visible...
+		_iwfOnRequestStart();
+
+		elUpload.document.open('text/html', 'replace');
+		elUpload.document.write(html);
+		elUpload.document.close();
+
+
+		// link up the callback
+		// (note this isn't fired natively, we fudge it.  See _iwfIframeCallback method)
+
+
+		// as soon as this is added to the document, it will post.
+		// TODO: add someway of pausing code here until upload is completed!
+		//       also, a progress bar would be good...
+
+//		iwfLog(fileCount + ' file(s) uploaded.', true);
+
+		return elUpload;
+
+	} else {
+		// form didn't contain a <input type='file'> element, so do nothing!
+		return null;
+	}
+
+}
+
+
+var _iwfTotalRequests = 0;
+var _iwfPendingRequests = 0;
+var _iwfRequestTicker = null;
+var _iwfRequestTickCount = 0;
+var _iwfRequestTickDuration = 100;
+
+
+// TODO: make the styles applied be configurable variables at the top of this file.
+function _iwfGetBusyBar(inner){
+	var b = iwfGetById('iwfBusy');
+	if (!b){
+		b = iwfGetOrCreateById('iwfBusy', 'div', 'body');
+		b.className = 'iwfbusybar';
+		iwfStyle(b, 'position', 'absolute');
+		iwfStyle(b, 'border', '1px solid black');
+		iwfStyle(b, 'backgroundColor', '#efefef');
+		iwfStyle(b, 'textAlign', 'Left');
+
+		iwfWidth(b, 100);
+		iwfHeight(b, 20);
+		iwfZIndex(b, 9999);
+
+		//iwfX(b, 0);
+		//iwfY(b, 0);
+
+		iwfX(b, iwfClientWidth() - iwfWidth(b)-5);
+		iwfY(b, iwfClientHeight() - iwfHeight(b)-5);
+
+		iwfHide(b);
+	}
+
+
+
+	var bb = iwfGetById('iwfBusyBar');
+	if(!bb){
+		bb = iwfGetOrCreateById('iwfBusyBar', 'div', b);
+		iwfStyle(bb, 'backgroundColor', 'navy');
+		iwfStyle(bb, 'color', 'white');
+		iwfStyle(bb, 'textAlign', 'left');
+		iwfStyle(bb, 'paddingLeft', '5px');
+		iwfWidth(bb, 1);
+		iwfHeight(bb, 20);
+		iwfX(bb, 0);
+		iwfY(bb, 0);
+	}
+
+	if(inner){
+		return bb;
+	} else {
+		return b;
+	}
+
+}
+
+function _iwfOnRequestStart(){
+	_iwfPendingRequests++;
+	_iwfTotalRequests++;
+
+	_iwfRequestTickDuration = 100;
+
+	if (!_iwfRequestTicker){
+		_iwfRequestTickCount = 0;
+		if (window.iwfOnRequestStart){
+			_iwfRequestTickDuration = iwfOnRequestStart();
+		} else if (_iwfShowGuiProgress) {
+			// use gui busy implementation
+			var bb = _iwfGetBusyBar(true);
+			iwfWidth(bb, 1);
+			bb.innerHTML = '0%';
+			iwfShow(_iwfGetBusyBar(false));
+		} else {
+			// use default busy implementation...
+			window.status = 'busy.';
+		}
+		if (!_iwfRequestTickDuration){
+			_iwfRequestTickDuration = 100;
+		}
+		_iwfRequestTicker = setInterval(_iwfOnRequestTick, _iwfRequestTickDuration);
+	}
+}
+
+function _iwfOnRequestTick(){
+	_iwfRequestTickCount++;
+	if (window.iwfOnRequestTick){
+		// Marburg (marbie) pointed out a variable misnaming here.  Thank you marbie!
+		iwfOnRequestTick(_iwfRequestTickCount, _iwfRequestTickDuration, _iwfPendingRequests);
+	} else if (!window.iwfOnRequestStart) {
+		if (_iwfShowGuiProgress) {
+			// use gui busy implementation
+			var bar = _iwfGetBusyBar(true);
+			if(bar){
+				var w = iwfWidth(bar) + 1;
+				if (w > 95){
+					w = 95;
+				}
+				iwfWidth(bar, w);
+				bar.innerHTML = iwfIntFormat(w) + "%";
+			}
+		} else {
+			// use default busy implementation...
+			window.status = 'busy...............................................'.substr(0, (_iwfRequestTickCount % 45) + 5);
+		}
+	} else {
+		// they didn't define a tick function,
+		// but they did define a start one, so do nothing.
+	}
+}
+
+function _iwfOnRequestEnd(){
+	_iwfPendingRequests--;
+	if (_iwfPendingRequests < 1){
+		_iwfPendingRequests = 0;
+		_iwfTotalRequests = 0;
+		clearInterval(_iwfRequestTicker);
+		_iwfRequestTicker = null;
+		if (window.iwfOnRequestEnd){
+			iwfOnRequestEnd();
+		} else if (!window.iwfOnRequestStart) {
+			if (_iwfShowGuiProgress) {
+			// use gui busy implementation
+				var bar = _iwfGetBusyBar(true);
+				if(bar){
+					iwfWidth(bar, 100);
+					bar.innerHTML = "Done";
+					iwfHideGentlyDelay(_iwfGetBusyBar(false), 15, 500);
+				}
+			} else {
+				// use default busy implementation...
+				window.status = 'done.';
+			}
+		} else {
+			// they didn't define an end function,
+			// but they did define a start one, so do nothing.
+		}
+
+	} else {
+		if (window.iwfOnRequestProgress){
+			iwfOnRequestProgress(_iwfPendingRequests, _iwfTotalRequests);
+		} else if (!window.iwfOnRequestStart) {
+			if (_iwfShowGuiProgress) {
+			// use gui busy implementation
+				var pct = (1 - (_iwfPendingRequests/_iwfTotalRequests)) * 100;
+				if (pct > 100){
+					pct = 100;
+				}
+				var bar = _iwfGetBusyBar(true);
+				if(bar){
+					iwfWidth(bar, pct);
+					bar.innerHTML = "loading " + iwfIntFormat(pct) + "%";
+				}
+			} else {
+				// use default busy implementation...
+				window.status = 'Remaining: ' + _iwfPendingRequests;
+			}
+		} else {
+			// they didn't define an end function,
+			// but they did define a start one, so do nothing.
+		}
+	}
+}
+
+function _iwfOnRequestError(code, msg, text){
+	if (window.iwfOnRequestError){
+		iwfOnRequestError(code, msg, text);
+	} else {
+		iwfLogFatal("Error " + code + ": " + msg + ":\n\n" + text);
+	}
+}
+
+// -----------------------------------
+// End: AJAX Request and Response
+// -----------------------------------
