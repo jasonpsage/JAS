@@ -2242,13 +2242,11 @@ Begin
     
     
     bOkToLog:=((p_rIOAppendLog.u2LogType_ID=1) or  
-              (p_rIOAppendLog.u2LogType_ID>=grJASConfig.iLogLevel));
+              (p_rIOAppendLog.u2LogType_ID<=grJASConfig.iLogLevel));
               
     
     //bOkToLog:=true;
-    writeln('201501180914 - Ok to Log?: ',saTrueFalse(bOkToLog));
-    //riteln('p_rIOAppendLog.u2LogType_ID: '+inttostr(p_rIOAppendLog.u2LogType_ID));
-    //riteln('grJASConfig.iLogLevel: '+inttostr(grJASConfig.iLogLevel));
+    writeln('201501180914 - Ok to Log?: ',saTrueFalse(bOkToLog),' Log Type:',p_rIOAppendLog.u2LogType_ID,' LogLevel: '+inttostr(grJASConfig.iLogLevel));
     //riteln('ENTRY:'+saIOAppendLogColumnData(p_rIOAppendLog)+csEOL);
     
     

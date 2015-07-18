@@ -1,0 +1,3 @@
+"JLOGT_DateNTime_dt","JLOGT_Severity_u1","JLOGT_Entry_ID","JLOGT_EntryData_s","JLOGT_SourceFile_s","JLOGT_User_ID","JLOGT_OS_Login_s","JLOGT_CmdLine_s"
+2015-07-18 16:46:01,5,201203091110,"Deleted Log File as instructed in JAS configuration.","uj_config.pp",0,"(?)","c:\JegasCRM\src\jas.exe"
+2015-07-18 16:46:05,4,201012291442,"201503162240 - JAS_Log: Requested Dir not found:../webroot/hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh/  ","uj_worker.pp",0,"(?)","c:\JegasCRM\src\jas.exe"
