@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link rel='stylesheet' href='iwf.css' />
+
+		<script type='text/javascript' src='../iwfcore.js'></script>
+		<script type='text/javascript' src='../iwfgui.js'></script>
+		<script type='text/javascript' src='../iwfxml.js'></script>
+		<script type='text/javascript' src='../iwfajax.js'></script>
+
+		<script type='text/javascript'>
+		function iwfOnRequestError(code, msg, text){
+			alert('error= ' + code + '\nMessage=' + msg + '\n\n' + text);
+		}
+
+		var cur = null;
+
+		function doRequest(url, tgt){
+
+
+			// begin requesting the data
+			iwfRequest(url);
+
+			cur = tgt;
+
+			// align the outline box around the current item
+			iwfAlignTo("mnuBlock", tgt, "tc", "tc", 15);
+
+			// prevent browser from leaving focus on this guy.
+			iwfGetById(tgt).blur();
+
+
+		}
+
+		function hilite(tgt){
+			// align a shadow box near at the top center, but have it
+			// delay a bit
+			iwfDelay(50, iwfAlignTo, "mnuBlock2", tgt, "bc", "tc", 20);
+
+
+			// align the other shadow box at the bottom center
+			iwfDelay(50, iwfAlignTo, "mnuBlock3", tgt, "tc", "bc", 10);
+		}
+
+		function unhilite(){
+			// move outline box back to current item
+			if(cur){
+				hilite(cur);
+			}
+		}
+
+		</script>
+
+	</head>
+	<body onload=''>
+
+		<!-- logo -->
+		<div>
+			<h1>IWF - Interactive Website Framework</h1>
+		</div>
+
+		<!-- for menu animations -->
+		<div id='mnuBlock' class='menuBlock'></div>
+		<div id='mnuBlock2' class='menuBlock2'></div>
+		<div id='mnuBlock3' class='menuBlock2'></div>
+
+
+		<!-- menu -->
+		<div id='menu' class='menu'>
+			<ul>
+				<li><a
+						href='javascript:doRequest("overview.xml", "mnuOverview");'
+						onmouseover='javascript:hilite("mnuOverview");'
+						onmouseout='javascript:unhilite();'
+						id='mnuOverview'>Overview</a></li>
+				<li><a
+						href='javascript:doRequest("examples.xml", "mnuExamples");'
+						onmouseover='javascript:hilite("mnuExamples");'
+						onmouseout='javascript:unhilite();'
+						id='mnuExamples'>Examples</a></li>
+				<li><a
+						href='javascript:doRequest("faq.xml", "mnuFaq");'
+						onmouseover='javascript:hilite("mnuFaq");'
+						onmouseout='javascript:unhilite();'
+						id='mnuFaq'>FAQ</a></li>
+				<li><a
+						href='javascript:doRequest("download.xml", "mnuDownload");'
+						onmouseover='javascript:hilite("mnuDownload");'
+						onmouseout='javascript:unhilite();'
+						id='mnuDownload'>Download</a></li>
+				<li><a
+						href='javascript:doRequest("test.xml", "mnuTest");'
+						onmouseover='javascript:hilite("mnuTest");'
+						onmouseout='javascript:unhilite();'
+						id='mnuTest'>Test</a></li>
+			</ul>
+		</div>
+
+		<!-- prepackaged window
+		<div id='exampleWindow' iwfWindow='true' iwfWindowTitle='Content' style='width:400;height:300;top:200px;left:150px;border:1px solid black;'>
+		</div>
+		 -->
+
+		<!-- default target for IWF -->
+		<div id='iwfContent' style='background-color:white;padding:5px 5px 5px 5px'></div>
+
+		<!-- target for testing secondary action type of HTML - thank you Colin for the heads up -->
+		<div id='iwfContent2' style='background-color:black;color:white;padding:5px 5px 5px 5px'></div>
+
+		<!-- stuff at the bottom -->
+		<div class='sidebar'>
+		<p>&nbsp;</p>
+
+		<!-- source forge links -->
+<a href="http://sourceforge.net"> <img src="http://sourceforge.net/sflogo.php?group_id=140835&amp;type=5" width="210" height="62" border="0" alt="SourceForge.net Logo" /></a>
+<a href="http://sourceforge.net/donate/index.php?group_id=140835"><img src="http://images.sourceforge.net/images/project-support.jpg" width="88" height="32" border="0" alt="Support IWF" /></a>
+
+		</div>
+
+		<script type='text/javascript' src='../iwfconfig.js'></script>
+
+		<script type='text/javascript'>
+			// the source forge images sometimes take too long to come up,
+			// so click the link and hilite the current menu item before the body onload event fires...
+			iwfClickLink("mnuOverview");
+			hilite("mnuOverview");
+		</script>
+	</body>
+</html>

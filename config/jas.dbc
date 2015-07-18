@@ -12,17 +12,10 @@
 ; EQUAL (=) sign: e.g. Variable=Value  (THIS IS OK)
 ;                 e.g. Variable= Value (THIS IS NOT OK)
 ;==============================================================================
-; Copyright  2012 Jegas, LLC  - All Rights Reserved   
+; Copyright  2015 Jegas, LLC  - All Rights Reserved
 ;==============================================================================
 ; Connection Name:         JAS
 ; Connection Desc:         JAS Squadron Leader, Lead Jet, Master Database
-; Original Filename:       /xfiles/inet/jas/jegas/config/jas.dbc
-; Generated:               2012-10-28 12:17:31
-; Generating Application:  Jegas, LLC
-;            EXE:          jas
-;            Path:         /xfiles/inet/jas/bin/
-;            Product Name: Jegas Application Server
-;            Version:      0.0.1
 ;==============================================================================
 ; DBMSID IS DBMS Dialect Selection (0=Not Set Yet)
 ;  1 =   Generic
@@ -50,8 +43,8 @@ DrivID=2
 Name=JAS
 Desc=JAS Squadron Leader, Lead Jet, Master Database
 DSN=
-UserName=root
-Password=root
+UserName=ODBC
+Password=ODBC
 Driver=
 Server=localhost
 Database=jas

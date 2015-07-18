@@ -1,0 +1,64 @@
+<?
+// =================================================================
+// |    _________ _______  _______  ______  _______                |
+// |   /___  ___// _____/ / _____/ / __  / / _____/                |  
+// |      / /   / /__    / / ___  / /_/ / / /____                  |       
+// |     / /   / ____/  / / /  / / __  / /____  /                  |
+// |____/ /   / /___   / /__/ / / / / / _____/ / By: Jegas, LLC    |
+// /_____/   /______/ /______/ /_/ /_/ /______/                    |
+// |                 Under the Hood            JasonPSage@jegas.com|
+// =================================================================
+// JASCID: 201012270048
+// Contains bare minimum to add and remove files to the php include
+// At the end of the file - there is ONE include for the JAS install 
+// location.
+// =================================================================
+function add_include_path ($path)
+{
+    foreach (func_get_args() AS $path)
+    {
+        if (!file_exists($path) OR (file_exists($path) && filetype($path) !== 'dir'))
+        {
+            trigger_error("Include path '{$path}' not exists", E_USER_WARNING);
+            continue;
+        }
+       
+        $paths = explode(PATH_SEPARATOR, get_include_path());
+       
+        if (array_search($path, $paths) === false)
+            array_push($paths, $path);
+       
+        set_include_path(implode(PATH_SEPARATOR, $paths));
+    }
+}
+
+function remove_include_path ($path)
+{
+    foreach (func_get_args() AS $path)
+    {
+        $paths = explode(PATH_SEPARATOR, get_include_path());
+       
+        if (($k = array_search($path, $paths)) !== false)
+            unset($paths[$k]);
+        else
+            continue;
+       
+        if (!count($paths))
+        {
+            trigger_error("Include path '{$path}' can not be removed because it is the only", E_USER_NOTICE);
+            continue;
+        }
+       
+        set_include_path(implode(PATH_SEPARATOR, $paths));
+    }
+}
+
+
+// Note: There is no need to utilize the below line of code to add the 
+//       JAS PHP include folder location if the directory has been 
+//       already added to PHP's include_path in the php.ini file.
+//       If it hasn't, then you need to copy this file to a directory
+//       THAT IS in the php.ini's include_path, and make sure you put the
+//       JAS PHP folder in the line below and uncomment it.
+add_include_path('/xfiles/code/jas/php/');
+?>

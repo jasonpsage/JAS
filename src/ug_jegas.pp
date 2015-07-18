@@ -253,8 +253,6 @@ Type rtJASConfig=Record
   //saMenuTemplate: ansistring;
   saDiagnosticLogFileName: ansistring;// SEE DIAGNOSTIC_LOG PRE-COMPILE Directive
   saJASFooter: ansistring;
-  saFFMPEG: ansistring;
-  saCONVERT: ansistring;
   // Filenames ----------------------------------------------------------------
 
 
@@ -262,7 +260,12 @@ Type rtJASConfig=Record
   saWebShareAlias: AnsiString; //< Aliased Directory "webshare". Usually: jws
   saJASDirTheme: ansistring;//web view
   // Web Paths ----------------------------------------------------------------
-  
+
+  // Threading --------------------------------------------------------------
+  iThreadPoolNoOfThreads: Longint;
+  iThreadPoolMaximumRunTimeInMSec: Longint;
+  // Threading --------------------------------------------------------------
+
   // Misc Settings ----------------------------------------------------------
   saServerURL: ansistring;// should not have trailing slash
   saServerName: ansistring;
@@ -297,13 +300,22 @@ Type rtJASConfig=Record
   bAllowVirtualHostCreation: boolean;  
   // Misc Settings ----------------------------------------------------------
 
-  // Threading --------------------------------------------------------------
-  iThreadPoolNoOfThreads: Longint;
-  iThreadPoolMaximumRunTimeInMSec: Longint;
-  // Threading --------------------------------------------------------------
-
   // Error and Log Settings -------------------------------------------------
-  iLogLevel: Longint;
+
+  iLogLevel: Longint;{< Everything -1 keep metrics but no log,
+                                    0 - no log,
+                                    1 - log everything,
+                                    2 - Fatal ONLY,
+                                    3 - Fatal & Errors,
+                                    4 - Fatal,Errors, Warnings,
+                                    5 - Fatal, Errors, Warnings, Information Entries,
+                                    6+ User Defined Log Entry Types, and log level
+                                    pattern starting at 2 and up continues to
+                                    work with user levels. This allows various
+                                    levels of custom logging using existing system}
+
+
+
   bLogMessagesShowOnServerConsole: boolean;
   bDeleteLogFile: Boolean;
   iErrorReportingMode: Longint;
@@ -2234,8 +2246,7 @@ Begin
               
     
     //bOkToLog:=true;
-    
-    //riteln('Ok to Log?:',bOkToLog);
+    writeln('201501180914 - Ok to Log?: ',saTrueFalse(bOkToLog));
     //riteln('p_rIOAppendLog.u2LogType_ID: '+inttostr(p_rIOAppendLog.u2LogType_ID));
     //riteln('grJASConfig.iLogLevel: '+inttostr(grJASConfig.iLogLevel));
     //riteln('ENTRY:'+saIOAppendLogColumnData(p_rIOAppendLog)+csEOL);
@@ -2323,6 +2334,10 @@ End;
 //=============================================================================
 
 
+
+
+
+
 //=============================================================================
 // INTERNAL
 Function JLog(
@@ -2332,13 +2347,12 @@ Function JLog(
   p_saSourceFile: AnsiString
 ): Boolean;
 //=============================================================================
-Var bOkToLog: Boolean;
 Begin
   {$IFDEF DEBUGBEGINEND}
     DebugIN('JLog200609191910',SOURCEFILE);
   {$ENDIF}
   Result:=True;
-  // riteln('grJegasCommon.rJegasLog.bLoggingDisabled:',grJegasCommon.rJegasLog.bLoggingDisabled);
+  //riteln('grJegasCommon.rJegasLog.bLoggingDisabled:',grJegasCommon.rJegasLog.bLoggingDisabled);
   // Same Filter Logic as other bIOAppendLog ... to prevent needless 
   // CPU cycles because this gets called alot.
   With grJegasCommon.rJegasLog Do Begin
@@ -2350,86 +2364,78 @@ Begin
       // setting the SeverityLogLevel filter to -1
       // Good for still getting metrics.
 
-      //riteln('ug_jegas.jlog Ok to Log?:',bOkToLog);
-      //riteln('grJegasCommon.rJegasLog.u1SeverityLogLevel',u1SeverityLogLevel);
-      //riteln('Passed:p_u1Severity:',p_u1Severity);
-  
       
-      If bOKToLog Then 
-      Begin
-    
-        // Date and Time the Log Entry was created
-        With arColumns[00] Do Begin
-          //saColumnName:='JLOGT_DateNTime_dt';
-          //u2JDType:=cnJegasType_jdt;
-          vValue:=now;
-        End;
-        
-        With arColumns[01] Do Begin
-          //saColumnName:='JLOGT_Severity_u1';
-          //u2JDType:=cnJegasType_u1;
-          vValue:=p_u2LogType_ID;
-        End;
-        
-        With arColumns[02] Do Begin
-          //saColumnName:='JLOGT_Entry_ID';
-          //u2JDType:=cnJegasType_u;
-          vValue:=p_u8Entry_ID;
-        End;
-        
-        With arColumns[03] Do Begin
-          //saColumnName:='JLOGT_EntryData_s';
-          //u2JDType:=cnJegasType_s;
-          vValue:=p_saEntryData;
-        End;
-      
-        // Actual Program Source File that has made the 
-        // call. Note: When releasing systems, you may not
-        // want this field populated, however I have found
-        // it invaluable with debugging.   
-        With arColumns[04] Do Begin
-          //saColumnName:='JLOGT_SourceFile_s';
-          //u2JDType:=cnJegasType_s;
-          vValue:=p_saSourceFile;
-        End;
-    
-        
-        // This is to contain the user id as JEGAS sees
-        // it, as it relates to the Jegas System.
-        // See rtJegasCommon - as it has this field, 
-        // as well as the system user name (os dependant),
-        // and where applicable, the network login name
-        // which can be different as well (os and os config
-        // dependant)
-        With arColumns[05] Do Begin
-          //saColumnName:='JLOGT_JUser_u';
-          //u2JDType:=cnJegasType_u;
-          vValue:=grJegasCommon.u8JegasUserID;
-        End;
-        
-    
-        // To Username as Operating System Sees it (when implemented)
-        With arColumns[06] Do Begin
-          //saColumnName:='JLOGT_OS_Login_s';
-          //u2JDType:=cnJegasType_s;
-          // vData:="Not Supported Yet"
-          // Default already Assigned ;)
-          // Not implemented yet
-        End;
-    
-        // is populated with the commandline used to invoke the app.
-        With arColumns[07] Do Begin
-          //saColumnName:='JLOGT_CmdLine_s';
-          //u2JDType:=cnJegasType_s;
-          vValue:=grJegasCommon.saCmdLine;
-        End;
-    
-        //with arColumns[] do begin
-        //  saColumnName:=
-        //  i4JDType:=
-        //  saData:=""
-        //end;
+      // Date and Time the Log Entry was created
+      With arColumns[00] Do Begin
+        //saColumnName:='JLOGT_DateNTime_dt';
+        //u2JDType:=cnJegasType_jdt;
+        vValue:=now;
       End;
+
+      With arColumns[01] Do Begin
+        //saColumnName:='JLOGT_Severity_u1';
+        //u2JDType:=cnJegasType_u1;
+        vValue:=p_u2LogType_ID;
+      End;
+
+      With arColumns[02] Do Begin
+        //saColumnName:='JLOGT_Entry_ID';
+        //u2JDType:=cnJegasType_u;
+        vValue:=p_u8Entry_ID;
+      End;
+
+      With arColumns[03] Do Begin
+        //saColumnName:='JLOGT_EntryData_s';
+        //u2JDType:=cnJegasType_s;
+        vValue:=p_saEntryData;
+      End;
+      
+      // Actual Program Source File that has made the
+      // call. Note: When releasing systems, you may not
+      // want this field populated, however I have found
+      // it invaluable with debugging.
+      With arColumns[04] Do Begin
+        //saColumnName:='JLOGT_SourceFile_s';
+        //u2JDType:=cnJegasType_s;
+        vValue:=p_saSourceFile;
+      End;
+    
+
+      // This is to contain the user id as JEGAS sees
+      // it, as it relates to the Jegas System.
+      // See rtJegasCommon - as it has this field,
+      // as well as the system user name (os dependant),
+      // and where applicable, the network login name
+      // which can be different as well (os and os config
+      // dependant)
+      With arColumns[05] Do Begin
+        //saColumnName:='JLOGT_JUser_u';
+        //u2JDType:=cnJegasType_u;
+        vValue:=grJegasCommon.u8JegasUserID;
+      End;
+
+    
+      // To Username as Operating System Sees it (when implemented)
+      With arColumns[06] Do Begin
+        //saColumnName:='JLOGT_OS_Login_s';
+        //u2JDType:=cnJegasType_s;
+        // vData:="Not Supported Yet"
+        // Default already Assigned ;)
+        // Not implemented yet
+      End;
+    
+      // is populated with the commandline used to invoke the app.
+      With arColumns[07] Do Begin
+        //saColumnName:='JLOGT_CmdLine_s';
+        //u2JDType:=cnJegasType_s;
+        vValue:=grJegasCommon.saCmdLine;
+      End;
+    
+      //with arColumns[] do begin
+      //  saColumnName:=
+      //  i4JDType:=
+      //  saData:=""
+      //end;
       //riteln('appending the log');
       result:=bIOAppendLog(grJegasCommon.rJegasLog);
       if result then 
@@ -4923,103 +4929,119 @@ end;
 //=============================================================================
 Procedure InitJASConfigRecord;
 //=============================================================================
-//var i: longint;
 begin
   with grJASConfig do begin
-    saServerURL:='http://localhost/';
-    saServerName:='Jegas Application Server';
-    saServerIdent:='TEST_JAS';
-    saDefaultPage:='index';
-    saDefaultArea:='sys_area';
-    saDefaultSection:='main';
-    u1DefaultMenuRenderMethod:=3;
-    iLogLevel:=0;//nothing
-    bLogMessagesShowOnServerConsole:=false;
-    iThreadPoolNoOfThreads:=1;
-    iThreadPoolMaximumRunTimeInMSec:= 5000;
-        
-    // was saJASDir - but naming doesn't match the the JASDIR = online view
-    // where saConfigDir for example is a OS dependant file path.
-    saSysDir:='../';//grJegasCommon.saAppPath+'..'+csDOSSLASH;// Directory where JAS is installed
-    // note not a perfect solution here - but its just a default.
-    // TODO: Clean this up to be a solid "decent" starting "default path".
-
-    saWebShareAlias:='/jws/';// Aliased Directory "webshare". Usually: jws
-    saConfigFile:='jas.cfg';
-    saDBCFilename:='jas.dbc';
-    //saTemplatesDir:=saSysDir+'templates'+csDOSSLASH;
-    iSessionTimeOutInMinutes:=60;
-    iLockTimeOutInMinutes:=30;
-    iLockRetriesBeforeFailure:=50;
-    iLockRetryDelayInMSec:=20;
-    u1PasswordKey:=141;
-    iValidateSessionRetryLimit:=50;
-    saDefaultLanguage:='en';//lowercase
+    // Physical Dir -------------------------------------------------------------
+    saSysDir:='../';
+    saConfigDir:=saSysDir+'config'+csDOSSLASH;// Jegas Configuration Directory (DSN's, jas.cfg etc.)
+    saFileDir:=saSysDir+'file'+csDOSSLASH;
+    saWebShareDir:=saSysDIR+'webshare'+csDOSSLASH;
     saCacheDir:= saSysDir+'cache'+csDOSSLASH;
-    saServerIP:='127.0.0.1';
-    u2ServerPort:=8080;
-    bDeleteLogFile:=true;
-    saServerSoftware:='Jegas Application Server / Jegas, LLC Version 1.0 -en';
-    {$IFDEF WIN32}
-    saPHP:='"c:\program files\php\php-cgi.exe"';// Full Path to PHP php-cgi.exe for launching CGI based PHP
-    saPerl:='c:\perl\bin\perl.exe'; // Full Path to Perl exe for launching CGI based Perl
-    {$ELSE}
-    saPHP:='/usr/bin/php-cgi';// Full Path to PHP php-cgi.exe for launching CGI based PHP
-    saPerl:='/usr/bin/perl'; // Full Path to Perl exe for launching CGI based Perl
-    {$ENDIF}
-    iTIMEZONEOFFSET:=-5;
-    iErrorReportingMode:=cnSYS_INFO_MODE_SECURE;
-    saErrorReportingSecureMessage:='Please note the error number shown in this message and record it. Your system administrator can use that number to help remedy system problems.';
-    bServerConsoleMessagesEnabled:=true;
-    bDebugServerConsoleMessagesEnabled:=false;
-    iDebugMode:=cnSYS_INFO_MODE_SECURE;
-    i8MaximumRequestHeaderLength:=8192;
-    iRetryLimit:=10;
-    iRetryDelayInMSec:=10;
-    iCreateSocketRetry:=100;
-    iCreateSocketRetryDelayInMSec:=5;
-    iSocketTimeOutInMSec:=12000;
-    iMaxFileHandles:=iThreadPoolNoOfThreads*2+1;// 1 for diagnostic Log if enabled, pairs for file served, host log (worst case scenario)
-    //saMenuTemplateFilename:='sys_menu';
-    //saMenuTemplate:='<!--@JAS-MENU@-->';
-    bBlackListEnabled:=true;
-    bWhiteListEnabled:=false;
-    bEnableSSL:=false;
-    bJobQEnabled:=false;
-    iJobQIntervalInMSec:= 10000; // Ten Seconds
-    saDiagnosticLogFileName:='';
-    saJASFooter:='jassig';
-    u8DefaultTop_JMenu_ID:=1;//stock default is menu Id #1 :)
-
-
-    saJASDirTheme:=saWebShareAlias+'themes/';
+    saLogDir:=saSysDir+'log'+csDOSSLASH;// Jegas default log directory
     saThemeDir:=saWebShareDir+'themes'+csDOSSLASH;
-    bDirectoryListing:=true;
-    bSafeDelete:=true;
-    bProtectJASRecords:=true;
-    bDataOnRight:=false;
-    sCacheMaxAgeInSeconds:='3600';
-    sSMTPHost:='';
-    sSMTPUsername:='';
-    sSMTPPassword:='';
-    sSystemEmailFromAddress:='';
-    saFFMPEG:='/usr/local/bin/ffmpeg';
-    saCONVERT:='/usr/bin/convert';
-    //saWAVMERGE='/usr/bin/wavmerge';
     saWebRootDir:=saSysDir+'webroot'+csDOSSLASH;
     saBinDir:=saSysDir+'bin'+csDOSSLASH;
     saSetupDir:=saSysDir+'setup'+csDOSSLASH;
     saSoftwaredir:=saSysDir+'software'+csDOSSLASH;
     saSrcDir:=saSysDir+'src'+csDOSSLASH;
     saDataBaseDir:=saSysDir+'database'+csDOSSLASH;
-    saDataBaseDir:=saPHPDir+'php'+csDOSSLASH;
-    saDataBaseDir:=saLogDir+'log'+csDOSSLASH;
-    saLogDir:=saSysDir+'log'+csDOSSLASH;// Jegas default log directory
-    saWebShareDir:=saSysDIR+'webshare'+csDOSSLASH;
-    saFileDir:=saSysDir+'file'+csDOSSLASH;
-    saConfigDir:=saSysDir+'config'+csDOSSLASH;// Jegas Configuration Directory (DSN's, jas.cfg etc.)
-    //saTemplateDir:=saSysDir+'templates'+csDOSSLASH;
-
+    saPHPDir:= saSysDir+'php'+csDOSSLASH;
+    // Physical Dir -------------------------------------------------------------
+  
+    // Filenames ----------------------------------------------------------------
+    saDBCFilename:='jas.dbc';
+    saConfigFile:='jas.cfg';
+    {$IFDEF WIN32}
+      saPHP:='"c:\program files\php\php-cgi.exe"';// Full Path to PHP php-cgi.exe for launching CGI based PHP
+      saPerl:='c:\perl\bin\perl.exe'; // Full Path to Perl exe for launching CGI based Perl
+    {$ELSE}
+      saPHP:='/usr/bin/php-cgi';// Full Path to PHP php-cgi.exe for launching CGI based PHP
+      saPerl:='/usr/bin/perl'; // Full Path to Perl exe for launching CGI based Perl
+    {$ENDIF}
+    saDiagnosticLogFileName:='';
+    saJASFooter:='jassig';
+    // Filenames ----------------------------------------------------------------
+  
+  
+    // Web Paths ----------------------------------------------------------------
+    saWebShareAlias:='/jws/';// Aliased Directory "webshare". Usually: jws
+    saJASDirTheme:=saWebShareAlias+'themes/';
+    // Web Paths ----------------------------------------------------------------
+  
+    // Threading --------------------------------------------------------------
+    iThreadPoolNoOfThreads:=1;
+    iThreadPoolMaximumRunTimeInMSec:= 5000;
+    // Threading --------------------------------------------------------------
+  
+    // Misc Settings ----------------------------------------------------------
+    saServerURL:='http://localhost/';
+    saServerName:='Jegas Application Server';
+    saServerIdent:='JEGAS';
+    saServerSoftware:='Jegas Application Server / Jegas, LLC Version 1.0 -en';
+    saDefaultArea:='sys_area';
+    saDefaultPage:='index';
+    saDefaultSection:='main';
+    u1PasswordKey:=141;
+    saDefaultLanguage:='en';//lowercase
+    u1DefaultMenuRenderMethod:=3;
+    saServerIP:='127.0.0.1';
+    u2ServerPort:=8080;
+    iRetryLimit:=10;
+    iRetryDelayInMSec:=10;
+    iTIMEZONEOFFSET:=-5;
+    iMaxFileHandles:=iThreadPoolNoOfThreads*2+1;// 1 for diagnostic Log if enabled, pairs for file served, host log (worst case scenario)
+    bBlackListEnabled:=true;
+    bWhiteListEnabled:=false;
+    bJobQEnabled:=false;
+    iJobQIntervalInMSec:= 10000; // Ten Seconds
+    u8DefaultTop_JMenu_ID:=1;//stock default is menu Id #1 :)
+    bDirectoryListing:=true;
+    bDataOnRight:=false;
+    sCacheMaxAgeInSeconds:='3600';
+    sSMTPHost:='';
+    sSMTPUsername:='';
+    sSMTPPassword:='';
+    sSystemEmailFromAddress:='from@notspecified.com';
+    bProtectJASRecords:=true;
+    bSafeDelete:=true;
+    bAllowVirtualHostCreation   :=false;
+    // Misc Settings ----------------------------------------------------------
+  
+  
+    // Error and Log Settings -------------------------------------------------
+    iLogLevel:=1;
+    bLogMessagesShowOnServerConsole:=false;
+    bDeleteLogFile:=true;
+    iErrorReportingMode:=cnSYS_INFO_MODE_SECURE;
+    saErrorReportingSecureMessage:='Please note the error number shown in this '+
+      'message and record it. Your system administrator can use that number to '+
+      'help remedy system problems.';
+    bServerConsoleMessagesEnabled:=true;
+    bDebugServerConsoleMessagesEnabled:=false;
+    iDebugMode:=cnSYS_INFO_MODE_SECURE;
+    // Error and Log Settings -------------------------------------------------
+  
+    // Session and Record Locking ---------------------------------------------
+    iSessionTimeOutInMinutes:=60;
+    iLockTimeOutInMinutes:=30;
+    iLockRetriesBeforeFailure:=50;
+    iLockRetryDelayInMSec:=20;
+    iValidateSessionRetryLimit:=50;
+    // Session and Record Locking ---------------------------------------------
+  
+    // IP Protocol Related ----------------------------------------------------
+    //i8MaximumRequestHeaderLength: Int64;
+    i8MaximumRequestHeaderLength:=8192;
+    iCreateSocketRetry:=100;
+    iCreateSocketRetryDelayInMSec:=5;
+    iSocketTimeOutInMSec:=12000;
+    bEnableSSL:=false;
+    // IP Protocol Related ----------------------------------------------------
+  
+    // ADVANCED CUSTOM PROGRAMMING --------------------------------------------
+    // Programmable Session Custom Hooks - Names for Actions that might
+    // be coded into the u01g_sessions file. Useful for working with
+    // integrated systems.
     saHOOK_ACTION_CREATESESSION_FAILURE:='';
     saHOOK_ACTION_CREATESESSION_SUCCESS:='';
     saHOOK_ACTION_REMOVESESSION_FAILURE:='';
@@ -5027,18 +5049,14 @@ begin
     saHOOK_ACTION_SESSIONTIMEOUT:='';
     saHOOK_ACTION_VALIDATESESSION_FAILURE:='';
     saHOOK_ACTION_VALIDATESESSION_SUCCESS:='';
-
-    saClientToVICIServerIP:='';
-    saJASServertoVICIServerIP:='';
-
+    // ADVANCED CUSTOM PROGRAMMING --------------------------------------------
+  
     saDefaultColorTheme         :='default';
     bDefaultSharesDefaultDomain :=true;
     saDefaultIconTheme          :='Crystal Clear';
     saDefaultAccessLog          :='access.default.log';
     saDefaultErrorLog           :='error.default.log';
     bCreateHybridJets           :=false;
-    bAllowVirtualHostCreation   :=false;
-    
   end;// with
   // This line below assures that JAS can cycle properly by resetting the config file name
   // to it's initial state at original ug_jegas.pp startup.

@@ -3186,8 +3186,6 @@ Begin
       '    <tr class="r2"><td>saPerl</td><td>'+grJASConfig.saPerl+'</td></tr>'+csCRLF+
       '    <tr class="r1"><td>saDiagnosticLogFileName</td><td>'+grJASConfig.saDiagnosticLogFileName+'</td></tr>'+csCRLF+
       '    <tr class="r2"><td>saJASFooter</td><td>'+grJASConfig.saJASFooter+'</td></tr>'+csCRLF+
-      '    <tr class="r1"><td>saFFMPEG</td><td>'+grJASConfig.saFFMPEG+'</td></tr>'+csCRLF+
-      '    <tr class="r2"><td>saCONVERT</td><td>'+grJASConfig.saCONVERT+'</td></tr>'+csCRLF+
       '    <tr class="r1"><td>saWebShareAlias</td><td>'+grJASConfig.saWebShareAlias+'</td></tr>'+csCRLF+
       '    <tr class="r2"><td>saJASDirTheme</td><td>'+grJASConfig.saJASDirTheme+'</td></tr>'+csCRLF+
       '    <tr class="r1"><td>saServerURL</td><td>'+grJASConfig.saServerURL+'</td></tr>'+csCRLF+
@@ -4245,8 +4243,6 @@ Begin
     xmlJASConfig.AppendItem_saName_N_saValue('saPerl',grJASConfig.saPerl); //< Full Path to Perl exe for launching CGI based Perl
     xmlJASConfig.AppendItem_saName_N_saValue('saDiagnosticLogFileName',grJASConfig.saDiagnosticLogFileName);// SEE DIAGNOSTIC_LOG PRE-COMPILE Directive
     xmlJASConfig.AppendItem_saName_N_saValue('saJASFooter',grJASConfig.saJASFooter);
-    xmlJASConfig.AppendItem_saName_N_saValue('saFFMPEG',grJASConfig.saFFMPEG);
-    xmlJASConfig.AppendItem_saName_N_saValue('saCONVERT',grJASConfig.saCONVERT);
     // Filenames ----------------------------------------------------------------
 
 

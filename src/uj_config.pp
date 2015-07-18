@@ -623,12 +623,6 @@ Begin
           grJASConfig.sCacheMaxAgeInSeconds:=saGetStringAfterEqualSign(sa);
         end else
 
-        If saBeforeEqual='CONVERT' then
-        begin
-          rConfigOverridden.bConvert:=true;
-          grJASConfig.saConvert:=saGetStringAfterEqualSign(sa);
-        end else
-
         If saBeforeEqual='CREATESOCKETRETRY' then
         begin
           rConfigOverridden.bCreateSocketRetry:=true;
@@ -712,12 +706,6 @@ Begin
         begin
           rConfigOverridden.bErrorReportingSecureMessage:=true;
           grJASConfig.saErrorReportingSecureMessage:=saGetStringAfterEqualSign(sa);
-        end else
-
-        If saBeforeEqual='FFMPEG' then
-        begin
-          rConfigOverridden.bFFMPEG:=true;
-          grJASConfig.saFFMPEG:=saGetStringAfterEqualSign(sa);
         end else
 
         If saBeforeEqual='HOOK_ACTION_CREATESESSION_FAILURE' then
@@ -1271,7 +1259,7 @@ begin
     if not bOk then
     begin
       bLogEntryMadeDuringStartUp:=true;
-      JLog(cnLog_FATAL, 200609161542, '****Unable to MAIN Load Database Connection file:'+grJASConfig.saDBCFilename, SOURCEFILE);
+      JLog(cnLog_FATAL, 200609161542, '****Unable to LOAD MAIN Database Connection file:'+grJASConfig.saDBCFilename, SOURCEFILE);
     end;
   end;
 
@@ -1314,10 +1302,6 @@ begin
       if (u8DataIn=2012100614040179599) and (not rConfigOverridden.bCacheMaxAgeInSeconds) then // JAS Cache Max Age In Seconds  admin   3600
       begin
         grJASCOnfig.sCacheMaxAgeInSeconds:=inttostr(u8val(saDataIn));
-      end else
-      if (u8DataIn=2012100614043322770) and (not rConfigOverridden.bConvert) then // JAS convert   admin   /usr/bin/convert
-      begin
-        grJASCOnfig.saConvert:=trim(saDataIn);
       end else
       if (u8DataIn=2012100614045994520) and (not rConfigOverridden.bCreateSocketRetry) then // JAS Create Socket Retry   admin   60
       begin
@@ -1381,10 +1365,6 @@ begin
       if (u8DataIn=2012100614101453914) and (not rConfigOverridden.bErrorReportingSecureMessage) then // JAS Error Reporting Secure Mode Message   NULL  Please note the error number shown in this message and record it. Your system administrator can use that number to help remedy system problems.
       begin
         grJASConfig.saErrorReportingSecureMessage:=saDataIn;
-      end else
-      if (u8DataIn=2012100614122888581) and (not rConfigOverridden.bFFMPEG) then // JAS ffmpeg  NULL  /usr/local/bin/ffmpeg
-      begin
-        grJASCOnfig.saFFMPEG:=trim(saDataIn);
       end else
       if (u8DataIn=2012100614124173033) and (not rConfigOverridden.bHOOK_ACTION_CREATESESSION_FAILURE) then // JAS HOOK_ACTION_CREATESESSION_FAILURE   admin   0
       begin

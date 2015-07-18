@@ -1,0 +1,10 @@
+<response>
+	<action type='html'>
+		<p>
+		The latest version of IWF is available at <a href='http://sourceforge.net/projects/iwf/' target='_blank'>http://sourceforge.net/projects/iwf/</a>.
+		</p>
+		<p>
+		Also, check out the corresponding website at <a href='http://iwf.sourceforge.net/' target='_blank'>http://iwf.sourceforge.net/</a>.
+		</p>
+	</action>
+</response>

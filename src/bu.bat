@@ -1,2 +1,2 @@
-mkdir f:\jasrepo
-jegasbackup f:\files\code\jas\ f:\jasrepo\
+mkdir c:\JegasCRM-Backup
+jegasbackup c:\JegasCRM\ c:\JegasCRM-Backup

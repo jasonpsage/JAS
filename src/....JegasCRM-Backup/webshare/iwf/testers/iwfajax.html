@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<style>
+			.altrow { background-color: lightgrey; }
+		</style>
+
+		<script type='text/javascript' src='../iwfcore.js'></script>
+		<script type='text/javascript' src='../iwfxml.js'></script>
+		<script type='text/javascript' src='../iwfgui.js'></script>
+		<script type='text/javascript' src='../iwfajax.js'></script>
+
+		<script type='text/javascript'>
+
+			window.name = 'main window';
+
+			function testError(s){
+					alert("Test page error: Could not locate element with id of '" + s + "'");
+					return false;
+			}
+
+			function getSource(id){
+				var el = iwfGetById(id);
+				if (!el){
+					return testError(id);
+				} else {
+					return el;
+				}
+			}
+
+			function getTarget(id){
+				var el = getSource(id);
+				if (el){
+					var tgt = iwfGetById(el.value);
+					if (!tgt){
+						alert('No element exists on this page with an id attribute of "' + el.value + '"');
+						return false;
+					} else {
+						return tgt;
+					}
+				}
+				return false;
+			}
+
+			function testGetById(){
+				var tgt = getTarget('txtGetById');
+				if (tgt){
+					alert(iwfElementToString(tgt));
+				}
+			}
+
+			function testXmlEncode(){
+				var el = getSource('txtXmlEncode');
+				if (el){
+					alert(iwfXmlEncode(el.innerText));
+				}
+
+			}
+
+
+			function test(w){
+				alert(w);
+				for(var i=0;i<w.attributes.length;i++){
+					alert(w.getAttribute(i));
+				}
+			}
+		</script>
+
+	</head>
+	<body onclick2='javascript:iwfMoveTo("moveme", iwfEvent(event).X, iwfEvent(event).Y, 10)'>
+		<h1>Tester for iwfajax.js</h1>
+		<a href='javascript:iwfAlignTo("moveme", "formSubmitResults", "tc", "bc", 30);'>Align orange to Result</a><br />
+		<a href='javascript:iwfDockTo("moveme", "iwfContent", "tc", "bc", 30); '>Dock orange to iwfContent</a><br />
+		<a href='javascript:iwfUnDockFrom("moveme", "iwfContent", 30); '>Undock orange from iwfContent</a><br />
+		<a href='javascript:iwfMoveTo("iwfContent", 300, 300, 10); '>Move iwfContent</a><br />
+		<a href='javascript:iwfMoveTo("iwfContent", 100, 500, 10); '>Reset iwfContent</a><br />
+		<div id='moveme' style='background-color:orange; width:100px; top:10px; left:50px;position:absolute'>This should move</div><br />
+		<a href='javascript:iwfMoveTo("moveme", 0, 0, 20); iwfShowGently("moveme", 5)'>reset orange box</a><br />
+		<form action='iwfajaxpost.php' method='get' name='frmGet' iwfTarget='formSubmitResults'>
+			<input type='hidden' value='hidden get value' name='hidValue' />
+			<input type='button' value='HTTP GET'  name='btnGet' onclick='javascript:iwfRequest(this);' />
+			<a href='javascript:iwfRequest("frmGet")'> GET via anchor</a>
+		</form>
+		<form action='iwfajaxpost.php' method='post' id='frmPost' iwfTarget='formSubmitResults'>
+			<input type='hidden' value='hidden post value' name='hidValue' />
+			<input type='button' value='HTTP POST'  name='btnPost' onclick='javascript:iwfRequest(this);' />
+			<a href='javascript:iwfRequest("frmPost", "formSubmitResults")'> POST via anchor</a>
+		</form>
+		<form action='iwfajaxpost2.php' method='post' id='frmPost2' iwfTarget='formSubmitResults' >
+			<input type='hidden' value='hidden post value' name='hidValue' />
+			<input type='radio' name='rdoTest' checked='checked' value='radio1' />
+			<input type='radio' name='rdoTest' value='radio2' />
+			<input type='checkbox' name='chkTest' value='Checkbox2' checked='checked' />
+			<input type='textbox' name='txtTest' value='Textbox' />
+			<input type='file' name='filPic' />
+			<input type='file' name='filPic2' />
+			<input type='button' value='FAKE HTTP POST'  name='btnPost' onclick='javascript:iwfRequest(this);' />
+			<input type='submit' value='REAL HTTP POST'  name='btnRealPost' />
+			<a href='javascript:iwfRequest("frmPost2", "formSubmitResults")'> FAKE POST via anchor</a>
+			<a href='javascript:document.forms["frmPost2"].submit();'> REAL POST via anchor</a>
+		</form>
+		<p>
+			<button onclick='javascript:iwfShowLog()'>Show IWF Log</button>
+		</p>
+		<div id='formSubmitResults' style='border:1px solid black;'>
+			Results of form submittal should show up here.
+		</div>
+		<div id='iwfContent' style='border:3px solid blue; position:absolute;top:500px;left:100px;'>
+			If they show up here, there is problems!  iwfTarget is not being recognized...
+		</div>
+	</body>
+</html>

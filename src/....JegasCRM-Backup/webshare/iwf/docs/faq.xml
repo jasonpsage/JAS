@@ -1,0 +1,140 @@
+<response>
+	<action type='html'>
+		<a name='top' />
+		<h2>Frequently Asked Questions</h2>
+		<p>
+			<ol>
+				<li><a href='#whatis'>What is IWF?</a></li>
+				<li><a href='#simplify'>What can IWF simplify for me?</a></li>
+				<li><a href='#js'>Do I need to know javascript to use it?</a></li>
+				<li><a href='#licensing'>What kind of licensing applies?</a></li>
+			</ol>
+		</p>
+		<hr />
+
+		<a name='whatis' />
+		<h3>What is IWF?</h3>
+		<p>
+			Interactive Website Framework, or IWF, is essentially a wrapper
+			for much of the mundane javascripting associated with creating
+			highly interactive, browser independent, responsive websites.
+			It keeps much of the "traditional" website coding paradigm,
+			while introducing several new functionalities -- such as
+			being able to suppress a page from entering the browser history (good for preventing data duplication when a user reposts the last request)
+		</p>
+		<a href='#top'>top</a>
+		<hr width='50%' align='center'/>
+
+		<a name='js' />
+		<h3>Do I need to know javascript to use it?</h3>
+		<p>
+			Yes, but very minimally.  For instance, if you understand what the following anchor tag
+			does, you'll be able to use IWF effectively:
+			<pre>
+&lt;a href='javascript:alert("Hello!")'&gt;Say Hi&lt;/a&gt;
+			</pre>
+			A common example of something relatively complex that IWF boils down to a simple
+			function call is AJAX.  AJAX is a term for the browser sending a request to the server
+			without clearing the current page.
+			<br />
+			<br />
+			Suppose you have a <code>listcds.php</code> page which returns 
+			HTML representing a list of cds and you want to put that HTML into an element with 
+			the id of "putCdsHere":
+			<pre>
+&lt;a href='javascript:iwfRequest("listcds.php", "putCdsHere");'&gt;List Cds&lt;/a&gt;
+			</pre>
+			All the details of creating the XmlHttpRequest object, setting its properties, asynchronously calling the server
+			in the background, catching the response upon completion, parsing that response, 
+			finding the appropriate element on the page, and injecting the HTML is done for you.
+			The only thing you need to do is tell IWF what you want and where to put it.  Simple, right?
+		</p>
+		<a href='#top'>top</a>
+		<hr width='50%' align='center' />
+
+
+		<a name='simplify' />
+		<h3>What can IWF simplify for me?</h3>
+		<p>
+			IWF contains a multitude of helper functions and objects, broken into 4 main categories:
+			<ul>
+				<li><h4>Common Functions (iwfcore.js)</h4>
+					<p>
+						Consists primarily of:
+						<ul>
+							<li>data typing (e.g. <code>iwfToDate</code>)</li>
+							<li>type checking (e.g. <code>iwfIsString</code>)</li>
+							<li>element manipulation (e.g. <code>iwfGetById</code>, <code>iwfAppendChild</code>)</li>
+							<li>string manipulation	(e.g. <code>iwfHtmlEncode</code>, <code>iwfXmlDecode</code>)</li>
+							<li>formatting (e.g. <code>iwfFloatFormat</code>)</li>
+						</ul>
+						<a href='javascript:alert("Sorry, not done yet!");/*iwfRequest("ref_core.xml");*/'>Reference for IWF Core</a>
+					</p>
+					
+				</li>
+				<li><h4>XML (iwfxml.js)</h4>
+					<p>
+						Consists of three objects, <code>iwfXmlDoc</code>, <code>iwfXmlNode</code>, and <code>iwfXmlWriter</code>.  These objects
+						can be used to parse and create xml.  These are <strong>not</strong> a reimplementation of the DOM objects -- these are
+						designed to have more readable javascript code.  For example, let's say we have the following xml:
+						<pre>
+&lt;internet&gt;
+	&lt;site url='www.sourceforge.net'&gt;
+		&lt;description&gt;Great place for open source projects!&lt;/description&gt;
+	&lt;/site&gt;
+	&lt;site url='iwf.sourceforge.net'&gt;
+		&lt;description&gt;IWF Project Home&lt;/description&gt;
+	&lt;/site&gt;
+&lt;/internet&gt;
+						</pre>
+						To pull the description for the IWF site using the typical DOM:<br />
+						<pre>var desc = doc.documentElement.lastChild().firstChild().innerText;</pre>
+						To pull the same node using the custom IWF implementation:<br />
+						<pre>var desc = doc.internet.site[1].description[0].getText();</pre>
+						<a href='javascript:alert("Sorry, not done yet!");/*iwfRequest("ref_xml.xml");*/'>Reference for IWF XML</a>
+					</p>
+				</li>
+				<li><h4>User Interface (iwfgui.js)</h4>
+					<p>
+						This contains functions to affect the user interface.
+						Ability to change the following aspects are included:
+						<ul>
+							<li>Visibility (e.g. <code>iwfShow</code>, <code>iwfHideGently</code>)</li>
+							<li>Position (e.g. <code>iwfX1</code>, <code>iwfMoveTo</code>)</li>
+							<li>Depth (e.g. <code>iwfZIndex</code>)</li>
+							<li>Size (e.g. <code>iwfHeight</code>, <code>iwfWidth</code>)</li>
+							<li>Opacity (e.g. <code>iwfOpacity</code>)</li>
+						</ul>
+						Also, user interaction objects have been generalized to be browser independent as well:
+						<ul>
+							<li>Event object (<code>iwfEvent</code>)</li>
+						</ul>
+						<a href='javascript:alert("Sorry, not done yet!");/*iwfRequest("ref_gui.js");*/'>Reference for IWF GUI</a>
+					</p>
+				</li>
+				<li><h4>AJAX (iwfajax.js)</h4>
+					<p>
+						This contains code required to perform AJAX requests.
+						<a href='javascript:alert("Sorry, not done yet!");/*iwfRequest("ref_ajax.js");*/'>Reference for IWF AJAX</a>
+
+					</p>
+				</li>
+			</ul>
+		</p>
+		<a href='#top'>top</a>
+		<hr width='50%' align='center'/>
+
+		<a name='licensing' />
+		<h3>What kind of licensing applies?</h3>
+		<p>
+			I have chosen the Lesser GPL (or LGPL) to license the IWF.
+			I wanted this code to be free and in the wild, but I thought the GPL
+			was overkill for this type of library-like code.
+		</p>
+		<a href='#top'>top</a>
+		<hr width='50%' align='center'/>
+
+
+
+	</action>
+</response>

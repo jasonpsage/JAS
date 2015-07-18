@@ -1,0 +1,50 @@
+<HTML>
+
+<!--------------------------------------------------------------->
+<!-- Copyright (c) 2006 by Conor O'Mahony.                     -->
+<!-- For enquiries, please email GubuSoft@GubuSoft.com.        -->
+<!-- Please keep all copyright notices below.                  -->
+<!-- Original author of TreeView script is Marcelino Martins.  -->
+<!--------------------------------------------------------------->
+<!-- This document includes the TreeView script.  The TreeView -->
+<!-- script can be found at http://www.TreeView.net.  The      -->
+<!-- script is Copyright (c) 2006 by Conor O'Mahony.           -->
+<!--------------------------------------------------------------->
+
+ <HEAD>
+  <TITLE>TreeView Demo: JavaScript Functions</TITLE>
+
+  <SCRIPT>
+   function op() {
+     // This function is for folders that do not open pages themselves.
+     // See the online instructions for more information.
+   }
+
+   // Note: To use the following two functions in a frameless layout, 
+   // move the functions to the main page in that frameless layout and 
+   // follow the instructions in the demoFuncsNodes.js file.
+   function exampleFunction(message) {
+     alert("TreeView nodes can call JavaScript functions\n" + message)
+   }
+
+   // Note: If you rename the "windowWithoutToolbar" function, please 
+   // don't give it a name that starts with "op".  If you start the
+   // name with "op", you will conflict with the TreeView code.
+   function windowWithoutToolbar(urlStr, width, height) { 
+     window.open(urlStr, '_blank', 'location=no,status=no,scrollbars=no,menubar=no,toolbar=no,directories=no,resizable=no,width=' + width + ',height=' + height) 
+   }
+  </SCRIPT>
+
+ </HEAD>
+
+ <!-- You may make other changes, but do not change the names  -->
+ <!-- of the frames (treeframe and basefrm).                   -->
+ <FRAMESET cols="200,*" onResize="if (navigator.family == 'nn4') window.location.reload()"> 
+  <FRAMESET rows="*,100"> 
+   <FRAME src="demoFuncsLeftFrame.html" name="treeframe">
+   <FRAME SRC="demoFuncsMenu.html" name="menu" SCROLLING="no" NORESIZE> 
+  </FRAMESET> 
+  <FRAME SRC="demoFuncsRightFrame.html" name="basefrm"> 
+ </FRAMESET> 
+
+</HTML>

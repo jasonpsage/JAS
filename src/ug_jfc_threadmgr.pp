@@ -1,13 +1,13 @@
 {==============================================================================
 |    _________ _______  _______  ______  _______  Jegas, LLC                  |
-|   /___  ___// _____/ / _____/ / __  / / _____/  JasonPSage@jegas.com        |
+|   /___  ___// _____/ / _____/ / __  / / _____/  Jason@jegas.com             |
 |      / /   / /__    / / ___  / /_/ / / /____                                |
 |     / /   / ____/  / / /  / / __  / /____  /                                |
 |____/ /   / /___   / /__/ / / / / / _____/ /                                 |
 /_____/   /______/ /______/ /_/ /_/ /______/                                  |
-|                 Under the Hood                                              |
+|         Virtually Everything IT(tm)                                         |
 ===============================================================================
-                       Copyright(c)2012 Jegas, LLC
+                       Copyright(c)2015 Jegas, LLC
 ==============================================================================}
 
 //=============================================================================
@@ -30,9 +30,9 @@ Unit ug_jfc_threadmgr;
 {$ENDIF}
 
 {DEFINE DEBUGTHREADBEGINEND} // used for thread debugging, like begin and end sorta
-                  // showthreads shows the threads progress with this.
-                  // whereas debuglogbeginend is ONE log file for all.
-                  // a bit messy for threads.
+                             // showthreads shows the threads progress with this.
+                             // whereas debuglogbeginend is ONE log file for all.
+                             // a bit messy for threads.
 {$IFDEF DEBUGTHREADBEGINEND}
 {$INFO | DEBUGTHREADBEGINEND: TRUE}
 {$ENDIF}

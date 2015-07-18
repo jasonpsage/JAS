@@ -506,8 +506,14 @@ end;
 function TJBLOKBUTTON.saRender: ansistring;
 //=============================================================================
 var
-  //Context: TCONTEXT;
-  //JScreen: TJScreen;
+  {$IFDEF DEBUGTHREADBEGINEND}
+    Context: TCONTEXT;
+  {$ELSE}
+     {$IFDEF TRACKTHREAD}
+        Context: TCONTEXT;
+     {$ENDIF}
+  {$ENDIF}
+
   saName: ansistring;
 {$IFDEF ROUTINENAMES}  var sTHIS_ROUTINE_NAME: String; {$ENDIF}
 Begin
@@ -515,8 +521,18 @@ Begin
 {$IFDEF DEBUGLOGBEGINEND}
   DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
-  //JScreen:=TJSCREEN(TJBLOK(lpJBLOK).lpDS);
-  //Context:=TJSCREEN(TJBLOK(lpJBLOK).lpDS).Context;
+
+  {$IFDEF DEBUGTHREADBEGINEND}
+    Context:=TJSCREEN(TJBLOK(lpJBLOK).lpDS).Context;
+  {$ELSE}
+     {$IFDEF TRACKTHREAD}
+       Context:=TJSCREEN(TJBLOK(lpJBLOK).lpDS).Context;
+     {$ENDIF}
+  {$ENDIF}
+
+
+
+
 {$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBIN(201203189018,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
 {$IFDEF TRACKTHREAD}Context.JThread.TrackThread(201203189018, sTHIS_ROUTINE_NAME);{$ENDIF}
 
@@ -1272,19 +1288,43 @@ end;
 //=============================================================================
 destructor TJBLOK.Destroy;
 //=============================================================================
-//var
-//  JScreen: TJSCREEN;
-  //Context: TCONTEXT;
-{$IFDEF ROUTINENAMES}  var sTHIS_ROUTINE_NAME: String; {$ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+  //var Context: TContext;
+{ELSE}
+   {IFDEF TRACKTHREAD}
+   //  var Context: TContext;
+   {ENDIF}
+{ENDIF}
+
+
+
+
+{IFDEF ROUTINENAMES}
+//  var sTHIS_ROUTINE_NAME: String;
+{ENDIF}
 Begin
-{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME:='TJBLOK.Destroy;'; {$ENDIF}
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
-  //JScreen:=TJSCREEN(lpDS);
-  //Context:=JScreen.Context;
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBIN(201203171046,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
-{$IFDEF TRACKTHREAD}Context.JThread.TrackThread(201203171047, sTHIS_ROUTINE_NAME);{$ENDIF}
+{IFDEF ROUTINENAMES}
+//sTHIS_ROUTINE_NAME:='TJBLOK.Destroy;';
+{ENDIF}
+{IFDEF DEBUGLOGBEGINEND}
+//  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
+
+{IFDEF DEBUGTHREADBEGINEND}
+//  Context:=TJSCREEN(TJBLOK(lpJBLOK).lpDS).Context;
+{ELSE}
+   {IFDEF TRACKTHREAD}
+   //  Context:=TJSCREEN(TJBLOK(lpJBLOK).lpDS).Context;
+   {ENDIF}
+{ENDIF}
+
+
+{IFDEF DEBUGTHREADBEGINEND}
+   //Context.JThread.DBIN(201203171046,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{ENDIF}
+{IFDEF TRACKTHREAD}
+  //Context.JThread.TrackThread(201203171047, sTHIS_ROUTINE_NAME);
+{ENDIF}
 
   if FXDL.MoveFirst then
   begin
@@ -1301,10 +1341,12 @@ Begin
     until not Bxdl.movenext;
   end;
   BXDL.Destroy;
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBOUT(201203171747,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{IFDEF DEBUGLOGBEGINEND}
+//  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+  //Context.JThread.DBOUT(201203171747,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{ENDIF}
 end;
 //=============================================================================
 
@@ -1396,19 +1438,24 @@ end;
 //=============================================================================
 procedure TJBLOK.RenderButtons;
 //=============================================================================
-//var
-  //JScreen: TJSCREEN;
-  //Context: TCONTEXT;
-{$IFDEF ROUTINENAMES}  var sTHIS_ROUTINE_NAME: String; {$ENDIF}
+{IFDEF ROUTINENAMES}
+//var sTHIS_ROUTINE_NAME: String;
+{ENDIF}
 Begin
-{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME:='TJBLOK.bExecute: boolean;'; {$ENDIF}
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
+{IFDEF ROUTINENAMES}
+//sTHIS_ROUTINE_NAME:='TJBLOK.bExecute: boolean;';
+{ENDIF}
+{IFDEF DEBUGLOGBEGINEND}
+//  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
   //JScreen:=TJSCREEN(lpDS);
   //Context:=JScreen.Context;
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBIN(201203180818,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
-{$IFDEF TRACKTHREAD}Context.JThread.TrackThread(201203180818, sTHIS_ROUTINE_NAME);{$ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+//Context.JThread.DBIN(201203180818,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{ENDIF}
+{IFDEF TRACKTHREAD}
+//Context.JThread.TrackThread(201203180818, sTHIS_ROUTINE_NAME);
+{ENDIF}
 
   If BXDL.MoveFirst Then
   Begin
@@ -1419,10 +1466,12 @@ Begin
     saButtons+='</ul>'+csCRLF;
   End;
 
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBOUT(201203180819,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{IFDEF DEBUGLOGBEGINEND}
+// DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+//Context.JThread.DBOUT(201203180819,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{ENDIF}
 end;
 //=============================================================================
 
@@ -1837,29 +1886,35 @@ end;
 //=============================================================================
 function TJBLOK.bExecuteCustomBlok: boolean;
 //=============================================================================
-//var
-//  bOk: boolean;
-  //JScreen: TJSCREEN;
-  //Context: TCONTEXT;
-{$IFDEF ROUTINENAMES}var sTHIS_ROUTINE_NAME: String; {$ENDIF}
+{IFDEF ROUTINENAMES}
+//var sTHIS_ROUTINE_NAME: String;
+{ENDIF}
 Begin
-{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME:='TJBLOK.bExecuteCustomBlok: boolean;'; {$ENDIF}
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
+{IFDEF ROUTINENAMES}
+//sTHIS_ROUTINE_NAME:='TJBLOK.bExecuteCustomBlok: boolean;';
+{ENDIF}
+{IFDEF DEBUGLOGBEGINEND}
+//  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
   //JScreen:=TJSCREEN(lpDS);
   //Context:=JScreen.Context;
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBIN(201203171756,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
-{$IFDEF TRACKTHREAD}Context.JThread.TrackThread(201203171756, sTHIS_ROUTINE_NAME);{$ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+//Context.JThread.DBIN(201203171756,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{//ENDIF}
+{IFDEF TRACKTHREAD}
+//Context.JThread.TrackThread(201203171756, sTHIS_ROUTINE_NAME);
+{ENDIF}
 
-  //bOk:=true;
-  //result:=bOk;
+
   result:=true;
 
-{$IFDEF DEBUGLOGBEGINEND}
-  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
-{$ENDIF}
-{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBOUT(201203171757,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+
+{IFDEF DEBUGLOGBEGINEND}
+//  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
+{ENDIF}
+{IFDEF DEBUGTHREADBEGINEND}
+//Context.JThread.DBOUT(201203171757,sTHIS_ROUTINE_NAME,SOURCEFILE);
+{ENDIF}
 end;
 //=============================================================================
 
@@ -6184,7 +6239,7 @@ function TJBLOK.bRecord_PreAdd: boolean;
 var
   bOk: Boolean;
   JScreen: TJSCREEN;
-  //Context: TCONTEXT;
+  Context: TCONTEXT;
 
 {$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME: String; {$ENDIF}
 Begin

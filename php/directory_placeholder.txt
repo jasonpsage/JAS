@@ -1,0 +1,22 @@
+//==============================================================================
+//|    _________ _______  _______  ______  ______|  Jegas Application Server 
+//|   /___  ___// _____/ / _____/ / __  / / _____/  
+//|      / /   / /__    / / ___  / /_/ / / /____ |  By: Jegas, LLC
+//|     / /   / ____/  / / /  / / __  / /____  / | 
+//|____/ /   / /___   / /__/ / / / / / _____/ /  |  Directory Place Holder File
+///_____/   /______/ /______/ /_/ /_/ /______/   |
+//|            Virtually Everything IT™          |
+//==============================================================================
+// Copyright(c)2010 Jegas, LLC - All Rights Reserved   
+// JASCID: 201012270038
+//==============================================================================
+
+This File is currently just a placeholder file. 
+
+Some version control systems (GIT for example) will not track a directory in the 
+software unless said directory contains at least one file. Copies of this file 
+are used specifically for this purpose.
+
+//==============================================================================
+// EOF
+//==============================================================================
