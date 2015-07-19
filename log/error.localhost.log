@@ -1,3 +1,7 @@
 [Sat Jul 18 19:14:54 2015] [warning] [client 127.0.0.1] 201503122027 - Missing Record that we were in the middle of deleting.  
 [Sat Jul 18 19:14:55 2015] [warning] [client 127.0.0.1] 201503122027 - Missing Record that we were in the middle of deleting.  
 [Sat Jul 18 19:30:03 2015] [warning] [client 127.0.0.1] 201503122027 - Missing Record that we were in the middle of deleting.  
+[Sat Jul 18 20:48:40 2015] [error] [client 127.0.0.1] You need to be logged in to use this feature.  
+[Sat Jul 18 21:08:44 2015] [warning] [client 127.0.0.1] Requested Dir not found:../webroot/london/  
+[Sat Jul 18 21:14:36 2015] [warning] [client 127.0.0.1] Requested Dir not found:../webroot/London/  
+[Sat Jul 18 21:17:32 2015] [warning] [client 127.0.0.1] Requested Dir not found:../webroot/London/  

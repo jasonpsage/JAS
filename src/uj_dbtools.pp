@@ -2118,6 +2118,9 @@ var
   rs2: JADO_RECORDSET;
   bOrphan: boolean;
   sa: ansistring;
+  saJCaptionUID: ansistring;
+  bKeep: boolean;
+
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
 {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='DBM_JCaptionFlagOrphans(p_Context: TCONTEXT);';{$ENDIF}
@@ -2154,7 +2157,9 @@ Begin
 
   if bOk then
   begin
-    saQry:='select JCapt_JCaption_UID from jcaption where JCapt_Deleted_b<>'+DBC.saDBMSBoolScrub(true) + ' or JCapt_Deleted_b is null';
+    saQry:='select JCapt_JCaption_UID,JCapt_Keep_b from jcaption '+
+      'where ((JCapt_Deleted_b<>'+DBC.saDBMSBoolScrub(true) + ') or '+
+      '(JCapt_Deleted_b is null))';
     bOk:=rs.open(saQry,DBC,201503161242);
     if not bOk then
     begin
@@ -2168,60 +2173,62 @@ Begin
     if rs.eol=false then
     begin
       repeat
-        bOrphan:=true;
-        {
+        saJCaptionUID:=DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID'));//NOTE ALREADY ESCAPED
+        bKeep:=bVal(rs.fields.Get_saValue('JCapt_Keep_b'));
+        //bOrphan:=true;
         bOrphan:=
-          (DBC.u8GetRowCount('jblokbutton','JBlkB_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171723)=0) and
-          (DBC.u8GetRowCount('jblokfield','JBlkF_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171724)=0) and
-          (DBC.u8GetRowCount('jblok','JBlok_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171725)=0) and
-          (DBC.u8GetRowCount('jcolumn','JColu_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171726)=0) and
-          (DBC.u8GetRowCount('jjobtype','JJobT_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171727)=0) and
-          (DBC.u8GetRowCount('jmenu','JMenu_IconAltText_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171728)=0) and
-          (DBC.u8GetRowCount('jprojectcategory','JMenu_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171729)=0) and
-          (DBC.u8GetRowCount('jprojectpriority','JPrjP_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171730)=0) and
-          (DBC.u8GetRowCount('jprojectstatus','JPrjS_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171731)=0) and
-          (DBC.u8GetRowCount('jscreen','JScrn_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171732)=0) and
-          (DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171733)=0) and
-          (DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171734)=0) and
-          (DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171735)=0);
-         }
-
-
-        saQry:=
-          'update jcaption set '+
-          '  JCapt_Orphan_b='+DBC.saDBMSBoolScrub(bOrphan)+' '+
-          'where '+
-          '  JCapt_JCaption_UID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID'))+' and '+
+          (NOT  bKeep) and
+          (DBC.u8GetRowCount('jblokbutton','JBlkB_JCaption_ID='+     saJCaptionUID,201506171723)=0) and
+          (DBC.u8GetRowCount('jblokfield','JBlkF_JCaption_ID='+      saJCaptionUID,201506171724)=0) and
+          (DBC.u8GetRowCount('jblok','JBlok_JCaption_ID='+           saJCaptionUID,201506171725)=0) and
+          (DBC.u8GetRowCount('jcolumn','JColu_JCaption_ID='+         saJCaptionUID,201506171726)=0) and
+          (DBC.u8GetRowCount('jjobtype','JJobT_JCaption_ID='+        saJCaptionUID,201506171727)=0) and
+          (DBC.u8GetRowCount('jprojectcategory','JPjCt_JCaption_ID='+saJCaptionUID,201506171729)=0) and
+          (DBC.u8GetRowCount('jprojectpriority','JPrjP_JCaption_ID='+saJCaptionUID,201506171730)=0) and
+          (DBC.u8GetRowCount('jprojectstatus','JPrjS_JCaption_ID='+  saJCaptionUID,201506171731)=0) and
+          (DBC.u8GetRowCount('jscreen','JScrn_JCaption_ID='+         saJCaptionUID,201506171732)=0) and
+          (DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+   saJCaptionUID,201506171733)=0) and
+          (DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+   saJCaptionUID,201506171734)=0) and
+          (DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+     saJCaptionUID,201506171735)=0);
+        saQry:='update jcaption set ';
+        if not bKeep then
+        begin
+          saQry+='  JCapt_Orphan_b='+DBC.saDBMSBoolScrub(bOrphan)+' ';
+        end
+        else
+        begin
+          saQry+='  JCapt_Orphan_b=false ';
+        end;
+        saQry+='where '+
+          'JCapt_JCaption_UID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID'))+' and '+
           '  (JCapt_Deleted_b<>'+DBC.saDBMSBoolScrub(true)+' or JCapt_Deleted_b is null)';
 
-
-        writeln('=====================BEGIN===========');
-          writeln ('DO THESE HAVE ZERO CAPTIONS');
-          writeln (' jblokbutton:'+   saYesNo(DBC.u8GetRowCount('jblokbutton','JBlkB_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171723)=0));
-          writeln (' jblokfield:'+    saYesNo(DBC.u8GetRowCount('jblokfield','JBlkF_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171724)=0));
-          writeln (' jblok:'+         saYesNo(DBC.u8GetRowCount('jblok','JBlok_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171725)=0));
-          writeln (' jcolumn:'+       saYesNo(DBC.u8GetRowCount('jcolumn','JColu_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171726)=0));
-          writeln (' jjobtype:'+      saYesNo(DBC.u8GetRowCount('jjobtype','JJobT_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171727)=0));
-          writeln (' jmenu:'+         saYesNo(DBC.u8GetRowCount('jmenu','JMenu_IconAltText_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171728)=0));
-          writeln (' jprojectcateg:'+ saYesNo(DBC.u8GetRowCount('jprojectcategory','JMenu_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171729)=0));
-          writeln (' jprojectprior:'+ saYesNo(DBC.u8GetRowCount('jprojectpriority','JPrjP_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171730)=0));
-          writeln (' jprojectstatu:'+ saYesNo(DBC.u8GetRowCount('jprojectstatus','JPrjS_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171731)=0));
-          writeln (' jscreen:' +      saYesNo(DBC.u8GetRowCount('jscreen','JScrn_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171732)=0));
-          writeln (' jtaskcategory:'+ saYesNo(DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171733)=0));
-          writeln (' jtaskpriority:'+ saYesNo(DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171734)=0));
-          writeln (' jtaskstatus:'+   saYesNo(DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JCapt_JCaption_UID')),201506171735)=0));
-        writeln('=====================END=============');
+        //riteln('=====================BEGIN===========');
+        //riteln ('DO THESE HAVE ZERO CAPTIONS');
+        //riteln (' jblokbutton:'+   saYesNo(DBC.u8GetRowCount('jblokbutton','JBlkB_JCaption_ID='+     saJCaptionUID),201506171723)=0));
+        //riteln (' jblokfield:'+    saYesNo(DBC.u8GetRowCount('jblokfield','JBlkF_JCaption_ID='+      saJCaptionUID),201506171724)=0));
+        //riteln (' jblok:'+         saYesNo(DBC.u8GetRowCount('jblok','JBlok_JCaption_ID='+           saJCaptionUID),201506171725)=0));
+        //riteln (' jcolumn:'+       saYesNo(DBC.u8GetRowCount('jcolumn','JColu_JCaption_ID='+         saJCaptionUID),201506171726)=0));
+        //riteln (' jjobtype:'+      saYesNo(DBC.u8GetRowCount('jjobtype','JJobT_JCaption_ID='+        saJCaptionUID),201506171727)=0));
+        //riteln (' jprojectcateg:'+ saYesNo(DBC.u8GetRowCount('jprojectcategory','JPjCt_JCaption_ID='+saJCaptionUID),201506171729)=0));
+        //riteln (' jprojectprior:'+ saYesNo(DBC.u8GetRowCount('jprojectpriority','JPrjP_JCaption_ID='+saJCaptionUID),201506171730)=0));
+        //riteln (' jprojectstatu:'+ saYesNo(DBC.u8GetRowCount('jprojectstatus','JPrjS_JCaption_ID='+  saJCaptionUID),201506171731)=0));
+        //riteln (' jscreen:' +      saYesNo(DBC.u8GetRowCount('jscreen','JScrn_JCaption_ID='+         saJCaptionUID),201506171732)=0));
+        //riteln (' jtaskcategory:'+ saYesNo(DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+   saJCaptionUID),201506171733)=0));
+        //riteln (' jtaskpriority:'+ saYesNo(DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+   saJCaptionUID),201506171734)=0));
+        //riteln (' jtaskstatus:'+   saYesNo(DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+     saJCaptionUID),201506171735)=0));
+        //riteln('=====================END=============');
 
 
-        if bOrphan then
-        begin
-          halt(0);
-          JASPrintln('');
-          JASPrintln('==================BEGIN=============');
-          JASPrintln(saQry);
-          JASPrintln('==================END=============');
-          JASPrintln('');
-        end;
+        //if bOrphan then
+        //begin
+        //  JASPrintln('');
+        //  JASPrintln('==================BEGIN=============');
+        //  JASPrintln(saQry);
+        //  JASPrintln('==================END=============');
+        //  JASPrintln('');
+        //  halt(0);
+        //end;
         bOk:=rs2.open(saQry, DBC,201503161243);
         if not bOk then
         begin
