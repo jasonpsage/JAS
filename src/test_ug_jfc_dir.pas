@@ -55,24 +55,22 @@ uses
 //=============================================================================
 function test_JFC_DIR: boolean;
 //=============================================================================
-var DDL: JFC_DIR;
+var DIR: JFC_DIR;
 
 Begin
-  DDL:=JFC_DIR.Create;
+  DIR:=JFC_DIR.Create;
   Writeln('Created...');
-
-  DDL.saPath:='/xfiles/code/jas/webshare/img/icon/themes/';
-
-  DDL.LoadDir;
-  Writeln('loaded...ListCount:',DDL.ListCount);
-  DDL.MoveFirst;
+  DIR.saPath:='.';
+  DIR.LoadDir;
+  Writeln('loaded...ListCount:',DIR.ListCount);
+  DIR.MoveFirst;
   repeat
-    Writeln(saFixedLength(JFC_DIRENTRY(DDL.Item_lpPtr).saName,1,30), 
+    Writeln(saFixedLength(JFC_DIRENTRY(DIR.Item_lpPtr).saName,1,30),
             StringOfChar(' ',5),
-            'Directory:', DDL.Item_bDir);
-  until not ddl.movenext;
+            'Directory:', DIR.Item_bDir);
+  until not DIR.movenext;
 
-  DDL.Destroy;
+  DIR.Destroy;
   result:=true;
 End;
 //=============================================================================

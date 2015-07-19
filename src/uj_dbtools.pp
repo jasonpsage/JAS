@@ -68,6 +68,7 @@ classes
 ,ug_common
 ,ug_jegas
 ,ug_tsfileio
+,ug_jfc_dir
 ,ug_jfc_xdl
 ,ug_jfc_xxdl
 ,ug_jfc_tokenizer
@@ -144,7 +145,7 @@ procedure DBM_FindDupeUID(p_Context: TCONTEXT);
 {}
 // This tool allows you to point to a connected database connection and select
 // one or more tables and submit your selection. Once submitted this function
-// will add table records and column records into JAS' meta data llowing you
+// will add table records and column records into JAS' meta data allowing you
 // to later view them, and make screens for them from the JTable Search
 // screen or from the record/detail view of any one of those tables.
 procedure DBM_LearnTables(p_Context: TCONTEXT);
@@ -1906,7 +1907,6 @@ Begin
         RenderHTMLErrorPage(p_Context);
       end;
 
-
       if bOk then
       begin
         clear_JColumn(rJColumn);
@@ -2120,7 +2120,9 @@ var
   sa: ansistring;
   saJCaptionUID: ansistring;
   bKeep: boolean;
-
+  saSrcPath: ansistring;
+  Dir: JFC_DIR;
+  bDone: boolean;
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
 {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='DBM_JCaptionFlagOrphans(p_Context: TCONTEXT);';{$ENDIF}
@@ -2133,6 +2135,7 @@ Begin
   DBC:=p_Context.VHDBC;
   rs:=JADO_RECORDSET.Create;
   rs2:=JADO_RECORDSET.Create;
+  Dir:=JFC_DIR.Create;
 
 
   bOk:=p_Context.bSessionValid;
@@ -2157,6 +2160,16 @@ Begin
 
   if bOk then
   begin
+    saSrcPath:='..'+csDOSSLASH+'src'+csDOSSLASH;
+    if fileexists(saSrcPath+'jas.pas') then // have jas.pas? Probably ok to scan the source code.
+    begin
+      Dir.saFilespec:='*.pp';
+      Dir.bDirOnly:=false;
+      Dir.bSort:=true;
+      Dir.bSortAscending:=true;
+      Dir.bSortCaseSensitive:=true;
+    end;
+    Dir.LoadDir;
     saQry:='select JCapt_JCaption_UID,JCapt_Keep_b from jcaption '+
       'where ((JCapt_Deleted_b<>'+DBC.saDBMSBoolScrub(true) + ') or '+
       '(JCapt_Deleted_b is null))';
@@ -2190,6 +2203,21 @@ Begin
           (DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+   saJCaptionUID,201506171733)=0) and
           (DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+   saJCaptionUID,201506171734)=0) and
           (DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+     saJCaptionUID,201506171735)=0);
+        if bOrphan and (Dir.Listcount>1) then
+        begin
+          if DIR.Movefirst then
+          begin
+            bDone:=false;
+            repeat
+              if bLoadTextFile(DIR.Item_saName,sa) and (pos(saJCaptionUID,sa)<>0) then
+              begin
+                writeln('201507190955 - FOUND CAPTION USED IN CODE!!! ================================');
+                bOrphan:=false;
+                bDone:=true;
+              end;
+            until (bDone) or (not DIR.movenext);
+          end;
+        end;
         saQry:='update jcaption set ';
         if not bKeep then
         begin
@@ -2251,6 +2279,7 @@ Begin
 
   rs.destroy;
   rs2.destroy;
+  Dir.Destroy;
 
 {$IFDEF DEBUGLOGBEGINEND}
   DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
@@ -2271,18 +2300,7 @@ end;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+//JASAPI_JNoteFlagOrphans
 //=============================================================================
 procedure DBM_JNoteFlagOrphans(p_Context: TCONTEXT);
 //=============================================================================
@@ -2294,28 +2312,33 @@ var
   rs2: JADO_RECORDSET;
   bOrphan: boolean;
   sa: ansistring;
-  rJTable: rtJTable;
-  saPKey: ansistring;
-  bNoRecords: boolean;
-  iRecords: longint;
-
+  saJNoteUID: ansistring;
+  bKeep: boolean;
+  saSrcPath: ansistring;
+  Dir: JFC_DIR;
+  bDone: boolean;
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
-{$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='DBM_JNoteFlagOrphans';{$ENDIF}
+{$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='DBM_JNoteFlagOrphans(p_Context: TCONTEXT);';{$ENDIF}
 {$IFDEF DEBUGLOGBEGINEND}
   DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
-{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBIN(201203102747,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
-{$IFDEF TRACKTHREAD}p_Context.JThread.TrackThread(201203102748, sTHIS_ROUTINE_NAME);{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBIN(201507191430,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{$IFDEF TRACKTHREAD}p_Context.JThread.TrackThread(201507191431, sTHIS_ROUTINE_NAME);{$ENDIF}
 
   DBC:=p_Context.VHDBC;
   rs:=JADO_RECORDSET.Create;
   rs2:=JADO_RECORDSET.Create;
+  Dir:=JFC_DIR.Create;
+
 
   bOk:=p_Context.bSessionValid;
   If not bOk Then
   Begin
-    JAS_Log(p_Context,cnLog_Error,201204140327,'Session is not valid. You need to be logged in and have permission to access this resource.','',SOURCEFILE);
+    JAS_Log(p_Context,cnLog_Error,201507191432,'Session is not valid. You '+
+      'need to be logged in and have permission to access this resource.','',
+      SOURCEFILE
+    );
     RenderHtmlErrorPage(p_Context);
   End;
 
@@ -2324,7 +2347,7 @@ Begin
     bOk:=bJAS_HasPermission(p_Context, cnJSecPerm_DatabaseMaintenance);
     if not bOk then
     begin
-      JAS_Log(p_Context, cnLog_Error,201204140328,
+      JAS_Log(p_Context, cnLog_Error,201507191433,
         '"Database Maintenance" - ACCESS DENIED - You do not have permission '+
         '"Database Maintenance" required to perform this action.',
         'JUser_Name:'+p_Context.rJUser.JUser_Name,SOURCEFILE);
@@ -2334,103 +2357,127 @@ Begin
 
   if bOk then
   begin
-    saQry:='select JNote_JNote_UID, JNote_JTable_ID, JNote_Row_ID from jnote where JNote_Deleted_b<>'+DBC.saDBMSBoolScrub(true) + ' or JNote_Deleted_b is null';
-    bOk:=rs.open(saQry,DBC,201503161244);
+    saSrcPath:='..'+csDOSSLASH+'src'+csDOSSLASH;
+    // have jas.pas? Probably ok to scan the source code.
+    if fileexists(saSrcPath+'jas.pas') then
+    begin
+      Dir.saFilespec:='*.pp';
+      Dir.bDirOnly:=false;
+      Dir.bSort:=true;
+      Dir.bSortAscending:=true;
+      Dir.bSortCaseSensitive:=true;
+    end;
+    Dir.LoadDir;
+    saQry:='select JNote_JNote_UID,JNote_Keep_b from jnote '+
+      'where ((JNote_Deleted_b<>'+DBC.saDBMSBoolScrub(true) + ') or '+
+      '(JNote_Deleted_b is null))';
+    bOk:=rs.open(saQry,DBC,201507191434);
     if not bOk then
     begin
-      JAS_LOG(p_Context, cnLog_Error, 201203081303, 'Trouble with Query','Query: ' + saQry, SOURCEFILE,DBC, rs);
+      JAS_LOG(p_Context, cnLog_Error, 201507191435, 'Trouble with Query','Query: ' + saQry, SOURCEFILE,DBC, rs);
       RenderHTMLErrorPage(p_Context);
     end;
   end;
 
-  bNoRecords:=false;
-  iRecords:=0;
   if bOk then
   begin
-    if not rs.eol then
+    if rs.eol=false then
     begin
       repeat
-        iRecords+=1;
-        bOrphan:=true;
-        clear_JTable(rJTable);
-        //saTable:=DBC.saGetTableName(rs.fields.Get_saValue('JNote_JTable_ID'));
-        rJTable.JTabl_JTable_UID:=rs.fields.Get_saValue('JNote_JTable_ID');
-        if u8Val(rJTable.JTabl_JTable_UID)>0 then
+        saJNoteUID:=DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JNote_JNote_UID'));//NOTE ALREADY ESCAPED
+        bKeep:=bVal(rs.fields.Get_saValue('JNote_Keep_b'));
+        //bOrphan:=true;
+        bOrphan:=
+          (NOT  bKeep) and
+          (DBC.u8GetRowCount('jtimecard','TMCD_JNote_Public_ID='+  saJNoteUID, 201507191436 )=0) and
+          (DBC.u8GetRowCount('jtimecard','TMCD_JNote_Internal_ID='+saJNoteUID, 201507191437 )=0) and
+          (DBC.u8GetRowCount('jmoduleconfig','JMCfg_JNote_ID='+    saJNoteUID, 201507191438 )=0) and
+          (DBC.u8GetRowCount('jmodulesetting','JMSet_JNote_ID='+   saJNoteUID, 201507191439 )=0) and
+          (DBC.u8GetRowCount('jinstalled','JInst_JNote_ID='+       saJNoteUID, 201507191440 )=0);
+        if bOrphan and (Dir.Listcount>1) then
         begin
-	  if bJAS_Load_JTable(p_Context, DBC, rJTable, false) then
-	  begin
-	    saPKey:=DBC.saGetPKeyColumn(pointer(DBC),rJTable.JTabl_Name,201210020205);
-	    saQry:=saPKey+'='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JNote_Row_ID'));
-	    if DBC.bColumnExists(rJTable.JTabl_Name, rJTable.JTabl_ColumnPrefix+'_Deleted_b',201210020050) then
-	    begin
-	      saQry+=' AND '+rJTable.JTabl_ColumnPrefix+'_Deleted_b<>'+DBC.saDBMSBoolScrub(true);
-	    end;
-	    if DBC.u8GetRowCount(rJTable.JTabl_Name,saQry,201506171736)>0 then
-	    begin
-	      bOrphan:=false;
-	    end;
-	    //else
-	    //begin
-	    //  JAS_LOG(p_Context, cnLog_Info, 201204020145, 'jnote flagged orphan. Table: ' + rJTable.JTabl_Name +' PKey: '+saPKey+' Where Clause: '+saQry,'',SOURCEFILE);
-	    //end;
-	  end;
-	  //else
-	  //begin
-	  //  JAS_LOG(p_Context, cnLog_Warn, 201204020146, 'Loading Table UID: '+rJTable.JTabl_JTable_UID,'',SOURCEFILE);
-	  //end;
+          if DIR.Movefirst then
+          begin
+            bDone:=false;
+            repeat
+              if bLoadTextFile(DIR.Item_saName,sa) and (pos(saJNoteUID,sa)<>0) then
+              begin
+                writeln('201507191448 - FOUND NOTE USED IN CODE!!! ================================');
+                bOrphan:=false;
+                bDone:=true;
+              end;
+            until (bDone) or (not DIR.movenext);
+          end;
         end;
-        saQry:=
-          'update jnote set '+
-          '  JNote_Orphan_b='+DBC.saDBMSBoolScrub(bOrphan)+' '+
-          'where '+
-          '  JNote_JNote_UID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JNote_JNote_UID'))+' and '+
+        saQry:='update jnote set ';
+        if not bKeep then
+        begin
+          saQry+='  JNote_Orphan_b='+DBC.saDBMSBoolScrub(bOrphan)+' ';
+        end
+        else
+        begin
+          saQry+='  JNote_Orphan_b=false ';
+        end;
+        saQry+='where '+
+          'JNote_JNote_UID='+DBC.saDBMSUIntScrub(rs.fields.Get_saValue('JNote_JNote_UID'))+' and '+
           '  (JNote_Deleted_b<>'+DBC.saDBMSBoolScrub(true)+' or JNote_Deleted_b is null)';
-        //JAS_LOG(p_Context, cnLog_Info, 201204020147, 'Updating jnote with: '+saQry,'',SOURCEFILE);
-        bOk:=rs2.open(saQry, DBC,201503161245);
+
+        //riteln('=====================BEGIN===========');
+        //riteln ('DO THESE HAVE ZERO CAPTIONS');
+        //riteln (' jblokbutton:'+   saYesNo(DBC.u8GetRowCount('jblokbutton','JBlkB_JCaption_ID='+     saJCaptionUID),201507191449)=0));
+        //riteln (' jblokfield:'+    saYesNo(DBC.u8GetRowCount('jblokfield','JBlkF_JCaption_ID='+      saJCaptionUID),201507191450)=0));
+        //riteln (' jblok:'+         saYesNo(DBC.u8GetRowCount('jblok','JBlok_JCaption_ID='+           saJCaptionUID),201507191451)=0));
+        //riteln (' jcolumn:'+       saYesNo(DBC.u8GetRowCount('jcolumn','JColu_JCaption_ID='+         saJCaptionUID),201507191452)=0));
+        //riteln (' jjobtype:'+      saYesNo(DBC.u8GetRowCount('jjobtype','JJobT_JCaption_ID='+        saJCaptionUID),201507191453)=0));
+        //riteln (' jprojectcateg:'+ saYesNo(DBC.u8GetRowCount('jprojectcategory','JPjCt_JCaption_ID='+saJCaptionUID),201507191454)=0));
+        //riteln (' jprojectprior:'+ saYesNo(DBC.u8GetRowCount('jprojectpriority','JPrjP_JCaption_ID='+saJCaptionUID),201507191455)=0));
+        //riteln (' jprojectstatu:'+ saYesNo(DBC.u8GetRowCount('jprojectstatus','JPrjS_JCaption_ID='+  saJCaptionUID),201507191456)=0));
+        //riteln (' jscreen:' +      saYesNo(DBC.u8GetRowCount('jscreen','JScrn_JCaption_ID='+         saJCaptionUID),201507191457)=0));
+        //riteln (' jtaskcategory:'+ saYesNo(DBC.u8GetRowCount('jtaskcategory','JTCat_JCaption_ID='+   saJCaptionUID),201507191458)=0));
+        //riteln (' jtaskpriority:'+ saYesNo(DBC.u8GetRowCount('jtaskpriority','JTPri_JCaption_ID='+   saJCaptionUID),201507191459)=0));
+        //riteln (' jtaskstatus:'+   saYesNo(DBC.u8GetRowCount('jtaskstatus','JTSta_JCaption_ID='+     saJCaptionUID),201507191460)=0));
+        //riteln('=====================END=============');
+
+
+        //if bOrphan then
+        //begin
+        //  JASPrintln('');
+        //  JASPrintln('==================BEGIN=============');
+        //  JASPrintln(saQry);
+        //  JASPrintln('==================END=============');
+        //  JASPrintln('');
+        //  halt(0);
+        //end;
+        bOk:=rs2.open(saQry, DBC,201507191461);
         if not bOk then
         begin
-          JAS_LOG(p_Context, cnLog_Error, 201203081304, 'Trouble with Query','Query: ' + saQry, SOURCEFILE, DBC, rs2);
+          JAS_LOG(p_Context, cnLog_Error, 201507191462, 'Trouble with Query','Query: ' + saQry, SOURCEFILE, DBC, rs2);
           RenderHTMLErrorPage(p_Context);
         end;
         rs2.close;
       until (not bOK) or (not rs.movenext);
-    end
-    else
-    begin
-      bNoRecords:=true;
     end;
   end;
 
   if bOk then
   begin
     bOk:=bJASNote(p_Context,'6569',sa,'Orphaned Notes have been flagged.');
-    if bNoRecords then
-    begin
-      sa+=' NOTE: Nothing was really processed. No Records Returned from Notes Table.';
-    end
-    else
-    begin
-      sa+=' Records Processed: '+inttostr(iRecords);
-    end;
-    p_Context.saPage:=saGetPage(p_Context, 'sys_area','sys_message','',false, 201203122225);
+    p_Context.saPage:=saGetPage(p_Context, 'sys_area','sys_message','',false, 201507191463);
     p_Context.PAGESNRXDL.AppendItem_saName_N_saValue('[@MESSAGE@]',sa);
     p_Context.PAGESNRXDL.AppendItem_saName_N_saValue('[@PAGEICON@]','<? echo $JASDIRICON; ?>/JAS/jegas/64/table_search.png');
     p_Context.saPageTitle:='Success';
   end;
 
-
   rs.destroy;
   rs2.destroy;
+  Dir.Destroy;
 
 {$IFDEF DEBUGLOGBEGINEND}
   DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
-{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBOUT(201203102749,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBOUT(201507191464,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
 end;
 //=============================================================================
-
-
-
 
 
 
@@ -2466,9 +2513,9 @@ var
   XDL: JFC_XDL;
 const cnColWidth=40;
   {$IFDEF ROUTINENAMES}var sTHIS_ROUTINE_NAME: String;{$ENDIF}
-
+          
   function bLoadJASFields(p_u8TableID: UInt64): boolean;
-  begin
+  begin   
     DBCFldXDL.DeleteAll;
     saQry:='select JColu_Name, JColu_JDType_ID, JColu_PrimaryKey_b from jcolumn where JColu_JTable_ID=' +DBC.saDBMSUIntScrub(p_u8TableID)+
       ' AND ((JColu_Deleted_b<>'+DBC.saDBMSBoolScrub(true)+')OR(JColu_Deleted_b IS NULL))';

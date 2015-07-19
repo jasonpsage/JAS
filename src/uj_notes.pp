@@ -1,13 +1,13 @@
 {==============================================================================
 |    _________ _______  _______  ______  _______  Jegas, LLC                  |
-|   /___  ___// _____/ / _____/ / __  / / _____/  JasonPSage@jegas.com        |
+|   /___  ___// _____/ / _____/ / __  / / _____/  Jason@jegas.com             |
 |      / /   / /__    / / ___  / /_/ / / /____                                |
 |     / /   / ____/  / / /  / / __  / /____  /                                |
 |____/ /   / /___   / /__/ / / / / / _____/ /                                 |
 /_____/   /______/ /______/ /_/ /_/ /______/                                  |
-|                 Under the Hood                                              |
+|         Virtually Everything IT(tm)                                         |
 ===============================================================================
-                       Copyright(c)2012 Jegas, LLC
+                       Copyright(c)2015 Jegas, LLC
 ==============================================================================}
 
 //=============================================================================
@@ -80,7 +80,7 @@ Function bJASNote(
   p_Context: TCONTEXT; //< JAS Thread Context Record
       p_saNotesUID: AnsiString; //< Specific Note Being Sought
   Var p_saResult: AnsiString; //< Notes come back in here.
-      p_saDefault: AnsiString  {< Value to return if p_saCaptionID='0' or 
+      p_saDefault: AnsiString  {< Value to return if p_saNotesUID='0' or
                                 can not be found.
                                 NOTE: p_saDefault is only used when
                                 note Record Cannot be found OR
@@ -99,7 +99,7 @@ Function bJASNote(
 //
 // This function makes it realatively easy to get notes from the JAS database's
 // jnote table. providing the user has the security permission for the
-// specified table and or table/row combinationin in JNote_Table_ID and
+// specified table and or table/row combination in JNote_Table_ID and
 // the optional JNote_Row_ID
 //
 // See Also JAS_GetNoteSecure in uxxj_application (where dispatched from)
@@ -108,7 +108,7 @@ Function bJASNoteSecure(
   p_Context: TCONTEXT; //< JAS Thread Context Record
       p_saNotesUID: AnsiString; //< Specific Note Being Sought
   Var p_saResult: AnsiString; //< Notes come back in here.
-      p_saDefault: AnsiString  {< Value to return if p_saCaptionID='0' or
+      p_saDefault: AnsiString  {< Value to return if p_saNotesUID='0' or
                                 can not be found.
                                 NOTE: p_saDefault is only used when
                                 note Record Cannot be found OR
