@@ -7,7 +7,7 @@
 /_____/   /______/ /______/ /_/ /_/ /______/                                  |
 |                 Under the Hood                                              |
 ===============================================================================
-                       Copyright(c)2012 Jegas, LLC
+                       Copyright(c)2015 Jegas, LLC
 ==============================================================================}
 
 //=============================================================================
@@ -164,7 +164,8 @@ type rtConfigOverridden = Record
   bJASFooter                                : boolean;
   bPasswordKey                              : boolean;
   bAllowVirtualHostCreation                 : boolean;
-  bCreateHybridJets                         : boolean
+  bCreateHybridJets                         : boolean;
+  bSIPURL                                   : boolean;
 end;
 var rConfigOverridden: rtConfigOverridden;
 
@@ -228,6 +229,7 @@ begin
     bPasswordKey                              := false ;
     bAllowVirtualHostCreation                 := false ;
     bCreateHybridJets                         := false ;
+    bSIPURL                                   := false ;
   end;// with
 end;
 // ============================================================================
@@ -272,6 +274,7 @@ type rtJVHostOverridden = record
   bVHost_CacheDir                 : boolean;
   bVHost_TemplateDir              : boolean;
   bVHost_CreateHybridJets_b       : boolean;
+  bVHost_SIPURL                   : Boolean;
 end;
 var rJVHostOverridden: rtJVHostOverridden;
 var rJVHostOverride: rtJVHostLight;
@@ -312,7 +315,7 @@ begin
     bVHost_CacheDir                 := false;
     bVHost_TemplateDir              := false;
     bVHost_CreateHybridJets_b       := false;
-    
+    bVHost_SIPURL                   := false;
   end;//with
 end;
 // ============================================================================
@@ -959,6 +962,7 @@ Begin
           rConfigOverridden.bCreateHybridJets:=true;
           grJASConfig.bCreateHybridJets:=bVal(saGetStringAfterEqualSign(sa));
         end else
+
         // ----------------------------------------------------------------------
         // END - OVERRIDE OPTIONS - OPTIONS HERE OVERRIDE DATABASE OPTIONS
         // ----------------------------------------------------------------------
@@ -1145,6 +1149,12 @@ Begin
           rJVHostOverride.saTemplateDir:=saGetStringAfterEqualSign(sa);
         end;
 
+        if saBeforeEqual='VHOST_SIPURL' then
+        begin
+          rJVHostOverridden.bVHost_SIPURL:=true;
+          rJVHostOverride.saSIPURL:=saGetStringAfterEqualSign(sa);
+        end;
+
       End;// if
     End;// while loop
     Close(ftext);
@@ -1232,6 +1242,7 @@ var
   iHost: longint;
   sa: ansistring;
   u2IOResult: word;
+  u8: UInt64;
   
 {$IFDEF ROUTINENAMES} sTHIS_ROUTINE_NAME: string;{$ENDIF}
 begin
@@ -1283,14 +1294,21 @@ begin
     saQry:='select UserP_UserPref_UID,UserP_Name,UsrPL_UserPrefLink_UID, UsrPL_Value from '+
            'juserpreflink join juserpref where UsrPL_UserPref_ID=UserP_UserPref_UID and '+
            'UsrPL_User_ID=1 and ((UserP_Deleted_b<>'+gaJCon[0].saDBMSBoolScrub(true)+')OR(UserP_Deleted_b IS NULL))';
+    //ASPrintln('---');
+    //ASPrintln(saQry);
+    //ASPrintln('---');
     bOk:=rs.open(saQry, gaJCon[0],201503161669);
     if not bOk then
     begin
       bLogEntryMadeDuringStartUp:=true;
       saMsg:='Unable to load admin configuration preferences. Query: '+saQry;
-      JASPrintln(saMsg);
+      //ASPrintln(saMsg);
       JLog(cnLog_FATAL, 201210061919, saMsg, SOURCEFILE);
     end;
+  end
+  else
+  begin
+    Writeln('open db con failing');
   end;
 
   if bOk and (not rs.EOL) then
@@ -1298,20 +1316,33 @@ begin
     repeat
       u8DataIn:=u8Val(rs.fields.Get_saValue('UsrPL_UserPrefLink_UID'));
       saDataIn:=rs.fields.Get_saValue('UsrPL_Value');
-      //ASPrintln(rs.fields.Get_saValue('UserP_Name')+' - '+rs.fields.Get_saValue('UsrPL_UserPrefLink_UID')+' - '+saDataIn);
-      if (u8DataIn=2012100614040179599) and (not rConfigOverridden.bCacheMaxAgeInSeconds) then // JAS Cache Max Age In Seconds  admin   3600
+      //ASPrintln(rs.fields.Get_saValue('UserP_Name')+' - '+inttostr(u8DataIn) +' - '+saDataIn);
+
+      //in 2.6.x fpc, comparing constant 64bit to variable was failing
+      // the fix is assign to in64 then compare the variables.
+      u8:=2012100614040179599;
+      if (u8DataIn=u8) and (not rConfigOverridden.bCacheMaxAgeInSeconds) then // JAS Cache Max Age In Seconds  admin   3600
       begin
         grJASCOnfig.sCacheMaxAgeInSeconds:=inttostr(u8val(saDataIn));
-      end else
-      if (u8DataIn=2012100614045994520) and (not rConfigOverridden.bCreateSocketRetry) then // JAS Create Socket Retry   admin   60
+        //ASPrintln('sCacheMaxAgeInSeconds');
+      end;
+
+      u8:=2012100614045994520;
+      if (u8DataIn=u8) and (not rConfigOverridden.bCreateSocketRetry) then // JAS Create Socket Retry   admin   60
       begin
         grJASConfig.iCreateSocketRetry:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614052025145) and (not rConfigOverridden.bCreateSocketRetryDelayInMSec) then // JAS Create Socket Retry Delay In MSec   admin   1000
+        //JASPrintln('iCreateSocketRetry');
+      end;
+
+      u8:=2012100614052025145;
+      if (u8DataIn=u8) and (not rConfigOverridden.bCreateSocketRetryDelayInMSec) then // JAS Create Socket Retry Delay In MSec   admin   1000
       begin
         grJASConfig.iCreateSocketRetryDelayInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614053914241) and (not rConfigOverridden.bDebugMode) then // JAS Debug Mode  admin   secure
+        //ASPrintln('iCreateSocketRetryDelayInMSec');
+      end;
+
+      u8:=2012100614053914241;
+      if (u8DataIn=u8) and (not rConfigOverridden.bDebugMode) then // JAS Debug Mode  admin   secure
       begin
         saDataIn:=UpperCase(saDataIn);
         if(saDataIn = 'VERBOSELOCAL') then
@@ -1329,24 +1360,39 @@ begin
             grJASConfig.iDebugMode:=cnSYS_INFO_MODE_SECURE;
           end;
         end;
-      end else
-      if (u8DataIn=2012100614061800671) and (not rConfigOverridden.bDebugServerConsoleMessagesEnabled) then // JAS Debug Server Console Messages Enabled   admin   Yes
+        //ASPrintln('iDebugMode');
+      end;
+
+      u8:=2012100614061800671;
+      if (u8DataIn=u8) and (not rConfigOverridden.bDebugServerConsoleMessagesEnabled) then // JAS Debug Server Console Messages Enabled   admin   Yes
       begin
         grJASConfig.bDebugServerConsoleMessagesEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614072805008) and (not rConfigOverridden.bDeleteLogFile) then // JAS Delete Log  admin   Yes
+        //ASPrintln('bDebugServerConsoleMessagesEnabled');
+      end;
+
+      u8:=2012100614072805008;
+      if (u8DataIn=u8) and (not rConfigOverridden.bDeleteLogFile) then // JAS Delete Log  admin   Yes
       begin
         grJASConfig.bDeleteLogFile:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614074544424) and (not rConfigOverridden.bBlackListEnabled) then // JAS Enable IP Blacklist   admin   Yes
+        //ASPrintln('bDeleteLogFile');
+      end;
+
+      u8:=2012100614074544424;
+      if (u8DataIn=u8) and (not rConfigOverridden.bBlackListEnabled) then // JAS Enable IP Blacklist   admin   Yes
       begin
         grJASConfig.bBlackListEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614080255621) and (not rConfigOverridden.bWhiteListEnabled) then // JAS Enable IP Whitelist   admin   No
+        //ASPrintln('bBlackListEnabled');
+      end;
+
+      u8:=2012100614080255621;
+      if (u8DataIn=u8) and (not rConfigOverridden.bWhiteListEnabled) then // JAS Enable IP Whitelist   admin   No
       begin
         grJASConfig.bWhiteListEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614090714788) and (not rConfigOverridden.bErrorReportingMode) then // JAS Error Reporting Mode  admin   secure
+        //ASPrintln('bWhiteListEnabled');
+      end;
+
+      u8:=2012100614090714788;
+      if (u8DataIn=u8) and (not rConfigOverridden.bErrorReportingMode) then // JAS Error Reporting Mode  admin   secure
       begin
         saDataIn:=upcase(trim(saDataIn));
         if(saDataIn = 'VERBOSE') then
@@ -1361,185 +1407,327 @@ begin
         begin
           grJASConfig.iErrorReportingMode:=cnSYS_INFO_MODE_SECURE;
         end;
-      end else
-      if (u8DataIn=2012100614101453914) and (not rConfigOverridden.bErrorReportingSecureMessage) then // JAS Error Reporting Secure Mode Message   NULL  Please note the error number shown in this message and record it. Your system administrator can use that number to help remedy system problems.
+        //ASPrintln('iErrorReportingMode');
+      end;
+
+      u8:=2012100614101453914;
+      if (u8DataIn=u8) and (not rConfigOverridden.bErrorReportingSecureMessage) then // JAS Error Reporting Secure Mode Message   NULL  Please note the error number shown in this message and record it. Your system administrator can use that number to help remedy system problems.
       begin
         grJASConfig.saErrorReportingSecureMessage:=saDataIn;
+        //ASPrintln('saErrorReportingSecureMessage');
       end else
-      if (u8DataIn=2012100614124173033) and (not rConfigOverridden.bHOOK_ACTION_CREATESESSION_FAILURE) then // JAS HOOK_ACTION_CREATESESSION_FAILURE   admin   0
+
+      u8:=2012100614124173033;
+      if (u8DataIn=u8) and (not rConfigOverridden.bHOOK_ACTION_CREATESESSION_FAILURE) then // JAS HOOK_ACTION_CREATESESSION_FAILURE   admin   0
       begin
         grJASConfig.saHOOK_ACTION_CREATESESSION_FAILURE :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614125179884) and (not rConfigOverridden.bHOOK_ACTION_CREATESESSION_SUCCESS) then // JAS HOOK_ACTION_CREATESESSION_SUCCESS   admin   0
+        //ASPrintln('saHOOK_ACTION_CREATESESSION_FAILURE');
+      end;
+
+      u8:=2012100614125179884;
+      if (u8DataIn=u8) and (not rConfigOverridden.bHOOK_ACTION_CREATESESSION_SUCCESS) then // JAS HOOK_ACTION_CREATESESSION_SUCCESS   admin   0
       begin
         grJASConfig.saHOOK_ACTION_CREATESESSION_SUCCESS :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614130177790)  and (not rConfigOverridden.bHOOK_ACTION_REMOVESESSION_FAILURE) then // JAS HOOK_ACTION_REMOVESESSION_FAILURE   admin   0
+        //ASPrintln('saHOOK_ACTION_CREATESESSION_SUCCESS');
+      end;
+
+      u8:=2012100614130177790;
+      if (u8DataIn=u8)  and (not rConfigOverridden.bHOOK_ACTION_REMOVESESSION_FAILURE) then // JAS HOOK_ACTION_REMOVESESSION_FAILURE   admin   0
       begin
         grJASConfig.saHOOK_ACTION_REMOVESESSION_FAILURE :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614131550006)  and (not rConfigOverridden.bHOOK_ACTION_REMOVESESSION_SUCCESS) then // JAS HOOK_ACTION_REMOVESESSION_SUCCESS   admin   0
+        //ASPrintln('saHOOK_ACTION_REMOVESESSION_FAILURE');
+      end;
+
+      u8:=2012100614131550006;
+      if (u8DataIn=u8)  and (not rConfigOverridden.bHOOK_ACTION_REMOVESESSION_SUCCESS) then // JAS HOOK_ACTION_REMOVESESSION_SUCCESS   admin   0
       begin
         grJASConfig.saHOOK_ACTION_REMOVESESSION_SUCCESS :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614132661440) and (not rConfigOverridden.bHOOK_ACTION_SESSIONTIMEOUT) then // JAS HOOK_ACTION_SESSIONTIMEOUT  admin   0
+        //ASPrintln('saHOOK_ACTION_REMOVESESSION_SUCCESS');
+      end;
+
+      u8:=2012100614132661440;
+      if (u8DataIn=u8) and (not rConfigOverridden.bHOOK_ACTION_SESSIONTIMEOUT) then // JAS HOOK_ACTION_SESSIONTIMEOUT  admin   0
       begin
         grJASConfig.saHOOK_ACTION_SESSIONTIMEOUT :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614134121397) and (not rConfigOverridden.bHOOK_ACTION_VALIDATESESSION_FAILURE) then // JAS HOOK_ACTION_VALIDATESESSION_FAILURE   admin   0
+        //ASPrintln('saHOOK_ACTION_SESSIONTIMEOUT');
+      end;
+
+      u8:=2012100614134121397;
+      if (u8DataIn=u8) and (not rConfigOverridden.bHOOK_ACTION_VALIDATESESSION_FAILURE) then // JAS HOOK_ACTION_VALIDATESESSION_FAILURE   admin   0
       begin
         grJASConfig.saHOOK_ACTION_VALIDATESESSION_FAILURE :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614135620684) and (not rConfigOverridden.bHOOK_ACTION_VALIDATESESSION_SUCCESS) then // JAS HOOK_ACTION_VALIDATESESSION_SUCCESS   admin   0
+        //ASPrintln('saHOOK_ACTION_VALIDATESESSION_FAILURE');
+      end;
+
+      u8:=2012100614135620684;
+      if (u8DataIn=u8) and (not rConfigOverridden.bHOOK_ACTION_VALIDATESESSION_SUCCESS) then // JAS HOOK_ACTION_VALIDATESESSION_SUCCESS   admin   0
       begin
         grJASConfig.saHOOK_ACTION_VALIDATESESSION_SUCCESS :=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614150622123) and (not rConfigOverridden.bJobQEnabled) then // JAS Job Queue Enabled   admin   Yes
+        //ASPrintln('saHOOK_ACTION_VALIDATESESSION_SUCCESS');
+      end;
+
+      u8:=2012100614150622123;
+      if (u8DataIn=u8) and (not rConfigOverridden.bJobQEnabled) then // JAS Job Queue Enabled   admin   Yes
       begin
         grJASConfig.bJobQEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614165072216) and (not rConfigOverridden.bJobQIntervalInMSec) then // JAS Job Queue Interval In Milli Seconds   admin   10000
+        //ASPrintln('bJobQEnabled');
+      end;
+
+      u8:=2012100614165072216;
+      if (u8DataIn=u8) and (not rConfigOverridden.bJobQIntervalInMSec) then // JAS Job Queue Interval In Milli Seconds   admin   10000
       begin
         grJASConfig.iJobQIntervalInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614171518219) and (not rConfigOverridden.bLogLevel) then // JAS Log Level   admin   0
+        //ASPrintln('iJobQIntervalInMSec');
+      end;
+
+      u8:=2012100614171518219;
+      if (u8DataIn=u8) and (not rConfigOverridden.bLogLevel) then // JAS Log Level   admin   0
       begin
         grJASConfig.iLogLevel:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614204192426) and (not rConfigOverridden.bLogMessagesShowOnServerConsole) then // JAS Log Messages Show On Server Console   admin   No
+        //ASPrintln('iLogLevel');
+      end;
+
+      u8:=2012100614204192426;
+      if (u8DataIn=u8) and (not rConfigOverridden.bLogMessagesShowOnServerConsole) then // JAS Log Messages Show On Server Console   admin   No
       begin
         grJASConfig.bLogMessagesShowOnServerConsole:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614291882510) and (not rConfigOverridden.bMaximumRequestHeaderLength) then // JAS Max Request Header Length   admin   1500000000
+        //ASPrintln('bLogMessagesShowOnServerConsole');
+      end;
+
+      u8:=2012100614291882510;
+      if (u8DataIn=u8) and (not rConfigOverridden.bMaximumRequestHeaderLength) then // JAS Max Request Header Length   admin   1500000000
       begin
         grJASConfig.i8MaximumRequestHeaderLength:=i8Val(saDataIn);
-      end else
-      if (u8DataIn=2012100614484499907) and (not rConfigOverridden.bThreadPoolMaximumRunTimeInMSec) then // JAS Max Thread Run Time MSec  admin   60000
+        //ASPrintln('i8MaximumRequestHeaderLength');
+      end;
+
+      u8:=2012100614484499907;
+      if (u8DataIn=u8) and (not rConfigOverridden.bThreadPoolMaximumRunTimeInMSec) then // JAS Max Thread Run Time MSec  admin   60000
       begin
         grJASConfig.iThreadPoolMaximumRunTimeInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614490660469) and (not rConfigOverridden.bMaxFileHandles) then // JAS Maximum File Handles  NULL  200
+        //ASPrintln('iThreadPoolMaximumRunTimeInMSec');
+      end;
+
+      u8:=2012100614490660469;
+      if (u8DataIn=u8) and (not rConfigOverridden.bMaxFileHandles) then // JAS Maximum File Handles  NULL  200
       begin
         grJASConfig.iMaxFileHandles:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614492220150) and (not rConfigOverridden.bThreadPoolNoOfThreads) then // JAS Number of Threads   admin   40
+        //ASPrintln('iMaxFileHandles');
+      end;
+
+      u8:=2012100614492220150;
+      if (u8DataIn=u8) and (not rConfigOverridden.bThreadPoolNoOfThreads) then // JAS Number of Threads   admin   40
       begin
         grJASConfig.iThreadPoolNoOfThreads:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614500246737) and (not rConfigOverridden.bPerl) then // JAS Perl  admin   /usr/bin/perl
+        //ASPrintln('iThreadPoolNoOfThreads');
+      end;
+
+      u8:=2012100614500246737;
+      if (u8DataIn=u8) and (not rConfigOverridden.bPerl) then // JAS Perl  admin   /usr/bin/perl
       begin
         grJASConfig.saPerl:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614502815902) and (not rConfigOverridden.bPHP) then // JAS PHP   admin   /usr/bin/php-cgi
+        //ASPrintln('saPerl');
+      end;
+
+      u8:=2012100614502815902;
+      if (u8DataIn=u8) and (not rConfigOverridden.bPHP) then // JAS PHP   admin   /usr/bin/php-cgi
       begin
         grJASConfig.saPHP:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614504757616) and (not rConfigOverridden.bProtectJASRecords) then // JAS Protect JAS Records   admin   True
+        //ASPrintln('saPHP');
+      end;
+
+      u8:=2012100614504757616;
+      if (u8DataIn=u8) and (not rConfigOverridden.bProtectJASRecords) then // JAS Protect JAS Records   admin   True
       begin
         grJASConfig.bProtectJASRecords:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100614510501178) and (not rConfigOverridden.bClientToVICIServerIP) then // JAS RC VICI Client To Server Address  admin
+        //ASPrintln('bProtectJASRecords');
+      end;
+
+      u8:=2012100614510501178;
+      if (u8DataIn=u8) and (not rConfigOverridden.bClientToVICIServerIP) then // JAS RC VICI Client To Server Address  admin
       begin
         grJASConfig.saClientToVICIServerIP:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100614511733687) and (not rConfigOverridden.bJASServertoVICIServerIP) then // JAS RC VICI Server To Server Address  admin
+        //ASPrintln('saClientToVICIServerIP');
+      end;
+
+      u8:=2012100614511733687;
+      if (u8DataIn=u8) and (not rConfigOverridden.bJASServertoVICIServerIP) then // JAS RC VICI Server To Server Address  admin
       begin
         grJASConfig.saJASServertoVICIServerIP:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100706052712248) and (not rConfigOverridden.bLockRetriesBeforeFailure) then // JAS Record Lock Retries Before Failure
+        //ASPrintln('saJASServertoVICIServerIP');
+      end;
+
+      u8:=2012100706052712248;
+      if (u8DataIn=u8) and (not rConfigOverridden.bLockRetriesBeforeFailure) then // JAS Record Lock Retries Before Failure
       begin
         grJASConfig.iLockRetriesBeforeFailure:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615120666942) and (not rConfigOverridden.bLockRetryDelayInMSec) then // JAS Record Lock Retry Delay In Milli Seconds  admin   20
+        //ASPrintln('iLockRetriesBeforeFailure');
+      end;
+
+      u8:=2012100615120666942;
+      if (u8DataIn=u8) and (not rConfigOverridden.bLockRetryDelayInMSec) then // JAS Record Lock Retry Delay In Milli Seconds  admin   20
       begin
         grJASConfig.iLockRetryDelayInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615123707971) and (not rConfigOverridden.bLockTimeoutInMinutes) then // JAS Record Lock Time Out In Minutes   admin   30
+        //ASPrintln('iLockRetryDelayInMSec');
+      end;
+
+      u8:=2012100615123707971;
+      if (u8DataIn=u8) and (not rConfigOverridden.bLockTimeoutInMinutes) then // JAS Record Lock Time Out In Minutes   admin   30
       begin
         grJASConfig.iLockTimeoutInMinutes:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615140260928) and (not rConfigOverridden.bRetryDelayInMSec) then // JAS Retry Delay In Milli Seconds  admin   100
+        //ASPrintln('iLockTimeoutInMinutes');
+      end;
+
+      u8:=2012100615140260928;
+      if (u8DataIn=u8) and (not rConfigOverridden.bRetryDelayInMSec) then // JAS Retry Delay In Milli Seconds  admin   100
       begin
         grJASConfig.iRetryDelayInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615142419915) and (not rConfigOverridden.bRetryLimit) then // JAS Retry Limit   admin   20
+        //ASPrintln('iRetryDelayInMSec');
+      end;
+
+      u8:=2012100615142419915;
+      if (u8DataIn=u8) and (not rConfigOverridden.bRetryLimit) then // JAS Retry Limit   admin   20
       begin
         grJASConfig.iRetryLimit:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615145637878) and (not rConfigOverridden.bSafeDelete) then // JAS Safe Delete   admin   True
+        //ASPrintln('iRetryLimit');
+      end;
+
+      u8:=2012100615145637878;
+      if (u8DataIn=u8) and (not rConfigOverridden.bSafeDelete) then // JAS Safe Delete   admin   True
       begin
         grJASConfig.bSafeDelete:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615152356082) and (not rConfigOverridden.bServerConsoleMessagesEnabled) then // JAS Server Console Messages Enabled   admin   Yes
+        //ASPrintln('bSafeDelete');
+      end;
+
+      u8:=2012100615152356082;
+      if (u8DataIn=u8) and (not rConfigOverridden.bServerConsoleMessagesEnabled) then // JAS Server Console Messages Enabled   admin   Yes
       begin
         //ASPrintln('Got 2012100615152356082 - bServerConsoleMessagesEnabled:'+saDataIn+':');
         grJASConfig.bServerConsoleMessagesEnabled:=bVal(saDataIn);
         //ASPrintln('Assigned 2012100615152356082 - bServerConsoleMessagesEnabled');
-      end else
-      if (u8DataIn=2012100615160460912) and (not rConfigOverridden.bSessionTimeoutInMinutes) then // JAS SessionTime Out In Minutes  admin   240
+        //ASPrintln('bServerConsoleMessagesEnabled');
+      end;
+
+      u8:=2012100615160460912;
+      if (u8DataIn=u8) and (not rConfigOverridden.bSessionTimeoutInMinutes) then // JAS SessionTime Out In Minutes  admin   240
       begin
         grJASConfig.iSessionTimeoutInMinutes:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615162043726) and (not rConfigOverridden.bSMTPHost) then // JAS SMTP Host   admin
+        //ASPrintln('iSessionTimeoutInMinutes');
+      end;
+
+      u8:=2012100615162043726;
+      if (u8DataIn=u8) and (not rConfigOverridden.bSMTPHost) then // JAS SMTP Host   admin
       begin
         grJASCOnfig.sSMTPHost:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100615163514292)  and (not rConfigOverridden.bSMTPPassword) then // JAS SMTP Password   admin
+        //ASPrintln('sSMTPHost');
+      end;
+
+      u8:=2012100615163514292;
+      if (u8DataIn=u8)  and (not rConfigOverridden.bSMTPPassword) then // JAS SMTP Password   admin
       begin
         grJASCOnfig.sSMTPPassword:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100615164495133) and (not rConfigOverridden.bSMTPUsername) then // JAS SMTP Username   admin
+        //ASPrintln('sSMTPPassword');
+      end;
+
+      u8:=2012100615164495133;
+      if (u8DataIn=u8) and (not rConfigOverridden.bSMTPUsername) then // JAS SMTP Username   admin
       begin
         grJASCOnfig.sSMTPUsername:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100615172828038) and (not rConfigOverridden.bSocketTimeOutInMSec) then // JAS Socket Timeout In Milli Seconds   admin   12000
+        //ASPrintln('sSMTPUsername');
+      end;
+
+      u8:=2012100615172828038;
+      if (u8DataIn=u8) and (not rConfigOverridden.bSocketTimeOutInMSec) then // JAS Socket Timeout In Milli Seconds   admin   12000
       begin
         grJASConfig.iSocketTimeOutInMSec:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615180834150) and (not rConfigOverridden.bTimeZoneOffSet) then // JAS Timezone Offset   admin   -5
+        //ASPrintln('iSocketTimeOutInMSec');
+      end;
+
+      u8:=2012100615180834150;
+      if (u8DataIn=u8) and (not rConfigOverridden.bTimeZoneOffSet) then // JAS Timezone Offset   admin   -5
       begin
         grJASConfig.iTimeZoneOffSet:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100615183451070) and (not rConfigOverridden.bValidateSessionRetryLimit) then // JAS Validate Session Retry Limit  admin   50
+        //ASPrintln('iTimeZoneOffSet');
+      end;
+
+      u8:=2012100615183451070;
+      if (u8DataIn=u8) and (not rConfigOverridden.bValidateSessionRetryLimit) then // JAS Validate Session Retry Limit  admin   50
       begin
         grJASConfig.iValidateSessionRetryLimit:=iVal(saDataIn);
-      end else
-      if (u8DataIn=2012100706402078540) and (not rConfigOverridden.bWebShareAlias) then // JAS Webshare Alias
+        //ASPrintln('iValidateSessionRetryLimit');
+      end;
+
+      u8:=2012100706402078540;
+      if (u8DataIn=u8) and (not rConfigOverridden.bWebShareAlias) then // JAS Webshare Alias
       begin
         grJASConfig.saWebShareAlias:=saTrim(saDataIn);
         //ASPrintln('-----------WEBSHARE------------');
         //ASPrintln(grJASConfig.saWebShareAlias);
         //ASPrintln('-----------WEBSHARE------------');
-      end else
-      if (u8DataIn=2012100708380246359) and (not rConfigOverridden.bDirectoryListing) then // JAS Allow Directory Listing
+        //ASPrintln('saWebShareAlias');
+      end;
+
+      u8:=1511140035347260001;
+      if (u8DataIn=u8) and (not rConfigOverridden.bDirectoryListing) then // JAS Allow Directory Listing
       begin
         grJASConfig.bDirectoryListing:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100523502800347) and (not rConfigOverridden.bWhiteListEnabled) then
+        //ASPrintln('bDirectoryListing');
+      end;
+
+      u8:=2012100523502800347;
+      if (u8DataIn=u8) and (not rConfigOverridden.bWhiteListEnabled) then
       begin
         grJASConfig.bWhiteListEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100523493783574) and (not rConfigOverridden.bBlackListEnabled) then
+        //ASPrintln('bWhiteListEnabled');
+      end;
+
+      u8:=2012100523493783574;
+      if (u8DataIn=u8) and (not rConfigOverridden.bBlackListEnabled) then
       begin
         grJASConfig.bBlackListEnabled:=bVal(saDataIn);
-      end else
-      if (u8DataIn=2012100906502356513) and (not rConfigOverridden.bJASFooter) then
+        //ASPrintln('bBlackListEnabled');
+      end;
+
+      u8:=2012100906502356513;
+      if (u8DataIn=u8) and (not rConfigOverridden.bJASFooter) then
       begin
         grJASConfig.saJASFooter:=trim(saDataIn);
-      end else
-      if (u8DataIn=2012100723482235916) and (not rConfigOverridden.bPasswordKey) then
+        //ASPrintln('saJASFooter');
+      end;
+
+      u8:=2012100723482235916;
+      if (u8DataIn=u8) and (not rConfigOverridden.bPasswordKey) then
       begin
         grJASConfig.u1PasswordKey:=u1Val(saDataIn);
-      end else
-      if(u8DataIn=1211061858501530001) and  (not rConfigOverridden.bAllowVirtualHostCreation) then
+        //ASPrintln('u1PasswordKey');
+      end;
+
+      u8:=1211061858501530001;
+      if(u8DataIn=u8) and  (not rConfigOverridden.bAllowVirtualHostCreation) then
       begin
         grJASConfig.bAllowVirtualHostCreation:=bVal(saDataIn);
+        //ASPrintln('bAllowVirtualHostCreation');
       end;
-      if(u8DataIn=1211231539180430025) and  (not rConfigOverridden.bCreateHybridJets) then
+
+      u8:=1211231539180430025;
+      if(u8DataIn=u8) and  (not rConfigOverridden.bCreateHybridJets) then
       begin
         grJASConfig.bCreateHybridJets:=bVal(saDataIn);
+        //ASPrintln('bCreateHybridJets');
+      end;
+
+      u8:=1511122305040190001;
+      if(u8DataIn=u8) and  (not rConfigOverridden.bSIPURL) then
+      begin
+        //ASPrintln('saDataIn:'+saDataIn);JASPrintln('u8DataIn:'+inttostr(u8DataIn));
+        //ASPRintLn('rConfigOverridden.bSIPURL: '+saTrueFalse(rConfigOverridden.bSIPURL));
+        //ASPrintln('grJASConfig.saSIPURL on entry: '+grJASConfig.saSIPURL);
+        //grJASConfig.saSIPURL:=saDataIn;
+        //ASPrintln('grJASConfig.saSIPURL: '+grJASConfig.saSIPURL+'   201511132231');
+        //ASPrintln('saSIPURL');
       end;
     until (not bOK) or (not rs.movenext);
+    //ASPRintln('Ok:'+saTrueFalse(bOk));
   end;
   rs.close;
   //ASPrintln('PAST Loading Pref Settings');
@@ -1602,7 +1790,8 @@ begin
         'VHost_ErrorLog,'+
         'VHost_JDConnection_ID, '+
         'VHost_CacheDir, '+
-        'VHost_TemplateDir '+
+        'VHost_TemplateDir, '+
+        'VHost_SIPURL '+
       'FROM jvhost '+
       'WHERE ((VHost_Deleted_b<>'+gaJCon[0].saDBMSBoolScrub(true)+')OR(VHost_Deleted_b IS NULL)) AND '+
         ' VHOST_Enabled_b='+gaJCon[0].saDBMSBoolScrub(true);
@@ -1653,6 +1842,7 @@ begin
         u8JDConnection_ID          :=u8Val(rs.fields.Get_saValue('VHost_JDConnection_ID'));
         saCacheDir                 :=rs.fields.Get_saValue('VHost_CacheDir');
         saTemplateDir              :=rs.fields.Get_saValue('VHost_TemplateDir');
+        saSIPURL                   :=rs.fields.Get_saValue('VHost_SIPURL');
         if upcase(saServerdomain)='DEFAULT' then i4DefaultHostCount+=1;
       end;
     until (not bOk) or (not rs.MoveNext) or (bMainSystemOnly);

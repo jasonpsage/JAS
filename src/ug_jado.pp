@@ -39,19 +39,31 @@ Unit ug_jado;
 {$MODE objfpc}
 
 
-
+{DEFINE SQLTRACE}
 {DEFINE DIAGMSG}
-
 {DEFINE DEBUGLOGBEGINEND}
+
+
 {$IFDEF DEBUGLOGBEGINEND}
 {$INFO | DEBUGLOGBEGINEND: TRUE}
 {$ENDIF}
 
-
 {$IFDEF DIAGMSG}
 {$INFO | DIAGMSG: TRUE}
 {$ENDIF}
+
+{$IFDEF SQLTRACE}
+{$INFO | SQLTRACE: TRUE}
+{$ENDIF}
+
+{$IFDEF MYSQL5}
+{$INFO | COMPILED FOR MYSQL5}
+{$ELSE}
+{$INFO | COMPILED FOR MYSQL4}
+{$ENDIF}
+
 //=============================================================================
+
 
 
 
@@ -70,7 +82,11 @@ Unit ug_jado;
 Uses 
 //=============================================================================
   sysutils,
+  {$IFNDEF MYSQL5}
   mysql4,
+  {$ELSE}
+  mysql50,
+  {$ENDIF}
   {$IFDEF ODBC}
   odbcsqldyn,
   {$ENDIF}
@@ -1264,7 +1280,7 @@ Type JADO_RECORDSET = Class(JFC_XDL)
   {$ENDIF}
   
   // PRIVATE - Use OPEN.
-  Function OpenMySQL4(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;
+  Function OpenMySQL(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;
   Function bMySQLFetchRecord(Var p_oADOC: JADO_CONNECTION): Boolean;
   Procedure MySQLShowRecord;//< private, does dump to std out
   {}
@@ -1305,7 +1321,8 @@ Type JADO_RECORDSET = Class(JFC_XDL)
                            // cnODBC_SQLStatistics = 4 = TABLE Stats and Indexs - SQLStatistics()
                            // cnODBC_SQLTablePrivileges = 5 = Table Privileges - SQLTablePrivileges()
   {}
-  rMySQL: TMYSQL;{< NOTE: This WAS a connection THING, but has been moved HERE
+  rMySQL: st_mysql;//TMYSQL;
+   {< NOTE: This WAS a connection THING, but has been moved HERE
    for Thread Safety in MySQL4 Driver mode. Note, other things about sharing 
    connections between threads may be problematic.}
   
@@ -1315,7 +1332,7 @@ Type JADO_RECORDSET = Class(JFC_XDL)
   lpMySQLUser:pointer;
   lpMySQLPasswd:pointer;
   
-  aRowBuf: TMySQL_ROW;
+  aRowBuf: MYSQL_ROW;//TMySQL_ROW;
   u4Columns: dword;
   u4Rows: dword;  
   u4RowsLeft: dword;
@@ -5319,8 +5336,9 @@ Begin
     {$IFDEF ODBC}
     cnDRIV_ODBC: Begin self.OpenODBC(p_saCMD, p_oADOC,p_bLogError, p_u8Caller); End; // ODBC CASE Section
     {$ENDIF}
-    cnDriv_MySQL: Begin // MySQL4 CASE Section
-        self.OpenMySQL4(p_saCMD, p_oADOC, p_bLogError,p_u8Caller);
+    cnDriv_MySQL: Begin // MySQL CASE Section
+        bOk:=self.OpenMySQL(p_saCMD, p_oADOC, p_bLogError,p_u8Caller);
+        //riteln('self.OpenMySQL returned:',bOk);
     End;
     Else begin
       p_oADOC.Errors.AppendItem_Error(200609131225,
@@ -5328,13 +5346,15 @@ Begin
         saSourceRoutine, '', True);
     end;//case
     End;//switch
-    bOk:=p_oADOC.Errors.listcount=0;
   End;
 
+  if bOk then
+  begin
+    bOk:= p_oADOC.Errors.listcount=0;
+  end;
   If bOk Then ActiveConnection:=p_oADOC;
   pvt_bEOL:=(u4RowsRead=0);
   Result:=bOk;
-
   if not bOk then JLog(cnLog_DEBUG, 201203112302, 'Caller: ' +inttostr(p_u8Caller)+ ' DEBUG - QUERY - OK:'+saYesNo(bOk)+' QUERY: '+p_saCMD, SOURCEFILE);
 
 
@@ -7424,7 +7444,12 @@ End;
 
 
 //=============================================================================
-Function JADO_RECORDSET.OpenMySQL4(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION; p_bLogError: boolean; p_u8Caller: uint64):Boolean;
+Function JADO_RECORDSET.OpenMySQL(
+  p_saCMD: AnsiString;
+  Var p_oADOC: JADO_CONNECTION;
+  p_bLogError: boolean;
+  p_u8Caller: uint64
+):Boolean;
 //=============================================================================
 Var
   bOk: Boolean;
@@ -7455,16 +7480,22 @@ Var
   saODBCCommandType: ansistring;
 
   iRetries: longint;
-
+  u8MySqlResult: uint64;
+  u8Zero: UInt64; // compensating for fpc 2.6.x 64 uint bug - can't compare constant to variable
+  {$IFDEF SQLTRACE}
+  f: text; // this is for the sqltrace diagnostic below that is commented out
+  u2IOResult: word;// this is for the sqltrace diagnostic below that is commented out
+  {$ENDIF}
 
 {$IFDEF DEBUGLOGBEGINEND}var sTHIS_ROUTINE_NAME:String;{$ENDIF}
 Begin
 {$IFDEF DEBUGLOGBEGINEND}
-  sTHIS_ROUTINE_NAME:='JADO_RECORDSET.OpenMySQL4(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION):Boolean;';
+  sTHIS_ROUTINE_NAME:='JADO_RECORDSET.OpenMySQL(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION):Boolean;';
   DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
+  saSourceRoutine:=SOURCEFILE + ' JADO_RECORDSET.OpenMySQL(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION)';
 
-  saSourceRoutine:=SOURCEFILE + ' JADO_RECORDSET.OpenMySQL4(p_saCMD: AnsiString; Var p_oADOC: JADO_CONNECTION)';
+  u8Zero:=0;
   bOk:=p_oADOC<>nil;
   If not bOk Then 
   Begin
@@ -7478,7 +7509,7 @@ Begin
     If not bOk Then 
     Begin
       p_oADOC.Errors.AppendItem_Error(200609250955,
-      200609250955,'Caller: '+inttostr(p_u8Caller)  +' JADO-MYSQL4: Connection not in Open State on entry. ' +
+      200609250955,'Caller: '+inttostr(p_u8Caller)  +' JADO-MYSQL: Connection not in Open State on entry. ' +
       saSourceRoutine,'',True);
       JLog(cnLog_ERROR, 200609250955,'success lost here ' + saSourceRoutine,sourcefile);
     End;
@@ -7526,7 +7557,7 @@ Begin
     If not bOk Then
     Begin
       i4State:=adStateClosed;
-      sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: Unable to connect. Check Credentials, network, and server itself. MYSQL:' + 
+      sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: Unable to connect. Check Credentials, network, and server itself. MYSQL:' + 
         mysql_error(@self.rMySQL) + ' ConPort: ' +inttostr(ActiveConnection.u4MyPort) + saSourceRoutine;
       ActiveConnection.Errors.AppendItem_Error(0,201002071146,sa,'',True);
       JLog(cnLog_ERROR, 200609120429, sa, SOURCEFILE);
@@ -7543,10 +7574,10 @@ Begin
   Begin
     If length(trim(ActiveConnection.saMyDatabase))>0 Then
     Begin
-      If mysql_select_db(lpMySQLPtr,PChar(ActiveConnection.saMyDatabase))<>0 Then
+      bOK:= u8Zero = mysql_select_db(lpMySQLPtr,PChar(ActiveConnection.saMyDatabase));
+      if not bOk then
       Begin
-        bOk:=False;
-        sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: Unable to change to database:' + ActiveConnection.saMyDatabase + ' MYSQL:' + mysql_error(@self.rMySQL) + ' ';
+        sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: Unable to change to database:' + ActiveConnection.saMyDatabase + ' MYSQL:' + mysql_error(@self.rMySQL) + ' ';
         //JLog(cnLog_ERROR, 200609120432, sa, SOURCEFILE);
         ActiveConnection.Errors.AppendItem_Error(0,200609120432,sa + saSourceRoutine,'',True);
         JLog(cnLog_ERROR, 200609120432,'success lost here ' + saSourceRoutine,sourcefile);
@@ -7570,7 +7601,7 @@ Begin
     bOk:=lpMySQLResults=nil;
     If not bOk Then 
     Begin
-      sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: lpMySQLResults was not NIL on entry Command:' + p_saCMD + ' ' + saSourceRoutine;
+      sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: lpMySQLResults was not NIL on entry Command:' + p_saCMD + ' ' + saSourceRoutine;
       p_oADOC.Errors.AppendItem_Error(0,200609250955,sa,'',True);
       JLog(cnLog_ERROR, 200609250955,'success lost here ' + sa,sourcefile);
     End;
@@ -7614,16 +7645,37 @@ Begin
     end;//switch
   end;
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   If bOk Then
   Begin  
     //riteln('About to execute the Query:',p_saCmd);
     //riteln('ActiveConnection:',Cardinal(ActiveConnection));
     //riteln('ActiveConnection.lpMySQLPtr:',Cardinal(ActiveConnection.lpMySQLPtr));
-    bOk:=mysql_query(lpMySQLPtr,PChar(p_saCMD))=0;
+    u8MySqlResult:=mysql_query(lpMySQLPtr,PChar(p_saCMD));
+    //if (pos('INSERT',UPCASE(p_saCMD))<>0) then
+    //begin
+    //  riteln('u8MySqlResult: ',u8MySqlResult,'   '+p_saCMD);
+    //  riteln('u8MySqlResult=u8Zero:' , u8MySqlResult=u8Zero);
+    //end;
+    bOk:= u8MySqlResult=u8Zero;
     If (not bOk) and p_bLogError Then
     Begin
-      sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: mysql_error:'+mysql_error(@self.rMySQL)+' Command:' + p_saCMD + 
-      ' mysql_query(lpMySQLPtr, PCHAR(p_saCmd)) failed. lpMySQLPtr:';
+      //riteln('ERROR: ',u8MySqlResult);
+      sa:='Caller: '+inttostr(p_u8Caller)+' mysql_error:'+
+        mysql_error(@self.rMySQL)+' Command:' + p_saCMD + ' mysql_query(lpMySQLPtr, PCHAR(p_saCmd)) failed. lpMySQLPtr:';
       sa+=inttostr(UINT(lpMySQLPtr));
       sa+=' '+ saSourceRoutine;
       p_oADOC.Errors.AppendItem_Error(0,200609251001,sa,'',True);
@@ -7631,8 +7683,15 @@ Begin
       //log(cnLog_ERROR, 200609251102,'MYSQL ERROR: ' + mysql_error(@self.rMySQL) ,sourcefile);
     End;
     //riteln('Made it past the execute the query part');
+
+
+    {$IFDEF SQLTRACE}
+    bTSOpenTextFile(grJASCOnfig.saLogDir+'sqltrace.sql',u2IOREsult,f,false,true);
+    write(f,'"'+saTrueFalse(bOk)+'"');
+    writeln(f,',"'+saSNRStr(saSNRStr(p_saCMD,'"','[@QUOTE@]'),'[@QUOTE@]','""')+'"');
+    bTSCloseTextFile(grJASCOnfig.saLogDir+'sqltrace.sql',u2IOREsult,f);
+    {$ENDIF}
   End;
-    
 
   If bOk Then
   Begin
@@ -7715,7 +7774,7 @@ Begin
           If not bOk Then
           Begin
             //riteln('got error');
-            sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: Failure mysql_fetch_field. Failed on Column# '+
+            sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: Failure mysql_fetch_field. Failed on Column# '+
               saStr(u4Columns_Loop)+' of '+ saStr(u4Columns)+ '. Command:' + p_saCMD + 
               ' MYSQL:' + mysql_error(lpMySQLPtr) + ' ' + saSourceRoutine;
             p_oADOC.Errors.AppendItem_Error(0,200609120534,sa,'',True);
@@ -7745,7 +7804,7 @@ Begin
             If not bOk Then
             Begin
               //riteln('got error');
-              sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: Failure mysql_fetch_field. Failed on Column# '+
+              sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: Failure mysql_fetch_field. Failed on Column# '+
                 saStr(u4Columns_Loop)+' of '+ saStr(u4Columns)+ ' during SQLTables Wedge. Command:' + p_saCMD + 
                 ' MYSQL:' + mysql_error(lpMySQLPtr) + ' ' + saSourceRoutine;
               p_oADOC.Errors.AppendItem_Error(0,201007080414,sa,'',True);
@@ -7760,7 +7819,7 @@ Begin
             If not bOk Then
             Begin
               //riteln('got error');
-              sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL4: Failure mysql_fetch_field. Failed on Column# '+
+              sa:='Caller: '+inttostr(p_u8Caller)+' JADO-MYSQL: Failure mysql_fetch_field. Failed on Column# '+
                 saStr(u4Columns_Loop)+' of '+ saStr(u4Columns)+ ' during SQLTables Wedge. Command:' + p_saCMD + 
                 ' MYSQL:' + mysql_error(lpMySQLPtr) + ' ' + saSourceRoutine;
               p_oADOC.Errors.AppendItem_Error(0,201007080415,sa,'',True);
@@ -7825,6 +7884,7 @@ Begin
     End;
   End;
   Result:=bOk;
+  //riteln('openmysql ok: ',bOk);
 
 {$IFDEF DEBUGLOGBEGINEND}
   DebugOut(sTHIS_ROUTINE_NAME,SOURCEFILE);
@@ -9757,11 +9817,11 @@ var
   saQry: ansistring;
   bOk: boolean;
   saErrMsg: ansistring;
-  
+
 {$IFDEF DEBUGLOGBEGINEND}var sTHIS_ROUTINE_NAME:String;{$ENDIF}
 begin
 {$IFDEF DEBUGLOGBEGINEND}
-  sTHIS_ROUTINE_NAME:='JADO_CONNECTION.i8GetRowCount(p_saTable: ansistring; p_saWhereClauseOrBlank: ansistring): Int64;';
+  sTHIS_ROUTINE_NAME:='JADO_CONNECTION.u8GetRowCount(p_saTable: ansistring; p_saWhereClauseOrBlank: ansistring): Int64;';
   DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
   rs:=JADO_RECORDSET.create;
@@ -9771,7 +9831,6 @@ begin
   if trim(p_saWhereClauseOrBlank)<>'' then
   begin
     saQry+=' WHERE '+p_saWhereClauseOrBlank;
-  //  saQry+=' AND '+p_saWhereClauseOrBlank;
   end;
 
   bOk:=rs.open(saQry,self,201503161704);
@@ -9790,7 +9849,19 @@ begin
   
   if bOk then
   begin
-    result:=i8Val(rs.fields.Get_saValue('MyCount'));
+    result:=u8Val(rs.fields.Get_saValue('MyCount'));
+  end
+  else
+  begin
+    result:=0;
+    //flip unsigned to highest value - passive indicator
+    // record count just failed. Log file also records NOT OK issue.
+    // When debugging and you see HUGE HUGE record counts, it should
+    // be a clue. Generally you have fixed your database issues before
+    // this matters all too much, but I didn't want to send a ZERO
+    // which is a valid response - no records means no records,
+    // not necessarily an error.
+    result-=1;
   end;
 
   rs.close;

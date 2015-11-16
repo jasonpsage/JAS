@@ -362,7 +362,6 @@ Type rtJASConfig=Record
   saDefaultAccessLog          : ansistring;
   saDefaultErrorLog           : ansistring;
   bCreateHybridJets           : boolean;
- 
 End;
 Var grJASConfig: rtJASConfig;
 //=============================================================================

@@ -16445,6 +16445,8 @@ Begin
         JUser_ResetPass_u            :=u8Val(rs.Fields.Get_saValue('JUser_ResetPass_u'));
         JUser_JVHost_ID              :=rs.Fields.Get_saValue('JUser_JVHost_ID');
         JUser_TotalJetUsers_d        :=rs.Fields.Get_saValue('JUser_TotalJetUsers_d');
+        JUser_SIP_Exten              :=rs.fields.Get_saValue('JUser_SIP_Exten');
+        JUser_SIP_Pass              :=rs.fields.Get_saValue('JUser_SIP_Pass');
         JUser_CreatedBy_JUser_ID     :=rs.Fields.Get_saValue('JUser_CreatedBy_JUser_ID');
         JUser_Created_DT             :=rs.Fields.Get_saValue('JUser_Created_DT');
         JUser_ModifiedBy_JUser_ID    :=rs.Fields.Get_saValue('JUser_ModifiedBy_JUser_ID');
@@ -16557,7 +16559,9 @@ Begin
         ',JUser_Audit_b='+JAS.saDBMSBoolScrub(JUser_Audit_b)+
         ',JUser_ResetPass_u='+JAS.saDBMSUIntScrub(JUser_ResetPass_u)+
         ',JUser_JVHost_ID='+JAS.saDBMSUintscrub(JUser_JVHost_ID)+
-        ',JUser_TotalJetUsers_d='+JAS.saDBMSDecscrub(JUser_TotalJetUsers_d);
+        ',JUser_TotalJetUsers_d='+JAS.saDBMSDecscrub(JUser_TotalJetUsers_d)+
+        ',JUSER_SIP_Exten='+JAS.saDBMSScrub(JUser_SIP_Exten)+
+        ',JUSER_SIP_Pass='+JAS.saDBMSScrub(JUser_SIP_Pass);
         if(bAddNew)then
         begin
           saQry+=',JUser_CreatedBy_JUser_ID='+JAS.saDBMSUIntScrub(JUser_CreatedBy_JUser_ID)+

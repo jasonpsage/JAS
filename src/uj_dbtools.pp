@@ -889,7 +889,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jsecgrplink',rs.fields.Get_saValue('JSGLk_JSecGrpLink_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jsecgrplink',rs.fields.Get_saValue('JSGLk_JSecGrpLink_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JSGLk_JSecGrpLink_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JSGLk_JSecGrpLink_UID'),
+        'DELETE FROM jsecgrplink WHERE JSGLk_JSecGrpLink_UID='+rs.fields.Get_saValue('JSGLk_JSecGrpLink_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020943, 'Trouble deleting record.','',SOURCEFILE);
@@ -948,7 +951,15 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jsecgrpuserlink',rs.fields.Get_saValue('JSGUL_JSecGrpUserLink_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jsecgrpuserlink',rs.fields.Get_saValue('JSGUL_JSecGrpUserLink_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JSGUL_JSecGrpUserLink_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JSGUL_JSecGrpUserLink_UID'),
+        'DELETE FROM jsecgrpuserlink WHERE JSGUL_JSecGrpUserLink_UID='+rs.fields.Get_saValue('JSGUL_JSecGrpUserLink_UID')
+      );
+
+
+
+
+
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1005,7 +1016,11 @@ Begin
     repeat
       p_Context.JTrakBegin(DBc, 'jsecpermuserlink',rs.fields.Get_saValue('JSPUL_JSecPermUserLink_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jsecpermuserlink',rs.fields.Get_saValue('JSPUL_JSecPermUserLink_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JSPUL_JSecPermUserLink_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JSPUL_JSecPermUserLink_UID'),
+        'DELETE FROM jsecpermuserlink WHERE JSPUL_JSecPermUserLink_UID='+rs.fields.Get_saValue('JSPUL_JSecPermUserLink_UID')
+      );
+
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1065,7 +1080,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jsysmodulelink',rs.fields.Get_saValue('JSyLk_JSysModuleLink_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jsysmodulelink',rs.fields.Get_saValue('JSyLk_JSysModuleLink_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JSyLk_JSysModuleLink_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JSyLk_JSysModuleLink_UID'),
+        'DELETE FROM jsysmodulelink where JSyLk_JSysModuleLink_UID='+rs.fields.Get_saValue('JSyLk_JSysModuleLink_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1124,7 +1142,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jinvoicelines',rs.fields.Get_saValue('JILin_JInvoiceLines_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jinvoicelines',rs.fields.Get_saValue('JILin_JInvoiceLines_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JILin_JInvoiceLines_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JILin_JInvoiceLines_UID'),
+        'DELETE FROM jinvoicelines WHERE JILin_JInvoiceLines_UID='+rs.fields.Get_saValue('JILin_JInvoiceLines_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1180,7 +1201,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jinstalled',rs.fields.Get_saValue('JInst_JInstalled_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jinstalled',rs.fields.Get_saValue('JInst_JInstalled_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JInst_JInstalled_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JInst_JInstalled_UID'),
+        'DELETE FROM jinstalled WHERE JInst_JInstalled_UID='+rs.fields.Get_saValue('JInst_JInstalled_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1237,7 +1261,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jmodc',rs.fields.Get_saValue('JModC_JModC_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jmodc',rs.fields.Get_saValue('JModC_JModC_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JModC_JModC_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JModC_JModC_UID'),
+        'DELETE FROM jmodc WHERE JModC_JModC_UID='+rs.fields.Get_saValue('JModC_JModC_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1296,7 +1323,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jmodulesetting',rs.fields.Get_saValue('JModC_JModC_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jmodulesetting',rs.fields.Get_saValue('JModC_JModC_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JModC_JModC_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JModC_JModC_UID'),
+        'DELETE FROM jmodulesetting WHERE JModC_JModC_UID='+rs.fields.Get_saValue('JModC_JModC_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1355,7 +1385,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'jmoduleconfig',rs.fields.Get_saValue('JMCfg_JModuleConfig_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'jmoduleconfig',rs.fields.Get_saValue('JMCfg_JModuleConfig_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('JMCfg_JModuleConfig_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('JMCfg_JModuleConfig_UID'),
+        'DELETE FROM jmoduleconfig WHERE JMCfg_JModuleConfig_UID='+rs.fields.Get_saValue('JMCfg_JModuleConfig_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -1417,7 +1450,10 @@ Begin
     repeat
       p_Context.JTrakBegin(DBC, 'juserpreflink',rs.fields.Get_saValue('UsrPL_UserPrefLink_UID'));
       bOk:=bJAS_DeleteRecord(p_Context,DBC, 'juserpreflink',rs.fields.Get_saValue('UsrPL_UserPrefLink_UID'));
-      p_Context.JTrakEnd(rs.fields.Get_saValue('UsrPL_UserPrefLink_UID'));
+      p_Context.JTrakEnd(
+        rs.fields.Get_saValue('UsrPL_UserPrefLink_UID'),
+        'DELETE FROM juserpreflink WHERE UsrPL_UserPrefLink_UID='+rs.fields.Get_saValue('UsrPL_UserPrefLink_UID')
+      );
       if not bOk then
       begin
         JAS_Log(p_Context, cnLog_Error,201205020948, 'Trouble deleting record.','',SOURCEFILE);
@@ -3167,7 +3203,10 @@ Begin
       begin
         p_Context.JTrakBegin(DBC, 'jcompanypers', rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
         bOk:=bJAS_DeleteRecord(p_Context,DBC,'jcompanypers',rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
-        p_Context.JTrakEnd(rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
+        p_Context.JTrakEnd(
+          rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'),
+          'DELETE FROM jcompanypers WHERE JCpyP_JCompanyPers_UID='+rs.fields.Get_saValue('JCpyP_JCompanyPers_UID')
+        );
         if not bOk then
         begin
           JAS_LOG(p_Context, cnLog_Error,201204281543,'Trouble deleting jcompanypers record UID: '+rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'),'',SOURCEFILE);
@@ -3198,7 +3237,10 @@ Begin
       begin
         p_Context.JTrakBegin(DBC, 'jcompanypers', rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
         bOk:=bJAS_DeleteRecord(p_Context,DBC,'jcompanypers',rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
-        p_Context.JTrakEnd(rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'));
+        p_Context.JTrakEnd(
+          rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'),
+          'DELETE FROM jcompanypers WHERE JCpyP_JCompanyPers_UID='+rs.fields.Get_saValue('JCpyP_JCompanyPers_UID')
+        );
         if not bOk then
         begin
           JAS_LOG(p_Context, cnLog_Error,201204281555,'Trouble deleting jcompanypers record UID: '+rs.fields.Get_saValue('JCpyP_JCompanyPers_UID'),'',SOURCEFILE);

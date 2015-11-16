@@ -385,34 +385,36 @@ Begin
       // REQUEST IF FOR SPECIFIC FIELD on SPECIFIC ROW
       saQry:=saLockInsertQuery(p_JLock_Row_ID,p_JLock_Col_ID);// Lock Table
       bOk:=rs.open(saQry, DBC, false,201503161804);
-      if not bOk then
+      if bOk then
+      begin
+        bGotLock:=true;
+      end else
       begin
         JAS_Log(p_Context,cnLOG_Warn,200912251922,
           'bJAS_LockRecord - Unable to create field lock','Query: '+saQry,SOURCEFILE,DBC,rs);
-      end else
-      begin
-        bGotLock:=true;
       end;
       rs.close;
     end else
 
     if (i8Row>0) and (i8Col<=0) then
     begin
-      // REQUEST for ROW LEVEL LOCK
-      saQry:=saLockInsertQuery(p_JLock_Row_ID,p_JLock_Col_ID);// Lock Table
+      // REQUEST FOR ROW LEVEL LOCK
+      saQry:=saLockInsertQuery(p_JLock_Row_ID,p_JLock_Col_ID);// Lock Row
+
+      //   QUERY , DB-Connection, LOG-Errors, UniqueCallerID
       bOk:=rs.open(saQry, DBC, false,201503161805);
-      if not bOk then
+      //bOk:=rs.open(saQry, DBC, true,201503161805);
+      if bOk then
+      begin
+        bGotLock:=true;
+      end
+      else
       begin
         sa:= ' p_JLock_JDConnection_ID:'+p_JLock_JDConnection_ID+' '+
              'p_JLock_TableName:'+p_JLock_TableName+' '+
              'p_JLock_Row_ID:'+p_JLock_Row_ID+' '+
              'p_JLock_Col_ID:'+p_JLock_Col_ID;
-        JAS_Log(p_Context,cnLOG_WARN,201203031422,
-          'bJAS_LockRecord - Unable to create row lock. '+sa,'Query: '+saQry,SOURCEFILE,DBC,rs);
-      end
-      else
-      begin
-        bGotLock:=true;
+        JAS_Log(p_Context,cnLOG_WARN,201203031422, 'bJAS_LockRecord - Unable to create row lock. '+sa,'Query: '+saQry,SOURCEFILE,DBC,rs);
       end;
       rs.close;
     end else
@@ -789,7 +791,7 @@ Begin
     end;
     p_Context.JTrakBegin(p_TGT, p_saTable,p_saUID);
     bOk:=rs.Open(saQry,p_TGT,201503161809);rs.close;
-    p_Context.JTrakEnd(p_saUID);
+    p_Context.JTrakEnd(p_saUID,saQry);
     if not bOk then
     begin
       JAS_Log(p_Context,cnLog_Error, 201203261049, 'Trouble deleting record.','Query: '+saQry,SOURCEFILE,p_TGT, rs);

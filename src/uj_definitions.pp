@@ -2761,6 +2761,7 @@ type rtJTrak=record
   JTrak_When_DT             : ansistring;
   JTrak_Before              : ansistring;
   JTrak_After               : ansistring;
+  JTrak_SQL                 : ansistring;
 end;
 procedure clear_JTrak(var p_rJTrak: rtJTrak);
 //=============================================================================
@@ -2790,6 +2791,8 @@ type rtJUser=Record
   JUser_ResetPass_u            : UInt64;
   JUser_JVHost_ID              : ansistring;
   JUser_TotalJetUsers_d        : ansistring;
+  JUser_SIP_Exten              : ansistring;
+  JUser_SIP_Pass               : ansistring;
   JUser_CreatedBy_JUser_ID     : ansistring;
   JUser_Created_DT             : ansistring;
   JUser_ModifiedBy_JUser_ID    : ansistring;
@@ -2877,6 +2880,7 @@ type rtJVHost=record
   VHost_Enabled_b                : ansistring;
   VHost_CacheDir                 : ansistring;
   VHost_TemplateDir              : ansistring;
+  VHOST_SipURL                   : ansistring;
   VHost_CreatedBy_JUser_ID       : ansistring;
   VHost_Created_DT               : ansistring;
   VHost_ModifiedBy_JUser_ID      : ansistring;
@@ -2928,6 +2932,7 @@ type rtJVHostLight=record
   bAllowRegistration         : Boolean;
   bRegistrationReqCellPhone  : boolean;
   bRegistrationReqBirthday   : boolean;
+  saSIPURL                   : ansistring;
 end;
 procedure clear_JVHostLight(var p_rJVHostLight: rtJVHostLight);
 //=============================================================================
@@ -5144,6 +5149,7 @@ begin
     JTrak_When_DT             :='';
     JTrak_Before              :='';
     JTrak_After               :='';
+    JTrak_SQL                 :='';
   end;//with
 end;
 //=============================================================================
@@ -5173,6 +5179,8 @@ begin
     JUser_ResetPass_u            :=0;
     JUser_JVHost_ID              :='';
     JUser_TotalJetUsers_d        :='';
+    JUser_SIP_Exten              :='';
+    JUser_SIP_Pass               :='';
     JUser_CreatedBy_JUser_ID     :='';
     JUser_Created_DT             :='';
     JUser_ModifiedBy_JUser_ID    :='';
@@ -5352,6 +5360,7 @@ begin
     VHost_Enabled_b                :='';
     VHost_CacheDir                 :='';
     VHost_TemplateDir              :='';
+    VHost_SIPURL                   :='';
     VHost_CreatedBy_JUser_ID       :='';
     VHost_Created_DT               :='';
     VHost_ModifiedBy_JUser_ID      :='';
@@ -5412,6 +5421,7 @@ begin
     bAllowRegistration         :=false;
     bRegistrationReqCellPhone  :=false;
     bRegistrationReqBirthday   :=false;
+    saSIPURL                   :='';
   end;
 end;
 //=============================================================================

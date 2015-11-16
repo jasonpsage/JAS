@@ -587,7 +587,7 @@ Begin
         If (length(saQry)>0)  Then
         Begin
           //Log(cnLog_Debug, 201007082040,'Debug JASSqlTool - Opening Query: '+saQry,SOURCEFILE);
-          bOk:=rs.Open(saQry,p_Context.JADOC[u8DSNSelected],201503161190);
+          bOk:=rs.Open(saQry,p_Context.JADOC[u8DSNSelected],true,201503161190);
           //Log(cnLog_Debug, 201007082040,'Debug JASSqlTool - Back from opening Query.',SOURCEFILE);
           if saExport='' then
           begin
@@ -677,35 +677,49 @@ Begin
               saJADO_RECORDSET+='&nbsp;&nbsp;options.ssl_capath:<b>'+rs.rMySQL.options.ssl_capath+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;options.ssl_cipher:<b>'+rs.rMySQL.options.ssl_cipher+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;options.max_allowed_packet:<b>'+saSTR(rs.rMySQL.options.max_allowed_packet)+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.use_ssl:<b>'+saTrueFalse(rs.rMySQL.options.use_ssl='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.compress:<b>'+saTrueFalse(rs.rMySQL.options.compress='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.named_pipe:<b>'+saTrueFalse(rs.rMySQL.options.named_pipe='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_probe:<b>'+saTrueFalse(rs.rMySQL.options.rpl_probe='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_parse:<b>'+saTrueFalse(rs.rMySQL.options.rpl_parse='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;options.no_master_reads:<b>'+saTrueFalse(rs.rMySQL.options.no_master_reads='0')+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='&nbsp;&nbsp;status:<b>'+saSTR(Byte(rs.rMySQL.status))+'</b><br />'+csCRLF;
-              //mysql_status = (MYSQL_STATUS_READY,MYSQL_STATUS_GET_RESULT, MYSQL_STATUS_USE_RESULT);
-              saJADO_RECORDSET+='&nbsp;&nbsp;free_me:<b>'+saTrueFalse(rs.rMySQL.free_me='0')+'</b><br />'+csCRLF;
+              {$IFDEF MYSQL5}
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.use_ssl:<b>'+saTrueFalse(rs.rMySQL.options.use_ssl=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.compress:<b>'+saTrueFalse(rs.rMySQL.options.compress=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.named_pipe:<b>'+saTrueFalse(rs.rMySQL.options.named_pipe=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_probe:<b>'+saTrueFalse(rs.rMySQL.options.rpl_probe=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_parse:<b>'+saTrueFalse(rs.rMySQL.options.rpl_parse=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.no_master_reads:<b>'+saTrueFalse(rs.rMySQL.options.no_master_reads=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;free_me:<b>'+saTrueFalse(rs.rMySQL.free_me=0)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;reconnect:<b>'+inttostr(rs.rMySQL.reconnect)+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;rpl_pivot:<b>'+saTrueFalse(rs.rMySQL.rpl_pivot=0)+'</b><br />'+csCRLF;
+              {$ELSE}
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.use_ssl:<b>'+rs.rMySQL.options.use_ssl+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.compress:<b>'+rs.rMySQL.options.compress+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.named_pipe:<b>'+rs.rMySQL.options.named_pipe+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_probe:<b>'+rs.rMySQL.options.rpl_probe+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.rpl_parse:<b>'+rs.rMySQL.options.rpl_parse+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;options.no_master_reads:<b>'+rs.rMySQL.options.no_master_reads+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;free_me:<b>'+rs.rMySQL.free_me+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;reconnect:<b>'+rs.rMySQL.reconnect+'</b><br />'+csCRLF;
+              saJADO_RECORDSET+='&nbsp;&nbsp;rpl_pivot:<b>'+rs.rMySQL.rpl_pivot+'</b><br />'+csCRLF;
+              {$ENDIF}
+              saJADO_RECORDSET+='&nbsp;&nbsp;status:<b>'+saSTR(Byte(rs.rMySQL.status))+'</b><br />'+csCRLF;
+
+              //mysql_status = (MYSQL_STATUS_READY,MYSQL_STATUS_GET_RESULT, MYSQL_STATUS_USE_RESULT);
+
               if rs.ODBCCommandTYPE=cnODBC_SQL then
               begin
-                saJADO_RECORDSET+='&nbsp;&nbsp;scramble_buff:<b>'+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[0]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[1]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[2]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[3]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[4]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[5]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[6]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[7]))+' '+
-                  saSTR(Byte(rs.rMySQL.scramble_buff[8]))+' '+
-                  '</b><br />'+csCRLF;
+              //  saJADO_RECORDSET+='&nbsp;&nbsp;scramble_buff:<b>'+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[0]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[1]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[2]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[3]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[4]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[5]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[6]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[7]))+' '+
+              //    saSTR(Byte(rs.rMySQL.scramble_buff[8]))+' '+
+              //    '</b><br />'+csCRLF;
               end
               else
               begin
                 saJADO_RECORDSET+='&nbsp;&nbsp;scramble_buff:<b>Withheld - Jegas Wedge Command In Progress (Not a true MySQL Query Under the hood)</b><br />';
               end;
-              saJADO_RECORDSET+='&nbsp;&nbsp;rpl_pivot:<b>'+saTrueFalse(rs.rMySQL.rpl_pivot='0')+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;master:<b>'+saSTR(UINT(rs.rMySQL.master))+'(lp to Master st_mysql struct) </b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;next_slave:<b>'+saSTR(UINT(rs.rMySQL.next_slave))+'(lp to next slave st_mysql struct) </b><br />'+csCRLF;
               saJADO_RECORDSET+='&nbsp;&nbsp;last_used_slave:<b>'+saSTR(UINT(rs.rMySQL.last_used_slave))+'(lp to last used slave st_mysql struct) </b><br />'+csCRLF;
@@ -4794,7 +4808,7 @@ Begin
         rs.close;
         p_Context.JTrakBegin(TGT,rJTable.JTabl_Name, sOutKey);
         bOk:=rs.open(saQry, TGT,201503161202);
-        p_Context.JTrakEnd(sOutKey);
+        p_Context.JTrakEnd(sOutKey,saQry);
         if not bOk then
         begin
           JAS_LOG(p_COntext, cnLog_error, 201204130256, 'Trouble with query.','Query: '+saQry,SOURCEFILE,TGT,rs);
@@ -4807,7 +4821,10 @@ Begin
           if p_Context.CGIENV.DataIn.Get_saValue('KEEP')='r1' then sOutKey:=sR2 else sOutKey:=sR1;
           p_Context.JTrakBegin(TGT,rJTable.JTabl_Name, sOutKey);
           bOk:=bJAS_DeleteRecord(p_Context,TGT,rJTable.JTabl_Name,sOutKey);
-          p_Context.JTrakEnd(sOutKey);
+          p_Context.JTrakEnd(sOutKey,
+            'DELETE FROM '+JADO.saDBMSEncloseObjectName(rJTable.JTabl_Name, TGT.u2DbmsID)+' WHERE '+
+            rJTable.JTabl_Name +' WHERE ' + sPKeyName + '='+TGT.saDBMSUIntScrub(sOutKey)
+          );
           if not bOk then
           begin
             JAS_LOG(p_COntext, cnLog_error, 201204130256, 'Trouble deleting record.','',SOURCEFILE);

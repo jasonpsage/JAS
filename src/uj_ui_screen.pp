@@ -216,6 +216,7 @@ type TJBlokField = class
   Destructor Destroy; override;
   procedure Reset;
   function bLoad: boolean;
+  
 
   public
   lpJBlok: pointer;
@@ -297,6 +298,7 @@ type TJBLok = class
     p_saUID: ansistring
   ): boolean;
 
+
   public
   lpDS: pointer;
   bProblem: boolean;
@@ -348,6 +350,8 @@ type TJScreen = class
   function bValidate:boolean;// Checks Screen Type, if Exporting, and Permissions
   function bPlaceScreenHeaderInPageSNRXDL: boolean;
   function bLoadJBloks: boolean;
+  function saSIP_URL_Assembled(p_saPhoneNumber: ansistring): ansistring;
+
   public
   DT: TDATETIME;
   Context: TCONTEXT;//reference
@@ -801,6 +805,7 @@ begin
   saColumnAlias:='';
 end;
 //=============================================================================
+
 
 
 
@@ -3147,7 +3152,7 @@ Begin
       end
       else
       begin
-        Context.PAGESNRXDL.AppendItem_SNRPair('[#'+'FBLOK'+JBlokField.rJBlokField.JBlkF_JBlokField_UID+'#]','(JWidget Troubles)');
+        Context.PAGESNRXDL.AppendItem_SNRPair('[#'+'FBLOK'+JBlokField.rJBlokField.JBlkF_JBlokField_UID+'#]','(JWidget Troubles LU)');
       end;
     end else
 
@@ -4751,6 +4756,21 @@ Begin
                         end;
                       end else
 
+                      if (cnJWidget_Phone=u2JWidgetID) then
+                      begin
+                        if (JScreen.bExportingNow) or (iClickAction>0) then
+                        begin
+                          saContent+=trim(rs.fields.Get_saValue(JBlokField.saColumnAlias));
+                        end
+                        else
+                        begin
+                          sa:=trim(rs.fields.Get_saValue(JBlokField.saColumnAlias));
+                          saContent+='<!--201511161633--><a target="_blank" href="'+JScreen.saSIP_URL_Assembled(sa)+'" title="Click to Dial" >';
+                          if length(sa)>40 then sa:=saLeftStr(sa,37)+'...';
+                          saContent+=sa+'</a>';
+                        end;
+                      end else
+
                       //if bIsJDTypeText(u2Val(JBlokField.rJBlokfield.JBlkF_JWidget_ID)) then
                       begin
                         if not JScreen.bExportingNow then
@@ -6239,7 +6259,7 @@ function TJBLOK.bRecord_PreAdd: boolean;
 var
   bOk: Boolean;
   JScreen: TJSCREEN;
-  Context: TCONTEXT;
+  //Context: TCONTEXT;
 
 {$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME: String; {$ENDIF}
 Begin
@@ -6739,7 +6759,7 @@ Begin
           end;
 
         end;
-        Context.JTrakEnd(rAudit.saUID);
+        Context.JTrakEnd(rAudit.saUID,saQry2);
         if bOk and ((uMode=cnJBlokMode_Save) or (uMode=cnJBlokMode_SaveNClose) or (umode=cnJBlokMode_SaveNNew)) then
         begin
           bOk:=bRecord_PostUpdate(rAudit.saUID);
@@ -6797,7 +6817,7 @@ Begin
             saQry:=saSNRStr(saQRYSNR,'[@UID@]',rAudit.saUID);
             Context.JTrakBegin(TGT, rJTable.JTabl_Name, rAudit.saUID);
             bOk:=rs.open(saQry, TGT,201503161522);
-            Context.JTrakEnd(rAudit.saUID);
+            Context.JTrakEnd(rAudit.saUID,saQry);
             If not bOk Then
             Begin
               JAS_Log(Context,cnLog_Error,201203231201,'Dynamic Query Failed.','Query: '+ saQry,SOURCEFILE, TGT,rs);
@@ -6877,11 +6897,6 @@ Begin
 {$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBOUT(201203102567,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
 end;
 //==============================================================================
-
-
-
-
-
 
 
 
@@ -7027,7 +7042,10 @@ Begin
           case iClickAction of
           cnJBlkF_ClickAction_DetailScreen: ;
           cnJBlkF_ClickAction_Link: begin ;
-            JBlokField.saCaption:='<a href="'+sa+'">'+JBlokField.saCaption+'</a>'+csCRLF;
+            if not u2JWidgetID=cnJWidget_Phone then
+            begin
+              JBlokField.saCaption:='<a href="'+sa+'">'+JBlokField.saCaption+'</a>'+csCRLF;
+            end;
           end;
           cnJBlkF_ClickAction_LinkNewWindow: begin // Custom ClickAction Data - Target = New Window = _blank
             JBlokField.saCaption:='<a target="_blank" href="'+sa+'">'+JBlokField.saCaption+'</a>'+csCRLF;
@@ -7158,6 +7176,57 @@ Begin
               JBlokField.rJBlokField.JBlkF_Widget_OnSelect
             );
           end else
+
+
+          if u2JWidgetID=cnJWidget_Phone then
+          begin
+            JASPrintln('!@!@!@!@!@!@@!@  PHONE !@!@!@!!@!@');
+            JASPrintln('!@!@!@!@!@!@@!@  '+garJVhostLight[Context.i4VHost].saSipURL);
+            JASPrintln('!@!@!@!@!@!@@!@  '+JBlokField.saValue);
+            JASPrintln('!@!@!@!@!@!@@!@  '+Context.rJUser.JUser_SIP_Exten);
+            JASPrintln('!@!@!@!@!@!@@!@  '+Context.rJUser.JUser_SIP_Pass);
+            If iVal(JBlokField.rJBlokField.JBlkF_Widget_MaxLength_u)<1 Then JBlokField.rJBlokField.JBlkF_Widget_MaxLength_u:='11';
+            If iVal(JBlokField.rJBlokField.JBlkF_Widget_Width)<1     Then JBlokField.rJBlokField.JBlkF_Widget_Width:='11';
+            If iVal(JBlokField.rJBlokField.JBlkF_Widget_Height)<1    Then JBlokField.rJBlokField.JBlkF_Widget_Height:='1';
+
+
+            writeln('-=-=-= ',garJVhostLight[Context.i4VHost].saSipURL);
+            WidgetPhone(
+              Context,
+              saDetailWidgetSNRName,
+              JBlokField.saCaption,
+              saSNRStr(
+                saSNRStr(
+                  saSNRSTR(
+                    garJVhostLight[Context.i4VHost].saSipURL,
+                    '[@PHONENUMBER@]',JBlokField.saValue
+                  ),
+                  '[@SIPEXTEN@]',
+                  Context.rJUser.JUser_SIP_Exten
+                ),
+                '[@SIPPASS@]',
+                Context.rJUser.JUser_SIP_Pass
+              ),
+              JBlokField.saValue,
+              JBlokField.rJBlokField.JBlkF_Widget_MaxLength_u,
+              JBlokField.rJBlokField.JBlkF_Widget_Width,
+              bDetailEditMode,
+              grJASConfig.bDataOnRight,
+              bVal(JBlokField.rJBlokField.JBlkF_Required_b) and (not bVal(JBlokField.rJBlokField.JBlkF_ReadOnly_b)),
+              false,
+              false,
+              JBlokField.rJBlokField.JBlkF_Widget_OnBlur,
+              JBlokField.rJBlokField.JBlkF_Widget_OnChange,
+              JBlokField.rJBlokField.JBlkF_Widget_OnClick,
+              JBlokField.rJBlokField.JBlkF_Widget_OnDblClick,
+              JBlokField.rJBlokField.JBlkF_Widget_OnFocus,
+              JBlokField.rJBlokField.JBlkF_Widget_OnKeyDown,
+              JBlokField.rJBlokField.JBlkF_Widget_OnKeypress,
+              JBlokField.rJBlokField.JBlkF_Widget_OnKeyUp,
+              JBlokField.rJBlokField.JBlkF_Widget_OnSelect
+            );
+          end else
+
 
           if bIsJDTypeNumber(u2JWidgetID) or bIsJDTypeString(u2JWidgetID) or bIsJDTypeChar(u2JWidgetID) then
           begin
@@ -7337,7 +7406,7 @@ Begin
             else
             begin
               // populate list failed - bummer
-              Context.PAGESNRXDL.AppendItem_saName_N_saValue('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles)');
+              Context.PAGESNRXDL.AppendItem_saName_N_saValue('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles B)');
             end;
           end else
 
@@ -7414,12 +7483,15 @@ Begin
             end
             else
             begin
-              Context.PAGESNRXDL.AppendItem_saName_N_saValue('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles)');
+              Context.PAGESNRXDL.AppendItem_saName_N_saValue('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles C)');
             end;
-          end
-          else
+          end else
+
+
+
+
           begin
-            Context.PAGESNRXDL.AppendItem_SNRPair('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles)');
+            Context.PAGESNRXDL.AppendItem_SNRPair('[#'+saDetailWidgetSNRName+'#]','(JWidget Troubles D)');
             bPreventSaveButton:=true;
           end;
         end;
@@ -8575,6 +8647,43 @@ end;
 
 
 
+//==============================================================================
+function TJScreen.saSIP_URL_Assembled(p_saPhoneNumber: ansistring): ansistring;
+//==============================================================================
+{$IFDEF ROUTINENAMES}  var sTHIS_ROUTINE_NAME: String; {$ENDIF}
+Begin
+{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME:='saASSEMBLED_SIP_URL: ansistring'; {$ENDIF}
+{$IFDEF DEBUGLOGBEGINEND}
+  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
+{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBIN(20151130124,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{$IFDEF TRACKTHREAD}Context.JThread.TrackThread(20151130125, sTHIS_ROUTINE_NAME);{$ENDIF}
+
+  //JBlok:=TJBLOK(p_lpJBlok);
+
+
+
+  result:=
+    saSNRStr(
+      saSNRStr(
+        saSNRSTR(
+          garJVHostLight[Context.i4VHost].saSIPURL,
+          '[@PHONENUMBER@]',
+          p_saPhoneNumber
+        ),
+        '[@SIPEXTEN@]',
+        Context.rJUser.JUser_SIP_Exten
+      ),
+      '[@SIPPASS@]',
+      Context.rJUser.JUser_SIP_Pass
+    );
+
+{$IFDEF DEBUGLOGBEGINEND}
+  DebugOut(sTHIS_ROUTINE_NAME,SourceFile);
+{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}Context.JThread.DBOUT(20151130125,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+end;
+//==============================================================================
 
 
 

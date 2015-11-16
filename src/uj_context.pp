@@ -296,7 +296,7 @@ Type TCONTEXT = class
   Procedure JTrakBegin(p_DBCon: JADO_CONNECTION; p_saTable: ansistring; p_saUID: ansistring);
   //=============================================================================
   {}
-  Procedure JTrakEnd(p_saUID: ansistring);
+  Procedure JTrakEnd(p_saUID: ansistring; p_saSQL: ansistring);
   //=============================================================================
   {}
   // Renders all sorts of diagnostic information appended to HTML based output
@@ -2059,6 +2059,7 @@ var
   bKeyGood: boolean;
   u8TempOutLen: uint64;
   i: longint;
+  u8Zero: uint64;
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
 {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='TCONTEXT.JAS_SNR;';{$ENDIF}
@@ -2071,12 +2072,12 @@ Begin
   DBC:=nil;
   RS:=Nil;
   iJSecKey:=0;
-
+  u8Zero:=0;
   bPerformSNR:=false;
   //ASPrintln('In TCONTEXT.JAS_SNR');
   //ASPrintln('MIME: '+saMimeType+' SNR Flag: '+saTRUEFALSE(bPerformSNR));
   u8TempOutLen:=length(saOut);
-  if (u8TempOutLen>0) then
+  if (u8TempOutLen>u8Zero) then
   begin
     //ASPrintln('In TCONTEXT.JAS_SNR: got good length');
     //if CGIENV.HEADER.FoundItem_saName(csINET_HDR_CONTENT_TYPE,true) then
@@ -2280,6 +2281,7 @@ Var
   i8Last: int64;
   i8MainLoopIterations: uint64;
   //i8RegressIterations: uint64;
+  u8Zero: uint64;
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
 {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='TCONTEXT.saJAS_PROCESS_SNR_LIST(p_bCaseSensitive: boolean; p_saPayLoad: ansistring): ANSISTRING;';{$ENDIF}
@@ -2289,14 +2291,14 @@ Begin
 {$IFDEF DEBUGTHREADBEGINEND}JThread.DBIN(201203102249,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
 {$IFDEF TRACKTHREAD}JThread.TrackThread(201203102250, sTHIS_ROUTINE_NAME);{$ENDIF}
 
-
+  u8Zero:=0;
   u8TempPayloadLen:=length(p_saPayLoad);
   sa:=p_saPayLoad;//Cuz we chopping it and its a pointer... we do not
   // want to hack our original in this case.
 
   //XDLCOPY:=JFC_XDL.CreateCopy(self);
   //If (length(p_sa)>0) and (iItems>0) Then
-  If (u8TempPayloadLen>0) and (PAGESNRXDL.MoveFirst) Then
+  If (u8TempPayloadLen>u8Zero) and (PAGESNRXDL.MoveFirst) Then
   Begin
     //riteln('Got In ...');
     //MoveFirst;
@@ -2498,7 +2500,7 @@ end;
 
 //=============================================================================
 {}
-Procedure TCONTEXT.JTrakEnd(p_saUID: ansistring);
+Procedure TCONTEXT.JTrakEnd(p_saUID: ansistring; p_saSQL: Ansistring);
 //=============================================================================
 Var
   bOk: boolean;
@@ -2516,10 +2518,11 @@ Var
   bExistsNow: boolean;
   rJTrak: rtJTrak;
   saColPrefix: ansistring;
+  bFirstFieldSaved: boolean;
 
   {$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME: String;{$ENDIF}
 Begin
-{$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='TCONTEXT.JTrakEnd(p_saUID: ansistring);';{$ENDIF}
+{$IFDEF ROUTINENAMES}sTHIS_ROUTINE_NAME:='TCONTEXT.JTrakEnd(p_saUID: ansistring; p_saSQL: ansistring);';{$ENDIF}
 {$IFDEF DEBUGLOGBEGINEND}
   DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
 {$ENDIF}
@@ -2532,6 +2535,7 @@ Begin
     RS:=JADO_RECORDSET.Create;
     XDL:=JFC_XDL.Create;
     Final_dtWhen:=now;
+    bFirstFieldSaved:=false;
 
 
     case JTrak_u2JDType of
@@ -2645,6 +2649,10 @@ Begin
                 JTrak_When_DT             :=FormatDateTime(csDATETIMEFORMAT,Final_dtWhen);
                 JTrak_Before              :=JTrakXDL.Item_saValue;
                 JTrak_After               :=XDL.Item_saValue;
+                if not bFirstFieldSaved then
+                begin
+                  JTrak_SQL:=p_saSQL; bFirstFieldSaved:=true;
+                end;
                 saQry:=
                   'INSERT INTO jtrak ('+
                     'JTrak_JDConnection_ID,'+
@@ -2658,7 +2666,8 @@ Begin
                     'JTrak_Delete_b,'+
                     'JTrak_When_DT,'+
                     'JTrak_Before,'+
-                    'JTrak_After'+
+                    'JTrak_After,'+
+                    'JTrak_SQL'+
                   ') VALUES (' +
                     DBC.saDBMSUIntScrub(JTrak_JDConnection_ID)+','+
                     DBC.saDBMSUIntScrub(JTrak_JSession_ID    )+','+
@@ -2670,8 +2679,9 @@ Begin
                     DBC.saDBMSBoolScrub(JTrak_Modify_b       )+','+
                     DBC.saDBMSBoolScrub(JTrak_Delete_b       )+','+
                     DBC.saDBMSDateScrub(JTrak_When_DT        )+','+
-                    DBC.saDBMSScrub(JTrak_Before         )+','+
-                    DBC.saDBMSScrub(JTrak_After          )+' '+
+                    DBC.saDBMSScrub(JTrak_Before             )+','+
+                    DBC.saDBMSScrub(JTrak_After              )+','+
+                    DBC.saDBMSScrub(JTrak_SQL                )+' '+
                   ')';
               end;//with
               rs.close;

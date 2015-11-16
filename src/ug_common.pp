@@ -554,6 +554,7 @@ const cnJWidget_URL = 102;
 const cnJWidget_Email = 103;
 const cnJWidget_ComboBox = 104;
 const cnJWidget_LookupComboBox = 105;
+const cnJWidget_Phone = 106;
 //=============================================================================
 
 //=============================================================================

@@ -1,2 +1,6 @@
-mkdir c:\JegasCRM-Backup
-jegasbackup c:\JegasCRM\ c:\JegasCRM-Backup
+md b:\opt
+md b:\opt\jas
+jegasbackup c:\opt\jas\ b:\opt\jas\
+
+
+

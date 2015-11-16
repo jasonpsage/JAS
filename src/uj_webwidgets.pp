@@ -390,6 +390,41 @@ Procedure WidgetHidden(
 );
 //=============================================================================
 
+//=============================================================================
+{}
+// Creates a widget that gets inserted into outgoing web pages via the JAS
+// SNR mechanisms. So, if you make a widget named MyTest in code, then
+// whan that page is served there will be the necessary code for that widget
+// in the SNR list. When your outout is about to leave the server, any
+// instance of [#MyTest#] will be replaced by the code created by this function.
+// Additionally, if this widget is placed correctly, then when the user submits
+// their page back the the server, you will have your MyTest's submitted value
+// in the incoming post or get variables from the user.
+Procedure WidgetPhone(
+  p_Context: TCONTEXT;
+  p_saWidgetName: AnsiString;
+  p_saWidgetCaption: AnsiString;
+  p_saSIPURL: AnsiString;
+  p_saValue: ansistring;
+  p_saMaxLen: AnsiString;
+  p_saSize: AnsiString;
+  p_bEditMode: Boolean;
+  p_bDataOnRight: Boolean;
+  p_bRequired: boolean;
+  p_bFilterTools: boolean;
+  p_bFilterNot: boolean;
+  p_saOnBlur: ansistring;
+  p_saOnChange: ansistring;
+  p_saOnClick: ansistring;
+  p_saOnDblClick: ansistring;
+  p_saOnFocus: ansistring;
+  p_saOnKeyDown: ansistring;
+  p_saOnKeypress: ansistring;
+  p_saOnKeyUp: ansistring;
+  p_saOnSelect: ansistring
+);
+//=============================================================================
+
 
 
 
@@ -2041,6 +2076,7 @@ Begin
     if (saLeftStr(saUP,7)<>'HTTP://') and
        (saLeftStr(saUP,8)<>'HTTPS://') and
        (saLeftStr(saUP,6)<>'FTP://') and
+       (saLeftStr(saUP,6)<>'TEL://') and
        (saLeftStr(saUP,1)<>'/') then
     begin
       p_saDefaultValue:='http://'+p_saDefaultValue;
@@ -2346,6 +2382,207 @@ Begin
 {$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBOUT(201203102711,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
 end;
 //=============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+//=============================================================================
+Procedure WidgetPhone(
+  p_Context: TCONTEXT;
+  p_saWidgetName: AnsiString;
+  p_saWidgetCaption: AnsiString;
+  p_saSIPURL: AnsiString;
+  p_saValue: ansistring;
+  p_saMaxLen: AnsiString;
+  p_saSize: AnsiString;
+  p_bEditMode: Boolean;
+  p_bDataOnRight: Boolean;
+  p_bRequired: boolean;
+  p_bFilterTools: boolean;
+  p_bFilterNot: boolean;
+  p_saOnBlur: ansistring;
+  p_saOnChange: ansistring;
+  p_saOnClick: ansistring;
+  p_saOnDblClick: ansistring;
+  p_saOnFocus: ansistring;
+  p_saOnKeyDown: ansistring;
+  p_saOnKeypress: ansistring;
+  p_saOnKeyUp: ansistring;
+  p_saOnSelect: ansistring
+);
+//=============================================================================
+Var
+  saResult: AnsiString;
+  saUP: ansistring;
+  sa: ansistring;
+{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME: String; {$ENDIF}
+Begin
+{$IFDEF ROUTINENAMES}  sTHIS_ROUTINE_NAME:='WidgetURL'; {$ENDIF}
+
+{$IFDEF DEBUGLOGBEGINEND}
+  DebugIn(sTHIS_ROUTINE_NAME,SourceFile);
+{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBIN(201511132129,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+{$IFDEF TRACKTHREAD}p_Context.JThread.TrackThread(201511132130, sTHIS_ROUTINE_NAME);{$ENDIF}
+
+
+  JASPrintLn('p_saWidgetName            : '+p_saWidgetName          );
+  JASPrintLn('p_saWidgetCaption         : '+p_saWidgetCaption       );
+  JASPrintLn('p_saSIPURL                : '+p_saSIPURL              );
+  JASPrintln('p_saValue                 : '+p_saValue );
+  JASPrintLn('p_saMaxLen                : '+p_saMaxLen              );
+  JASPrintLn('p_saSize                  : '+p_saSize                );
+  JASPrintLn('p_bEditMode: Boolean      : '+saTrueFalse(p_bEditMode));
+  JASPrintLn('p_bDataOnRight: Boolean   : '+saTrueFalse(p_bDataOnRight));
+  JASPrintLn('p_bRequired: boolean      : '+saTrueFalse(p_bRequired   ));
+  JASPrintLn('p_bFilterTools: boolean   : '+saTrueFalse(p_bFilterTools));
+  JASPrintLn('p_bFilterNot: boolean     : '+saTrueFalse(p_bFilterNot));
+  JASPrintLn('p_saOnBlur                : '+p_saOnBlur              );
+  JASPrintLn('p_saOnChange              : '+p_saOnChange            );
+  JASPrintLn('p_saOnClick               : '+p_saOnClick             );
+  JASPrintLn('p_saOnDblClick            : '+p_saOnDblClick          );
+  JASPrintLn('p_saOnFocus               : '+p_saOnFocus             );
+  JASPrintLn('p_saOnKeyDown             : '+p_saOnKeyDown           );
+  JASPrintLn('p_saOnKeypress            : '+p_saOnKeypress          );
+  JASPrintLn('p_saOnKeyUp               : '+p_saOnKeyUp             );
+  JASPrintLn('p_saOnSelect              : '+p_saOnSelect            );
+
+
+
+  sa:='';
+  clearnullevents(
+    p_saOnBlur,
+    p_saOnChange,
+    p_saOnClick,
+    p_saOnDblClick,
+    p_saOnFocus,
+    p_saOnKeyDown,
+    p_saOnKeypress,
+    p_saOnKeyUp
+  );
+  p_saOnSelect:=trim(p_saOnSelect);if p_saOnSelect='NULL' then p_saOnSelect:='';
+
+  if not p_bFilterTools then if trim(p_saValue)='NULL' then p_saValue:='';
+
+  saResult:='<table>';
+  saUP:=upcase(trim(p_saValue));
+  //if (not p_bfilterTools) and (saUP<>'NULL') and (saUP<>'') then
+  //begin
+  //  if (saLeftStr(saUP,7)<>'HTTP://') and
+  //     (saLeftStr(saUP,8)<>'HTTPS://') and
+  //     (saLeftStr(saUP,6)<>'FTP://') and
+  //     (saLeftStr(saUP,6)<>'TEL://') and
+  //     (saLeftStr(saUP,1)<>'/') then
+  //  begin
+  //    p_saDefaultValue:='http://'+p_saDefaultValue;
+  //  end;
+  //end;
+
+  saResult+='<tr><td>';
+  If not p_bEditMode Then saResult+='<u>';
+  if (not p_bfilterTools) and (saUP<>'NULL') then
+  begin
+    saResult+='<a href="'+p_saSIPURL+'" target="_blank" title="Dial">'+p_saWidgetCaption+'</a>';
+  end
+  else
+  begin
+    saResult+=saEncodeURI(p_saWidgetCaption);
+  end;
+
+  If not p_bEditMode Then saResult+='</u>';
+  if (p_bRequired) then
+  begin
+    saResult+='<span name="'+p_saWidgetName+'rf" id="'+
+      p_saWidgetName+'rf" >'+
+      '<font color="red" style="font: strong">&nbsp;*&nbsp;</font>'+
+      '</span>';
+  end;
+  If not p_bDataOnRight Then saResult+='</td></tr>';
+  If not p_bDataOnRight Then saResult+='<tr>';
+  If p_bEditMode Then
+  Begin
+    saResult +='<td>';
+
+    saresult+=csCRLF+'<script language="javascript">'+csCRLF;
+    if p_saOnBlur    <>'' then saResult+='function '+p_saWidgetName+'_OnBlur(){'    +csCRLF+p_saOnBlur    +csCRLF+'}'+csCRLF;
+    if p_saOnChange  <>'' then saResult+='function '+p_saWidgetName+'_OnChange(){'  +csCRLF+p_saOnChange  +csCRLF+'}'+csCRLF;
+    if p_saOnClick   <>'' then saResult+='function '+p_saWidgetName+'_OnClick(){'   +csCRLF+p_saOnClick   +csCRLF+'}'+csCRLF;
+    if p_saOnDblClick<>'' then saResult+='function '+p_saWidgetName+'_OnDblClick(){'+csCRLF+p_saOnDblClick+csCRLF+'}'+csCRLF;
+    if p_saOnFocus   <>'' then saResult+='function '+p_saWidgetName+'_OnFocus(){'   +csCRLF+p_saOnFocus   +csCRLF+'}'+csCRLF;
+    if p_saOnKeyDown <>'' then saResult+='function '+p_saWidgetName+'_OnKeyDown(){' +csCRLF+p_saOnKeyDown +csCRLF+'}'+csCRLF;
+    if p_saOnKeypress<>'' then saResult+='function '+p_saWidgetName+'_OnKeypress(){'+csCRLF+p_saOnKeypress+csCRLF+'}'+csCRLF;
+    if p_saOnKeyUp   <>'' then saResult+='function '+p_saWidgetName+'_OnKeyUp(){'   +csCRLF+p_saOnKeyUp   +csCRLF+'}'+csCRLF;
+    if p_saOnSelect  <>'' then saResult+='function '+p_saWidgetName+'_OnSelect(){'  +csCRLF+p_saOnSelect  +csCRLF+'}'+csCRLF;
+    saresult+=csCRLF+'</script>'+csCRLF;
+
+    if p_bfiltertools then saresult+='<table><tr><td>';
+  End
+  Else
+  Begin
+    saresult+='<td class="rodata" ';
+    If length(trim(p_saValue))=0 Then
+    Begin
+      saResult +='height="20">';
+    End
+    Else
+    Begin
+      saResult+='>';
+      if length(p_saValue)>40 then
+      begin
+        sa+=saLeftStr(p_saValue,40)+'...';
+      end
+      else
+      begin
+        sa+=p_saValue;
+      end;
+      saResult+='<a target="_blank" href="'+p_saSIPURL+'" title="Dial" />'+sa+'</a>';
+    End;
+  End;
+  saResult+='<input type="';
+  If p_bEditMode Then saResult+='text" ' Else saResult+='hidden" ';
+  If p_saMaxLen<>'' Then saResult+='maxlength="'+p_saMaxLen+'" ';
+  If p_saSize<>'' Then saResult+='size="'+p_saSize+'" ';
+  saResult+='name="'+p_saWidgetName+'" id="'+p_saWidgetName+'" value="'+saSNRStr(p_saValue,'"','&quot;')+'" ';
+  if p_bEditMode then
+  begin
+    if p_saOnBlur    <>'' then saResult+='onblur="return '+p_saWidgetName+'_OnBlur();" ';
+    if p_saOnChange  <>'' then saResult+='onchange="return '+p_saWidgetName+'_OnChange();" ';
+    if p_saOnClick   <>'' then saResult+='onclick="return '+p_saWidgetName+'_OnClick();" ';
+    if p_saOnDblClick<>'' then saResult+='ondblclick="return '+p_saWidgetName+'_OnDblClick();" ';
+    if p_saOnFocus   <>'' then saResult+='onfocus="return '+p_saWidgetName+'_OnFocus();" ';
+    if p_saOnKeyDown <>'' then saResult+='onkeydown="return '+p_saWidgetName+'_OnKeyDown();" ';
+    if p_saOnKeypress<>'' then saResult+='onkeypress="return '+p_saWidgetName+'_OnKeypress();" ';
+    if p_saOnKeyUp   <>'' then saResult+='onkeyup="return '+p_saWidgetName+'_OnKeyUp();" ';
+    if p_saOnSelect  <>'' then saResult+='onselect="return '+p_saWidgetName+'_OnSelect();" ';
+  end;
+  saresult+=' />';
+  if p_bEditMode and p_bFilterTools then
+  begin
+    saResult+='</td><td>'+saFilterTool_AndNot_Toggle(p_saWidgetName, p_bfilterNOT)+'</td></tr></table>';
+  end;
+  saResult+='</td></tr>';
+  saResult+='</table>';
+  p_Context.PAGESNRXDL.AppendItem_SNRPair('[#'+p_saWidgetName+'#]',saResult);
+{$IFDEF DEBUGLOGBEGINEND}
+  DebugOUT(sTHIS_ROUTINE_NAME,SourceFile);
+{$ENDIF}
+{$IFDEF DEBUGTHREADBEGINEND}p_Context.JThread.DBOUT(201511132131,sTHIS_ROUTINE_NAME,SOURCEFILE);{$ENDIF}
+End;
+//=============================================================================
+
+
+
+
+
+
 
 
 //=============================================================================
