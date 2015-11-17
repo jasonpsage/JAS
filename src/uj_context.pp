@@ -663,8 +663,8 @@ Begin
                 ' lpMySQLResults:'+inttostR(UINT(p_JADOR.lpMySQLResults))+
                 ' lpMySQLPtr:'+inttostR(UINT(p_JADOR.lpMySQLPtr))+
                 ' lpMySQLHost:'+inttostR(UINT(p_JADOR.lpMySQLHost))+
-                ' lpMySQLUser:'+inttostR(UINT(p_JADOR.lpMySQLUser))+
-                ' lpMySQLPasswd:'+inttostR(UINT(p_JADOR.lpMySQLPasswd))+
+                //' lpMySQLUser:'+inttostR(UINT(p_JADOR.lpMySQLUser))+
+                //' lpMySQLPasswd:'+inttostR(UINT(p_JADOR.lpMySQLPasswd))+
                 ' aRowBuf:'+inttostR(UINT(p_JADOR.aRowBuf))+
                 ' u4Columns:'+inttostR(p_JADOR.u4Columns)+
                 ' u4Rows:'+inttostR(p_JADOR.u4Rows)+

@@ -1329,8 +1329,8 @@ Type JADO_RECORDSET = Class(JFC_XDL)
   lpMySQLResults : PMYSQL_RES;  
   lpMySQLPtr: pointer;  
   lpMySQLHost:pointer;
-  lpMySQLUser:pointer;
-  lpMySQLPasswd:pointer;
+  sMySQLUser: string[32];
+  sMySQLPasswd:string[32];
   
   aRowBuf: MYSQL_ROW;//TMySQL_ROW;
   u4Columns: dword;
@@ -7462,6 +7462,7 @@ Var
   //lp: pointer;
   sa:AnsiString;
 
+  {$IFDEF ODBC}
   saUpCase: ansistring;
   SQL_Catalog: ANSISTRING;
   SQL_Schema: ansistring;
@@ -7478,6 +7479,7 @@ Var
   SQL_Unique: word;
   SQL_Reserved: word;
   saODBCCommandType: ansistring;
+  {$ENDIF}
 
   iRetries: longint;
   u8MySqlResult: uint64;
@@ -7520,10 +7522,12 @@ Begin
   Begin
     //JLog(cnLog_DEBUG,0,'Caller: '+p_saCaller+' About to try mysql_real_connect with Server:' + ActiveConnection.saMyServer +
     //  ' Username:'+ActiveConnection.saMyUserName+' Password:'+ActiveConnection.saMyPassword,sourcefile);
-    If length(ActiveConnection.saMyServer)=0 Then lpMySQLHost:=nil else lpMySQLHost:=pointer(ActiveConnection.saMyServer);
-    If length(ActiveConnection.saMyUserName)=0 Then lpMySQLUser:=nil Else lpMySQLUser:=pointer(ActiveConnection.saMyUserName);
-    If length(ActiveConnection.saMyPassword)=0 Then lpMySQLPasswd:=nil Else lpMySQLPasswd:=pointer(ActiveConnection.saMyPassword);
+    //writeln('Caller: '+inttostr(p_u8Caller)+' About to try mysql_real_connect with Server:' + ActiveConnection.saMyServer +
+    //  ' Username:'+ActiveConnection.saMyUserName+' Password:'+ActiveConnection.saMyPassword,sourcefile);
 
+    If length(ActiveConnection.saMyServer)=0 Then lpMySQLHost:=nil else lpMySQLHost:=pointer(ActiveConnection.saMyServer);
+    //If length(ActiveConnection.saMyUserName)=0 Then MySQLUser:=nil Else lpMySQLUser:=pointer(ActiveConnection.saMyUserName);
+    //If length(ActiveConnection.saMyPassword)=0 Then lpMySQLPasswd:=nil Else lpMySQLPasswd:=pointer(ActiveConnection.saMyPassword);
     //lpMySQLPtr:=mysql_real_connect(
     //  PMySQL(@ActiveConnection.rMySql),
     //  lpMySQLHost,
@@ -7533,14 +7537,25 @@ Begin
     //  0,
     //  nil,
     //  0);
+
+
+{
+  saMyUsername: AnsiString;//< GENERIC - Used by Open Connection
+  saMyPassword: AnsiString;//< GENERIC - Used by Open Connection
+  saMyConnectString: AnsiString;//< GENERIC - Used by Open Connection
+  saMyDatabase: AnsiString;//< GENERIC - Used by Open Connection
+  saMyServer: AnsiString;//< GENERIC - Used by Open Connection
+  u4MyPort: cardinal;
+}
+
     iRetries:=0;
     repeat
       mysql_init(@self.rMySql);
       lpMySQLPtr:=mysql_real_connect(
         PMySQL(@self.rMySql),
         lpMySQLHost,
-        lpMySQLUser,
-        lpMySQLPasswd,
+        pointer(ActiveConnection.saMyUsername),//lpMySQLUser,
+        pointer(ActiveConnection.saMyPAssword),//lpMySQLPasswd,
         nil,
         ActiveConnection.u4MyPort,
         nil,

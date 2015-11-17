@@ -2245,7 +2245,7 @@ Begin
               
     
     //bOkToLog:=true;
-    writeln('201501180914 - Ok to Log?: ',saTrueFalse(bOkToLog),' Log Type:',p_rIOAppendLog.u2LogType_ID,' LogLevel: '+inttostr(grJASConfig.iLogLevel));
+    //riteln('201501180914 - Ok to Log?: ',saTrueFalse(bOkToLog),' Log Type:',p_rIOAppendLog.u2LogType_ID,' LogLevel: '+inttostr(grJASConfig.iLogLevel));
     //riteln('ENTRY:'+saIOAppendLogColumnData(p_rIOAppendLog)+csEOL);
     
     

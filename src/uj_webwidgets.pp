@@ -2434,26 +2434,26 @@ Begin
 {$IFDEF TRACKTHREAD}p_Context.JThread.TrackThread(201511132130, sTHIS_ROUTINE_NAME);{$ENDIF}
 
 
-  JASPrintLn('p_saWidgetName            : '+p_saWidgetName          );
-  JASPrintLn('p_saWidgetCaption         : '+p_saWidgetCaption       );
-  JASPrintLn('p_saSIPURL                : '+p_saSIPURL              );
-  JASPrintln('p_saValue                 : '+p_saValue );
-  JASPrintLn('p_saMaxLen                : '+p_saMaxLen              );
-  JASPrintLn('p_saSize                  : '+p_saSize                );
-  JASPrintLn('p_bEditMode: Boolean      : '+saTrueFalse(p_bEditMode));
-  JASPrintLn('p_bDataOnRight: Boolean   : '+saTrueFalse(p_bDataOnRight));
-  JASPrintLn('p_bRequired: boolean      : '+saTrueFalse(p_bRequired   ));
-  JASPrintLn('p_bFilterTools: boolean   : '+saTrueFalse(p_bFilterTools));
-  JASPrintLn('p_bFilterNot: boolean     : '+saTrueFalse(p_bFilterNot));
-  JASPrintLn('p_saOnBlur                : '+p_saOnBlur              );
-  JASPrintLn('p_saOnChange              : '+p_saOnChange            );
-  JASPrintLn('p_saOnClick               : '+p_saOnClick             );
-  JASPrintLn('p_saOnDblClick            : '+p_saOnDblClick          );
-  JASPrintLn('p_saOnFocus               : '+p_saOnFocus             );
-  JASPrintLn('p_saOnKeyDown             : '+p_saOnKeyDown           );
-  JASPrintLn('p_saOnKeypress            : '+p_saOnKeypress          );
-  JASPrintLn('p_saOnKeyUp               : '+p_saOnKeyUp             );
-  JASPrintLn('p_saOnSelect              : '+p_saOnSelect            );
+  //ASPrintLn('p_saWidgetName            : '+p_saWidgetName          );
+  //ASPrintLn('p_saWidgetCaption         : '+p_saWidgetCaption       );
+  //ASPrintLn('p_saSIPURL                : '+p_saSIPURL              );
+  //ASPrintln('p_saValue                 : '+p_saValue );
+  //ASPrintLn('p_saMaxLen                : '+p_saMaxLen              );
+  //ASPrintLn('p_saSize                  : '+p_saSize                );
+  //ASPrintLn('p_bEditMode: Boolean      : '+saTrueFalse(p_bEditMode));
+  //ASPrintLn('p_bDataOnRight: Boolean   : '+saTrueFalse(p_bDataOnRight));
+  //ASPrintLn('p_bRequired: boolean      : '+saTrueFalse(p_bRequired   ));
+  //ASPrintLn('p_bFilterTools: boolean   : '+saTrueFalse(p_bFilterTools));
+  //ASPrintLn('p_bFilterNot: boolean     : '+saTrueFalse(p_bFilterNot));
+  //ASPrintLn('p_saOnBlur                : '+p_saOnBlur              );
+  //ASPrintLn('p_saOnChange              : '+p_saOnChange            );
+  //ASPrintLn('p_saOnClick               : '+p_saOnClick             );
+  //ASPrintLn('p_saOnDblClick            : '+p_saOnDblClick          );
+  //ASPrintLn('p_saOnFocus               : '+p_saOnFocus             );
+  //ASPrintLn('p_saOnKeyDown             : '+p_saOnKeyDown           );
+  //ASPrintLn('p_saOnKeypress            : '+p_saOnKeypress          );
+  //ASPrintLn('p_saOnKeyUp               : '+p_saOnKeyUp             );
+  //ASPrintLn('p_saOnSelect              : '+p_saOnSelect            );
 
 
 

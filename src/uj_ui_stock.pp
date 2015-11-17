@@ -728,8 +728,8 @@ Begin
               saJADO_RECORDSET+='lpMySQLResults:<b>'+saSTR(UINT(rs.lpMySQLResults))+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='lpMySQLPTR:<b>'+saSTR(UINT(rs.lpMySQLPTR))+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='lpMySQLHost:<b>'+saSTR(UINT(rs.lpMySQLHost))+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='lpMySQLUser:<b>'+saSTR(UINT(rs.lpMySQLUser))+'</b><br />'+csCRLF;
-              saJADO_RECORDSET+='lpMySQLPasswd:<b>'+saSTR(UINT(rs.lpMySQLPasswd))+'</b><br />'+csCRLF;
+              //saJADO_RECORDSET+='lpMySQLUser:<b>'+saSTR(UINT(rs.lpMySQLUser))+'</b><br />'+csCRLF;
+              //saJADO_RECORDSET+='lpMySQLPasswd:<b>'+saSTR(UINT(rs.lpMySQLPasswd))+'</b><br />'+csCRLF;
               saJADO_RECORDSET+='aRowBuf: <b>(TMySQLRow)'+saSTR(UINT(rs.aRowBuf))+'</b><br />'+csCRLF;
             End;
 
