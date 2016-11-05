@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <title>Loading...</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2011 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2011 -->
+
+  <!-- BEGIN - JAS WIDGET STUFF -->
+  <!-- datepicker start-->
+  <style type="text/css">
+
+   <!-- -->
+  </style>
+  <!-- datepicker end-->
+  <script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>widgets/datetimepicker/datetimepicker_css.js"></script>
+  <script type="text/javascript" src="/jws/freemind/flashobject.js"></script>
+  <!-- END - JAS WIDGET STUFF -->
+
+
+  <!-- BEGIN - THEME RELATED -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <script type="text/javascript"        src= "<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/script.js"></script>
+  <link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.css" type="text/css" media="screen" />
+  <!--[if IE 6]><link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.ie6.css" type="text/css" media="screen" /><![endif]-->
+  <!--[if IE 7]><link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.ie7.css" type="text/css" media="screen" /><![endif]-->
+  <link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/jas_custom.css" type="text/css" media="screen" />
+  <!-- END - THEME RELATED -->
+
+
+  <!-- BEGIN - JAS STUFF -->
+  <link rel="stylesheet" href="<? echo $JASDIRWEBSHARE; ?>css/jas.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>script/jas_customizations.js"></script>
+  <script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>script/jegas.js"></script>
+  <script type='text/javascript' src='<? echo $JASDIRWEBSHARE; ?>iwf/iwf_complete.js'></script>
+  <!-- END - JAS STUFF -->
+
+
+<!-- JASCID: 201101132102 -->
+</head>
+<body onload="PageOnLoad('[@PAGETITLE@]');" >
+<div id="jas-page-background-simple-gradient"><div id="jas-page-background-gradient"></div></div>
+<div id="jas-page-background-glare"><div id="jas-page-background-glare-image"></div></div>
+<div id="jas-main">
+  <div class="jas-sheet">
+    <div class="jas-sheet-tl"></div>
+    <div class="jas-sheet-tr"></div>
+    <div class="jas-sheet-bl"></div>
+    <div class="jas-sheet-br"></div>
+    <div class="jas-sheet-tc"></div>
+    <div class="jas-sheet-bc"></div>
+    <div class="jas-sheet-cl"></div>
+    <div class="jas-sheet-cr"></div>
+    <div class="jas-sheet-cc"></div>
+      <div class="jas-sheet-body">
+        <div id="jas-toggle-header">[@JASTHEMEHEADER@]</div><!--<div class="jas-nav"></div>-->
+
+<!-- JASCID: 201101132102 -->
+<div class="jas-content-layout">
+<!-- JASCID: 201101132102 -->
+<!--SECTION MAIN BEGIN-->
+<!-- JASCID: 201101132102 -->
+
+  <br />
+  <div class="jas-post">
+    <div class="jas-post-tl"></div>
+    <div class="jas-post-tr"></div>
+    <div class="jas-post-bl"></div>
+    <div class="jas-post-br"></div>
+    <div class="jas-post-tc"></div>
+
+    <div class="jas-post-bc"></div>
+    <div class="jas-post-cl"></div>
+    <div class="jas-post-cr"></div>
+    <div class="jas-post-cc"></div>
+    <div class="jas-post-body">
+      <div class="jas-post-inner jas-article">
+        <h2 class="jas-postheader"><a href="#" title="Members" ><img class="image" src="/jws/img/icon/themes/CrystalClear/32/apps/utilities-terminal.png" title="" />&nbsp;[@PAGETITLE@]</a></h2>        <div class="jas-postcontent">
+          <!-- article-content -->
+
+          <p></p>
+          <div class="cleared"></div>
+          <!--<div class="jas-content-layout overview-table">-->
+            <!--<div class="jas-content-layout-row">-->
+          		<!--<div class="jas-layout-cell">-->
+                <!--<div class="overview-table-inner">-->
+
+  <span>Please allow time for mind map to load. Notice the hidden controls just under this text when you hover.</span><br />
+	<div id="flashcontent" onmouseover="javascript: document.visorFreeMind.focus();">
+		 Flash plugin or Javascript are turned off.
+		 Activate both  and reload to view the mindmap
+	</div>
+	<script type="text/javascript">
+		// <![CDATA[
+		// for allowing using http://.....?mindmap.mm mode
+		//function getMap(map){
+		//  var result=map;
+		//  var loc=document.location+'';
+		//  if(loc.indexOf(".mm")>0 && loc.indexOf("?")>0){
+		//	result=loc.substring(loc.indexOf("?")+1);
+		//  }
+		//  return result;
+		//}
+		var fo = new FlashObject(sMainURL+"jws/freemind/visorFreemind.swf", "visorFreeMind", "100%", "400px", 6, "#9999ff");
+		fo.addParam("quality", "high");
+		fo.addParam("bgcolor", "#aaaaaa");
+		fo.addVariable("openUrl", "_blank");
+		fo.addVariable("startCollapsedToLevel","3");
+		fo.addVariable("maxNodeWidth","200");
+		fo.addVariable("mainNodeShape","elipse");
+		fo.addVariable("justMap","false");
+
+    fo.addVariable("initLoadFile",sMainURL+"jws/freemind/freemind.mm");
+		/*fo.addVariable("initLoadFile",sMainURL+"jas/jegas/?action=GetNoteSecure&decodeuri=no&uid=[@JNote_JNotes_UID@]");*/
+
+    fo.addVariable("defaultToolTipWordWrap",200);
+		fo.addVariable("offsetX","left");
+		fo.addVariable("offsetY","top");
+		fo.addVariable("buttonsPos","top");
+		fo.addVariable("min_alpha_buttons",20);
+		fo.addVariable("max_alpha_buttons",100);
+		fo.addVariable("scaleTooltips","false");
+		fo.write("flashcontent");
+		// ]]>
+	</script>
+
+
+
+                <!--</div>-->
+          		<!--</div>--><!-- end cell -->
+            <!--</div>--><!-- end row -->
+          <!--</div>--><!-- end table -->
+          <!-- /article-content -->
+        </div>
+        <div clas="cleared"></div>
+      </div>
+      <div class="cleared"></div>
+
+    </div>
+  </div>
+</div><br />
+
+<!--SECTION MAIN END-->
+<!-- JASCID: 201101132102 -->
+
+</div>
+      <div id="jas-quicklinks" class="jas-quicklinks"></div>
+      </div>
+    </div>
+    [@JASSIG@]
+  </div>
+</div>
+</body>
+</html>
+
+

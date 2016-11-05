@@ -1,0 +1,300 @@
+<html><body>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012271707 sys -->
+
+
+
+  <!--SECTION SCREEN BEGIN-->
+  <!-- SECTION SCREEN ./templates/en/screenminigrid.jas -->
+  <div id="container">
+	  <form name="JASFORM" id="JASFORM" method="POST" action=".?JSID=[@JSID@]">
+	    <input type=hidden name="SCREENID" value="[@SCREENID@]">
+	    <input type="hidden" name="button" id="button" value="">
+	    <input type="hidden" name="filtershowing" id="filtershowing" value="[@FILTERSHOWING@]">
+      <input type="hidden" name="mini" id="mini" value="true">
+      <script>
+        var bShowing= ![@FILTERSHOWING@];
+        function GrayOut(){
+          var el=document.getElementById('container');
+          el.style.filter='alpha(opacity=50);';
+          el.style.opacity='.50';
+        };
+	      function SubmitForm(){GrayOut();document.getElementById("export").value=""; document.getElementById("JASFORM").submit();};
+	      function JButton(p_s){document.getElementById("button").value=p_s;SubmitForm();};
+	      function ToggleFilter(){
+	        if(bShowing){
+	          bShowing=false;
+	          var el = document.getElementById('filter');
+	          el.style.display='none';
+	          document.getElementById('filtershowing').value="false";
+	          document.getElementById('filterimage').src="<? echo $JASDIRICONTHEME; ?>32/actions/zoom-in.png";
+	        }else{
+	          bShowing=true;
+	          var el = document.getElementById('filter');
+	          el.style.display='';
+	          document.getElementById('filtershowing').value="true";
+	          document.getElementById('filterimage').src="<? echo $JASDIRICONTHEME; ?>32/actions/zoom-out.png";
+	        };
+
+	      };
+        function navfirst(){document.getElementById("gridnav").value="firstpage"; SubmitForm();};
+        function navback(){document.getElementById("gridnav").value="backpage"; SubmitForm();};
+        function navnext(){document.getElementById("gridnav").value="nextpage"; SubmitForm();};
+        function navlast(){document.getElementById("gridnav").value="lastpage"; SubmitForm();};
+        function exportpage(p_iPage,p_sExportMode){document.getElementById("exportmode").value=p_sExportMode;document.getElementById("export").value=p_iPage; document.getElementById("JASFORM").submit();};
+        function exportall(p_sExportMode){
+          var bConfirm = true;
+          if(parseInt('[@RTOTALRECORDS@]')>3000){
+            bConfirm=confirm('This resultset is large and may timeout. Would you like the system to process '+
+              'this export in the background job queue? Your results will show up as a task assigned to '+
+              'you with a download link.');
+            if(bConfirm){p_sExportMode=p_sExportMode+'_BACKGROUND';};
+          };
+          document.getElementById("exportmode").value=p_sExportMode;
+          document.getElementById("export").value="ALL";
+          if(bConfirm){document.getElementById("JASFORM").submit();};
+        };
+      </script>
+      <input type=hidden name="rtotalpages" id="rtotalpages" value="[@RTOTALPAGES@]" />
+
+	    <table width="100%">
+	    <tr><td>[$SCREENHEADER$]</td></tr>
+	    <tr><td><div id="filter" style="display: none;" >[$BLOKFILTERSECTION$]</div></td></tr>
+	    <tr><td>[$BLOKGRIDSECTION$]</td></tr>
+      </table>
+	  </form>
+  </div>
+  <script>try{edit_init();}catch(eX){};</script>
+  <!--SECTION SCREEN END-->
+
+
+
+
+
+
+  <!--SECTION SCREENHEADER BEGIN-->
+  <!-- SECTION SCREENHEADER ./templates/en/screenminigrid.jas -->
+  <div class="jas-layout-row jas-content">
+    <div class="jas-post">
+      <div class="jas-post-tl"></div>
+      <div class="jas-post-tr"></div>
+      <div class="jas-post-bl"></div>
+      <div class="jas-post-br"></div>
+      <div class="jas-post-tc"></div>
+
+      <div class="jas-post-bc"></div>
+      <div class="jas-post-cl"></div>
+      <div class="jas-post-cr"></div>
+      <div class="jas-post-cc"></div>
+      <div class="jas-post-body">
+        <table>
+        <tr>
+          <td>
+            [@SCREENCAPTION@]<font size="1"><input type="checkbox" name="EDITSCREEN" [@EDITSCREEN@] onclick="SubmitForm();" />Designer Mode &nbsp;</font>
+            Results Page [@RPAGE@] of [@RTOTALPAGES@]. Total Records: [@RTOTALRECORDS@]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <a title="First" href="javascript: navfirst();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/start.png" title="Move First Button" /></a>
+            <a title="Previous" href="javascript: navback();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/back.png" title="Move Previous Button" /></a>
+            <a title="Next" href="javascript: navnext();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/forward.png" title="Move Next Button" /></a>
+            <a title="Last" href="javascript: navlast();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/end.png" title="Move Last Button" /></a>
+            <input type="hidden" name="gridnav" id="gridnav" value="" />
+            <input type=hidden name="gridnav" id="gridnav" value="" />
+            <input type=hidden name="export" id="export" value="" />
+            <input type=hidden name="exportmode" id="exportmode" value="" />
+            <span>Page:<input type=text maxlength=6 size=6 name="rpage" id="rpage" value="[@RPAGE@]" onkeypress="return goodchars(event,'0123456789');"></span>
+            <a title="Move to specific page" href="javascript: SubmitForm();"><img class="image" valign=absmiddle src="<? echo $JASDIRICONTHEME; ?>32/actions/end.png" title="Move to specific page button" /></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a title="Export current page as CSV" href="javascript: exportpage([@RPAGE@],'CSV');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/view-pane-detailed.png" title="Export current page as CSV" /></a>
+            <a title="Export all as CSV" href="javascript: exportall('CSV');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/view-pane-icon.png" title="Export ALL as CSV" /></a>
+            <a title="Export current page as HTML" href="javascript: exportpage([@RPAGE@],'TABULAR');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/document-save.png" title="Export current page as HTML" /></a>
+            <a title="Export all as HTML" href="javascript: exportall('TABULAR');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/document-save-all.png" title="Export ALL as HTML" /></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a title="Show/Hide Filtering Tools" href="javascript: ToggleFilter();"><img class="image" id="filterimage" src="<? echo $JASDIRICONTHEME; ?>32/actions/zoom-in.png" /><span class="jasbutspan">Filter</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: SubmitForm();"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/system-search.png" class="image"><span class="jasbutspan">&nbsp;Find</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: ResetForm();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/document-revert.png" class="image"><span class="jasbutspan">&nbsp;Reset</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: NewWindow('[@ALIAS@].?SCREENID=152&JSID=[@JSID@]')"><img src="/jws/img/icon/themes/CrystalClear/32/actions/window-new.png" class="image"><span class="jasbutspan">&nbsp;Add New</span></a>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br />
+  <!--SECTION SCREENHEADER END-->
+  
+  <!--SECTION SCREENHEADERADMIN BEGIN-->
+  <!-- SECTION SCREENHEADERADMIN ./templates/en/screenminigrid.jas -->
+  <div class="jas-layout-row jas-content">
+    <div class="jas-post">
+      <div class="jas-post-tl"></div>
+      <div class="jas-post-tr"></div>
+      <div class="jas-post-bl"></div>
+      <div class="jas-post-br"></div>
+      <div class="jas-post-tc"></div>
+
+      <div class="jas-post-bc"></div>
+      <div class="jas-post-cl"></div>
+      <div class="jas-post-cr"></div>
+      <div class="jas-post-cc"></div>
+      <div class="jas-post-body">
+        <table>
+        <tr>
+          <td>
+            [@SCREENCAPTION@]<font size="1"><input type="checkbox" name="EDITSCREEN" [@EDITSCREEN@] onclick="SubmitForm();" />Designer Mode &nbsp;</font><a title="Edit Screen" href="javascript: edit_init(); NewWindow('?UID=[@SCREENADMIN_JSCRN_JSCREEN_UID@]&Screen='+encodeURIComponent('jscreen Data'));"><img src="<? echo $JASDIRICONTHEME; ?>16/actions/edit.png" /></a>
+            Results Page [@RPAGE@] of [@RTOTALPAGES@]. Total Records: [@RTOTALRECORDS@]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <a title="First" href="javascript: navfirst();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/start.png" title="Move First Button" /></a>
+            <a title="Previous" href="javascript: navback();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/back.png" title="Move Previous Button" /></a>
+            <a title="Next" href="javascript: navnext();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/forward.png" title="Move Next Button" /></a>
+            <a title="Last" href="javascript: navlast();"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/end.png" title="Move Last Button" /></a>
+            <input type="hidden" name="gridnav" id="gridnav" value="" />
+            <input type=hidden name="gridnav" id="gridnav" value="" />
+            <input type=hidden name="export" id="export" value="" />
+            <input type=hidden name="exportmode" id="exportmode" value="" />
+            <span>Page:<input type=text maxlength=6 size=6 name="rpage" id="rpage" value="[@RPAGE@]" onkeypress="return goodchars(event,'0123456789');"></span>
+            <a title="Move to specific page" href="javascript: SubmitForm();"><img class="image" valign=absmiddle src="<? echo $JASDIRICONTHEME; ?>32/actions/end.png" title="Move to specific page button" /></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a title="Export current page as CSV" href="javascript: exportpage([@RPAGE@],'CSV');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/view-pane-detailed.png" title="Export current page as CSV" /></a>
+            <a title="Export all as CSV" href="javascript: exportall('CSV');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/view-pane-icon.png" title="Export ALL as CSV" /></a>
+            <a title="Export current page as HTML" href="javascript: exportpage([@RPAGE@],'TABULAR');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/document-save.png" title="Export current page as HTML" /></a>
+            <a title="Export all as HTML" href="javascript: exportall('TABULAR');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/document-save-all.png" title="Export ALL as HTML" /></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a title="Show/Hide Filtering Tools" href="javascript: ToggleFilter();"><img class="image" id="filterimage" src="<? echo $JASDIRICONTHEME; ?>32/actions/zoom-in.png" /><span class="jasbutspan">Filter</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: SubmitForm();"><img src="<? echo $JASDIRICONTHEME; ?>32/actions/system-search.png" class="image"><span class="jasbutspan">&nbsp;Find</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: ResetForm();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/document-revert.png" class="image"><span class="jasbutspan">&nbsp;Reset</span></a>
+            &nbsp;&nbsp;
+            <a href="javascript: NewWindow('[@ALIAS@].?SCREENID=152&JSID=[@JSID@]')"><img src="/jws/img/icon/themes/CrystalClear/32/actions/window-new.png" class="image"><span class="jasbutspan">&nbsp;Add New</span></a>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br />
+  <script>
+    function edit_init(){document.getElementById("EDIT_ACTION").value=""; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=""; };
+    function editcol_up(p_B,p_FC){edit_init(); document.getElementById("EDIT_ACTION").value="MOVEUP"; document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC;SubmitForm();};
+    function editcol_down(p_B,p_FC){edit_init(); document.getElementById("EDIT_ACTION").value="MOVEDOWN"; document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC;SubmitForm();};
+    function editcol_left(p_B,p_FC){edit_init(); document.getElementById("EDIT_ACTION").value="MOVELEFT"; document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC;SubmitForm();};
+    function editcol_right(p_B,p_FC){edit_init(); document.getElementById("EDIT_ACTION").value="MOVERIGHT"; document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC;SubmitForm();};
+    function editcol_delete(p_B,p_FC){ if (confirm("Delete this JBlokField?")){edit_init(); document.getElementById("EDIT_ACTION").value="DELETE"; document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B; document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC; SubmitForm();};};
+    function editcol_add(p_B){
+      edit_init();
+      document.getElementById("EDIT_ACTION").value="ADD";
+      document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B;
+      SubmitForm();
+    };
+    function editcol_edit(p_B,p_FC){
+      edit_init();
+      document.getElementById("EDIT_ACTION").value="EDIT";
+      document.getElementById("EDIT_JBLOK_JBLOK_UID").value=p_B;
+      document.getElementById("EDIT_JBLKF_JBLOKFIELD_UID").value=p_FC;
+      SubmitForm();
+    };
+  </script>
+  <input type="hidden" name="EDIT_JBLOK_JBLOK_UID" id="EDIT_JBLOK_JBLOK_UID" value="" />
+  <input type="hidden" name="EDIT_ACTION" id="EDIT_ACTION" value="" />
+  <input type="hidden" name="EDIT_JBLKF_JBLOKFIELD_UID" id="EDIT_JBLKF_JBLOKFIELD_UID" value="" />
+  <!--SECTION SCREENHEADERADMIN END-->
+
+
+
+  
+  <!--SECTION FILTERHEADER BEGIN-->
+  <!-- SECTION FILTERHEADER ./templates/en/screenminigrid.jas -->
+  <img class="image" src="[@FILTER_JBLOK_ICONSMALL@]" />
+  &nbsp;[@FILTERCAPTION@]
+  <!--SECTION FILTERHEADER END-->
+
+  <!--SECTION FILTERHEADERADMIN BEGIN-->
+  <!-- SECTION FILTERHEADERADMIN ./templates/en/screenminigrid.jas -->
+  <img class="image" src="[@FILTER_JBLOK_ICONSMALL@]" />
+  &nbsp;[@FILTERCAPTION@]&nbsp;
+  <a title="Add Column" href="javascript: editcol_add('[@FILTERADMIN_JBLOK_JBLOK_UID@]');"><img src="<? echo $JASDIRICONTHEME; ?>16/actions/edit-add.png" /></a>
+  &nbsp;
+  <a title="Edit this JBlok" href="javascript: edit_init(); NewWindow('?UID=[@FILTERADMIN_JBLOK_JBLOK_UID@]&JSID=[@JSID@]&Screen='+encodeURIComponent('jblok Data'));">
+    <img src="<? echo $JASDIRICONTHEME; ?>16/actions/edit.png" />
+  </a>
+  <!--SECTION FILTERHEADERADMIN END-->
+
+  <!--SECTION FILTERSECTION BEGIN-->
+  <!-- SECTION FILTERSECTION ./templates/en/screenminigrid.jas -->
+  <table>
+  <tr>
+    <td>
+      <div class="jas-layout-row jas-content">
+        <div class="jas-post">
+          <div class="jas-post-tl"></div>
+          <div class="jas-post-tr"></div>
+          <div class="jas-post-bl"></div>
+          <div class="jas-post-br"></div>
+          <div class="jas-post-tc"></div>
+
+          <div class="jas-post-bc"></div>
+          <div class="jas-post-cl"></div>
+          <div class="jas-post-cr"></div>
+          <div class="jas-post-cc"></div>
+          <div class="jas-post-body">
+            <div class="jas-post-inner jas-article">
+              <h2 class="jas-postheader">
+              [$BLOKFILTERHEADER$]
+              </h2>
+              <div class="jas-postcontent">
+                [$BLOKFILTER$]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td></td>
+  </tr>
+  </table>
+  <!--SECTION FILTERSECTION END-->
+
+
+  <!--SECTION GRIDHEADER BEGIN-->
+  <!-- SECTION GRIDHEADER ./templates/en/screenminigrid.jas -->
+  <!--SECTION GRIDHEADER END-->
+  
+  <!--SECTION GRIDHEADERADMIN BEGIN-->
+  <!-- SECTION GRIDHEADERADMIN ./templates/en/screenminigrid.jas -->
+  <a title="Add Column" href="javascript: editcol_add('[@GRIDADMIN_JBLOK_JBLOK_UID@]');"><img class="image" src="<? echo $JASDIRICONTHEME; ?>16/actions/edit-add.png" /></a>&nbsp;&nbsp;&nbsp;<a title="Edit this JBlok" href="javascript: edit_init(); NewWindow('?UID=[@GRIDADMIN_JBLOK_JBLOK_UID@]&JSID=[@JSID@]&Screen='+encodeURI('jblok Data'));"><img class="image" src="<? echo $JASDIRICONTHEME; ?>16/actions/edit.png" /></a>
+  <!--SECTION GRIDHEADERADMIN END-->
+
+  <!--SECTION GRIDSECTION BEGIN-->
+  <!-- SECTION GRIDSECTION ./templates/en/screenminigrid.jas -->
+  <div class="jas-post-inner jas-article">
+    [$BLOKGRIDHEADER$]&nbsp;[@MULTIFEEDBACK@]<br />
+    <div class="jas-postcontent">
+      <div class="jasgrid">
+        <!-- BLOKGRID BEGIN -->
+        [$BLOKGRID$]
+        <!-- BLOKGRID END -->
+      </div>
+    </div>
+  </div>
+  <p>[@SCREENQUERY@]</p>
+  <!--SECTION GRIDSECTION END-->
+</body></html>

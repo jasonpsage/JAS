@@ -1,0 +1,21 @@
+JFC_TOKENIZER.DumpToTextFile(p_Filename:ansistring):word;
+JFC_TOKENIZER.DumpToTextFile(tokendump.txt)
+-------------------------------------------------------------------------------
+Non-Displayable characters appear as (#n) where n is ascii code.
+aQuotePair Array length or count = 4
+
+sQuotes (Length=0)><
+sSeparators (Length=1)> <
+sWhiteSpace (Length=1)> <
+-------------------------------------------------------------------------------
+Quote Mode on Exit (Zero=Not In Quote Mode, Non-Zero=Which Quote Mode) :0
+-------------------------------------------------------------------------------
+Passed String>Hello There Dude!<
+-------------------------------------------------------------------------------
+Tokens:3
+-------------------------------------------------------------------------------
+Token 1 >Hello< iQuoteID:0
+Token 2 >There< iQuoteID:0
+Token 3 >Dude!< iQuoteID:0
+-------------------------------------------------------------------------------
+

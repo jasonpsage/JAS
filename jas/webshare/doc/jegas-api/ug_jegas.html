@@ -1,0 +1,2439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jegas</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<h1 class="unit">Unit ug_jegas</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td><a class="section" href="#PasDoc-Classes">Classes, Interfaces, Objects and Records</a></td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td><a class="section" href="#PasDoc-Constants">Constants</a></td><td><a class="section" href="#PasDoc-Variables">Variables</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+This is first source file of the entire code base Jegas, LLC has; created about 2003. Note: The JegasAPI is what JAS is built on. There is only the JASConfig structure in here for scope reasons, the rest of the JegasAPI is quite separate and free from JAS related anything.</p>
+<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
+<ul class="useslist"><li>base64</li><li>classes</li><li>dateutils</li><li>dos</li><li>process</li><li>sysutils</li><li><a  href="ug_common.html">ug_common</a></li><li><a  href="ug_jfc_dir.html">ug_jfc_dir</a></li><li><a  href="ug_jfc_tokenizer.html">ug_jfc_tokenizer</a></li><li><a  href="ug_jfc_xdl.html">ug_jfc_xdl</a></li><li><a  href="ug_misc.html">ug_misc</a></li><li><a  href="ug_tsfileio.html">ug_tsfileio</a></li><li>variants</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Classes"></a><h3 class="cio">Classes, Interfaces, Objects and Records</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Name</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="ug_jegas.rtIOAppendLog.html"><code>rtIOAppendLog</code></a></td>
+<td class="itemdesc">used for passing information to the <a class="normal" href="ug_jegas.html#saIOAppendLogColumnHeaders">saIOAppendLogColumnHeaders</a>, <a class="normal" href="ug_jegas.html#saIOAppendLogColumnData">saIOAppendLogColumnData</a> and <a class="normal" href="ug_jegas.html#bIOAppendLog">bIOAppendLog</a> functions.</td>
+</tr>
+<tr class="list2">
+<td class="itemname">record&nbsp;<a class="bold" href="ug_jegas.rtJASConfig.html"><code>rtJASConfig</code></a></td>
+<td class="itemdesc">This Jegas Application Server's internal configuration storage reacord.</td>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="ug_jegas.rtJegasCommon.html"><code>rtJegasCommon</code></a></td>
+<td class="itemdesc">This record is designed to contain information about the user, the application itself, and the main log file.</td>
+</tr>
+<tr class="list2">
+<td class="itemname">record&nbsp;<a class="bold" href="ug_jegas.rtPunkBeGoneStats.html"><code>rtPunkBeGoneStats</code></a></td>
+<td class="itemdesc">============================================================================= =============================================================================</td>
+</tr>
+</table>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bCopyFile">bCopyFile</a></b>(Var p_saSrc: AnsiString; Var p_saDest: AnsiString; Var p_u2IOREsult: Word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bCopyFile">bCopyFile</a></b>(Var p_saSrc: AnsiString; Var p_saDest: AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bDeleteFilesInTree">bDeleteFilesInTree</a></b>(p_saDirectory: ansiString; p_saFileSpec: ansiString):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bGetFileModifiedDate">bGetFileModifiedDate</a></b>(p_saFilename: ansistring; var p_dtDateTime: TDATETIME): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bGetFileSize">bGetFileSize</a></b>(p_saFilename: ansistring; var p_u8FileSize: UInt64): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bGoodEmail">bGoodEmail</a></b>(p_sa: ansistring): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bGoodPassword">bGoodPassword</a></b>(p_s: string): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bGoodUsername">bGoodUsername</a></b>(p_sa: ansistring): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIOAppendLog">bIOAppendLog</a></b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeBinary">bIsJDTypeBinary</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeBoolean">bIsJDTypeBoolean</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeChar">bIsJDTypeChar</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeCurrency">bIsJDTypeCurrency</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeDate">bIsJDTypeDate</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeDec">bIsJDTypeDec</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeInt">bIsJDTypeInt</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeMemo">bIsJDTypeMemo</a></b>(p_u2JDType:word): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeNumber">bIsJDTypeNumber</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeString">bIsJDTypeString</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeText">bIsJDTypeText</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bIsJDTypeUInt">bIsJDTypeUInt</a></b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bMoveFile">bMoveFile</a></b>(var p_saSrc: AnsiString; var p_saDest: AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bMoveFile">bMoveFile</a></b>(var p_saSrc: AnsiString; var p_saDest: AnsiString; p_u2IOREsult: Word):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bPermBackUp">bPermBackUp</a></b>( p_saDestFile: ansistring; p_saSrcDir: ansistring; p_bRecurse: boolean; p_saScriptName: ansistring; var p_u8ErrorCount: UInt64; var p_u8ErrID: UInt64; var p_saErrMsg: ansistring ):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bSaveFile">bSaveFile</a></b>( p_saFilename: ansistring; p_saFileData: ansistring; p_iRetryLimit: longint; p_iRetryDelayInMSecs: longint; var p_u2IOResult: word; p_bAppend: boolean ):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#bSendMail">bSendMail</a></b>( p_saTo: ansistring; p_saFrom: ansistring; p_saSubject: ansistring; p_saMsg: ansistring ):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#bStoreFileInTree">bStoreFileInTree</a></b>( p_saMakeTreeWithThis: ansistring; p_saSourceDirectory: ansiString; p_saSourceFileName: ansiString; p_saDestTreeTop: ansiString; p_saData: AnsiString; Var p_saRelPath: ansiString; p_i4Size: longint; p_i4Levels: longint ):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#DebugIN">DebugIN</a></b>(saSection: AnsiString; p_saSourceFile: AnsiString);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#DebugOUT">DebugOUT</a></b>(saSection: AnsiString; p_saSourceFile: AnsiString);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#DESTROYDIRECTORY">DESTROYDIRECTORY</a></b>(p_saDir: ansistring): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddDays">dtAddDays</a></b>(p_dtFrom: TDATETIME; p_iDays: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddHours">dtAddHours</a></b>(p_dtFrom: TDATETIME;p_iHours: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddMinutes">dtAddMinutes</a></b>(p_dtFrom: TDATETIME; p_iMinutes: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddMonths">dtAddMonths</a></b>(p_dtFrom: TDATETIME; p_iMonths: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddMSec">dtAddMSec</a></b>(p_dtFrom: TDATETIME; p_iMSec: longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddSec">dtAddSec</a></b>(p_dtFrom: TDATETIME; p_iSeconds: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtAddYears">dtAddYears</a></b>(p_dtFrom: TDATETIME; p_iYears: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtSubtractHours">dtSubtractHours</a></b>(p_dtFrom: TDATETIME;p_iHours: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtSubtractMinutes">dtSubtractMinutes</a></b>(p_dtFrom: TDATETIME; p_iMinutes: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtSubtractMSec">dtSubtractMSec</a></b>(p_dtFrom: TDATETIME; p_iMSec: longint): TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#dtSubtractSec">dtSubtractSec</a></b>(p_dtFrom: TDATETIME; p_iSeconds: Longint): TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#FileExistsInTree">FileExistsInTree</a></b>( p_saMakeTreeWithThis: ansistring; p_saFilename: ansiString; p_saTreeTop: ansiString; Var p_saRelPath: ansiString; p_u1Size: byte; p_u1Levels: byte ):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#i4PToC">i4PToC</a></b>(p_sa: AnsiString; Var p_cdest: PChar; p_i4DestCBuflen: LongInt):LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#i4WindowStateToInt">i4WindowStateToInt</a></b>(p_saWindowState: AnsiString): LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffDays">iDiffDays</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffDays">iDiffDays</a></b>(p_tsFrom: TTIMESTAMP;p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffHours">iDiffHours</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffHours">iDiffHours</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffMinutes">iDiffMinutes</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffMinutes">iDiffMinutes</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffMonths">iDiffMonths</a></b>(p_dtFrom: TDATETIME;p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffMonths">iDiffMonths</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffMSec">iDiffMSec</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffSeconds">iDiffSeconds</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffSeconds">iDiffSeconds</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffYears">iDiffYears</a></b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME):Int64 ;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iDiffYears">iDiffYears</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP):Int64 ;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iMilitaryToNormalHours">iMilitaryToNormalHours</a></b>(p_iHours:longint):longint;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iMSec">iMSec</a></b>:Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#iMSec">iMSec</a></b>(p_dt: TDATETIME):Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#InitJASConfigRecord">InitJASConfigRecord</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#JASDebugPrint">JASDebugPrint</a></b>(p_sa:ansistring);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#JASDebugPrintln">JASDebugPrintln</a></b>(p_sa:ansistring);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#JASPrint">JASPrint</a></b>(p_sa:ansistring);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#JASPrintln">JASPrintln</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#JASPrintln">JASPrintln</a></b>(p_sa:ansistring);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#JCopyFile">JCopyFile</a></b>(p_saSrc: ansistring; p_saDest: Ansistring): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#JDate">JDate</a></b>( p_saDate: AnsiString; p_iFormatOut: longint; p_iFormatIn: longint ): AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#JDate">JDate</a></b>( p_saDate: AnsiString; p_iFormatOut: longint; p_iFormatIn: longint; Var p_dt: TDATETIME ): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#JLog">JLog</a></b>( p_u2LogType_ID: word; p_u8Entry_ID: UInt64; p_saEntryData: AnsiString; p_saSourceFile: AnsiString ): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="ug_jegas.html#Merge">Merge</a></b>( p_bPerformMerge: boolean; p_uDupeScore: cardinal; p_bCaseSensitive: boolean; var p_bDupe: boolean; p_SrcXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_DestXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_ColXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#ParseName">ParseName</a></b>( p_In_saName: ansistring; var p_Out_saFirst: ansistring; var p_Out_saMiddle: ansistring; var p_Out_saLast: ansistring );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saBase64Decode">saBase64Decode</a></b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saBase64Encode">saBase64Encode</a></b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saBuildName">saBuildName</a></b>( p_saDear: AnsiString; p_saFirst: AnsiString; p_saMiddle: AnsiString; p_saLast: AnsiString; p_saSuffix: ansiString ):ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saBytesToHuman">saBytesToHuman</a></b>(p_u8Size: UInt64): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saCmdLine">saCmdLine</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saCToP">saCToP</a></b>(Var p_csrc: PChar):AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saCut">saCut</a></b>(p_saSrc: ansistring; p_i8Start: int64; p_i8Length: int64): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saDebugNest">saDebugNest</a></b>(p_saSectionName: AnsiString; p_bBegin: Boolean; p_uNestLevel: UInt64): AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saDouble">saDouble</a></b>(p_fValue: double; p_iDigits: longint; p_iDecimals: longint): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saDoubleEscape">saDoubleEscape</a></b>(p_saEscapeThis: ansistring; p_chCharToEscape: char): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saEscape">saEscape</a></b>(p_saEscapeThis: ansistring; p_chCharToEscape: char; p_saReplaceWith: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saExtractDir">saExtractDir</a></b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saExtractExt">saExtractExt</a></b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saExtractName">saExtractName</a></b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saExtractPath">saExtractPath</a></b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saFileNameNoExt">saFileNameNoExt</a></b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saFormatTimeStamp">saFormatTimeStamp</a></b>(p_saFormat: AnsiString; p_ts: TTIMESTAMP): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saGetUniqueCommID">saGetUniqueCommID</a></b>(p_saPath: AnsiString):ansiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saInsert">saInsert</a></b>(p_saSrc: ansistring; p_saInsertMe: ansistring; p_i8Start: int64): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saIOAppendLogColumnData">saIOAppendLogColumnData</a></b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>): AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saIOAppendLogColumnHeaders">saIOAppendLogColumnHeaders</a></b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saJasLocateTemplate">saJasLocateTemplate</a></b>( p_saREL_PATH_N_FILE:ansistring; p_sCurrentLang, p_sCurrentTheme: string; p_saRequestedDir: ansistring; p_i8Caller: int64; p_VHostTemplateDir: Ansistring; p_saWebShareDir: ansistring ): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saJDType">saJDType</a></b>(p_u2JDType:word): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saJegasLogoRawText">saJegasLogoRawText</a></b>(p_saEOL: AnsiString; p_bShowJASServerID: boolean): AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saJegasLogoRawText">saJegasLogoRawText</a></b>(p_saEOL: AnsiString): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saJFCDirAsText">saJFCDirAsText</a></b>(p_Dir: <a  href="ug_jfc_dir.JFC_DIR.html">JFC_DIR</a>; p_saLineTerminator: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saMid">saMid</a></b>(p_saSrc: ansistring; p_i8Start: int64; p_i8Length: int64): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saParseLastName">saParseLastName</a></b>(p_saName: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saPhoneConCat">saPhoneConCat</a></b>(p_saPhone: ansistring; p_saExt: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saProper">saProper</a></b>(p_saSentence: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saSequencedFilename">saSequencedFilename</a></b>(p_saFilename: AnsiString; p_sExtension: String): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saSingle">saSingle</a></b>(p_fValue: single; p_iDigits: longint; p_iDecimals: longint): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saSolveRelativePath">saSolveRelativePath</a></b>(p_sa: AnsiString):ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#saWin2LinPath">saWin2LinPath</a></b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#saWindowStateToString">saWindowStateToString</a></b>(p_i4WindowState: LongInt): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#sGetUID">sGetUID</a></b>:String; inline;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#StrToTimeStamp">StrToTimeStamp</a></b>(p_sa: AnsiString):TTIMESTAMP;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddDays">tsAddDays</a></b>(p_tsFrom: TTIMESTAMP; p_iDays: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddHours">tsAddHours</a></b>(p_tsFrom: TTIMESTAMP; p_Comp_Hours: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddMinutes">tsAddMinutes</a></b>(p_tsFrom: TTIMESTAMP; p_Comp_Minutes: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddMonths">tsAddMonths</a></b>( p_tsFrom: TTIMESTAMP; p_iMonths: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddMSec">tsAddMSec</a></b>( p_tsFrom: TTIMESTAMP; p_Comp_MSec: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddSec">tsAddSec</a></b>(p_tsFrom: TTIMESTAMP; p_Comp_Seconds: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsAddYears">tsAddYears</a></b>(p_tsFrom: TTIMESTAMP; p_iYears: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#tsDiff">tsDiff</a></b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): TTIMESTAMP;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#u2ExecuteShellCommand">u2ExecuteShellCommand</a></b>(p_saWorkingDir: ansistring; p_saCmd: ansistring): word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#u2GetCRC16TS">u2GetCRC16TS</a></b>(p_saSrcfile: ansistring): word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#u2Shell">u2Shell</a></b>(p_saCommand: AnsiString; p_saParam: AnsiString): word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#u8FileSize">u8FileSize</a></b>(p_saFilename: ansistring): UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#u8GetCRC64TS">u8GetCRC64TS</a></b>(p_saSrcfile: ansistring): UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_jegas.html#u8GetUID">u8GetUID</a></b>: UInt64; inline;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jegas.html#uIPAddressCount">uIPAddressCount</a></b>(p_IP: string):UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#WaitInMSec">WaitInMSec</a></b>(p_i8MilliSeconds: Int64);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="ug_jegas.html#WaitInSec">WaitInSec</a></b>(p_i8Seconds: Int64);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Constants"></a><h3 class="summary">Constants</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_00">cnDateFormat_00</a></b>=0;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_01">cnDateFormat_01</a></b>=1;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_02">cnDateFormat_02</a></b>=2;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_03">cnDateFormat_03</a></b>=3;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_04">cnDateFormat_04</a></b>=4;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_05">cnDateFormat_05</a></b>=5;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_06">cnDateFormat_06</a></b>=6;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_07">cnDateFormat_07</a></b>=7;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_08">cnDateFormat_08</a></b>=8;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_09">cnDateFormat_09</a></b>=9;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_10">cnDateFormat_10</a></b>=10;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_11">cnDateFormat_11</a></b>=11;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_12">cnDateFormat_12</a></b>=12;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_13">cnDateFormat_13</a></b>=13;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_14">cnDateFormat_14</a></b>=14;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_15">cnDateFormat_15</a></b>=15;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_16">cnDateFormat_16</a></b>=16;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_17">cnDateFormat_17</a></b>=17;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_18">cnDateFormat_18</a></b>=18;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_19">cnDateFormat_19</a></b>=19;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_20">cnDateFormat_20</a></b>=20;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_21">cnDateFormat_21</a></b>=21;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_22">cnDateFormat_22</a></b>=22;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_23">cnDateFormat_23</a></b>=23;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_24">cnDateFormat_24</a></b>=24;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnDateFormat_Elements">cnDateFormat_Elements</a></b>=11;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cnJegasLogColumns">cnJegasLogColumns</a></b> = 8;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_1">csDateDay_1</a></b>='Sunday';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_2">csDateDay_2</a></b>='Monday';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_3">csDateDay_3</a></b>='Tuesday';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_4">csDateDay_4</a></b>='Wednesday';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_5">csDateDay_5</a></b>='Thursday';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_6">csDateDay_6</a></b>='Friday';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateDay_7">csDateDay_7</a></b>='Saturday';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_00">csDateFormat_00</a></b>='?';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_01">csDateFormat_01</a></b>='MM/DD/YYYY HH:NN AM';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_02">csDateFormat_02</a></b>='MM/DD/YYYY';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_03">csDateFormat_03</a></b>='YYYY-MM-DD';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_04">csDateFormat_04</a></b>='DDD MMM DD HH:NN:SS EDT YYYY';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_05">csDateFormat_05</a></b>='DDD, DD MMM YYYY HH:NN:SS';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_06">csDateFormat_06</a></b>='DDD, DD MMM YYYY HH:NN:SS UTC';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_07">csDateFormat_07</a></b>='DDDD, DD MMM, YYYY HH:NN:SS AM';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_08">csDateFormat_08</a></b>='HH:NN:SS';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_09">csDateFormat_09</a></b>='HH:NN:SS EDT';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_10">csDateFormat_10</a></b>='MMM DDD DD YYYY';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_11">csDateFormat_11</a></b>='YYYY-MM-DD HH:NN:SS';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_12">csDateFormat_12</a></b>='MM/DD/YY';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_13">csDateFormat_13</a></b>='DD/MMM/YYYY';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateformat_14">csDateformat_14</a></b>='DD/MMM/YYYY HH:NN AM';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_15">csDateFormat_15</a></b>='DD/MMM/YYYY HH:NN';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_16">csDateFormat_16</a></b>='HH:NN AM';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_17">csDateFormat_17</a></b>='HH:NN';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_18">csDateFormat_18</a></b>='DD/MMM/YYYY:HH:NN:SS';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_19">csDateFormat_19</a></b>='MM/DD/YYYY HH:NN';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_20">csDateFormat_20</a></b>='MM/DD/YYYY HH:NN';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_21">csDateFormat_21</a></b>='YYYY-MM-DD HH:NN';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_22">csDateFormat_22</a></b>='DD/YYYY/MM HH:NN AM';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_23">csDateFormat_23</a></b>='DDD MMM MM HH:NN:SS YYYY';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateFormat_24">csDateFormat_24</a></b>='DD/MM/YYYY HH:NN AM';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_01">csDateMonth_01</a></b>='January';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_02">csDateMonth_02</a></b>='Febuary';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_03">csDateMonth_03</a></b>='March';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_04">csDateMonth_04</a></b>='April';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_05">csDateMonth_05</a></b>='May';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_06">csDateMonth_06</a></b>='June';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_07">csDateMonth_07</a></b>='July';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_08">csDateMonth_08</a></b>='August';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_09">csDateMonth_09</a></b>='September';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_10">csDateMonth_10</a></b>='October';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_11">csDateMonth_11</a></b>='November';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#csDateMonth_12">csDateMonth_12</a></b>='December';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cs_IOAppendLog_QuoteBeginTemp">cs_IOAppendLog_QuoteBeginTemp</a></b>='[JQUOTE_BEGIN]';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#cs_IOAppendLog_QuoteEndTemp">cs_IOAppendLog_QuoteEndTemp</a></b>='[JQUOTE_END]';</code></td>
+</tr>
+</table>
+<a name="PasDoc-Variables"></a><h3 class="summary">Variables</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gasDateFormat">gasDateFormat</a></b>: array[0..22] Of String;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gasDay">gasDay</a></b>: array[1..7] Of String;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gasMonth">gasMonth</a></b>: array[1..12] Of String;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gbServerCycling">gbServerCycling</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gbServerShuttingDown">gbServerShuttingDown</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#giDebugNestLevel">giDebugNestLevel</a></b>: longint;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#grJASConfig">grJASConfig</a></b>: <a  href="ug_jegas.rtJASConfig.html">rtJASConfig</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#grJegasCommon">grJegasCommon</a></b>: <a  href="ug_jegas.rtJegasCommon.html">rtJegasCommon</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#grPunkBeGoneStats">grPunkBeGoneStats</a></b>: <a  href="ug_jegas.rtPunkBeGoneStats.html">rtPunkBeGoneStats</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gsaJASFooter">gsaJASFooter</a></b>: Ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jegas.html#gu2UIDCounter">gu2UIDCounter</a></b>: word;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bCopyFile"></a><code>Function <b>bCopyFile</b>(Var p_saSrc: AnsiString; Var p_saDest: AnsiString; Var p_u2IOREsult: Word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bCopyFile"></a><code>Function <b>bCopyFile</b>(Var p_saSrc: AnsiString; Var p_saDest: AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOTE: See <a class="normal" href="ug_common.html">ug_common</a> for light weight (code size wise) <a class="normal" href="ug_common.html#bLoadTextfile">bLoadTextfile</a> variety, does a line by line using readln generically. Uses block read/write with a Constant determined buffer size. See cnFileIO_BufferSize</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bDeleteFilesInTree"></a><code>Function <b>bDeleteFilesInTree</b>(p_saDirectory: ansiString; p_saFileSpec: ansiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function deletes all contents of the supplied directory matching filespec. It Does not delete the directories. NOT related to TREE STORAGE routines: <a class="normal" href="ug_jegas.html#FileExistsInTree">FileExistsInTree</a> or <a class="normal" href="ug_jegas.html#bStoreFileInTree">bStoreFileInTree</a> but can be used in their directories if proper path is supplied. See: <a class="normal" href="ug_common.html#saFileToTreeDOS">saFileToTreeDos</a> function in ug_common.pp</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGetFileModifiedDate"></a><code>function <b>bGetFileModifiedDate</b>(p_saFilename: ansistring; var p_dtDateTime: TDATETIME): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return DateTime file modified</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGetFileSize"></a><code>function <b>bGetFileSize</b>(p_saFilename: ansistring; var p_u8FileSize: UInt64): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return the size of the given file.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGoodEmail"></a><code>function <b>bGoodEmail</b>(p_sa: ansistring): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGoodPassword"></a><code>function <b>bGoodPassword</b>(p_s: string): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGoodUsername"></a><code>function <b>bGoodUsername</b>(p_sa: ansistring): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIOAppendLog"></a><code>Function <b>bIOAppendLog</b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Purpose: To make the most compatible &quot;generic&quot; logging format for importing data into various applications.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeBinary"></a><code>Function <b>bIsJDTypeBinary</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are binary. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeBoolean"></a><code>Function <b>bIsJDTypeBoolean</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are boolean. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeChar"></a><code>Function <b>bIsJDTypeChar</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are characters. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeCurrency"></a><code>Function <b>bIsJDTypeCurrency</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are of the Currency data type. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeDate"></a><code>Function <b>bIsJDTypeDate</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are dates. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeDec"></a><code>Function <b>bIsJDTypeDec</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are fixed or floating point decimal <a class="normal" href="numbers.html">numbers</a>. Not Currency Data types however. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeInt"></a><code>Function <b>bIsJDTypeInt</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are integers. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeMemo"></a><code>Function <b>bIsJDTypeMemo</b>(p_u2JDType:word): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are memos. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeNumber"></a><code>Function <b>bIsJDTypeNumber</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are numeric. Int, Uint, Decimals, currency BUT NOT BOOLEAN. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeString"></a><code>Function <b>bIsJDTypeString</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are strings. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeText"></a><code>Function <b>bIsJDTypeText</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for any passed Jegas Type that is TEXT: this includes char, strings and memos. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIsJDTypeUInt"></a><code>Function <b>bIsJDTypeUInt</b>(p_u2JDType:word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns true for passed Jegas Types that are unsigned integers. See <a class="normal" href="ug_common.html">ug_common</a> for definitions of jegas types</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bMoveFile"></a><code>Function <b>bMoveFile</b>(var p_saSrc: AnsiString; var p_saDest: AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Basically these call the <a class="normal" href="ug_jegas.html#bCopyFile">bCopyfile</a> functions but remove the source file if successful.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bMoveFile"></a><code>Function <b>bMoveFile</b>(var p_saSrc: AnsiString; var p_saDest: AnsiString; p_u2IOREsult: Word):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPermBackUp"></a><code>function <b>bPermBackUp</b>( p_saDestFile: ansistring; p_saSrcDir: ansistring; p_bRecurse: boolean; p_saScriptName: ansistring; var p_u8ErrorCount: UInt64; var p_u8ErrID: UInt64; var p_saErrMsg: ansistring ):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Essensially creates a script to perform a &quot; ls -l &quot; with long date format and the recurse flag depnding on the p_bRecurse Parameter. this allowed me to use existing code and freepascal doesn'<a class="normal" href="t.html">t</a> have an easy way to get the same information. It gives you &quot;do you have access&quot; for linux but not &quot;what permissions does the sales group files have?&quot; This works :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bSaveFile"></a><code>function <b>bSaveFile</b>( p_saFilename: ansistring; p_saFileData: ansistring; p_iRetryLimit: longint; p_iRetryDelayInMSecs: longint; var p_u2IOResult: word; p_bAppend: boolean ):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+File Saving function. Uses TEXT mode with a Write (versus a writeln) so in theory should be useful for various file types even though creates file of text.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bSendMail"></a><code>function <b>bSendMail</b>( p_saTo: ansistring; p_saFrom: ansistring; p_saSubject: ansistring; p_saMsg: ansistring ):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bStoreFileInTree"></a><code>Function <b>bStoreFileInTree</b>( p_saMakeTreeWithThis: ansistring; p_saSourceDirectory: ansiString; p_saSourceFileName: ansiString; p_saDestTreeTop: ansiString; p_saData: AnsiString; Var p_saRelPath: ansiString; p_i4Size: longint; p_i4Levels: longint ):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Originated in Wimble project as _bStorePic_) This function returns TRUE if the passed pic file in p_sapicFile (filename only) can be successfully stored in the &quot;pic Database&quot; (so to speak). This was originally designed for the mlsimport.pas application.
+
+<p>It relies on the pic sitting in the [mlsdir]import= directory</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DebugIN"></a><code>Procedure <b>DebugIN</b>(saSection: AnsiString; p_saSourceFile: AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+FOR DEBUGGING With the DEBUGBEGINANDEND Logging &quot;Tools&quot; - Should be called when function or procedure starts. (Not ideal for threaded apps yet)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DebugOUT"></a><code>Procedure <b>DebugOUT</b>(saSection: AnsiString; p_saSourceFile: AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+FOR DEBUGGING With the DEBUGBEGINANDEND Logging &quot;Tools&quot; - Should be called last function or procedure exits. (Not ideal for threaded apps yet)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DESTROYDIRECTORY"></a><code>function <b>DESTROYDIRECTORY</b>(p_saDir: ansistring): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this should probably be called empty directory or something. it destroys all files in the specified folder recursively and it doesn'<a class="normal" href="t.html">t</a> actually remove the directories themselves, it just empties them.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddDays"></a><code>Function <b>dtAddDays</b>(p_dtFrom: TDATETIME; p_iDays: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddHours"></a><code>Function <b>dtAddHours</b>(p_dtFrom: TDATETIME;p_iHours: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddMinutes"></a><code>Function <b>dtAddMinutes</b>(p_dtFrom: TDATETIME; p_iMinutes: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddMonths"></a><code>Function <b>dtAddMonths</b>(p_dtFrom: TDATETIME; p_iMonths: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddMSec"></a><code>Function <b>dtAddMSec</b>(p_dtFrom: TDATETIME; p_iMSec: longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddSec"></a><code>Function <b>dtAddSec</b>(p_dtFrom: TDATETIME; p_iSeconds: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtAddYears"></a><code>Function <b>dtAddYears</b>(p_dtFrom: TDATETIME; p_iYears: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtSubtractHours"></a><code>Function <b>dtSubtractHours</b>(p_dtFrom: TDATETIME;p_iHours: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtSubtractMinutes"></a><code>Function <b>dtSubtractMinutes</b>(p_dtFrom: TDATETIME; p_iMinutes: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtSubtractMSec"></a><code>Function <b>dtSubtractMSec</b>(p_dtFrom: TDATETIME; p_iMSec: longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtSubtractSec"></a><code>Function <b>dtSubtractSec</b>(p_dtFrom: TDATETIME; p_iSeconds: Longint): TDATETIME;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="FileExistsInTree"></a><code>Function <b>FileExistsInTree</b>( p_saMakeTreeWithThis: ansistring; p_saFilename: ansiString; p_saTreeTop: ansiString; Var p_saRelPath: ansiString; p_u1Size: byte; p_u1Levels: byte ):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Originated in Wimble Project as _bPicExists_) This function returns TRUE if the passed pic file in p_saPicFileName (filename only) exists in the &quot;pic Database&quot; (so to speak) on the harddrive. If it does exist, (function returns true) the p_saPath parameter returns with the RELATIVE path of the pic's directory so the results can be used for both web and DOS operations. Note: p_saPath is NOT touched UNLESS the picture is found. This makes it easy for weboperations to have a default &quot;NO PICTURE PRESENT&quot; default that gets overrided if the image DOES exist! :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="i4PToC"></a><code>Function <b>i4PToC</b>(p_sa: AnsiString; Var p_cdest: PChar; p_i4DestCBuflen: LongInt):LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Use to Copy a PASCAL ANSISTRING to a &quot;C++&quot; String Buffer. returns length actually copied for the benfit of said C++ routines.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="i4WindowStateToInt"></a><code>Function <b>i4WindowStateToInt</b>(p_saWindowState: AnsiString): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffDays"></a><code>Function <b>iDiffDays</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This looks recursive but its not - there are two versions of many of the datetime functions - one for freepascal TDATETIME and one for OS TIMESTAMPS.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffDays"></a><code>Function <b>iDiffDays</b>(p_tsFrom: TTIMESTAMP;p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffHours"></a><code>Function <b>iDiffHours</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffHours"></a><code>Function <b>iDiffHours</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffMinutes"></a><code>Function <b>iDiffMinutes</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffMinutes"></a><code>Function <b>iDiffMinutes</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffMonths"></a><code>Function <b>iDiffMonths</b>(p_dtFrom: TDATETIME;p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is a funky way to do it, but necessary as far as I know because it manages to handle the leap year stuff by leveraging the FreePascal IncMonth Function. This works out to be accurate, versus day math like days divided by some guess'timate like 30 days a month - which is skewed.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffMonths"></a><code>Function <b>iDiffMonths</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffMSec"></a><code>Function <b>iDiffMSec</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffSeconds"></a><code>Function <b>iDiffSeconds</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffSeconds"></a><code>Function <b>iDiffSeconds</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffYears"></a><code>Function <b>iDiffYears</b>(p_dtFrom: TDATETIME; p_dtTo: TDATETIME):Int64 ;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iDiffYears"></a><code>Function <b>iDiffYears</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP):Int64 ;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iMilitaryToNormalHours"></a><code>Function <b>iMilitaryToNormalHours</b>(p_iHours:longint):longint;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns <a class="normal" href="numbers.html">numbers</a> to their non-military counterpart: e.g: 13 becomes 1</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iMSec"></a><code>Function <b>iMSec</b>:Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+cheap milli sec thing - returns milliseconds since midnight This is the Same as the above version of this routine except this one uses the system clock with the sysutils' NOW function.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="iMSec"></a><code>Function <b>iMSec</b>(p_dt: TDATETIME):Int64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+cheap milli sec thing - returns milliseconds since midnight.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="InitJASConfigRecord"></a><code>Procedure <b>InitJASConfigRecord</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Resets JAS Configuration to its default app start up state</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASDebugPrint"></a><code>Procedure <b>JASDebugPrint</b>(p_sa:ansistring);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sends (generally debug) messages to the console providing that the config- uration file's DebugServerConsoleMessagesEnabled is set to &quot;yes&quot;. No carriage return or LineFeed is performed, so you can append previous text you sent to the console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASDebugPrintln"></a><code>Procedure <b>JASDebugPrintln</b>(p_sa:ansistring);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sends (generally debug) messages to the console providing that the config- uration file's DebugServerConsoleMessagesEnabled is set to &quot;yes&quot;. This function sends a carriage return and a line feed after your passed string.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASPrint"></a><code>Procedure <b>JASPrint</b>(p_sa:ansistring);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sends messages to the console providing that the configuration file's ServerConsoleMessagesEnabled is set to &quot;yes&quot;. No carriage return or LineFeed is performed, so you can append previous text you sent to the console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASPrintln"></a><code>Procedure <b>JASPrintln</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sends messages to the console providing that the configuration file's ServerConsoleMessagesEnabled is set to &quot;yes&quot;. This call sends a Carriage return and a linefeed to the console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASPrintln"></a><code>Procedure <b>JASPrintln</b>(p_sa:ansistring);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sends messages to the console providing that the configuration file's ServerConsoleMessagesEnabled is set to &quot;yes&quot;. This function sends a carriage return and a line feed after your passed string.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JCopyFile"></a><code>function <b>JCopyFile</b>(p_saSrc: ansistring; p_saDest: Ansistring): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+copy file function that uses delphi classes.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JDate"></a><code>Function <b>JDate</b>( p_saDate: AnsiString; p_iFormatOut: longint; p_iFormatIn: longint ): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Variety Without Passing Date Object In OR Out - See other <code>JDATE</code> routine for more info.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JDate"></a><code>Function <b>JDate</b>( p_saDate: AnsiString; p_iFormatOut: longint; p_iFormatIn: longint; Var p_dt: TDATETIME ): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Date String to String conversion (can optionally pass date object, but send '?' as p_FormatIn parameter.
+
+<p>REQ PARAMETERS: p_saDate - DATE IN STRING FORMAT p_iFormatOut - DESIRED OUTPUT FORMAT &mdash;- unless using TDATETIME p_iFormatIn - Format of date coming in &mdash;- unless using TDATETIME
+
+<p>If Using TDATETIME, For Input/output, or who knows why you'd do both.... Send ZERO in the Appropriate p_iFormatIn and p_iFormatOut parameters.
+
+<p>var p_dtDateTime - TDATETIME. (Dual Purpose) in/out depending on passed p_saFormatIn and p_saFormatOut Parameters. which case pass '?'.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JLog"></a><code>Function <b>JLog</b>( p_u2LogType_ID: word; p_u8Entry_ID: UInt64; p_saEntryData: AnsiString; p_saSourceFile: AnsiString ): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+INTERNAL</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Merge"></a><code>procedure <b>Merge</b>( p_bPerformMerge: boolean; p_uDupeScore: cardinal; p_bCaseSensitive: boolean; var p_bDupe: boolean; p_SrcXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_DestXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_ColXDL: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+p_SrcXDL and p_DestXDL
+
+<p>XDL: Item_i8User = Weight 0-4,000,000,000 (REcommend lower values (B&circ;)&gt; ONLY HONORED IN SrcXDL. This Value is ignored in DestXDL. Range: 4 Byte Unsigned Integer - Don'<a class="normal" href="t.html">t</a> Exceed. XDL: Item_saName = Field Name (not Caption ideally but would work if both had the same naming. Which Means if DeDuping different tables, the DestXDL Item_saName's should be that of the SrcXDL. XDL: Item_saValue= Value to be compared XDL: Item_saDesc = Undefined.
+
+<p>NOTE: For <code>Merge</code> - the DestXDL will be Populated. So The Values after this routine performs a <code>merge</code>, that you'll want, will be in DestXDL.
+
+<p>If you have a small number of fields you wish to <code>merge</code> with a larger Table, only include the fields that exist in both tables.
+
+<p>The dupe Score is the Score to beat to be considered a DUPE. this is not an exact science - so this is how we learn to tweak settings to get acceptable results. Each kind of dupe checking will have unique WEIGHTS and a DupeScore.
+
+<p>If Both XDL Do No have identical COUNT of Items; also more than ZERO, otherwise the routine will fail.
+
+<p>p_ColXDL
+
+<p>The Collision XDL Returns Colisions Preventing a Full <code>Merge</code>. You Will Get a List of Column Names in p_ColXDL.Item_saName For diagnostic reasons, you will get Src Value in Item_saValue and Dest value in Item_saDesc. This might be useful to make user interface to selectively resolve colisions.
+
+<p>Naturally sending uninitialized XDLs will cause a CRASH.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ParseName"></a><code>Procedure <b>ParseName</b>( p_In_saName: ansistring; var p_Out_saFirst: ansistring; var p_Out_saMiddle: ansistring; var p_Out_saLast: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saBase64Decode"></a><code>function <b>saBase64Decode</b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Decodes passed string to base64 encoding.
+
+<p>Freepascal has classes for this but I just wanted a simple function I could call to get data from one format to another without to much fuss. Now... because streams can get large; if you find this function needs some optimization or something, consider making an overloaded version of this function that accepts the TStringStream class instances you might have in memory already to avoid having to copy said data in memory again before it can be used.
+
+<p>NOTE: an oddity for this function that isn'<a class="normal" href="t.html">t</a> related to this function but instead the underlying code. Freepascal has base64 encoding and decoding classes and we are using them. The strange thing was how in some situations a freepascal user reported missing bytes at the end of a base64 decoding. The reason has to do with the way base64 encoding more or less does groups of three bytes at a time. If the number of bytes in a stream is not evenly divisible by 3, you end up with 1 or two stragglers. Turns out.. the weird thing is that those last one or two bytes will get processed when the class destructor (destroy) is called. Here is the article:</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saBase64Encode"></a><code>function <b>saBase64Encode</b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Encodes passed string to base64 encoding.
+
+<p>Freepascal has classes for this but I just wanted a simple function I could call to get data from one format to another without to much fuss. Now... because streams can get large; if you find this function needs some optimization or something, consider making an overloaded version of this function that accepts the TStringStream class instances you might have in memory already to avoid having to copy said data in memory again before it can be used.
+
+<p>NOTE: an oddity for this function that isn'<a class="normal" href="t.html">t</a> related to this function but instead the underlying code. Freepascal has base64 encoding and decoding classes and we are using them. The strange thing was how in some situations a freepascal user reported missing bytes at the end of a base64 decoding. The reason has to do with the way base64 encoding more or less does groups of three bytes at a time. If the number of bytes in a stream is not evenly divisible by 3, you end up with 1 or two stragglers. Turns out.. the weird thing is that those last one or two bytes will get processed when the class destructor (destroy) is called. Here is the article: <a  href="http://community.freepascal.org:10000/bboards/message?message_id=243020&amp;forum_id=24088">http://community.freepascal.org:10000/bboards/message?message_id=243020&amp;forum_id=24088</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saBuildName"></a><code>Function <b>saBuildName</b>( p_saDear: AnsiString; p_saFirst: AnsiString; p_saMiddle: AnsiString; p_saLast: AnsiString; p_saSuffix: ansiString ):ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saBytesToHuman"></a><code>function <b>saBytesToHuman</b>(p_u8Size: UInt64): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this function returns a byte count into a human readable form e.g. 88342348295 bytes &ndash; EW Better: 88G 5M whatever</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saCmdLine"></a><code>Function <b>saCmdLine</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns command line when program invoked. saves user and other portions of app to piece back together the parameters - useful for logging purposes so is in mem as one string - not a loop every time the string needs to be placed back together</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saCToP"></a><code>Function <b>saCToP</b>(Var p_csrc: PChar):AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This routine takes a C++ sz and copies it into a Pascal Ansistring.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saCut"></a><code>function <b>saCut</b>(p_saSrc: ansistring; p_i8Start: int64; p_i8Length: int64): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saDebugNest"></a><code>Function <b>saDebugNest</b>(p_saSectionName: AnsiString; p_bBegin: Boolean; p_uNestLevel: UInt64): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function is used by internal <a class="normal" href="ug_jegas.html#JLog">JLOG</a> logging function and is made available externally for <a class="normal" href="ug_jfc_threadmgr.html">ug_jfc_threadmgr</a>'s internal debugging infrastructure.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saDouble"></a><code>function <b>saDouble</b>(p_fValue: double; p_iDigits: longint; p_iDecimals: longint): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Converts a double to a string</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saDoubleEscape"></a><code>function <b>saDoubleEscape</b>(p_saEscapeThis: ansistring; p_chCharToEscape: char): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Double Escapes a String. finds a char then replaces it with two of them.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saEscape"></a><code>function <b>saEscape</b>(p_saEscapeThis: ansistring; p_chCharToEscape: char; p_saReplaceWith: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Escapes a String. Finds a char and replaces it with string. eg: 'Isn/'<a class="normal" href="t.html">t</a>' = <code>saEscape</code>('Isn''<a class="normal" href="t.html">t</a>','/''');</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saExtractDir"></a><code>function <b>saExtractDir</b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Identical to <a class="normal" href="ug_jegas.html#saExtractPath">saExtractPath</a>. Extracts the directory name excluding the filename.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saExtractExt"></a><code>function <b>saExtractExt</b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the filename extension only, excluding the path and file name.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saExtractName"></a><code>function <b>saExtractName</b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the filename only. It excludes the path and the extension.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saExtractPath"></a><code>function <b>saExtractPath</b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the path without filename or extension</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saFileNameNoExt"></a><code>function <b>saFileNameNoExt</b>(p_saFileName: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Demoted. See function sExtractName(p_sFilename: string):string; Returns the filename without the extension. Demoted in favor of better function names :) Its identical ;)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saFormatTimeStamp"></a><code>Function <b>saFormatTimeStamp</b>(p_saFormat: AnsiString; p_ts: TTIMESTAMP): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saGetUniqueCommID"></a><code>Function <b>saGetUniqueCommID</b>(p_saPath: AnsiString):ansiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saInsert"></a><code>function <b>saInsert</b>(p_saSrc: ansistring; p_saInsertMe: ansistring; p_i8Start: int64): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saIOAppendLogColumnData"></a><code>Function <b>saIOAppendLogColumnData</b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOTE: Used internally by IOAppendLog This was internally Encapsulated but - returns column data prepared to be outed by IOAppend after an EOL is appendeded for the correct OS implementation.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saIOAppendLogColumnHeaders"></a><code>Function <b>saIOAppendLogColumnHeaders</b>(Var p_rIOAppendLog: <a  href="ug_jegas.rtIOAppendLog.html">rtIOAppendLog</a>): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOTE: Used internally by IOAppendLog This was internally Encapsulated but - returns column headers prepared to be outed by IOAppend after an EOL is appendeded for the correct OS implementation.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saJasLocateTemplate"></a><code>function <b>saJasLocateTemplate</b>( p_saREL_PATH_N_FILE:ansistring; p_sCurrentLang, p_sCurrentTheme: string; p_saRequestedDir: ansistring; p_i8Caller: int64; p_VHostTemplateDir: Ansistring; p_saWebShareDir: ansistring ): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function allows you to ask for a file you need from the system or a theme etc... and it will follow a series of locations to attempt to satisfy that request taking into account the current language, current theme, etc... and work its way back to the stock theme, then the built in templates that are not generally &quot;directly accessible&quot; like the theme bits might be. (It;s like the built in CORE UI for JAS - so - we have a fall back or two to try to keep running - even when things get misconfigured, forgotten or something.
+
+<p>IN: RELPATHNFILE ( e.g.: './en/error/somefile????' ); OUT: Full pathnfile to first version of file in order of precendence
+
+<p>(Current Theme Dir) CURRENT LANG (??) Folder DEFAULTLANGUAGE (EN) ROOT of Theme ( './' )
+
+<p>If NOT ALREADY IN 'stock' theme - check that next.... ('stock' Theme Dir) CURRENT LANG (??) Folder DEFAULTLANGUAGE (EN) ROOT of Theme ( './' )
+
+<p>LAST RESORT: ('templates' Dir) - Which unlike themes - are not generally set up for folks on the outside to access directly. CURRENT LANG (??) Folder DEFAULTLANGUAGE (EN) ROOT of Theme ( './' )
+
+<p>IF NOT TEMPLATE Exists - then an empty string is returned NOTE: if either or both p_saCurrentLang, p_saCurrentTheme are sent blank, than tests reliant on those will be skipped. =============================================================================</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saJDType"></a><code>Function <b>saJDType</b>(p_u2JDType:word): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+diagnostic Aid: Send it the Jegas Data Type - it will return its NAME as text</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saJegasLogoRawText"></a><code>Function <b>saJegasLogoRawText</b>(p_saEOL: AnsiString; p_bShowJASServerID: boolean): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saJegasLogoRawText"></a><code>Function <b>saJegasLogoRawText</b>(p_saEOL: AnsiString): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saJFCDirAsText"></a><code>function <b>saJFCDirAsText</b>(p_Dir: <a  href="ug_jfc_dir.JFC_DIR.html">JFC_DIR</a>; p_saLineTerminator: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+takes a loaded <a class="normal" href="ug_jfc_dir.JFC_DIR.html">JFC_DIR</a> and produces posix like output with differences were not deemed important for parsing the results.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saMid"></a><code>function <b>saMid</b>(p_saSrc: ansistring; p_i8Start: int64; p_i8Length: int64): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saParseLastName"></a><code>Function <b>saParseLastName</b>(p_saName: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saPhoneConCat"></a><code>Function <b>saPhoneConCat</b>(p_saPhone: ansistring; p_saExt: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saProper"></a><code>Function <b>saProper</b>(p_saSentence: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saSequencedFilename"></a><code>Function <b>saSequencedFilename</b>(p_saFilename: AnsiString; p_sExtension: String): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function returns the first filename in a sequence like this: FILENAME.###.EXTENSION where ### are fixed length Zero Padded #. Sequenced based on File Presense. Only fails on 999 roll over. Starts at 001 To explain a little clear. If you have SomeFile.001.txt and call this function like: saMyResult:=<code>saSequencedFilename</code>('SomeFile','txt'); and then if there isn'<a class="normal" href="t.html">t</a> a file named: SomeFile.002.txt already in existance, this is the value you will get back in saMyResult. This function can be useful so make revisions on disk - think VAX if you can go back that far.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saSingle"></a><code>function <b>saSingle</b>(p_fValue: single; p_iDigits: longint; p_iDecimals: longint): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Converts a single to a string</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saSolveRelativePath"></a><code>function <b>saSolveRelativePath</b>(p_sa: AnsiString):ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function takes a &quot;DOS RELATIVE PATH&quot; and attempts to solve it by removing the single and double dots ('.', '..') to give a solid path. This function does not verify with the operating system that this is valid, nor can it turn a dir of pure relative information into directory names.
+
+<p>TODO: Make work by verifying the PATH EXISTS as sent, and if it does, getting that information by merely changing to that path, and extracting the results. e.q. getCurDir, switch to path dir, read getdir again, go back to dir we started in (saved with first get dir) If directory can not be resolved, returned passed directory unchanged I suppose.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saWin2LinPath"></a><code>function <b>saWin2LinPath</b>(p_sa: ansistring): ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Does its best to convert a windows path to a linux one.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saWindowStateToString"></a><code>Function <b>saWindowStateToString</b>(p_i4WindowState: LongInt): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="sGetUID"></a><code>Function <b>sGetUID</b>:String; inline;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Generates (record) Unique Identifiers returns the number converted to a string for you.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="StrToTimeStamp"></a><code>Function <b>StrToTimeStamp</b>(p_sa: AnsiString):TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function takes a string and parses and converts it to a TTIMESTAMP Note that when I tried to convert 2005-01-01 05:30 AM I got erroneous results - yet when I tried '1/1/5 5:30 PM' I got '2005-01-01 17:30:00' as my timestamp. the point is you want to test to make sure the string format are using works correctly before you move forward. See the <a class="normal" href="ug_jegas.html#JDate">JDATE</a> function to convert to and from various date formats.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddDays"></a><code>Function <b>tsAddDays</b>(p_tsFrom: TTIMESTAMP; p_iDays: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddHours"></a><code>Function <b>tsAddHours</b>(p_tsFrom: TTIMESTAMP; p_Comp_Hours: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddMinutes"></a><code>Function <b>tsAddMinutes</b>(p_tsFrom: TTIMESTAMP; p_Comp_Minutes: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddMonths"></a><code>Function <b>tsAddMonths</b>( p_tsFrom: TTIMESTAMP; p_iMonths: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddMSec"></a><code>Function <b>tsAddMSec</b>( p_tsFrom: TTIMESTAMP; p_Comp_MSec: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddSec"></a><code>Function <b>tsAddSec</b>(p_tsFrom: TTIMESTAMP; p_Comp_Seconds: Comp): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsAddYears"></a><code>Function <b>tsAddYears</b>(p_tsFrom: TTIMESTAMP; p_iYears: longint): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="tsDiff"></a><code>Function <b>tsDiff</b>(p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP): TTIMESTAMP;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Time Difference function between FPC TTIMESTAMPS. Note in testing it was discovered that YEAR differences didn'<a class="normal" href="t.html">t</a> come back properly (zeroed) and the same for millisecond differences. HOURS, MINUTES and SECONDS do appear to work properly. This may be a flaw in our code, a bug in FPC lower level timestamp conversion routines this library wraps, or could be to exact spec and more work needs to be done on our end to make this function work the way we'd like. At the moment it's hardly in our critical path - but if it becomes so or you want to take a stab at fixing this - let us know! &ndash;Jason P Sage</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2ExecuteShellCommand"></a><code>function <b>u2ExecuteShellCommand</b>(p_saWorkingDir: ansistring; p_saCmd: ansistring): word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Allows you to execute a shell command in a separate process. It inherits the executing user''s environment. No Facility to add to the environment is provided. (Do it another way - use TPROCESS directly if you want to get fancy.
+
+<p>You can however pass the directory you want to be the working directory for the process you are going to invoke.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2GetCRC16TS"></a><code>Function <b>u2GetCRC16TS</b>(p_saSrcfile: ansistring): word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Thread Safe when ug_jfc_threadmgr.pp employed. returns a 16bit crc of the specified file. errors will be seen as a zero result</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2Shell"></a><code>Function <b>u2Shell</b>(p_saCommand: AnsiString; p_saParam: AnsiString): word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns ExitCode - Works for DOS and Linux. Note: Linux just appends the two parameters with a space separator. Using this gives you a platform independant way to execute shell commands. See uc_library.iCShell functions WARNING: Using this particular function with the console unit renders the mouse unusable in DOS(At least if you call another FPC app already using it). That in MIND that there may be different precautions that need platform specific &quot;safety&quot; code to handling shelling out, it is recommended you use the iCShell function which does the same thing with precautionary code. (Which last I checked didn'<a class="normal" href="t.html">t</a> exist cuz I'm waiting on a solution from FPC site) I don'<a class="normal" href="t.html">t</a> like making routines you use in one case and not in another but any other way would require circular references OR including units in a less than optimized manner just to see if they are IN USE or not.
+
+<p>NOTE: The mouse dying warning was on 1.9.? FreePascal and Windows ME - and refers to the CONSOLE (dos) window only - it's hopefully fixed now - but might be different PERIOD in newer Win platforms and this FreePascal 2.?.? version(s) 2006-05-07 Jason P Sage THE FIX: You have to use the mouse unit directly in your program and then follow these steps after shelling out: DoneMouse; InitMouse; RedrawConsole;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u8FileSize"></a><code>function <b>u8FileSize</b>(p_saFilename: ansistring): UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns specified file's size in bytes. if the file does not exist OR is ZERO LENGTH it will return ZERO! (So we get all 64bit space and dont lose half the addressing space) =|:&circ;)&gt;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u8GetCRC64TS"></a><code>Function <b>u8GetCRC64TS</b>(p_saSrcfile: ansistring): UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Thread Safe when ug_jfc_threadmgr.pp employed. returns a 64bit crc of the specified file. errors will be seen as a zero result</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u8GetUID"></a><code>Function <b>u8GetUID</b>: UInt64; inline;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Generates (record) Unique Identifiers returns the number as an UInt64 or a 64bit unsigned integer.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uIPAddressCount"></a><code>function <b>uIPAddressCount</b>(p_IP: string):UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+counts number of IP Addresses represented by the pas IP. Examples: PASSED RESULT &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 1.1.1.1 : 1 1.1.1. : 256 1.1.1 : 256 1.1. : 65536 1.1 : 65536 1. : 16777216 1 : 16777216</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WaitInMSec"></a><code>Procedure <b>WaitInMSec</b>(p_i8MilliSeconds: Int64);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WaitInSec"></a><code>Procedure <b>WaitInSec</b>(p_i8Seconds: Int64);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+SecsPerDay = 24 * 60 * 60; // Seconds and milliseconds per day MSecsPerDay = SecsPerDay * 1000; DateDelta = 693594; // Days between 1/1/0001 and 12/31/1899</p>
+</td></tr>
+</table>
+<h3 class="detail">Constants</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_00"></a><code><b>cnDateFormat_00</b>=0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+0 for when you pass DATE OBJECT, use this as format in, just so routine doesn'<a class="normal" href="t.html">t</a> kick you out.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_01"></a><code><b>cnDateFormat_01</b>=1;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+1 ADO Friendly for SAVING TO MSSQL 5/1/2005 12:00 am (or Zero Padded not sure if matters)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_02"></a><code><b>cnDateFormat_02</b>=2;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_03"></a><code><b>cnDateFormat_03</b>=3;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+BlueShoes Date Picker Format for isoInit and CGI Params</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_04"></a><code><b>cnDateFormat_04</b>=4;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_05"></a><code><b>cnDateFormat_05</b>=5;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+5 JavaScript date object - can be used to set time, I think</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_06"></a><code><b>cnDateFormat_06</b>=6;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+6 - NOTE: Your date must already be fixed up to take into account UTC time differences. This function formats it, it doesn'<a class="normal" href="t.html">t</a> translate the date to your UTC locale etc.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_07"></a><code><b>cnDateFormat_07</b>=7;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+7 javascript date.toLocaleString() format DDDD=day name spelled out</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_08"></a><code><b>cnDateFormat_08</b>=8;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+8</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_09"></a><code><b>cnDateFormat_09</b>=9;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+9</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_10"></a><code><b>cnDateFormat_10</b>=10;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+10 'Mon May 20 2002'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_11"></a><code><b>cnDateFormat_11</b>=11;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+11 '2005-01-30 14:15:12'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_12"></a><code><b>cnDateFormat_12</b>=12;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+12 '01/30/05' USA Short Format</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_13"></a><code><b>cnDateFormat_13</b>=13;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+13 '17/Jan/2007' European TODO: Implement this format in FPC <a class="normal" href="ug_jegas.html#JDate">JDATE</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_14"></a><code><b>cnDateFormat_14</b>=14;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+14 'DD/MMM/YYYY HH:MM AM' or '17/Jan/2007 03:08 PM'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_15"></a><code><b>cnDateFormat_15</b>=15;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+15 'DD/MMM/YYYY HH:MM' or '17/Jan/2007 23:00' Military</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_16"></a><code><b>cnDateFormat_16</b>=16;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+16 'HH:MM AM' or '03:08 PM'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_17"></a><code><b>cnDateFormat_17</b>=17;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+17 'HH:MM' or '23:00'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_18"></a><code><b>cnDateFormat_18</b>=18;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_19"></a><code><b>cnDateFormat_19</b>=19;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOT ZERO PADDED</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_20"></a><code><b>cnDateFormat_20</b>=20;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+ZERO PADDED</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_21"></a><code><b>cnDateFormat_21</b>=21;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+11 '2005-01-30 14:15'</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_22"></a><code><b>cnDateFormat_22</b>=22;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_23"></a><code><b>cnDateFormat_23</b>=23;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_24"></a><code><b>cnDateFormat_24</b>=24;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnDateFormat_Elements"></a><code><b>cnDateFormat_Elements</b>=11;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJegasLogColumns"></a><code><b>cnJegasLogColumns</b> = 8;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_1"></a><code><b>csDateDay_1</b>='Sunday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_2"></a><code><b>csDateDay_2</b>='Monday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_3"></a><code><b>csDateDay_3</b>='Tuesday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_4"></a><code><b>csDateDay_4</b>='Wednesday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_5"></a><code><b>csDateDay_5</b>='Thursday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_6"></a><code><b>csDateDay_6</b>='Friday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateDay_7"></a><code><b>csDateDay_7</b>='Saturday';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_00"></a><code><b>csDateFormat_00</b>='?';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_01"></a><code><b>csDateFormat_01</b>='MM/DD/YYYY HH:NN AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_02"></a><code><b>csDateFormat_02</b>='MM/DD/YYYY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_03"></a><code><b>csDateFormat_03</b>='YYYY-MM-DD';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_04"></a><code><b>csDateFormat_04</b>='DDD MMM DD HH:NN:SS EDT YYYY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_05"></a><code><b>csDateFormat_05</b>='DDD, DD MMM YYYY HH:NN:SS';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+4</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_06"></a><code><b>csDateFormat_06</b>='DDD, DD MMM YYYY HH:NN:SS UTC';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_07"></a><code><b>csDateFormat_07</b>='DDDD, DD MMM, YYYY HH:NN:SS AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_08"></a><code><b>csDateFormat_08</b>='HH:NN:SS';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_09"></a><code><b>csDateFormat_09</b>='HH:NN:SS EDT';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_10"></a><code><b>csDateFormat_10</b>='MMM DDD DD YYYY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_11"></a><code><b>csDateFormat_11</b>='YYYY-MM-DD HH:NN:SS';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_12"></a><code><b>csDateFormat_12</b>='MM/DD/YY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_13"></a><code><b>csDateFormat_13</b>='DD/MMM/YYYY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateformat_14"></a><code><b>csDateformat_14</b>='DD/MMM/YYYY HH:NN AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_15"></a><code><b>csDateFormat_15</b>='DD/MMM/YYYY HH:NN';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_16"></a><code><b>csDateFormat_16</b>='HH:NN AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_17"></a><code><b>csDateFormat_17</b>='HH:NN';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_18"></a><code><b>csDateFormat_18</b>='DD/MMM/YYYY:HH:NN:SS';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_19"></a><code><b>csDateFormat_19</b>='MM/DD/YYYY HH:NN';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_20"></a><code><b>csDateFormat_20</b>='MM/DD/YYYY HH:NN';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_21"></a><code><b>csDateFormat_21</b>='YYYY-MM-DD HH:NN';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_22"></a><code><b>csDateFormat_22</b>='DD/YYYY/MM HH:NN AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_23"></a><code><b>csDateFormat_23</b>='DDD MMM MM HH:NN:SS YYYY';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateFormat_24"></a><code><b>csDateFormat_24</b>='DD/MM/YYYY HH:NN AM';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_01"></a><code><b>csDateMonth_01</b>='January';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_02"></a><code><b>csDateMonth_02</b>='Febuary';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_03"></a><code><b>csDateMonth_03</b>='March';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_04"></a><code><b>csDateMonth_04</b>='April';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_05"></a><code><b>csDateMonth_05</b>='May';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_06"></a><code><b>csDateMonth_06</b>='June';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_07"></a><code><b>csDateMonth_07</b>='July';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_08"></a><code><b>csDateMonth_08</b>='August';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_09"></a><code><b>csDateMonth_09</b>='September';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_10"></a><code><b>csDateMonth_10</b>='October';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_11"></a><code><b>csDateMonth_11</b>='November';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csDateMonth_12"></a><code><b>csDateMonth_12</b>='December';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cs_IOAppendLog_QuoteBeginTemp"></a><code><b>cs_IOAppendLog_QuoteBeginTemp</b>='[JQUOTE_BEGIN]';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Alternate Temp Value for quotes found</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cs_IOAppendLog_QuoteEndTemp"></a><code><b>cs_IOAppendLog_QuoteEndTemp</b>='[JQUOTE_END]';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Alternate Temp Value for quotes found</p>
+</td></tr>
+</table>
+<h3 class="detail">Variables</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gasDateFormat"></a><code><b>gasDateFormat</b>: array[0..22] Of String;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gasDay"></a><code><b>gasDay</b>: array[1..7] Of String;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gasMonth"></a><code><b>gasMonth</b>: array[1..12] Of String;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gbServerCycling"></a><code><b>gbServerCycling</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is a JAS SPECIFIC variable that is here for scope reasons only. it is not used by the JegasAPI internally.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gbServerShuttingDown"></a><code><b>gbServerShuttingDown</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is a JAS SPECIFIC variable that is here for scope reasons only. it is not used by the JegasAPI internally.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="giDebugNestLevel"></a><code><b>giDebugNestLevel</b>: longint;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+used for debugging - Nesting Count (Not ideal for threaded apps yet) so I made a thread debug begin-end system too - each thread is logged separately with its memory address used to formulate the filename&quot; TTHREAD85832485789789324423.log &lt;&mdash; sort of</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="grJASConfig"></a><code><b>grJASConfig</b>: <a  href="ug_jegas.rtJASConfig.html">rtJASConfig</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="grJegasCommon"></a><code><b>grJegasCommon</b>: <a  href="ug_jegas.rtJegasCommon.html">rtJegasCommon</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This a &quot;TYPE RECORD&quot; of fields pertaining ONLY to JAS or the Jegas Application server. They are here for scope reasons but are not an integral part of the JegasAPI. Globally available.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="grPunkBeGoneStats"></a><code><b>grPunkBeGoneStats</b>: <a  href="ug_jegas.rtPunkBeGoneStats.html">rtPunkBeGoneStats</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+=============================================================================</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gsaJASFooter"></a><code><b>gsaJASFooter</b>: Ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is a JAS SPECIFIC variable that is here for scope reasons only. it is not used by the JegasAPI internally.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gu2UIDCounter"></a><code><b>gu2UIDCounter</b>: word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+============================================================================= ============================================================================= ***************************************************************************** ============================================================================= ***************************************************************************** !@!Declarations ***************************************************************************** ============================================================================= =============================================================================</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

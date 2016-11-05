@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: uc_console: record rtVCInfo</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="rtVCInfo"></a><h1 class="cio">record rtVCInfo</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Hierarchy</td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td>Methods</td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="uc_console.html">uc_console</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type rtVCInfo = record</code></p>
+<h2 class="description">Description</h2>
+<p>
+Note: Having Transparency Set To TRUE while All cell's characters set to ASCII ZERO will render the <a class="normal" href="uc_console.html#VC">VC</a> Invisible - Not hidden. The same is true for Setting All VCOpaque flags to False. These are not the most efficient ways to hide a <a class="normal" href="uc_console.html#VC">VC</a>. Just set to hidden for optimal performance.</p>
+<h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VBGC">VBGC</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VCursorType">VCursorType</a></b>: Word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VCX">VCX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VCY">VCY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VFGC">VFGC</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VH">VH</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VOpaqueBG">VOpaqueBG</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VOpaqueCh">VOpaqueCh</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VOpaqueFG">VOpaqueFG</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VPX">VPX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VPY">VPY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VScroll">VScroll</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VSH">VSH</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VSW">VSW</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VSX">VSX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VSY">VSY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VTabSize">VTabSize</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VTrackCursor">VTrackCursor</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VTransparency">VTransparency</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VUseScrollRegionCoords">VUseScrollRegionCoords</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VVisible">VVisible</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VW">VW</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VWrap">VWrap</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VY">VY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.rtVCInfo.html#VX">VX</a></b>: LongInt;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VBGC"></a><code><b>VBGC</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: <a class="normal" href="uc_console.html#Black">Black</a>) Pen Foreground And Background Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCursorType"></a><code><b>VCursorType</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: <a class="normal" href="uc_console.html#crUnderline">crUnderline</a>) The Blinky Cursor Types: <a class="normal" href="uc_console.html#crUnderline">crUnderline</a>, <a class="normal" href="uc_console.html#crHidden">crHidden</a>, <a class="normal" href="uc_console.html#crBlock">crBlock</a>, <a class="normal" href="uc_console.html#crHalfBlock">crHalfBlock</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCX"></a><code><b>VCX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Blinky Coords - One Based</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCY"></a><code><b>VCY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Blinky Coords - One Based</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VFGC"></a><code><b>VFGC</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: Light Gray) Pen Foreground And Background Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VH"></a><code><b>VH</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(No Default - You Must In <a class="normal" href="uc_console.html#NewVC">NewVC</a> Call) Height and Width of Virtual Screen</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VOpaqueBG"></a><code><b>VOpaqueBG</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles Ability to allow BG color of whatever is underneath <a class="normal" href="uc_console.html#VC">VC</a> to show</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VOpaqueCh"></a><code><b>VOpaqueCh</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles Ability to allow Characters of whatever is underneath <a class="normal" href="uc_console.html#VC">VC</a> to show</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VOpaqueFG"></a><code><b>VOpaqueFG</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles Ability to allow FG color of whatever is underneath <a class="normal" href="uc_console.html#VC">VC</a> to show</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VPX"></a><code><b>VPX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Pen Coords - One Based</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VPY"></a><code><b>VPY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Pen Coords - One Based</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VScroll"></a><code><b>VScroll</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles Auto Scroll - Which scrolls the <a class="normal" href="uc_console.html#VC">VC</a>'s contents up if while using <a class="normal" href="uc_console.html#VCWrite">VCWrite</a> commands you either wrote past the bottom right hand corner of the <a class="normal" href="uc_console.html#VC">VC</a> (if <a class="normal" href="uc_console.rtVCInfo.html#VWrap">VWrap</a> is set to true) or if a Linefeed (Ascii #10) is encountered.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VSH"></a><code><b>VSH</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: <a class="normal" href="uc_console.html#VCHeight">VCHeight</a> -See <a class="normal" href="uc_console.rtVCInfo.html#VH">VH</a> Field of this record) Scrolling Region X,Y,W,H (One Based)- MUST Be entirely within <a class="normal" href="uc_console.html#VC">VC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VSW"></a><code><b>VSW</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: <a class="normal" href="uc_console.html#VCWidth">VCWidth</a> -See <a class="normal" href="uc_console.rtVCInfo.html#VW">VW</a> Field of this record) Scrolling Region X,Y,W,H (One Based)- MUST Be entirely within <a class="normal" href="uc_console.html#VC">VC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VSX"></a><code><b>VSX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Scrolling Region X,Y,W,H (One Based)- MUST Be entirely within <a class="normal" href="uc_console.html#VC">VC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VSY"></a><code><b>VSY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Scrolling Region X,Y,W,H (One Based)- MUST Be entirely within <a class="normal" href="uc_console.html#VC">VC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VTabSize"></a><code><b>VTabSize</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 8) Tabsize - Only has effect when VCWrit'n with the pen</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VTrackCursor"></a><code><b>VTrackCursor</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles AutoCursor Tracking. The Cursor Follows the Pen when using <a class="normal" href="uc_console.html#VCWrite">VCWrite</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VTransparency"></a><code><b>VTransparency</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: False) Toggles whether characters in the <a class="normal" href="uc_console.html#VC">VC</a> with Ascii Value Zero makes those cells transparent or not. Also, Ascii 1=Solid FGC Ascii 2=Solid BGC Ascii 3=Solid FGC &amp; BGC</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VUseScrollRegionCoords"></a><code><b>VUseScrollRegionCoords</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Decides if the scroll region variables are used or if the whole <a class="normal" href="uc_console.html#VC">vc</a> (virtual console) will scroll.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VVisible"></a><code><b>VVisible</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True) Toggles whether <a class="normal" href="uc_console.html#VC">VC</a> is Hidden or not</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VW"></a><code><b>VW</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(No Default - You Must In <a class="normal" href="uc_console.html#NewVC">NewVC</a> Call) Height and Width of Virtual Screen</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VWrap"></a><code><b>VWrap</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: True)Toggles whether Writing Past the Width of the <a class="normal" href="uc_console.html#VC">VC</a> makes the cursor drop to the next line. Has no bearing on VCPut commands, just <a class="normal" href="uc_console.html#VCWrite">VCWrite</a> stuff</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VY"></a><code><b>VY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Virtual Screen coords Relative to Real Video Screen-One Based</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VX"></a><code><b>VX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(Default: 1) Virtual Screen coords Relative to Real Video Screen-One Based</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

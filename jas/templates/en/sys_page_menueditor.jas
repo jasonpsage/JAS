@@ -1,0 +1,22 @@
+<html><head><meta charset="UTF-8"><title>JAS Menu Editor</title>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012291906 SYS -->
+<script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>widgets/treeview/funcs.js"></script>
+</head>
+
+<!-- You may make other changes, but do not change the names  -->
+<!-- of the frames (treeframe and basefrm).                   -->
+<frameset cols="480,*" onResize="if (navigator.family == 'nn4') window.location.reload()">
+<frameset rows="*"><frame src=".?ACTION=MenuEditor&ME=LF&JSID=[@JSID@]" name="treeframe">
+<!--<frame src=".?ACTION=MenuEditor&ME=M" name="menu" scrolling="no" > -->
+</frameset><frame src=".?ACTION=MenuEditor&ME=RF&JSID=[@JSID@]" name="basefrm"></frameset>
+
+</html>

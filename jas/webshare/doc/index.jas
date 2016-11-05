@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <title>Loading...</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2015 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2015 -->
+
+  <!-- BEGIN - JAS WIDGET STUFF -->
+  <!--<link href="<? echo $JASDIRWEBSHARE; ?>widgets/datetimepicker/rfnet.css" rel="stylesheet" type="text/css">-->
+  <style type="text/css">
+
+   <!-- -->
+  </style>
+  <!-- END - JAS WIDGET STUFF -->
+
+  <!-- BEGIN - THEME RELATED -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <script type="text/javascript"        src= "<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/script.js"></script>
+  <link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.css" type="text/css" media="screen" />
+  <!--[if IE 6]><link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.ie6.css" type="text/css" media="screen" /><![endif]-->
+  <!--[if IE 7]><link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/style.ie7.css" type="text/css" media="screen" /><![endif]-->
+  <script type="text/javascript" src="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/script.js"></script>
+  <link rel="stylesheet" href="<? echo $JASDIRTHEME; ?><? echo $JASTHEME; ?>/jas_custom.css" type="text/css" media="screen" />
+  <!-- END - THEME RELATED -->
+
+
+
+  <!-- BEGIN - JAS STUFF -->
+  <link rel="stylesheet" href="<? echo $JASDIRWEBSHARE; ?>css/jas.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>script/jas_customizations.js"></script>
+  <script type="text/javascript" src="<? echo $JASDIRWEBSHARE; ?>script/jegas.js"></script>
+  <script type='text/javascript' src='<? echo $JASDIRWEBSHARE; ?>iwf/iwfcomplete.js'></script>
+  <!-- END - JAS STUFF -->
+
+<!-- JASCID: 201106231044 -->
+</head>
+<body onload="PageOnLoad('[@PAGETITLE@]');" >
+<div id="jas-page-background-simple-gradient"><div id="jas-page-background-gradient"></div></div>
+<div id="jas-page-background-glare"><div id="jas-page-background-glare-image"></div></div>
+<div class="jas-nav">
+  <!--@JAS-MENU@-->
+</div>
+<div id="jas-main">
+  <br />
+  <h3>JegasCRM/JAS Documentation</h3>
+  <p><b>"In the beginning, there was darkness; documentation was no where to be found."</b> that's all I got so far. Sorry.</p>
+
+
+<!--  <ul>
+    <li><a href="/jws/doc/developers/">Developers</a></li>
+    <li><a href="/jws/doc/design/">Design Overview</a></li>
+    <li><a href="/jws/doc/users/">Users</a></li>
+    <li><a href="/jws/doc/themgt/">Administrators</a></li>
+  </ul>
+-->
+  <br />
+  [@JASSIG@]
+</div>
+</body>
+</html>

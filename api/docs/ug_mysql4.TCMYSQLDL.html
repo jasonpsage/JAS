@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_mysql4: Class TCMYSQLDL</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="TCMYSQLDL"></a><h1 class="cio">Class TCMYSQLDL</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_mysql4.html">ug_mysql4</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TCMYSQLDL = class(<a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>)</code></p>
+<h2 class="description">Description</h2>
+<div class="nodescription">no description available, JFC_XDL description follows</div><p>
+Base <code>JFC_XDL</code> class</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a></li>
+<li class="thisitem">TCMYSQLDL</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_mysql4.TCMYSQLDL.html#rMySQL">rMySQL</a></b>: TMYSQL;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_mysql4.TCMYSQLDL.html#create">create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#CreateConnection">CreateConnection</a></b>(p_saHost, p_saUser, p_saPasswd: AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#ExecuteQuery">ExecuteQuery</a></b>(p_sa: AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#ExecuteQueryFromFile">ExecuteQueryFromFile</a></b>(p_sa: AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#HaveResults">HaveResults</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#pvt_CreateItem">pvt_CreateItem</a></b>: <a  href="ug_mysql4.TCMySqlItem.html">TCMySqlItem</a>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#read_bConnected">read_bConnected</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#Read_item_alpRowBuf">Read_item_alpRowBuf</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#read_item_lpQResult">read_item_lpQResult</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_mysql4.TCMYSQLDL.html#SelectDatabase">SelectDatabase</a></b>(p_sa:AnsiString):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_mysql4.TCMYSQLDL.html#DoneQuery">DoneQuery</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_mysql4.TCMYSQLDL.html#pvt_DestroyItem">pvt_DestroyItem</a></b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_mysql4.TCMYSQLDL.html#write_bConnected">write_bConnected</a></b>(p_bConnected: Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_mysql4.TCMYSQLDL.html#Write_item_alpRowBuf">Write_item_alpRowBuf</a></b>(p_lp: pointer);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_mysql4.TCMYSQLDL.html#write_item_lpQResult">write_item_lpQResult</a></b>(p_lpQResult: pointer);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_mysql4.TCMYSQLDL.html#Connected">Connected</a></b>: Boolean read <a  href="ug_mysql4.TCMYSQLDL.html#read_bConnected">read_bConnected</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#write_bConnected">Write_bConnected</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_mysql4.TCMYSQLDL.html#Item_RowBuf">Item_RowBuf</a></b>: pointer read <a  href="ug_mysql4.TCMYSQLDL.html#Read_item_alpRowBuf">read_item_alpRowBuf</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#Write_item_alpRowBuf">write_item_alpRowBuf</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_mysql4.TCMYSQLDL.html#QResult">QResult</a></b>: pointer read <a  href="ug_mysql4.TCMYSQLDL.html#read_item_lpQResult">read_item_lpQResult</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#write_item_lpQResult">write_item_lpQResult</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="rMySQL"></a><code><b>rMySQL</b>: TMYSQL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CreateConnection"></a><code>Function <b>CreateConnection</b>(p_saHost, p_saUser, p_saPasswd: AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function returns true if the connection was successful and false if not - simple enough - just remember that a record is created in the MYSQLXDL class (see uxxg_JFC.pp for details) regardless of connection. this way you can poll for errors and stuff like this: writeln(stderr, mysql_error(MySqlXDL.PTR));
+
+<p>when you are totally done you can simply delete the record from MySqlXDL with MySqlXDL.Delete - just make sure MySqlXDL is pointing to the correct connection you want to delete! It can hold a practically unlimited amount of valid and failed connections.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ExecuteQuery"></a><code>Function <b>ExecuteQuery</b>(p_sa: AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Executes query using current connection MySqlXDL is pointing to - calls mysql_store_result internally - don'<a class="normal" href="t.html">t</a> need to call it yourself. however - when you are through with the query - call <a class="normal" href="ug_mysql4.TCMYSQLDL.html#DoneQuery">DoneQuery</a> so mysql_free_result gets called.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ExecuteQueryFromFile"></a><code>Function <b>ExecuteQueryFromFile</b>(p_sa: AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Works Just Like Execute Query except it executes the specified file if it can find it and load it.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="HaveResults"></a><code>Function <b>HaveResults</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+returns true if current connection MySQLXDL is pointing to. This only works if you follow recommendations - see &quot;<a class="normal" href="ug_mysql4.TCMYSQLDL.html#QResult">QResult</a>&quot; above.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_CreateItem"></a><code>Function <b>pvt_CreateItem</b>: <a  href="ug_mysql4.TCMySqlItem.html">TCMySqlItem</a>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_bConnected"></a><code>Function <b>read_bConnected</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_item_alpRowBuf"></a><code>Function <b>Read_item_alpRowBuf</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_item_lpQResult"></a><code>Function <b>read_item_lpQResult</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SelectDatabase"></a><code>Function <b>SelectDatabase</b>(p_sa:AnsiString):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Calls mysql_select_db for current connection MySqlXDL is pointing to.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DoneQuery"></a><code>Procedure <b>DoneQuery</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Calls mysql_free_result for current connection MYSqlXDL is pointing to.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_DestroyItem"></a><code>Procedure <b>pvt_DestroyItem</b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_bConnected"></a><code>Procedure <b>write_bConnected</b>(p_bConnected: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_item_alpRowBuf"></a><code>Procedure <b>Write_item_alpRowBuf</b>(p_lp: pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_item_lpQResult"></a><code>Procedure <b>write_item_lpQResult</b>(p_lpQResult: pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Connected"></a><code>property <b>Connected</b>: Boolean read <a  href="ug_mysql4.TCMYSQLDL.html#read_bConnected">read_bConnected</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#write_bConnected">Write_bConnected</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Obvious - But it only works for current &quot;connection&quot; MySqlXDL is pointing to.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_RowBuf"></a><code>property <b>Item_RowBuf</b>: pointer read <a  href="ug_mysql4.TCMYSQLDL.html#Read_item_alpRowBuf">read_item_alpRowBuf</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#Write_item_alpRowBuf">write_item_alpRowBuf</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This is a shorthand way to access <a class="normal" href="ug_mysql4.TCMySqlItem.html">TCMySqlItem</a>(MySqlXDL.lpITem).aRowBuf When mysql_fetchrow. Example: MySqlXDL.RowBuf:=mysql_fetch_row(MySQLXDL.QResult);
+
+<p>This is provided so you can have a rowbuffer for each connection in MySQLXDL. Accessing elements directly is a pain - its easyier to make a your own MyRowBuf: TMySql_ROW; for working with - just assign it like this MyRowBuf:=MySqlXDL.RowBuf; then do whatever writeln(MyRowBuf[1]); (Or use the ITEM in the linked list directly.)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="QResult"></a><code>property <b>QResult</b>: pointer read <a  href="ug_mysql4.TCMYSQLDL.html#read_item_lpQResult">read_item_lpQResult</a> Write <a  href="ug_mysql4.TCMYSQLDL.html#write_item_lpQResult">write_item_lpQResult</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns mysql.pp &quot;PMYSQL_RES&quot; This is maintained provided you use Method <a class="normal" href="ug_mysql4.TCMYSQLDL.html#ExecuteQuery">ExecuteQuery</a> instead of mysql_query and you use method <a class="normal" href="ug_mysql4.TCMYSQLDL.html#DoneQuery">DoneQuery</a> instead of mysql_free_result. If you follow this advice - <code>QResult</code> will be set to NIL whenever you don'<a class="normal" href="t.html">t</a> have results in mem. This is how the method <a class="normal" href="ug_mysql4.TCMYSQLDL.html#HaveResults">HaveResults</a> works. This works on the Current &quot;connection&quot; MySQLXDL is pointing to.</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

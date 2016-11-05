@@ -1,0 +1,11 @@
+[Fri Nov 04 17:46:51 2016] [error] [client 127.0.0.1] Unable to comply. Will not delete JAS System Records.
+[Fri Nov 04 17:46:51 2016] [error] [client 127.0.0.1] bPreDelete called from Detail Screen Failed. Table: jtable UID: 1605302008184020028
+[Fri Nov 04 17:53:08 2016] [error] [client 127.0.0.1] Unable to comply. Will not delete JAS System Records.
+[Fri Nov 04 18:18:32 2016] [error] [client 0.0.0.0] TWORKER.CheckJobQ - Trouble executing query.
+[Fri Nov 04 19:07:00 2016] [error] [client 0.0.0.0] TWORKER.CheckJobQ - Trouble executing query.
+[Fri Nov 04 19:13:31 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Fri Nov 04 19:13:31 2016] [error] [client 127.0.0.1] Trouble deleting record. s: b4 delete call table name >jorgpers<
+[Fri Nov 04 19:14:02 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Fri Nov 04 19:14:02 2016] [error] [client 127.0.0.1] Trouble deleting record. s: b4 delete call table name >jorgpers<
+[Fri Nov 04 20:19:05 2016] [error] [client 127.0.0.1] bJAS_ValidateSession unable to load JSession Record.
+[Fri Nov 04 20:19:05 2016] [error] [client 127.0.0.1] Invalid Session

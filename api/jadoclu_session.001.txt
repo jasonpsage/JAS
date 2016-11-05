@@ -1,0 +1,8 @@
+?
+f
+?
+/jegas/jas/config/jas.dbc
+?
+c
+select * from jcolumn;
+q

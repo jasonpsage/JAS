@@ -1,2 +1,0 @@
-"JLOGT_DateNTime_dt","JLOGT_Severity_u1","JLOGT_Entry_ID","JLOGT_EntryData_s","JLOGT_SourceFile_s","JLOGT_User_ID","JLOGT_OS_Login_s","JLOGT_CmdLine_s"
-2015-11-16 19:41:23,5,201203091110,"Deleted Log File as instructed in JAS configuration.","uj_config.pp",0,"(?)","C:\JegasCRM\src\jas.exe"

@@ -1,0 +1,57 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201012271718 sys -->
+<!--PAGETITLE "dev_view_html"-->
+<h3>Paste HTML code below...</h3>
+
+<a target="_blank" href="[@ALIAS@].?action=help&helpid=0&JSID=[@JSID@]" title="Render HTML Screen Help">
+  <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+</a>
+
+
+<textarea id="ta" cols="100" rows="4"></textarea>
+<h3>Then click the Render Button...</h3>
+<script>
+  function render(){
+    document.getElementById('mydiv').innerHTML=document.getElementById('ta').value;
+  };
+</script>
+<input id="btnRender" type="button" value="Reset" onclick="document.getElementById('ta').value='';document.getElementById('mydiv').innerHTML='';"/>
+<input id="btnRender" type="button" value="Render HTML CODE" onclick="render();"/>
+
+
+
+
+
+  <div id="container">
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+        <div class="jas-post-inner jas-article">
+          <div id="mydiv" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

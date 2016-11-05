@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfc_buffer: Class JFC_BUFFER</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JFC_BUFFER"></a><h1 class="cio">Class JFC_BUFFER</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfc_buffer.html">ug_jfc_buffer</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JFC_BUFFER = class(<a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a>)</code></p>
+<h2 class="description">Description</h2>
+<div class="nodescription">no description available, JFC_DLITEM description follows</div><p>
+BASE Class for everything (By using this as base - a class can be directly manipulated by classes derived from <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a>. If this isn'<a class="normal" href="t.html">t</a> possible you still can <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a>. For this situation - <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> was &quot;recreated&quot; for Version 3 of this Library - Its not 100% Compatible - Names changed to match V3 - but its basicly the same thing - ONLY FASTER and LEANER than ever. Dynamic Linked List Navigation is FAST but sorting is a bit trickier. There is a method for SWAPPING Linked List positions but for faster sorting (without using an array directly) I'd use <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">lpPTR</a> for my objects and just swap pointers or something... I'm not a sorting genuis anyways.</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="thisitem">JFC_BUFFER</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_lpBuffer">pvt_lpBuffer</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSize">pvt_uSize</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSizePerItem">pvt_uSizePerItem</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_buffer.JFC_BUFFER.html#uItems">uItems</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#create">create</a></b>(p_uSize: UInt64; p_uSizePerItem: UInt64);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#destroy">destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#chIn">chIn</a></b>(p_ch: char): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#saOut">saOut</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#DeleteAll">DeleteAll</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#SaIn">SaIn</a></b>(Var p_sa: AnsiString);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#write_uSize">write_uSize</a></b>(p_u: UInt64);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#lpBuffer">lpBuffer</a></b>: pointer read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_lpBuffer">pvt_lpBuffer</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#uSize">uSize</a></b>: UInt64 read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSize">pvt_usize</a> Write <a  href="ug_jfc_buffer.JFC_BUFFER.html#write_uSize">write_usize</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_buffer.JFC_BUFFER.html#uSizePerItem">uSizePerItem</a></b>: UInt64 read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSizePerItem">pvt_uSizePerItem</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="pvt_lpBuffer"></a><code><b>pvt_lpBuffer</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="pvt_uSize"></a><code><b>pvt_uSize</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+=============================================================================</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="pvt_uSizePerItem"></a><code><b>pvt_uSizePerItem</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uItems"></a><code><b>uItems</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Used for &quot;How Much In Buffer&quot; scratch variable for your programs/units and used by &quot;<a class="normal" href="ug_jfc_buffer.JFC_BUFFER.html#SaIn">saIn</a>&quot; method of this class. Modified by &quot;<a class="normal" href="ug_jfc_buffer.JFC_BUFFER.html#SaIn">SAIN</a>(ansistring)&quot; automatically and USED as a GUIDE for &quot;<a class="normal" href="ug_jfc_buffer.JFC_BUFFER.html#saOut">saOut</a>: ansistring&quot; You can use as a scratch variable also.</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>(p_uSize: UInt64; p_uSizePerItem: UInt64);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="destroy"></a><code>Destructor <b>destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="chIn"></a><code>Function <b>chIn</b>(p_ch: char): boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function adds the char to the buffer as an alternative to sending in a string. This should process faster than using the <a class="normal" href="ug_jfc_buffer.JFC_BUFFER.html#SaIn">saIn</a> procedure to process individual characters/bytes. the function returns false if the char can not fit in the buffer.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saOut"></a><code>Function <b>saOut</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns ansistring of contents in buffer, iBytesInBuffer long Internally MOVE is used so it should be fast.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DeleteAll"></a><code>procedure <b>DeleteAll</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Does what it looks like. Its here for convenience. Setting the Size of the buffer (<a class="normal" href="ug_jfc_buffer.JFC_BUFFER.html#uSize">uSize</a>) to zero does the same thing.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SaIn"></a><code>Procedure <b>SaIn</b>(Var p_sa: AnsiString);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Copies an ansistring into buffer This uses MOVE and DELETE so it should be fast. The AnsiString PARAMETER you send WILL be modified! IF the whole String fits in the buffer - then it will come back empty. If only part fits in the buffer - then the part that fits will be deleted and the shortened (not fitting) portion will be what you have left. Use iBytesInBuffer to get the number of bytes actually copied to the buffer and subsequently &quot;Delete&quot;'d from your passed parameter. Forced to make my own DELETE called <a class="normal" href="ug_common.html#DeleteString">DELETESTRING</a> cuz FPC version crashed with 2 meg ansistring when trying to &quot;DELETE&quot; LEft 1 meg of it. <a class="normal" href="ug_common.html#DeleteString">DELETESTRING</a> is in u03g_strings.pp Uses FPC sysutils LEftStr and RightStr - Should be fairly fast still and does try to prevent errors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="write_uSize"></a><code>Procedure <b>write_uSize</b>(p_u: UInt64);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpBuffer"></a><code>property <b>lpBuffer</b>: pointer read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_lpBuffer">pvt_lpBuffer</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uSize"></a><code>property <b>uSize</b>: UInt64 read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSize">pvt_usize</a> Write <a  href="ug_jfc_buffer.JFC_BUFFER.html#write_uSize">write_usize</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Resize BUFFER - Contents Preserved but &quot;NEW&quot; empty space is not ZERO filled or anything.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uSizePerItem"></a><code>property <b>uSizePerItem</b>: UInt64 read <a  href="ug_jfc_buffer.JFC_BUFFER.html#pvt_uSizePerItem">pvt_uSizePerItem</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

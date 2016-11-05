@@ -1,0 +1,2979 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: uc_console</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<h1 class="unit">Unit uc_console</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td><a class="section" href="#PasDoc-Classes">Classes, Interfaces, Objects and Records</a></td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td><a class="section" href="#PasDoc-Constants">Constants</a></td><td><a class="section" href="#PasDoc-Variables">Variables</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+This unit is the CORE Jegas API's Console support. It uses the core runtime library units Video, Mouse and Keyboard to provide virtual consoles allowing console based GUI (they are still very useful) applications, swimming fish, or even aconsole based graphical game. so you basically can have as many virtual console as you want, you define the size, even the z order. You can even poke holes in them and see thru them!</p>
+<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
+<ul class="useslist"><li>crt</li><li>dos</li><li>Keyboard</li><li>Mouse</li><li>Sysutils</li><li><a  href="ug_common.html">ug_common</a></li><li><a  href="ug_jegas.html">ug_jegas</a></li><li><a  href="ug_jfc_tokenizer.html">ug_JFC_TOKENIZER</a></li><li><a  href="ug_jfc_xdl.html">ug_JFC_XDL</a></li><li>Video</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Classes"></a><h3 class="cio">Classes, Interfaces, Objects and Records</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Name</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="uc_console.rtConsoleDriver.html"><code>rtConsoleDriver</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list2">
+<td class="itemname">record&nbsp;<a class="bold" href="uc_console.rtConsoleMode.html"><code>rtConsoleMode</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="uc_console.rtKeyPress.html"><code>rtKeyPress</code></a></td>
+<td class="itemdesc">Structure used to store keypress information</td>
+</tr>
+<tr class="list2">
+<td class="itemname">record&nbsp;<a class="bold" href="uc_console.rtMEvent.html"><code>rtMEvent</code></a></td>
+<td class="itemdesc">PREPARATION for NCURSES Type Output - Either ANSI or GFX Chars If I ever get around to it - these chars - when encountered in buffer will be translated to the Correct &quot;NCURSES&quot; call on linux Cheap Way Out For Now is the compiler define</td>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="uc_console.rtVCInfo.html"><code>rtVCInfo</code></a></td>
+<td class="itemdesc">Note: Having Transparency Set To TRUE while All cell's characters set to ASCII ZERO will render the <a class="normal" href="uc_console.html#VC">VC</a> Invisible - Not hidden.</td>
+</tr>
+<tr class="list2">
+<td class="itemname">Class&nbsp;<a class="bold" href="uc_console.TVCXDL.html"><code>TVCXDL</code></a></td>
+<td class="itemdesc">This is an extended <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> class used to facilitate this library The ZOrder is accomplished using the <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> simple bubble sort on the <a class="normal" href="uc_console.html#VC">VC</a>'s Z-Order field</td>
+</tr>
+<tr class="list">
+<td class="itemname">Class&nbsp;<a class="bold" href="uc_console.TVCXDLITEM.html"><code>TVCXDLITEM</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+</table>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#BringVCToTop">BringVCToTop</a></b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#DoneConsole">DoneConsole</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetActiveVC">GetActiveVC</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#GetConsoleDriver">GetConsoleDriver</a></b>(Var Driver: <a  href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#GetConsoleMode">GetConsoleMode</a></b>(Var Mode: <a  href="uc_console.rtConsoleMode.html">rtConsoleMode</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetConsoleModeCount">GetConsoleModeCount</a></b>: Word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetConsoleModeData">GetConsoleModeData</a></b>(Index: Word; Var Data: <a  href="uc_console.rtConsoleMode.html">rtConsoleMode</a>):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#GetKeyPress">GetKeyPress</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetMButtons">GetMButtons</a></b>: Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetMEvent">GetMEvent</a></b>:<a  href="uc_console.rtMEvent.html">rtMEvent</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetMX">GetMX</a></b>: Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetMY">GetMY</a></b>: Word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetVCCount">GetVCCount</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetVCZ">GetVCZ</a></b>(p_Z: LongInt): LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#GetZVC">GetZVC</a></b>(p_VC: LongInt): LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#HaveM">HaveM</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#HideMCursor">HideMCursor</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#InitConsole">InitConsole</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#KeyHit">KeyHit</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#MButtons">MButtons</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#MEvent">MEvent</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#NewVC">NewVC</a></b>(p_iX, p_iY,p_iVWidth, p_iVHeight: Longint):UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#NewVC">NewVC</a></b>(p_iX, p_iY,p_iVWidth, p_iVHeight: Longint;p_u1VFGC, p_u1VBGC: Byte):UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#NewVC">NewVC</a></b>:UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#NewVC">NewVC</a></b>(p_iVWidth, p_iVHeight: LongInt):UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#RemoveVC">RemoveVC</a></b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#SetActiveVC">SetActiveVC</a></b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#SetConsoleDriver">SetConsoleDriver</a></b>(Const Driver: <a  href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#SetMXY">SetMXY</a></b>(x,y:Word);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#ShowMCursor">ShowMCursor</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#SyncAllVC">SyncAllVC</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#ToggleVCVisible">ToggleVCVisible</a></b>(p_VC:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#TurnOffCNTLC">TurnOffCNTLC</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#UpdateConsole">UpdateConsole</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCClear">VCClear</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCClrEol">VCClrEol</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCCursorType">VCCursorType</a></b>: Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCDrawBGXY">VCDrawBGXY</a></b>(px,py: LongInt;sa:AnsiString);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBox">VCFillBox</a></b>(X,Y: LongInt;W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxBGC">VCFillBoxBGC</a></b>(X,Y: LongInt;W,H: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxBGCCTR">VCFillBoxBGCCTR</a></b>(W,H: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxChar">VCFillBoxChar</a></b>(X,Y: LongInt;W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxCharCTR">VCFillBoxCharCTR</a></b>(W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxCTR">VCFillBoxCTR</a></b>(W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxFGC">VCFillBoxFGC</a></b>(X,Y: LongInt;W,H: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCFillBoxFGCCTR">VCFillBoxFGCCTR</a></b>(W,H: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetAll">VCGetAll</a></b>(p_iX, p_iY: LongInt):Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetBGC">VCGetBGC</a></b>(p_iX, p_iY: LongInt):Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetCenterX">VCGetCenterX</a></b>(p_iWidth: LongInt): LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetCenterY">VCGetCenterY</a></b>(p_iHeight: LongInt): LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetChar">VCGetChar</a></b>(p_iX, p_iY: LongInt): Char;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetCursorX">VCGetCursorX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetCursorY">VCGetCursorY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetFGC">VCGetFGC</a></b>(p_iX, p_iY: LongInt):Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetInfo">VCGetInfo</a></b>: <a  href="uc_console.rtVCInfo.html">rtVCInfo</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetOpaqueBG">VCGetOpaqueBG</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetOpaqueCH">VCGetOpaqueCH</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetOpaqueFG">VCGetOpaqueFG</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetPenBGC">VCGetPenBGC</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetPenFGC">VCGetPenFGC</a></b>: Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetPenX">VCGetPenX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetPenY">VCGetPenY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetScroll">VCGetScroll</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCGetScrollRegion">VCGetScrollRegion</a></b>(Var p_X, p_Y, p_W, p_H: LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetTabSize">VCGetTabSize</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetTrackCursor">VCGetTrackCursor</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetTransparency">VCGetTransparency</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetUseScrollRegionCoords">VCGetUseScrollRegionCoords</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetVisible">VCGetVisible</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetWrap">VCGetWrap</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetX">VCGetX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetY">VCGetY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCGetZ">VCGetZ</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCHeight">VCHeight</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCPutAll">VCPutAll</a></b>(p_iX, p_iY: LongInt; p_wAll:Word);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCPutAll">VCPutAll</a></b>(p_iX, p_iY: LongInt; P_ch: Char; p_byFG, p_byBG: Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCPutBGC">VCPutBGC</a></b>(p_iX, p_iY: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCPutChar">VCPutChar</a></b>(p_iX, p_iY: LongInt; p_ch:Char);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCPutFGC">VCPutFGC</a></b>(p_iX, p_iY: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCRedrawCell">VCRedrawCell</a></b>(p_vx,p_vy:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCResize">VCResize</a></b>(p_iNewWidth, p_iNewHeight: LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCScrollDown">VCScrollDown</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCScrollLeft">VCScrollLeft</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCScrollRight">VCScrollRight</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCScrollUp">VCScrollUp</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetBGC">VCSetBGC</a></b>(p_u1BGC: Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetCursorType">VCSetCursorType</a></b>(p_wCursorType: Word);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetCursorXY">VCSetCursorXY</a></b>(p_iX, p_iY: LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetFGC">VCSetFGC</a></b>(p_u1FGC: Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetInfo">VCSetInfo</a></b>(p_rVCInfo: <a  href="uc_console.rtVCInfo.html">rtVCInfo</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetOpaqueBG">VCSetOpaqueBG</a></b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetOpaqueCh">VCSetOpaqueCh</a></b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetOpaqueFG">VCSetOpaqueFG</a></b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetPenX">VCSetPenX</a></b>(p_iX:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetPenXY">VCSetPenXY</a></b>(p_iX, p_iY:LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetPenY">VCSetPenY</a></b>(p_iY:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetScroll">VCSetScroll</a></b>(p_bEnabled: Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetScrollRegion">VCSetScrollRegion</a></b>(p_X, p_Y, p_W, p_H: LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetTabsize">VCSetTabsize</a></b>(p_iTabsize: LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetTrackCursor">VCSetTrackCursor</a></b>(p_bTrackCursor: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetTransparency">VCSetTransparency</a></b>(p_bTransparency:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetUseScrollRegionCoords">VCSetUseScrollRegionCoords</a></b>(p_b: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetVisible">VCSetVisible</a></b>(p_b:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetWrap">VCSetWrap</a></b>(p_bWrap: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSetXY">VCSetXY</a></b>(p_iX, p_iY:LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSNRBox">VCSNRBox</a></b>(X,Y: LongInt;W,H: LongInt; chfind,chreplace:Char);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCSNRBoxCTR">VCSNRBoxCTR</a></b>(W,H: LongInt; chfind,chreplace:Char);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_console.html#VCWidth">VCWidth</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWordWrap">VCWordWrap</a></b>(p_iWidth,p_iHeight: LongInt; p_saMsg: AnsiString);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWrite">VCWrite</a></b>(sa:AnsiString);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteChar">VCWriteChar</a></b>(p_Char: Char);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteCharXY">VCWriteCharXY</a></b>(p_iX, p_iY: LongInt; p_ch:Char);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteCTR">VCWriteCTR</a></b>(sa:AnsiString);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteln">VCWriteln</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteln">VCWriteln</a></b>(sa:AnsiString);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_console.html#VCWriteXY">VCWriteXY</a></b>(X,Y: LongInt; sa: AnsiString) ;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Constants"></a><h3 class="summary">Constants</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#Black">Black</a></b>         = <a  href="uc_console.html#Black">Black</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#Blue">Blue</a></b>          = <a  href="uc_console.html#Blue">Blue</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#Brown">Brown</a></b>         = <a  href="uc_console.html#Brown">Brown</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_CHECKMARK">cch_GFX_CHECKMARK</a></b>='X';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_CURLYBRACELEFT">cch_GFX_CURLYBRACELEFT</a></b>='(';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_CURLYBRACERIGHT">cch_GFX_CURLYBRACERIGHT</a></b>=')';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_DOT1">cch_GFX_DOT1</a></b>='.';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_DOT2">cch_GFX_DOT2</a></b>='.';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_DOT3">cch_GFX_DOT3</a></b>='.';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_DOT4">cch_GFX_DOT4</a></b>='#';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HALFBOTTOM">cch_GFX_HALFBOTTOM</a></b> = ' ';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HALFLEFT">cch_GFX_HALFLEFT</a></b> = ' ';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HALFRIGHT">cch_GFX_HALFRIGHT</a></b>=' ';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HALFTOP">cch_GFX_HALFTOP</a></b> = ' ';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HARROWDOWN">cch_GFX_HARROWDOWN</a></b> = 'v';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HARROWLEFT">cch_GFX_HARROWLEFT</a></b> = '&lt;';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HARROWRIGHT">cch_GFX_HARROWRIGHT</a></b> = '&gt;';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HARROWUP">cch_GFX_HARROWUP</a></b> = '&circ;';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMEBOTTOMLEFT">cch_GFX_HFRAMEBOTTOMLEFT</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMEBOTTOMRIGHT">cch_GFX_HFRAMEBOTTOMRIGHT</a></b>='*';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMECROSS">cch_GFX_HFRAMECROSS</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMEHORIZONTAL">cch_GFX_HFRAMEHORIZONTAL</a></b>='*';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMET">cch_GFX_HFRAMET</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMETLEFT">cch_GFX_HFRAMETLEFT</a></b>='*';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMETOPLEFT">cch_GFX_HFRAMETOPLEFT</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMETOPRIGHT">cch_GFX_HFRAMETOPRIGHT</a></b>='*';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMETRIGHT">cch_GFX_HFRAMETRIGHT</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMETU">cch_GFX_HFRAMETU</a></b>='*';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_HFRAMEVERTICAL">cch_GFX_HFRAMEVERTICAL</a></b>='*';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LARROWDOWN">cch_GFX_LARROWDOWN</a></b> = 'v';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LARROWLEFT">cch_GFX_LARROWLEFT</a></b> = '&lt;';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LARROWRIGHT">cch_GFX_LARROWRIGHT</a></b> = '&gt;';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LARROWUP">cch_GFX_LARROWUP</a></b> = '&circ;';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMEBOTTOMLEFT">cch_GFX_LFRAMEBOTTOMLEFT</a></b>='+';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMEBOTTOMRIGHT">cch_GFX_LFRAMEBOTTOMRIGHT</a></b>='+';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMECROSS">cch_GFX_LFRAMECROSS</a></b>=' ';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMEHORIZONTAL">cch_GFX_LFRAMEHORIZONTAL</a></b>='+';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMET">cch_GFX_LFRAMET</a></b>='+';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMETLEFT">cch_GFX_LFRAMETLEFT</a></b>='+';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMETOPLEFT">cch_GFX_LFRAMETOPLEFT</a></b>='+';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMETOPRIGHT">cch_GFX_LFRAMETOPRIGHT</a></b>='+';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMETRIGHT">cch_GFX_LFRAMETRIGHT</a></b>='+';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMETU">cch_GFX_LFRAMETU</a></b>='+';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_LFRAMEVERTICAL">cch_GFX_LFRAMEVERTICAL</a></b>='+';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_PIPE">cch_GFX_PIPE</a></b>='|';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_SHADE1">cch_GFX_SHADE1</a></b> = ' ';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_SHADE2">cch_GFX_SHADE2</a></b> = ' ';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_SHADE3">cch_GFX_SHADE3</a></b> = ' ';</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#cch_GFX_SOLID">cch_GFX_SOLID</a></b> = ' ';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#CR">CR</a></b> = #13;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#crBlock">crBlock</a></b>=<a  href="uc_console.html#crBlock">crBlock</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#crHalfBlock">crHalfBlock</a></b>=<a  href="uc_console.html#crHalfBlock">crHalfBlock</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#crHidden">crHidden</a></b>=<a  href="uc_console.html#crHidden">crHidden</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#CRLF">CRLF</a></b> = <a  href="uc_console.html#CR">CR</a>+<a  href="uc_console.html#LF">LF</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#crUnderline">crUnderline</a></b>=<a  href="uc_console.html#crUnderline">crUnderline</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#Cyan">Cyan</a></b>          = <a  href="uc_console.html#Cyan">Cyan</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#DarkGray">DarkGray</a></b>      = <a  href="uc_console.html#DarkGray">DarkGray</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#Green">Green</a></b>         = <a  href="uc_console.html#Green">Green</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbAscii">kbAscii</a></b> = <a  href="uc_console.html#kbAscii">kbAscii</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdDelete">kbdDelete</a></b> = <a  href="uc_console.html#kbdDelete">kbdDelete</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdDown">kbdDown</a></b> = <a  href="uc_console.html#kbdDown">kbdDown</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdEnd">kbdEnd</a></b> = <a  href="uc_console.html#kbdEnd">kbdEnd</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF1">kbdF1</a></b> = <a  href="uc_console.html#kbdF1">kbdF1</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF10">kbdF10</a></b> = <a  href="uc_console.html#kbdF10">kbdF10</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF11">kbdF11</a></b> = <a  href="uc_console.html#kbdF11">kbdF11</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF12">kbdF12</a></b> = <a  href="uc_console.html#kbdF12">kbdF12</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF13">kbdF13</a></b> = <a  href="uc_console.html#kbdF13">kbdF13</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF14">kbdF14</a></b> = <a  href="uc_console.html#kbdF14">kbdF14</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF15">kbdF15</a></b> = <a  href="uc_console.html#kbdF15">kbdF15</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF16">kbdF16</a></b> = <a  href="uc_console.html#kbdF16">kbdF16</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF17">kbdF17</a></b> = <a  href="uc_console.html#kbdF17">kbdF17</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF18">kbdF18</a></b> = <a  href="uc_console.html#kbdF18">kbdF18</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF19">kbdF19</a></b> = <a  href="uc_console.html#kbdF19">kbdF19</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF2">kbdF2</a></b> = <a  href="uc_console.html#kbdF2">kbdF2</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF20">kbdF20</a></b> = <a  href="uc_console.html#kbdF20">kbdF20</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF3">kbdF3</a></b> = <a  href="uc_console.html#kbdF3">kbdF3</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF4">kbdF4</a></b> = <a  href="uc_console.html#kbdF4">kbdF4</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF5">kbdF5</a></b> = <a  href="uc_console.html#kbdF5">kbdF5</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF6">kbdF6</a></b> = <a  href="uc_console.html#kbdF6">kbdF6</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF7">kbdF7</a></b> = <a  href="uc_console.html#kbdF7">kbdF7</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF8">kbdF8</a></b> = <a  href="uc_console.html#kbdF8">kbdF8</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdF9">kbdF9</a></b> = <a  href="uc_console.html#kbdF9">kbdF9</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdHome">kbdHome</a></b> = <a  href="uc_console.html#kbdHome">kbdHome</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdInsert">kbdInsert</a></b> = <a  href="uc_console.html#kbdInsert">kbdInsert</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdLeft">kbdLeft</a></b> = <a  href="uc_console.html#kbdLeft">kbdLeft</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdMiddle">kbdMiddle</a></b> = <a  href="uc_console.html#kbdMiddle">kbdMiddle</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdPgDn">kbdPgDn</a></b> = <a  href="uc_console.html#kbdPgDn">kbdPgDn</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdPgUp">kbdPgUp</a></b> = <a  href="uc_console.html#kbdPgUp">kbdPgUp</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdRight">kbdRight</a></b> = <a  href="uc_console.html#kbdRight">kbdRight</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbdUp">kbdUp</a></b> = <a  href="uc_console.html#kbdUp">kbdUp</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbFnKey">kbFnKey</a></b> = <a  href="uc_console.html#kbFnKey">kbFnKey</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbPhys">kbPhys</a></b> = <a  href="uc_console.html#kbPhys">kbPhys</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbReleased">kbReleased</a></b> = <a  href="uc_console.html#kbReleased">kbReleased</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#kbUniCode">kbUniCode</a></b> = <a  href="uc_console.html#kbUniCode">kbUniCode</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#LF">LF</a></b> = #10;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightBlue">LightBlue</a></b>     = <a  href="uc_console.html#LightBlue">LightBlue</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightCyan">LightCyan</a></b>     = <a  href="uc_console.html#LightCyan">LightCyan</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightGray">LightGray</a></b>     = <a  href="uc_console.html#LightGray">LightGray</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightGreen">LightGreen</a></b>    = <a  href="uc_console.html#LightGreen">LightGreen</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightMagenta">LightMagenta</a></b>  = <a  href="uc_console.html#LightMagenta">LightMagenta</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#LightRed">LightRed</a></b>      = <a  href="uc_console.html#LightRed">LightRed</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#Magenta">Magenta</a></b>       = <a  href="uc_console.html#Magenta">Magenta</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseActionDown">MouseActionDown</a></b>   = <a  href="uc_console.html#MouseActionDown">MouseActionDown</a>   ;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseActionMove">MouseActionMove</a></b>   = <a  href="uc_console.html#MouseActionMove">MouseActionMove</a>   ;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseActionUp">MouseActionUp</a></b>     = <a  href="uc_console.html#MouseActionUp">MouseActionUp</a>     ;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseLeftButton">MouseLeftButton</a></b>   = <a  href="uc_console.html#MouseLeftButton">MouseLeftButton</a>   ;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseMiddleButton">MouseMiddleButton</a></b> = <a  href="uc_console.html#MouseMiddleButton">MouseMiddleButton</a> ;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#MouseRightButton">MouseRightButton</a></b>  = <a  href="uc_console.html#MouseRightButton">MouseRightButton</a>  ;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#Red">Red</a></b>           = <a  href="uc_console.html#Red">Red</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#White">White</a></b>         = <a  href="uc_console.html#White">White</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#Yellow">Yellow</a></b>        = <a  href="uc_console.html#Yellow">Yellow</a>;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Variables"></a><h3 class="summary">Variables</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#ActiveVC">ActiveVC</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#bInvalid">bInvalid</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#ConsoleCapabilities">ConsoleCapabilities</a></b>: Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#ConsoleUnitInitialized">ConsoleUnitInitialized</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#CursorType">CursorType</a></b>: Word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#CursorX">CursorX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#CursorY">CursorY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#gbConsoleDebugLog">gbConsoleDebugLog</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#giConsoleHeight">giConsoleHeight</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#giConsoleWidth">giConsoleWidth</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#gsaTerm">gsaTerm</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#MG">MG</a></b>: &circ;UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#rLKey">rLKey</a></b>: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#rLMEvent">rLMEvent</a></b>: <a  href="uc_console.rtMEvent.html">rtMEvent</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#rPollMouseEvent">rPollMouseEvent</a></b>: TMouseEvent;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#RVM">RVM</a></b>: TVideoMode;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_console.html#uMSButtons">uMSButtons</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_console.html#VC">VC</a></b>: <a  href="uc_console.TVCXDL.html">TVCXDL</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="BringVCToTop"></a><code>Procedure <b>BringVCToTop</b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+bring the specified virtual console to the top of the Z-Order, essentially bringing it to the top.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DoneConsole"></a><code>Procedure <b>DoneConsole</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+ShutDown Unit</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetActiveVC"></a><code>Function <b>GetActiveVC</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Simply returns the current <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> UID.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetConsoleDriver"></a><code>Procedure <b>GetConsoleDriver</b>(Var Driver: <a  href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function allows reading and writing to the selected display device. Note otspassing the address of functions inside the video driver, to those pointner are actual function call addresses in memory. Have no fear, if you populate the record with the correct values using: <code>GetConsoleDriver</code>(Var Driver: <a class="normal" href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>); then modify the fields wish. Writing the data back with the function: <a class="normal" href="uc_console.html#SetConsoleDriver">SetConsoleDriver</a>(Const Driver: <a class="normal" href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>):Boolean; will store it and the changes are put into effect. (perhaps not until a video mode change. I always store and then clear thew screen.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetConsoleMode"></a><code>Procedure <b>GetConsoleMode</b>(Var Mode: <a  href="uc_console.rtConsoleMode.html">rtConsoleMode</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+popuates a record type name <a class="normal" href="uc_console.rtConsoleMode.html">rtConsoleMode</a>. Calling this function will have Mode populated with correct data upon its return.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetConsoleModeCount"></a><code>Function <b>GetConsoleModeCount</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+reports how many console modes this console can support.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetConsoleModeData"></a><code>Function <b>GetConsoleModeData</b>(Index: Word; Var Data: <a  href="uc_console.rtConsoleMode.html">rtConsoleMode</a>):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Get Specific information about a particular ConsoleMode supported by the console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetKeyPress"></a><code>Procedure <b>GetKeyPress</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+wait for and grab a keypress from the buffer</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetMButtons"></a><code>Function <b>GetMButtons</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns bit flags for the mouse buttons - seems like it should scale to 16 buttons? :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetMEvent"></a><code>Function <b>GetMEvent</b>:<a  href="uc_console.rtMEvent.html">rtMEvent</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+return the <a class="normal" href="uc_console.rtMEvent.html">rtMEvent</a> (Mouse event) structure populated with the next mouse action in thr queue.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetMX"></a><code>Function <b>GetMX</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+not reliable in windows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetMY"></a><code>Function <b>GetMY</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+not reliable in windows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetVCCount"></a><code>Function <b>GetVCCount</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns how many virtual consoles are currently instantiated</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetVCZ"></a><code>Function <b>GetVCZ</b>(p_Z: LongInt): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return <a class="normal" href="uc_console.html#VC">VC</a> UID of Specific Z Position</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="GetZVC"></a><code>Function <b>GetZVC</b>(p_VC: LongInt): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return Z order position for Specific <a class="normal" href="uc_console.html#VC">VC</a> uses current Pen Position</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="HaveM"></a><code>Function <b>HaveM</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Have Mouse?</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="HideMCursor"></a><code>Procedure <b>HideMCursor</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+hide the mouse cursor</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="InitConsole"></a><code>Function <b>InitConsole</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Initialize Unit</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="KeyHit"></a><code>Function <b>KeyHit</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns true if a key was hit andneeds to be pulled</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MButtons"></a><code>Function <b>MButtons</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+How many buttons</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MEvent"></a><code>Function <b>MEvent</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns true if a mouse event has occurred</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="NewVC"></a><code>Function <b>NewVC</b>(p_iX, p_iY,p_iVWidth, p_iVHeight: Longint):UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+create a virtual console to your size specifications and position it at x,y</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="NewVC"></a><code>Function <b>NewVC</b>(p_iX, p_iY,p_iVWidth, p_iVHeight: Longint;p_u1VFGC, p_u1VBGC: Byte):UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+create a virtual console to your size specifications and position it at x,y AND fill the virtual console with the specified color properties. Setting up the default text and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="NewVC"></a><code>Function <b>NewVC</b>:UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates <a class="normal" href="uc_console.html#VC">VC</a> with W,H = <a class="normal" href="uc_console.html#giConsoleWidth">giConsoleWidth</a> x <a class="normal" href="uc_console.html#giConsoleHeight">giConsoleHeight</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="NewVC"></a><code>Function <b>NewVC</b>(p_iVWidth, p_iVHeight: LongInt):UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+create a virtual console to your size specifications</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="RemoveVC"></a><code>Procedure <b>RemoveVC</b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Take the specified Virtual Console unique identified (UID) passed in p_uVCUID and remove it from memory.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="SetActiveVC"></a><code>Procedure <b>SetActiveVC</b>(p_uVCUID: UInt64);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+If the specified virtual Console exists, than its UID is assigned to the global <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="SetConsoleDriver"></a><code>Function <b>SetConsoleDriver</b>(Const Driver: <a  href="uc_console.rtConsoleDriver.html">rtConsoleDriver</a>):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Change the Console Driver.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="SetMXY"></a><code>Procedure <b>SetMXY</b>(x,y:Word);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+set the position of the mouse cursor</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ShowMCursor"></a><code>Procedure <b>ShowMCursor</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+show the mouse cursor</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="SyncAllVC"></a><code>Procedure <b>SyncAllVC</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Causes next <a class="normal" href="uc_console.html#UpdateConsole">UpdateConsole</a> or RedrawConsole to Redraw all the <a class="normal" href="uc_console.html#VC">VC</a>'s in the VideoBuffer. This added to deal with situations where special effects like opaque and transparencies don'<a class="normal" href="t.html">t</a> appear correctly.
+
+<p>These &quot;incorrect&quot; situations are simply that a <a class="normal" href="uc_console.html#VC">VC</a>'s CELL is made transparent (entirely or just foreground or background colors) remain that way visually until the screen buffer is recalculated. This is for efficency. There is a routine to FIX (or recalculate the screen buffer for one cell), called &quot;<a class="normal" href="uc_console.html#VCRedrawCell">VCRedrawCell</a>&quot;, but it would slow the main drawing routines if it was added to the main logic to keep verifying - one char at a time - if a transparency has changed and recalculating it individually. This is much slower in cases where many transparency chars have changed. Recalculating the screen the way the &quot;<code>SyncAllVC</code>&quot; causes is much faster than using RedrawCH. The bottom line is <a class="normal" href="uc_console.html#VCRedrawCell">VCRedrawCell</a> is faster than the Syncronization that <code>SyncAllVC</code> causes, but <a class="normal" href="uc_console.html#VCRedrawCell">VCRedrawCell</a> for one character is MUCH faster than SyncAll <a class="normal" href="uc_console.html#VC">VC</a>. You - &quot;The Programmer&quot; have to decide when to do which. <code>SyncAllVC</code> is plenty fast enough for all normal text based applications. Animations are when this is most important to consider. Sorry - to write a book - but I wanted to document enough information to allow &quot;you&quot; the programmer to understand this unit as well as know how best to leverage its design to your benefit. Below is a list of routines that cause this syncronization to occur.
+
+<p>Other routines that cause this syncronization to occur before the next <a class="normal" href="uc_console.html#UpdateConsole">UpdateConsole</a> or RedrawConsole are as follows:
+
+<p>&ndash;Routines &ndash; Providing the <a class="normal" href="uc_console.html#VC">VC</a> was... <a class="normal" href="uc_console.html#NewVC">NewVC</a> - OnScreen made on the screen
+
+<p><a class="normal" href="uc_console.html#RemoveVC">RemoveVC</a> - On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible
+
+<p><a class="normal" href="uc_console.html#BringVCToTop">BringVCToTop</a> - On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible
+
+<p><a class="normal" href="uc_console.html#VCSetXY">VCSetXY</a> - On Screen before or after move &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible
+
+<p><a class="normal" href="uc_console.html#VCResize">VCResize</a> - On Screen before or after resize &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible
+
+<p><a class="normal" href="uc_console.html#VCSetVisible">VCSetVisible</a> - On Screen &amp; Actually Toggled ( Calling <a class="normal" href="uc_console.html#VCSetVisible">VCSetVisible</a>(true) when it is already true will NOT cause <code>SyncAllVC</code> to be called. )
+
+<p><a class="normal" href="uc_console.html#VCSetTransparency">VCSetTransparency</a>- On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible &amp; Actually Toggled ( Calling <a class="normal" href="uc_console.html#VCSetTransparency">VCSetTransparency</a>(true) when it is already true will NOT cause <code>SyncAllVC</code> to be called. )
+
+<p><a class="normal" href="uc_console.html#VCSetOpaqueFG">VCSetOpaqueFG</a> - On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible &amp; Actually Toggled ( Calling <a class="normal" href="uc_console.html#VCSetOpaqueFG">VCSetOpaqueFG</a>(true) when it is already true will NOT cause <code>SyncAllVC</code> to be called. )
+
+<p><a class="normal" href="uc_console.html#VCSetOpaqueBG">VCSetOpaqueBG</a> - On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible = False &amp; Actually Toggled ( Calling <a class="normal" href="uc_console.html#VCSetOpaqueBG">VCSetOpaqueBG</a>(true) when it is already true will NOT cause <code>SyncAllVC</code> to be called. )
+
+<p><a class="normal" href="uc_console.html#VCSetOpaqueCh">VCSetOpaqueCH</a> - On Screen &amp; <a class="normal" href="uc_console.html#VC">VC</a> Visible = False &amp; Actually Toggled ( Calling <a class="normal" href="uc_console.html#VCSetOpaqueCh">VCSetOpaqueCH</a>(true) when it is already true will NOT cause <code>SyncAllVC</code> to be called. )
+
+<p><a class="normal" href="uc_console.html#VCSetInfo">VCSetInfo</a> - This routine is a global way to change <a class="normal" href="uc_console.html#VC">VC</a> parameters and as such calls the following routines if the (Special) passed parameters have changed from thier previous settings: <a class="normal" href="uc_console.html#VCSetXY">VCSetXY</a>, <a class="normal" href="uc_console.html#VCResize">VCResize</a>, <a class="normal" href="uc_console.html#VCSetTransparency">VCSetTransparency</a>, <a class="normal" href="uc_console.html#VCSetOpaqueFG">VCSetOpaqueFG</a>, <a class="normal" href="uc_console.html#VCSetOpaqueBG">VCSetOpaqueBG</a>, and <a class="normal" href="uc_console.html#VCSetVisible">VCSetVisible</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ToggleVCVisible"></a><code>Procedure <b>ToggleVCVisible</b>(p_VC:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This proc BOOKMARKS the Current <a class="normal" href="uc_console.html#VC">VC</a>, effectively having no effect on what ever you had as current, switches to the <a class="normal" href="uc_console.html#VC">VC</a> you tell it, toggles the visible flag, and then sets the &quot;current&quot; working <a class="normal" href="uc_console.html#VC">VC</a> to what it was before you made this call. Its just a conveinant way to hide/unhide any <a class="normal" href="uc_console.html#VC">VC</a> anytime without needing To Write PREPARATION code to Save You Current <a class="normal" href="uc_console.html#VC">VC</a>, Set the New <a class="normal" href="uc_console.html#VC">VC</a>, toggle the Visible Flag, and then Set Back the <a class="normal" href="uc_console.html#VC">VC</a> I was on before... etc.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="TurnOffCNTLC"></a><code>Procedure <b>TurnOffCNTLC</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this makes the normal KILL key sequence &quot;CNTL+C&quot; in effective. Careful with this one.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="UpdateConsole"></a><code>Procedure <b>UpdateConsole</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Updates the console; call after you are donw making drawing calls to see them.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCClear"></a><code>Procedure <b>VCClear</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+clears the screen of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCClrEol"></a><code>Procedure <b>VCClrEol</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Clear <a class="normal" href="uc_console.html#VC">vc</a> from pen position up thru the end of the line in the active console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCCursorType"></a><code>Function <b>VCCursorType</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#CursorType">cursortype</a> of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCDrawBGXY"></a><code>Procedure <b>VCDrawBGXY</b>(px,py: LongInt;sa:AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+use to draw with background colors only on a transparency <a class="normal" href="uc_console.html#VC">VC</a> use string chars 0-7 to make background color, spaces=holes</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBox"></a><code>Procedure <b>VCFillBox</b>(X,Y: LongInt;W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fills a box in the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> with the passed character at x,y for this width,height</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxBGC"></a><code>Procedure <b>VCFillBoxBGC</b>(X,Y: LongInt;W,H: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fill <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> with a box, where only the background color is changed</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxBGCCTR"></a><code>Procedure <b>VCFillBoxBGCCTR</b>(W,H: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fill <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> with a centered box, where only the bacgrond color is changed</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxChar"></a><code>Procedure <b>VCFillBoxChar</b>(X,Y: LongInt;W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fills <a class="normal" href="uc_console.html#ActiveVC">activevc</a> with a box at location X,Y and width and height W,H</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxCharCTR"></a><code>Procedure <b>VCFillBoxCharCTR</b>(W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This seems to do what <a class="normal" href="uc_console.html#VCFillBoxCTR">VCFillBoxCTR</a> does, a centered box in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxCTR"></a><code>Procedure <b>VCFillBoxCTR</b>(W,H: LongInt; ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Makes a centered box, width and height are W and H respectively in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxFGC"></a><code>Procedure <b>VCFillBoxFGC</b>(X,Y: LongInt;W,H: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fill <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> with a box, where only the foreground color is changed</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCFillBoxFGCCTR"></a><code>Procedure <b>VCFillBoxFGCCTR</b>(W,H: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Fill <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> with a centered box, where only the foreground color is changed</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetAll"></a><code>Function <b>VCGetAll</b>(p_iX, p_iY: LongInt):Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+return the character and color byte pair for the specific character cell in the <a class="normal" href="uc_console.html#ActiveVC">activeVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetBGC"></a><code>Function <b>VCGetBGC</b>(p_iX, p_iY: LongInt):Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Get Background Color of a specific character cell in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetCenterX"></a><code>Function <b>VCGetCenterX</b>(p_iWidth: LongInt): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the x position of the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> that should be used to center a string p_iWidth</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetCenterY"></a><code>Function <b>VCGetCenterY</b>(p_iHeight: LongInt): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the y position of the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> that should be used to center a string vertically p_iHeight high</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetChar"></a><code>Function <b>VCGetChar</b>(p_iX, p_iY: LongInt): Char;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns character at the specified x,y location in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetCursorX"></a><code>Function <b>VCGetCursorX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return the X position of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetCursorY"></a><code>Function <b>VCGetCursorY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return the Y position of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetFGC"></a><code>Function <b>VCGetFGC</b>(p_iX, p_iY: LongInt):Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Get Foreground Color of a specific character cell in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetInfo"></a><code>Function <b>VCGetInfo</b>: <a  href="uc_console.rtVCInfo.html">rtVCInfo</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Populates the <a class="normal" href="uc_console.rtVCInfo.html">rtVCInfo</a> structure with information about the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetOpaqueBG"></a><code>Function <b>VCGetOpaqueBG</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s Opaque Background Setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetOpaqueCH"></a><code>Function <b>VCGetOpaqueCH</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+return <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s opaque ch flag setting's value</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetOpaqueFG"></a><code>Function <b>VCGetOpaqueFG</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s Opaque Foreground Setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetPenBGC"></a><code>Function <b>VCGetPenBGC</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Pen's background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetPenFGC"></a><code>Function <b>VCGetPenFGC</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Pen's foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetPenX"></a><code>Function <b>VCGetPenX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the pen's X position in the <a class="normal" href="uc_console.html#VC">VC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetPenY"></a><code>Function <b>VCGetPenY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the pen's Y position in the <a class="normal" href="uc_console.html#VC">VC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetScroll"></a><code>Function <b>VCGetScroll</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s Scroll Enabled Flag's setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetScrollRegion"></a><code>Procedure <b>VCGetScrollRegion</b>(Var p_X, p_Y, p_W, p_H: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this procedure acts like a function, the parameters are passed by reference, so that you call this function, the parameters are populated with the requested information, and after the call the passed parameters contain the desired values.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetTabSize"></a><code>Function <b>VCGetTabSize</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+get the tabsize setting; the number of spaces a tab character represents in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetTrackCursor"></a><code>Function <b>VCGetTrackCursor</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s trackcursor setting. I honestly forgot what this means. It might be the &quot;blinky&quot; cursor thing. Better to be honest right?</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetTransparency"></a><code>Function <b>VCGetTransparency</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns <a class="normal" href="uc_console.html#ActiveVC">activevc</a>'s current transparency on/off setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetUseScrollRegionCoords"></a><code>Function <b>VCGetUseScrollRegionCoords</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s &quot;custom scrolling region&quot; current setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetVisible"></a><code>Function <b>VCGetVisible</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+reports if the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> is visible or not</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetWrap"></a><code>Function <b>VCGetWrap</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the <a class="normal" href="uc_console.html#ActiveVC">activevc</a>'s wordwrap on/off setting</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetX"></a><code>Function <b>VCGetX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the X Position of the <a class="normal" href="uc_console.html#ActiveVC">activevc</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetY"></a><code>Function <b>VCGetY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the Y Position of the <a class="normal" href="uc_console.html#ActiveVC">activevc</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCGetZ"></a><code>Function <b>VCGetZ</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Return Z Position of Current <a class="normal" href="uc_console.html#VC">VC</a> (Remember TopMost is <a class="normal" href="uc_console.html#GetVCCount">GetVCCount</a> result)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCHeight"></a><code>Function <b>VCHeight</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the height of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCPutAll"></a><code>Procedure <b>VCPutAll</b>(p_iX, p_iY: LongInt; p_wAll:Word);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fill every character color byte pair (a word) with the value passed in p_wAll in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCPutAll"></a><code>Procedure <b>VCPutAll</b>(p_iX, p_iY: LongInt; P_ch: Char; p_byFG, p_byBG: Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+fill every character cell with the specified character, foreground and background colors in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCPutBGC"></a><code>Procedure <b>VCPutBGC</b>(p_iX, p_iY: LongInt; p_u1BGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+place the background color you would like at a specific character cell in the <a class="normal" href="uc_console.html#ActiveVC">activevc</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCPutChar"></a><code>Procedure <b>VCPutChar</b>(p_iX, p_iY: LongInt; p_ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+place a character at a specific location in the active <a class="normal" href="uc_console.html#VC">VC</a>. It will only remember characters actually placed within its current size.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCPutFGC"></a><code>Procedure <b>VCPutFGC</b>(p_iX, p_iY: LongInt; p_u1FGC:Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+place the foreground color you would like at a specific character cell in the <a class="normal" href="uc_console.html#ActiveVC">activevc</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCRedrawCell"></a><code>Procedure <b>VCRedrawCell</b>(p_vx,p_vy:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+parameters ONE BASED <a class="normal" href="uc_console.html#VC">VC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCResize"></a><code>Procedure <b>VCResize</b>(p_iNewWidth, p_iNewHeight: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+resizes the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> to the size you specify</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCScrollDown"></a><code>Procedure <b>VCScrollDown</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Scrolls <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Text Down</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCScrollLeft"></a><code>Procedure <b>VCScrollLeft</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Scrolls <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Text Left</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCScrollRight"></a><code>Procedure <b>VCScrollRight</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Scrolls ActiveVCText Right</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCScrollUp"></a><code>Procedure <b>VCScrollUp</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Scrolls <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Text Up</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetBGC"></a><code>Procedure <b>VCSetBGC</b>(p_u1BGC: Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set Background color on the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetCursorType"></a><code>Procedure <b>VCSetCursorType</b>(p_wCursorType: Word);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Allows you to set the cursor type of the active <a class="normal" href="uc_console.html#VC">vc</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetCursorXY"></a><code>Procedure <b>VCSetCursorXY</b>(p_iX, p_iY: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+use to set the x,y coordinates of the virtual console. The center of the console universe is at 1,1 but your virtual console can be negative X, off to the left off screen, or negative Y up and above the screen, also far right or down as you want ... of course it has to be in the visiable area of your screen to be seen... naturally :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetFGC"></a><code>Procedure <b>VCSetFGC</b>(p_u1FGC: Byte);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set Foreground color on the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetInfo"></a><code>Procedure <b>VCSetInfo</b>(p_rVCInfo: <a  href="uc_console.rtVCInfo.html">rtVCInfo</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Allows you to populate the <a class="normal" href="uc_console.rtVCInfo.html">rtVCInfo</a> withthe setting you want for your <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>, and then calling this procedure with your loaded <a class="normal" href="uc_console.rtVCInfo.html">rtVCInfo</a> structure will apply those values.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetOpaqueBG"></a><code>Procedure <b>VCSetOpaqueBG</b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Opaque Background Setting On/Off If On, then the background color of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> will change to the color of the background of the <a class="normal" href="uc_console.html#VC">VC</a> beneath it from a z-order perspective.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetOpaqueCh"></a><code>Procedure <b>VCSetOpaqueCh</b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> opaque character mode flag. if off, then vcs beneath, their foreground color bleeds thru, or is used to paint the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> versus the color assigned to that character. This is a visual trick, the background not being opaque is the coolest though.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetOpaqueFG"></a><code>Procedure <b>VCSetOpaqueFG</b>(p_bOpaque: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> Opaque Foreground Setting On/Off If On, then the foreground color of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> will change to the color of the foreground of the <a class="normal" href="uc_console.html#VC">VC</a> beneath it from a z-order perspective.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetPenX"></a><code>Procedure <b>VCSetPenX</b>(p_iX:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set Pen X position in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetPenXY"></a><code>Procedure <b>VCSetPenXY</b>(p_iX, p_iY:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this sets the Pen position in the active virtual console. This is the same as a cursor position on the screen. The Pen's X and Y location.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetPenY"></a><code>Procedure <b>VCSetPenY</b>(p_iY:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set Pen Y position in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetScroll"></a><code>Procedure <b>VCSetScroll</b>(p_bEnabled: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s Scroll Enabled Flag</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetScrollRegion"></a><code>Procedure <b>VCSetScrollRegion</b>(p_X, p_Y, p_W, p_H: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set up the scroll region of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetTabsize"></a><code>Procedure <b>VCSetTabsize</b>(p_iTabsize: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set how many spaces a tab represents when writing with the pen in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetTrackCursor"></a><code>Procedure <b>VCSetTrackCursor</b>(p_bTrackCursor: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This sets the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s TrackCursor Setting. I honestly forgot what this means. It might be the &quot;blinky&quot; cursor thing. Better to be honest right?</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetTransparency"></a><code>Procedure <b>VCSetTransparency</b>(p_bTransparency:Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Set <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s transparancy on/off</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetUseScrollRegionCoords"></a><code>Procedure <b>VCSetUseScrollRegionCoords</b>(p_b: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+You can Set scroll regions that aren'<a class="normal" href="t.html">t</a> the normal &quot;whole screen&quot;, and this is how you toggle the &quot;custom scrolling region&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetVisible"></a><code>Procedure <b>VCSetVisible</b>(p_b:Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the Visible flag on or off. Hide and show your virtual consoles at will. :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetWrap"></a><code>Procedure <b>VCSetWrap</b>(p_bWrap: Boolean);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Sets the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s wordwrap on/off</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSetXY"></a><code>Procedure <b>VCSetXY</b>(p_iX, p_iY:LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Position the <a class="normal" href="uc_console.html#ActiveVC">activevc</a>. Setting it &quot;out of bounds&quot; is ok. The animation demo with the fish is a good demonstration of this, each fish is a virtual console.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSNRBox"></a><code>Procedure <b>VCSNRBox</b>(X,Y: LongInt;W,H: LongInt; chfind,chreplace:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This allows you to search for (chfind) and replace (chreplace) a character in a region specified X,Y,W and H on the screen</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCSNRBoxCTR"></a><code>Procedure <b>VCSNRBoxCTR</b>(W,H: LongInt; chfind,chreplace:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This allows you to search for (chfind) and replace (chreplace) a character in a region centered on the screen, W wide and H high.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWidth"></a><code>Function <b>VCWidth</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns the width of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWordWrap"></a><code>Procedure <b>VCWordWrap</b>(p_iWidth,p_iHeight: LongInt; p_saMsg: AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Write a message on the <a class="normal" href="uc_console.html#ActiveVC">activevc</a>, centered, width and height that word wraps so words split at the right places, as best as it can. Toss is a super long run-on word and you will get odd results I'd think.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWrite"></a><code>Procedure <b>VCWrite</b>(sa:AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+writes a string in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> starting at theActiveVC's current Pen's X,Y position. the pen does wrap down to the next line if it reaches the with of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>. This routine does NOT perform a carriage return or linefeed when the text is finished.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteChar"></a><code>Procedure <b>VCWriteChar</b>(p_Char: Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+writes a character at <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s current Pen's X,Y position. It then advances the pen (or cursor).</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteCharXY"></a><code>Procedure <b>VCWriteCharXY</b>(p_iX, p_iY: LongInt; p_ch:Char);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Puts a character in the <a class="normal" href="uc_console.html#ActiveVC">activevc</a> at the specified x,y location.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteCTR"></a><code>Procedure <b>VCWriteCTR</b>(sa:AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Write a string centered on the screen in the active console using the current Pen's Y location.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteln"></a><code>Procedure <b>VCWriteln</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Performs a Carriage Return and Linefeed combination on the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>'s pen</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteln"></a><code>Procedure <b>VCWriteln</b>(sa:AnsiString);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+writes a string in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a> starting at theActiveVC's current Pen's X,Y position. the pen does wrap down to the next line if it reaches the with of the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a>. This routine DOES perform a carriage return and linefeed when the text is finished.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VCWriteXY"></a><code>Procedure <b>VCWriteXY</b>(X,Y: LongInt; sa: AnsiString) ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+write a string at a specified location in the <a class="normal" href="uc_console.html#ActiveVC">ActiveVC</a></p>
+</td></tr>
+</table>
+<h3 class="detail">Constants</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Black"></a><code><b>Black</b>         = <a  href="uc_console.html#Black">Black</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Blue"></a><code><b>Blue</b>          = <a  href="uc_console.html#Blue">Blue</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Brown"></a><code><b>Brown</b>         = <a  href="uc_console.html#Brown">Brown</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_CHECKMARK"></a><code><b>cch_GFX_CHECKMARK</b>='X';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_CURLYBRACELEFT"></a><code><b>cch_GFX_CURLYBRACELEFT</b>='(';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_CURLYBRACERIGHT"></a><code><b>cch_GFX_CURLYBRACERIGHT</b>=')';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_DOT1"></a><code><b>cch_GFX_DOT1</b>='.';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+light dot</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_DOT2"></a><code><b>cch_GFX_DOT2</b>='.';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+square dot</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_DOT3"></a><code><b>cch_GFX_DOT3</b>='.';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Heavy Round Dot</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_DOT4"></a><code><b>cch_GFX_DOT4</b>='#';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+HEAVY Square</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HALFBOTTOM"></a><code><b>cch_GFX_HALFBOTTOM</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HALFLEFT"></a><code><b>cch_GFX_HALFLEFT</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HALFRIGHT"></a><code><b>cch_GFX_HALFRIGHT</b>=' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HALFTOP"></a><code><b>cch_GFX_HALFTOP</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HARROWDOWN"></a><code><b>cch_GFX_HARROWDOWN</b> = 'v';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HARROWLEFT"></a><code><b>cch_GFX_HARROWLEFT</b> = '&lt;';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HARROWRIGHT"></a><code><b>cch_GFX_HARROWRIGHT</b> = '&gt;';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HARROWUP"></a><code><b>cch_GFX_HARROWUP</b> = '&circ;';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Heavy Arrows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMEBOTTOMLEFT"></a><code><b>cch_GFX_HFRAMEBOTTOMLEFT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMEBOTTOMRIGHT"></a><code><b>cch_GFX_HFRAMEBOTTOMRIGHT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMECROSS"></a><code><b>cch_GFX_HFRAMECROSS</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMEHORIZONTAL"></a><code><b>cch_GFX_HFRAMEHORIZONTAL</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMET"></a><code><b>cch_GFX_HFRAMET</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMETLEFT"></a><code><b>cch_GFX_HFRAMETLEFT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMETOPLEFT"></a><code><b>cch_GFX_HFRAMETOPLEFT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Heavy frames - Double lines or whatever</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMETOPRIGHT"></a><code><b>cch_GFX_HFRAMETOPRIGHT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMETRIGHT"></a><code><b>cch_GFX_HFRAMETRIGHT</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMETU"></a><code><b>cch_GFX_HFRAMETU</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+upsidedown</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_HFRAMEVERTICAL"></a><code><b>cch_GFX_HFRAMEVERTICAL</b>='*';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LARROWDOWN"></a><code><b>cch_GFX_LARROWDOWN</b> = 'v';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LARROWLEFT"></a><code><b>cch_GFX_LARROWLEFT</b> = '&lt;';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LARROWRIGHT"></a><code><b>cch_GFX_LARROWRIGHT</b> = '&gt;';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LARROWUP"></a><code><b>cch_GFX_LARROWUP</b> = '&circ;';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+LIGHT Arrows</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMEBOTTOMLEFT"></a><code><b>cch_GFX_LFRAMEBOTTOMLEFT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMEBOTTOMRIGHT"></a><code><b>cch_GFX_LFRAMEBOTTOMRIGHT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMECROSS"></a><code><b>cch_GFX_LFRAMECROSS</b>=' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMEHORIZONTAL"></a><code><b>cch_GFX_LFRAMEHORIZONTAL</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMET"></a><code><b>cch_GFX_LFRAMET</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMETLEFT"></a><code><b>cch_GFX_LFRAMETLEFT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMETOPLEFT"></a><code><b>cch_GFX_LFRAMETOPLEFT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+LIGHT Frames - single line or whatever</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMETOPRIGHT"></a><code><b>cch_GFX_LFRAMETOPRIGHT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMETRIGHT"></a><code><b>cch_GFX_LFRAMETRIGHT</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMETU"></a><code><b>cch_GFX_LFRAMETU</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+upsidedown</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_LFRAMEVERTICAL"></a><code><b>cch_GFX_LFRAMEVERTICAL</b>='+';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_PIPE"></a><code><b>cch_GFX_PIPE</b>='|';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_SHADE1"></a><code><b>cch_GFX_SHADE1</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_SHADE2"></a><code><b>cch_GFX_SHADE2</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_SHADE3"></a><code><b>cch_GFX_SHADE3</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cch_GFX_SOLID"></a><code><b>cch_GFX_SOLID</b> = ' ';</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CR"></a><code><b>CR</b> = #13;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="crBlock"></a><code><b>crBlock</b>=<a  href="uc_console.html#crBlock">crBlock</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Cursor Shapes</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="crHalfBlock"></a><code><b>crHalfBlock</b>=<a  href="uc_console.html#crHalfBlock">crHalfBlock</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Cursor Shapes</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="crHidden"></a><code><b>crHidden</b>=<a  href="uc_console.html#crHidden">crHidden</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Cursor Shapes</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CRLF"></a><code><b>CRLF</b> = <a  href="uc_console.html#CR">CR</a>+<a  href="uc_console.html#LF">LF</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="crUnderline"></a><code><b>crUnderline</b>=<a  href="uc_console.html#crUnderline">crUnderline</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Cursor Shapes</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Cyan"></a><code><b>Cyan</b>          = <a  href="uc_console.html#Cyan">Cyan</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DarkGray"></a><code><b>DarkGray</b>      = <a  href="uc_console.html#DarkGray">DarkGray</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Green"></a><code><b>Green</b>         = <a  href="uc_console.html#Green">Green</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbAscii"></a><code><b>kbAscii</b> = <a  href="uc_console.html#kbAscii">kbAscii</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdDelete"></a><code><b>kbdDelete</b> = <a  href="uc_console.html#kbdDelete">kbdDelete</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figur ed out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdDown"></a><code><b>kbdDown</b> = <a  href="uc_console.html#kbdDown">kbdDown</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdEnd"></a><code><b>kbdEnd</b> = <a  href="uc_console.html#kbdEnd">kbdEnd</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF1"></a><code><b>kbdF1</b> = <a  href="uc_console.html#kbdF1">kbdF1</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF10"></a><code><b>kbdF10</b> = <a  href="uc_console.html#kbdF10">kbdF10</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF11"></a><code><b>kbdF11</b> = <a  href="uc_console.html#kbdF11">kbdF11</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF12"></a><code><b>kbdF12</b> = <a  href="uc_console.html#kbdF12">kbdF12</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF13"></a><code><b>kbdF13</b> = <a  href="uc_console.html#kbdF13">kbdF13</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF14"></a><code><b>kbdF14</b> = <a  href="uc_console.html#kbdF14">kbdF14</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF15"></a><code><b>kbdF15</b> = <a  href="uc_console.html#kbdF15">kbdF15</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF16"></a><code><b>kbdF16</b> = <a  href="uc_console.html#kbdF16">kbdF16</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF17"></a><code><b>kbdF17</b> = <a  href="uc_console.html#kbdF17">kbdF17</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF18"></a><code><b>kbdF18</b> = <a  href="uc_console.html#kbdF18">kbdF18</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF19"></a><code><b>kbdF19</b> = <a  href="uc_console.html#kbdF19">kbdF19</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF2"></a><code><b>kbdF2</b> = <a  href="uc_console.html#kbdF2">kbdF2</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF20"></a><code><b>kbdF20</b> = <a  href="uc_console.html#kbdF20">kbdF20</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF3"></a><code><b>kbdF3</b> = <a  href="uc_console.html#kbdF3">kbdF3</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF4"></a><code><b>kbdF4</b> = <a  href="uc_console.html#kbdF4">kbdF4</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF5"></a><code><b>kbdF5</b> = <a  href="uc_console.html#kbdF5">kbdF5</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF6"></a><code><b>kbdF6</b> = <a  href="uc_console.html#kbdF6">kbdF6</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF7"></a><code><b>kbdF7</b> = <a  href="uc_console.html#kbdF7">kbdF7</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF8"></a><code><b>kbdF8</b> = <a  href="uc_console.html#kbdF8">kbdF8</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdF9"></a><code><b>kbdF9</b> = <a  href="uc_console.html#kbdF9">kbdF9</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdHome"></a><code><b>kbdHome</b> = <a  href="uc_console.html#kbdHome">kbdHome</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdInsert"></a><code><b>kbdInsert</b> = <a  href="uc_console.html#kbdInsert">kbdInsert</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figur ed out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdLeft"></a><code><b>kbdLeft</b> = <a  href="uc_console.html#kbdLeft">kbdLeft</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdMiddle"></a><code><b>kbdMiddle</b> = <a  href="uc_console.html#kbdMiddle">kbdMiddle</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figur ed out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdPgDn"></a><code><b>kbdPgDn</b> = <a  href="uc_console.html#kbdPgDn">kbdPgDn</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdPgUp"></a><code><b>kbdPgUp</b> = <a  href="uc_console.html#kbdPgUp">kbdPgUp</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdRight"></a><code><b>kbdRight</b> = <a  href="uc_console.html#kbdRight">kbdRight</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbdUp"></a><code><b>kbdUp</b> = <a  href="uc_console.html#kbdUp">kbdUp</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out o n each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbFnKey"></a><code><b>kbFnKey</b> = <a  href="uc_console.html#kbFnKey">kbFnKey</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured o ut on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbPhys"></a><code><b>kbPhys</b> = <a  href="uc_console.html#kbPhys">kbPhys</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbReleased"></a><code><b>kbReleased</b> = <a  href="uc_console.html#kbReleased">kbReleased</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be fig ured out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="kbUniCode"></a><code><b>kbUniCode</b> = <a  href="uc_console.html#kbUniCode">kbUniCode</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Declaration brought over from fpc keyboard unit. Note these are under the different platform to platform.. but is handled for you. More complex key combinations are a maintenance issue - like CNTL+F1 for example needs to be figur ed out on each platform and implemented appropriately in this unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LF"></a><code><b>LF</b> = #10;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightBlue"></a><code><b>LightBlue</b>     = <a  href="uc_console.html#LightBlue">LightBlue</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightCyan"></a><code><b>LightCyan</b>     = <a  href="uc_console.html#LightCyan">LightCyan</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightGray"></a><code><b>LightGray</b>     = <a  href="uc_console.html#LightGray">LightGray</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightGreen"></a><code><b>LightGreen</b>    = <a  href="uc_console.html#LightGreen">LightGreen</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightMagenta"></a><code><b>LightMagenta</b>  = <a  href="uc_console.html#LightMagenta">LightMagenta</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LightRed"></a><code><b>LightRed</b>      = <a  href="uc_console.html#LightRed">LightRed</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Magenta"></a><code><b>Magenta</b>       = <a  href="uc_console.html#Magenta">Magenta</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseActionDown"></a><code><b>MouseActionDown</b>   = <a  href="uc_console.html#MouseActionDown">MouseActionDown</a>   ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Mouse down event</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseActionMove"></a><code><b>MouseActionMove</b>   = <a  href="uc_console.html#MouseActionMove">MouseActionMove</a>   ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Mouse move event</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseActionUp"></a><code><b>MouseActionUp</b>     = <a  href="uc_console.html#MouseActionUp">MouseActionUp</a>     ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Mouse up event</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseLeftButton"></a><code><b>MouseLeftButton</b>   = <a  href="uc_console.html#MouseLeftButton">MouseLeftButton</a>   ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Left mouse button</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseMiddleButton"></a><code><b>MouseMiddleButton</b> = <a  href="uc_console.html#MouseMiddleButton">MouseMiddleButton</a> ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Middle mouse button</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MouseRightButton"></a><code><b>MouseRightButton</b>  = <a  href="uc_console.html#MouseRightButton">MouseRightButton</a>  ;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Right mouse button</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Red"></a><code><b>Red</b>           = <a  href="uc_console.html#Red">Red</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground and background colors.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="White"></a><code><b>White</b>         = <a  href="uc_console.html#White">White</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="Yellow"></a><code><b>Yellow</b>        = <a  href="uc_console.html#Yellow">Yellow</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+can be used as foreground colors only</p>
+</td></tr>
+</table>
+<h3 class="detail">Variables</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ActiveVC"></a><code><b>ActiveVC</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Used to denote which <a class="normal" href="uc_console.html#VC">VC</a> the commands are being acted upon</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bInvalid"></a><code><b>bInvalid</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+used to call CopyAllVCToVideo in <a class="normal" href="uc_console.html#UpdateConsole">UpdateConsole</a> proc</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ConsoleCapabilities"></a><code><b>ConsoleCapabilities</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+I think you need to refer to the freepascaldocumentation for the crt unit for this one.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ConsoleUnitInitialized"></a><code><b>ConsoleUnitInitialized</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+set to true if the console unit is initialized</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CursorType"></a><code><b>CursorType</b>: Word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+physical blinky type, underscore, half,full square...</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CursorX"></a><code><b>CursorX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this is where the &quot;hardware&quot; cursor is (blinky) in the actual view port (view screen)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CursorY"></a><code><b>CursorY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+this is where the &quot;hardware&quot; cursor is (blinky) in the actual view port (view screen)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gbConsoleDebugLog"></a><code><b>gbConsoleDebugLog</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+used by DEBUGLOGBEGINEND</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="giConsoleHeight"></a><code><b>giConsoleHeight</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+height of console in characters</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="giConsoleWidth"></a><code><b>giConsoleWidth</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+width of console in characters</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gsaTerm"></a><code><b>gsaTerm</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="MG"></a><code><b>MG</b>: &circ;UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Mouse Grid has UID of <a class="normal" href="uc_console.html#VC">VC</a> - This is a dynamic &quot;grid&quot; the size of the &quot;view screen&quot;. This grid is updated with the UID's of each virtual console that is &quot;visible&quot;,so you end up with a grid that if someone clicked, you can reference and find out quickly WHICH virtual console was just clicked.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="rLKey"></a><code><b>rLKey</b>: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+record with infor about a single keypress</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="rLMEvent"></a><code><b>rLMEvent</b>: <a  href="uc_console.rtMEvent.html">rtMEvent</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+record for a singlemouse event.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="rPollMouseEvent"></a><code><b>rPollMouseEvent</b>: TMouseEvent;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Used to store info when polling the mouse</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="RVM"></a><code><b>RVM</b>: TVideoMode;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+I think you need to refer to the freepascaldocumentation for the crt unit for this one also.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uMSButtons"></a><code><b>uMSButtons</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Mouse Buttons</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="VC"></a><code><b>VC</b>: <a  href="uc_console.TVCXDL.html">TVCXDL</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Extended <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> used to house the virtual consoles and manage them in memory</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

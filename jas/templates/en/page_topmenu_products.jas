@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <title>sys_page.jas</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+</head>
+<body>
+<!--SECTION MAIN BEGIN-->
+<!--JASCID 201611041337-->
+  <div id="jaslogodiv">
+    <center>
+      <table width="100%">
+      <tr>
+        <td valign="top" align="left" width="30%">
+          <ul class="jas-blok-buttons">
+          <li>
+            <a href="?MT=1&MID=1183&JSID=[@JSID@]">
+              <img class="image" src="[@JASDIRWEBSHARE@]img/icon/JAS/products/jas/128/jas_logo.png" /><span class="jasbutspan">&nbsp;JAS Credits</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+             <br /><br /><br />
+          </li>
+          <li>
+            <a href=".?MT=1&MID=1605051723414110002&JSID=[@JSID@]">
+              <img class="image" src="[@JASDIRWEBSHARE@]img/logo/jegas/Logo.png" /><span class="jasbutspan">API</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          </ul>
+        </td>
+        <td align="center" width="40%">
+          <a href=".?MT=1&MID=1602140113503020000&JSID=[@JSID@]"> <center><img class="image" width="256px" src="[@JASDIRWEBSHARE@]img/logo/jegas/jas_logo.png" /><h3>Jegas Application Server</h3></center>
+        </td>
+        <td valign="top" align="left" width="30%">
+          <ul class="jas-blok-buttons">
+          <li>
+            <a href=".?MT=1&MID=1512090834342530004&JSID=[@JSID@]">
+              <span class="jasbutspan">&nbsp;Utilities</span><img class="image" src="[@JASDIRWEBSHARE@]img/icon/JAS/products/schemamaster/64/schemamasterlogo.png" />
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+            <br /><br /><br />
+          </li>
+          <li>
+           <br /><br /><br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+      <br />
+    </center>
+  </div>
+  <script>
+    var el=document.getElementById("jaslogodiv");
+    if ('[@JASHASPANELS@]'=='TRUE'){el.style.display="none";};
+  </script>
+<!--SECTION MAIN END-->
+
+<!--SECTION BLANK BEGIN-->
+<!--SECTION BLANK END-->
+</body>
+</html>

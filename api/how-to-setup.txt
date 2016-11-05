@@ -1,0 +1,53 @@
+
+    HOW TO SET THINGS UP SO YOU CAN USE ALL OF THE JEGASAPI
+    
+    
+      1:  Have Freepascal Installed
+      2:  File your freepascal fpc.cfg file because we must
+          edit it.
+    
+          Windows eg: c:\FPC\2.4.4\bin\i386-win32\fpc.cfg
+    
+          Linux: /etc/fpc.cfg
+    
+    
+    Paste the text below into the VERY top of your freepascal
+    configuration file for easy finding later. This file
+    just tells the compiler where to find the synapse files
+    and the jegasapi no matterwhere you are compiling.
+
+    Use the directories below as a guide but the important
+    this is Freepascal can find the API and the SYNAPSE
+    library.
+
+    For linux, drop drive letter and colon and it should
+    work the same way.
+
+    I know there is a Version 3.0.0 for Freepascal but I
+    have not tested any of this with newer versions.
+    (2016-03-04)
+
+    Have Fun,
+
+      Jegas
+
+
+#########################################################
+# Place in the top of your freepascal fpc.cfg file.
+# Location
+# Windows Example: c:\FPC\2.6.4\bin\i386-win32\fpc.cfg
+#########################################################
+# - JegasAPI and Synapse (Network Library) locations
+# So the compiler can find (Synapse) and this api if
+# you are kaming a project in a separate directory.
+#########################################################
+-Flc:/jegas/api/synapse/source/lib
+-Fuc:/jegas/api/synapse/source/lib
+-Foc:/jegas/api/synapse/source/lib
+-Fic:/jegas/api/synapse/source/lib
+-Flc:/jegas/api/
+-Fuc:/jegas/api/
+-Foc:/jegas/api/
+-Fic:/jegas/api/
+#########################################################
+

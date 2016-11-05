@@ -1,0 +1,898 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfc_dl: Class JFC_DL</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JFC_DL"></a><h1 class="cio">Class JFC_DL</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfc_dl.html">ug_jfc_dl</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JFC_DL = class(<a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a>)</code></p>
+<h2 class="description">Description</h2>
+<p>
+Out of the box this class manipulates <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> class - Which until you expand on it - or use a one of the derivitives iNN here, is useless. It gives you the foundation for a very powerful double linked list pair: <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> CLASS to have dynamic instances of , and a <code>JFC_DL</code> to manage multiple instances of your CLASSES derived from <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a>.
+
+<p>Sample Code provided iNN vitual &quot;STUB&quot; routines contained iNN comments</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="thisitem">JFC_DL</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#bCopy">bCopy</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#bDebug">bDebug</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#bDestroyNestedLists">bDestroyNestedLists</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#bShowNestedLists">bShowNestedLists</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#iType">iType</a></b>: Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#lpFirst">lpFirst</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#lpLast">lpLast</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#lpOwner">lpOwner</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#pvt_u8AutoNumber">pvt_u8AutoNumber</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#uItems">uItems</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_dl.JFC_DL.html#uN">uN</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jfc_dl.JFC_DL.html#Create">Create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jfc_dl.JFC_DL.html#CreateCopy">CreateCopy</a></b>(p_lpSameTypeOfClass: pointer);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jfc_dl.JFC_DL.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#AppendItem">AppendItem</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#AppendItemToList">AppendItemToList</a></b>(p_lpNewItem: pointer):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#AppendItem_lpPtr">AppendItem_lpPtr</a></b>(p_lpPtr: pointer): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#AutoNumber">AutoNumber</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#BOL">BOL</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#DeleteAll">DeleteAll</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#DeleteItem">DeleteItem</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#DeleteThisItem">DeleteThisItem</a></b>(p_lpItem:pointer):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#EOL">EOL</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FNextItem_lpPTR">FNextItem_lpPTR</a></b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundAnsistring">FoundAnsistring</a></b>( p_saString: AnsiString; p_bCaseSensitive: Boolean; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundBinary">FoundBinary</a></b>( p_lpWhat: pointer; p_uSize: UInt64; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundItem">FoundItem</a></b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundItem_lpPTR">FoundItem_lpPTR</a></b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundNth">FoundNth</a></b>(p_uN: UInt64):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#FoundTimestamp">FoundTimestamp</a></b>( p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#InsertItem">InsertItem</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#InsertItemInList">InsertItemInList</a></b>(p_lpNewItem: pointer):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#InsertItem_lpPtr">InsertItem_lpPtr</a></b>(p_lpPtr: pointer): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#MoveFirst">MoveFirst</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#MoveLast">MoveLast</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#MoveNext">MoveNext</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#MovePrevious">MovePrevious</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#NextItem_lpPtr">NextItem_lpPtr</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#Next_lpItem">Next_lpItem</a></b>:pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#PrevItem_lpPtr">PrevItem_lpPtr</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#Prev_lpItem">Prev_lpItem</a></b>:pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#pvt_CreateItem">pvt_CreateItem</a></b>: <a  href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a>; Virtual;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#read_item_lpPtr">read_item_lpPtr</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#RemoveItemFromList">RemoveItemFromList</a></b>:pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#RemoveThisItemFromList">RemoveThisItemFromList</a></b>(p_lpItem:pointer):pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#SortAnsistring">SortAnsistring</a></b>( p_bCaseSensitive: Boolean; p_lpOffset: pointer; p_bAscending: Boolean; p_bUsePtr: Boolean ):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_dl.JFC_DL.html#SortBinary">SortBinary</a></b>( p_uSize: UInt64; p_lpOffset: pointer; p_bAscending: Boolean; p_bUsePtr: Boolean ):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#pvt_createtask">pvt_createtask</a></b>; Virtual;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">pvt_DestroyItem</a></b>(p_lp:pointer); Virtual;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#pvt_destroytask">pvt_destroytask</a></b>(p_lp: pointer); Virtual;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#SwapItems">SwapItems</a></b>(p_lpItem1, p_lpItem2: pointer);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#SwapItem_lpPtr">SwapItem_lpPtr</a></b>(p_lpItem1, p_lpItem2: pointer);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#Sync">Sync</a></b>(p_lpSameTypeOfClass: pointer); Virtual;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_dl.JFC_DL.html#write_item_lpptr">write_item_lpptr</a></b>(p_lp:pointer);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_dl.JFC_DL.html#IsCopy">IsCopy</a></b>: Boolean read <a  href="ug_jfc_dl.JFC_DL.html#bCopy">bCopy</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_dl.JFC_DL.html#Item_lpPtr">Item_lpPtr</a></b>: pointer read <a  href="ug_jfc_dl.JFC_DL.html#read_item_lpPtr">read_item_lpPtr</a> Write <a  href="ug_jfc_dl.JFC_DL.html#write_item_lpptr">write_item_lpptr</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_dl.JFC_DL.html#ListCount">ListCount</a></b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uItems">UItems</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_dl.JFC_DL.html#N">N</a></b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uN">uN</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bCopy"></a><code><b>bCopy</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bDebug"></a><code><b>bDebug</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+=============================================================================</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bDestroyNestedLists"></a><code><b>bDestroyNestedLists</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+DELETE Special Flag - If you inherit <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> - you must implement yourself. For example see <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">pvt_destroyitem</a>. It's simple. DEFAULT is FALSE. If Set to TRUE - then when the interior <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">pvt_Destroyitem</a> function is called via <a class="normal" href="ug_jfc_dl.JFC_DL.html#DeleteItem">DeleteItem</a>, <a class="normal" href="ug_jfc_dl.JFC_DL.html#DeleteAll">DeleteAll</a> or <a class="normal" href="ug_jfc_dl.JFC_DL.html#DeleteThisItem">DeleteThisItem</a> - then the <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">JFC_DLITEM.lpPtr</a> field is checked to see if its NIL. If it IS NOT NIL - It is presumed to be a pointer to another <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> class - which needs to be destroyed so orphans aren'<a class="normal" href="t.html">t</a> left in memory. SO... It Calls <a class="normal" href="ug_jfc_dl.JFC_DL.html#DeleteAll">DeleteAll</a> on the <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> hanging off the DLITEM.lpPtr we are deleting, then destroys it, and sets <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">lpPtr</a> to NIL right before the item is released. There is no 100% secure way I know of to ascertain if the class I want to delete IS NOT a base or whatever...
+
+<p>SO DO NOT misunderstand the name of this variable. I needed a generic enough name so descendants can implement this also.
+
+<p>If this FLAG is true, the Code in the <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">JFC_DL.pvt_destroyitem</a> procedure ASSUMES the Object pointed to in <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">JFC_DLITEM.lpPtr</a> is a <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a>.
+
+<p>Likewise, in the <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> class, If this FLAG is true, the Code in the <a class="normal" href="ug_jfc_xdl.JFC_XDL.html#pvt_DestroyItem">JFC_XDL.pvt_destroyitem</a> procedure ASSUMES the Object pointed to in JFC_XDLITEM.lpPtr is a <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bShowNestedLists"></a><code><b>bShowNestedLists</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Not Implemented fully this Generation - but ATM, 2009-02-12, only <a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a> and <a class="normal" href="ug_jfc_xxdl.jfc_XXDL.html">JFC_XXDL</a> have the saHTMLTable Function. The same way that <a class="normal" href="ug_jfc_dl.JFC_DL.html#bDestroyNestedLists">bDestroyNestedLists</a>:=true - Destroys DL's hanging off the <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">JFC_DLITEM.lpPtr</a> (if not NIL), this variable controls if the saHTMLTable function rendered nested lists.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="iType"></a><code><b>iType</b>: Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Value is DESCENDANT DEFINED, use as you like. 32bit or 64bit - depends on endian</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpFirst"></a><code><b>lpFirst</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+32bit or 64bit - depends on endian</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpItem"></a><code><b>lpItem</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+CURRENT &quot;ItemClass&quot; this CLASS is looking at.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpLast"></a><code><b>lpLast</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpOwner"></a><code><b>lpOwner</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+DESCENDANT DEFINED - can be handy</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_u8AutoNumber"></a><code><b>pvt_u8AutoNumber</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uItems"></a><code><b>uItems</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uN"></a><code><b>uN</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&lt; 32bit or 64bit - depends on endian</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>Constructor <b>Create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE BUT INHERIT</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CreateCopy"></a><code>Constructor <b>CreateCopy</b>(p_lpSameTypeOfClass: pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Makes an Instance of CLASS that is &quot;ReadOnly&quot; and &quot;looks&quot; at the list managed by the CLASS you passed iNN p_lpSameTypeOfClass. This allows TWO or more &quot;CURSORs&quot; iNN the same list. Before You Start messing with a copyied VERSION of this CLASS, call &quot;<a class="normal" href="ug_jfc_dl.JFC_DL.html#Sync">Sync</a>&quot; method if it is possible the copied CLASS has added or removed any items.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>Destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+override but inherit</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AppendItem"></a><code>Function <b>AppendItem</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+true unless copy or error</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AppendItemToList"></a><code>Function <b>AppendItemToList</b>(p_lpNewItem: pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Appends your class to the end of the list and makes it the current item. Pass pointer to your classitem - You are responsible for not adding same class twice - that is pointless ONE and TWO it will corrupt the list. If you're not sure - Call &quot;FindItem&quot; function - with the pointer of the class you wish to add. If it returns false - then its safe to add it.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AppendItem_lpPtr"></a><code>Function <b>AppendItem_lpPtr</b>(p_lpPtr: pointer): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+True unless copy or error</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AutoNumber"></a><code>Function <b>AutoNumber</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Special Feature Presentation of the Highly advanced <code>AutoNumber</code> ;) Returns a higher LongInt number each time its called until it rolls over. Good for UNIQUE IDENTIFIERS. Works Like Database <code>AUTONUMBER</code> fields. NOTE: This is not called automatically ANYWHERE - Descendant classes that wish to utilize this are totally responsible for calling this routine at the right times - Suggestion: When <a class="normal" href="ug_jfc_dl.JFC_DL.html#AppendItem">AppendItem</a>'<a class="normal" href="ug_jfc_dl.JFC_DL.html#N">n</a> or <a class="normal" href="ug_jfc_dl.JFC_DL.html#InsertItem">InsertITem</a>'<a class="normal" href="ug_jfc_dl.JFC_DL.html#N">n</a> ;)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="BOL"></a><code>Function <b>BOL</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&quot;Beginning of List&quot; - TRUE if Current Item is the FIRST ITEM iNN the list OR the list is Empty.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DeleteAll"></a><code>Function <b>DeleteAll</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+<code>DeleteAll</code> Returns TRUE unless Error - Or bCopyied Class.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DeleteItem"></a><code>Function <b>DeleteItem</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+TRUE if Successful Delete - False if Copy, empty list, or error</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DeleteThisItem"></a><code>Function <b>DeleteThisItem</b>(p_lpItem:pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="EOL"></a><code>Function <b>EOL</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&quot;End Of List&quot; - TRUE if Current Item is the LAST ITEM iNN the list OR the list is Empty.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FNextItem_lpPTR"></a><code>Function <b>FNextItem_lpPTR</b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Good Sample Source to See How a Basic <a class="normal" href="ug_jfc_dl.JFC_DL.html#FoundBinary">JFC_DL.FoundBinary</a> is done. Looks for your pointer starting from beginning of list</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundAnsistring"></a><code>Function <b>FoundAnsistring</b>( p_saString: AnsiString; p_bCaseSensitive: Boolean; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+CORE Ansistring Search Same as <a class="normal" href="ug_jfc_dl.JFC_DL.html#FoundBinary">FoundBinary</a> but for Ansistrings - Has Case Sensitivity option. Not for use with NORMAL STRINGS. Normal Strings have serious limitations not true with ANSISTRINGS. I CHOSE to use ANSISTRINGS as much as possible. Sorry there isn'<a class="normal" href="t.html">t</a> a Case insensitive search for normal strings. This is a base class....you could write one! :)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundBinary"></a><code>Function <b>FoundBinary</b>( p_lpWhat: pointer; p_uSize: UInt64; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Search Funtions NOTES ABOUT THESE SEARCH METHODS: &ndash;They All are smart enough to just return false if the list is empty. &ndash;They ALL - upon a successful FIND - Set the CURRENT Item to the just FOUND item. &ndash;They ALL - upon failing - RETURN the list to the item that was Current before the search was invoked. &ndash;They all are reasonably fast, platform independant and to a large degree datatype oblivious - less special searches for ANSISTRING type. &ndash;Any Binary searches for data types (for instance a whole record) that has one or more ANSISTRING variables iNN it will be unreliable because ANSISTRINGS are really pointers and the SAME data might be stored somewhere else _in_ mem, meaning pointer values won'<a class="normal" href="t.html">t</a> match - hence search MAY fail.
+
+<p>CORE Binary Search - Tricky BUT GOLDEN!
+
+<p>Returns TRUE if Found and False if not. Good For EXACT MATCHES of BINARY Data - This means everything except ANSISTRINGS - IF used for STRINGS - CASE and LENGTH SENSISTIVE!
+
+<p>Its Tricky but portable - Kind of a VARIANT type thing - HERE is an example to try to explain how it works.
+
+<p>Result:=<code>JFC_DL.FoundBinary</code>(@FindThis, SizeOf(FindThis), @TYOURITEMCLASS(nil).FindThisField; TRUE,FALSE);
+
+<p>To Seek a record based on an OBJECT stored _in_ <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">lpPTR</a> change the last field to true and instead of @TYOURITEMCLASS(nil).iFindThisField Use @YOURCLASS(nil).iFindThisField;
+
+<p>NOTE: The TypeCast of nil is MUTE! ITs used for pointer math - But you need to send it because it is a reference point for the pointer math. IT Works - thats all that matters. If you have multiple SIZE class items managed by this <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> class - Careful about Searching fields that might (memory wise) fall outside of a class's memory bounds - _in_ Short - If you have two classes _in_ a list where the FIRST type has one LongInt and the second has two - You should only do searches on the FIRST int cuz you might inadvertantly attempt to read from a memory location that isn'<a class="normal" href="t.html">t</a> yours. This shouldn'<a class="normal" href="t.html">t</a> be something to worry about until you start getting REALLY complex - multiple class types _in_ same linked list etc. And even then it works with care.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundItem"></a><code>Function <b>FoundItem</b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Looks for specific <a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a> pointer value - Important Because just setting <a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a> to a specific pointer to an ITEM you know EXISTS will screw up &quot;Nth&quot; - The Item's #'d position iNN list - BUT you can get around this for blazing speed by SETTING <a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpITem</a> directly = and doing a <a class="normal" href="ug_jfc_dl.JFC_DL.html#MoveFirst">MoveFirst</a> or <a class="normal" href="ug_jfc_dl.JFC_DL.html#MoveLast">MoveLast</a> to resync Nth value...As long as you remember that &quot;Nth&quot; is corrupt until then if you just hyperspeed your way around.
+
+<p>Use this to be safe. If its already THERE - just returns TRUE otherwise IT does a <a class="normal" href="ug_jfc_dl.JFC_DL.html#MoveFirst">MoveFirst</a> and loops through list until it finds it. If it DOES it returns TRUE, FALSE otherwise.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundItem_lpPTR"></a><code>Function <b>FoundItem_lpPTR</b>(p_lp: pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Good Sample Source to See How a Basic <a class="normal" href="ug_jfc_dl.JFC_DL.html#FoundBinary">JFC_DL.FoundBinary</a> is done. Looks for your pointer starting from NEXT position _in_ list</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundNth"></a><code>Function <b>FoundNth</b>(p_uN: UInt64):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+SEEK &quot;Nth&quot; item <a class="normal" href="ug_jfc_dl.JFC_DL.html#uN">uN</a> list. Returns TRUE if Found, FALSE otherwise
+
+<p>This routine does calculate the shortest method to navigate from the current position iNN the list to the requested one. But it does require multiple iterations - though so far it proves to be pretty darn fast. Fast as it can without a jump table.
+
+<p>I didn'<a class="normal" href="t.html">t</a> add a jump table as a memory saver for classes that don'<a class="normal" href="t.html">t</a> even use this. It would be very possible to make your own jump table. I didn'<a class="normal" href="t.html">t</a> because it would add storage overhead I didn'<a class="normal" href="t.html">t</a> want iNN the base class.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundTimestamp"></a><code>Function <b>FoundTimestamp</b>( p_tsFrom: TTIMESTAMP; p_tsTo: TTIMESTAMP; p_lpOffset: pointer; p_bStartAtBegin: Boolean; p_bUsePtr: Boolean):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+CORE TTIMESTAMP Search Same as <a class="normal" href="ug_jfc_dl.JFC_DL.html#FoundBinary">FoundBinary</a> but for TTIMESTAMP This does not return a sort listed, it simply searches for the next TTIMESTAMP within the p_tsFrom and p_tsTo Parameters.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="InsertItem"></a><code>Function <b>InsertItem</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+TRUE if Successful - False if Copy, or error</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="InsertItemInList"></a><code>Function <b>InsertItemInList</b>(p_lpNewItem: pointer):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Inserts Your Class iNN front of the current item and becomes the current item. Same rules apply as append concerning duplicates.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="InsertItem_lpPtr"></a><code>Function <b>InsertItem_lpPtr</b>(p_lpPtr: pointer): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+TRUE if Successful - False if Copy, or error</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MoveFirst"></a><code>Function <b>MoveFirst</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MoveLast"></a><code>Function <b>MoveLast</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MoveNext"></a><code>Function <b>MoveNext</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MovePrevious"></a><code>Function <b>MovePrevious</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="NextItem_lpPtr"></a><code>Function <b>NextItem_lpPtr</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns RAW value from <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">JFC_DLITEM.lpPtr</a> field from the next or prev item. If it doesn'<a class="normal" href="t.html">t</a> exist - Currently its designed to just bomb for speed reasons. (Die Quickly...kidding)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Next_lpItem"></a><code>Function <b>Next_lpItem</b>:pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Pointer to next <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> item (See <a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a>)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PrevItem_lpPtr"></a><code>Function <b>PrevItem_lpPtr</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Prev_lpItem"></a><code>Function <b>Prev_lpItem</b>:pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Pointer to next <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> item (See <a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a>)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_CreateItem"></a><code>Function <b>pvt_CreateItem</b>: <a  href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a>; Virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE - DON'<a class="normal" href="t.html">T</a> INHERIT! Make this return YOUR ITEM CLASS TYPE after its instanced.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_item_lpPtr"></a><code>Function <b>read_item_lpPtr</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+make properties work</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="RemoveItemFromList"></a><code>Function <b>RemoveItemFromList</b>:pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&quot;Removes&quot; Current Item from List - Returns NIL if failed else pointer to your removed item. Fails if list empty or a &quot;<a class="normal" href="ug_jfc_dl.JFC_DL.html#bCopy">bCopy</a>&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="RemoveThisItemFromList"></a><code>Function <b>RemoveThisItemFromList</b>(p_lpItem:pointer):pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Same Thing as <a class="normal" href="ug_jfc_dl.JFC_DL.html#RemoveItemFromList">RemoveItemFromList</a> but removes SPECIFIC item instead of Current &quot;<a class="normal" href="ug_jfc_dl.JFC_DL.html#lpItem">lpItem</a>&quot;.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SortAnsistring"></a><code>Function <b>SortAnsistring</b>( p_bCaseSensitive: Boolean; p_lpOffset: pointer; p_bAscending: Boolean; p_bUsePtr: Boolean ):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+THIS is a slow Bubble Sort - Though Pointer method faster paradigm Then trying to sort the ACTUAL pointers that control the DL navigation</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SortBinary"></a><code>Function <b>SortBinary</b>( p_uSize: UInt64; p_lpOffset: pointer; p_bAscending: Boolean; p_bUsePtr: Boolean ):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+THIS is a slow Bubble Sort - Though Pointer method faster paradigm Then trying to sort the ACTUAL pointers that control the DL navigation</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_createtask"></a><code>Procedure <b>pvt_createtask</b>; Virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Place to put &quot;generations&quot; of code thats you can add to but inherit the previous generation - unlike <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_CreateItem">pvt_createitem</a> which gets overriden entirely CALLED AFTER <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_CreateItem">pvt_createItem</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_DestroyItem"></a><code>Procedure <b>pvt_DestroyItem</b>(p_lp:pointer); Virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE - DON'<a class="normal" href="t.html">T</a> INHERIT! Make This <a class="normal" href="ug_jfc_dl.JFC_DL.html#Destroy">DESTROY</a> your ClassItem When p_ptr (pointer to YOUR class) is sent.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_destroytask"></a><code>Procedure <b>pvt_destroytask</b>(p_lp: pointer); Virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Place to put &quot;generations&quot; of code thats you can add to but inherit the previous generation - unlike <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">pvt_destroyitem</a> which gets overriden entirely CALLED BEFORE <a class="normal" href="ug_jfc_dl.JFC_DL.html#pvt_DestroyItem">pvt_DestroyItem</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SwapItems"></a><code>Procedure <b>SwapItems</b>(p_lpItem1, p_lpItem2: pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+No Error Checking - Make sure they exist - Swaps Sequential Positions in list - not fastest thing iNN world but it works.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SwapItem_lpPtr"></a><code>Procedure <b>SwapItem_lpPtr</b>(p_lpItem1, p_lpItem2: pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Faster Than Swap Items - This doesn'<a class="normal" href="t.html">t</a> Change the ORDER or the linked list itself - it swaps the data iNN the <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html#lpPtr">JFC_DLITEM.lpPtr</a> fields. You Supply the TWO &quot;ITEMS&quot; that point to the <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> classes.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Sync"></a><code>Procedure <b>Sync</b>(p_lpSameTypeOfClass: pointer); Virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE BUT INHERIT</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_item_lpptr"></a><code>Procedure <b>write_item_lpptr</b>(p_lp:pointer);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+make properties work</p>
+</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsCopy"></a><code>property <b>IsCopy</b>: Boolean read <a  href="ug_jfc_dl.JFC_DL.html#bCopy">bCopy</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns TRUE if this class was created with the <a class="normal" href="ug_jfc_dl.JFC_DL.html#CreateCopy">CreateCopy</a> constructor.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_lpPtr"></a><code>property <b>Item_lpPtr</b>: pointer read <a  href="ug_jfc_dl.JFC_DL.html#read_item_lpPtr">read_item_lpPtr</a> Write <a  href="ug_jfc_dl.JFC_DL.html#write_item_lpptr">write_item_lpptr</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Properties and Stuff Added for conveinance of accessing fields iNN &quot;ITEMs&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ListCount"></a><code>property <b>ListCount</b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uItems">UItems</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns number of items <a class="normal" href="ug_jfc_dl.JFC_DL.html#uN">uN</a> list.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="N"></a><code>property <b>N</b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uN">uN</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Reports CURRENT Item's sequential position iNN the list.</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

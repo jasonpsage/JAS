@@ -1,0 +1,94 @@
+<!--SECTION MAIN BEGIN-->
+<form name="JASFORM" id="JASFORM" method="POST" action=".?action=DBM_LearnTables&JSID=[@JSID@]">
+<script>
+  function SubmitForm(){document.getElementById("JASFORM").submit();};
+  function JButton(p_s){
+    if((p_s=='SAVE')||(p_s=='SAVENCLOSE')){
+      if(bReqFields_Validate()){
+        document.getElementById("button").value=p_s;SubmitForm();
+      };
+    }else{
+      document.getElementById("button").value=p_s;SubmitForm();
+    };
+  };
+</script>
+<script>try{edit_init();}catch(eX){};</script>
+<div class="jas-layout-row jas-content">
+  <div class="jas-post">
+    <div class="jas-post-tl"></div>
+    <div class="jas-post-tr"></div>
+    <div class="jas-post-bl"></div>
+    <div class="jas-post-br"></div>
+    <div class="jas-post-tc"></div>
+
+    <div class="jas-post-bc"></div>
+    <div class="jas-post-cl"></div>
+    <div class="jas-post-cr"></div>
+    <div class="jas-post-cc"></div>
+    <div class="jas-post-body">
+      <div class="jas-post-inner jas-article">
+        <table>
+        <tr>
+          <td><h2 class="jas-postheader">Learn Tables</h2></td>
+          <td>
+            <a target="_blank" href="[@ALIAS@].?action=help&helpid=0&JSID=[@JSID@]" title="[@PAGETITLE@] Filter Grid Screen Help">
+              <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p>This utility allows you to select tables that you want JAS to learn about. You can select multiple tables using your CTRL key while clicking.</p>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+
+<table>
+<tr>
+  <td>
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article">
+            <h2 class="jas-postheader">Tables from connected databases listed.</h2>
+            <div class="jas-postcontent">
+            <div class="panelheader">Select Below</div>
+              [#TABLES#]
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td valign="top">
+    <ul class="jas-blok-buttons">
+    <li><a href="javascript: self.close();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/document-close.png" class="image">
+    <span class="jasbutspan">&nbsp;Close this Window</span></a></li>
+    <li><a href="javascript: SubmitForm();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/system-search.png" class="image"><span class="jasbutspan">&nbsp;Begin</span></a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+</form>
+<!--SECTION MAIN END-->
+
+
+
+
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->

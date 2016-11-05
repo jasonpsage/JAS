@@ -1,0 +1,65 @@
+CREATE OR REPLACE VIEW `view_org` AS
+select
+  `jorg`.`JOrg_jorg_UID` AS `OrganizationID`,
+  `jorg`.`JOrg_Name` AS `OrganizationName`,
+  `jorg`.`JOrg_Phone` AS `Phone`,
+  `jorg`.`JOrg_Fax` AS `Fax`,
+  `jorg`.`JOrg_Email` AS `Email`,
+  `jorg`.`JOrg_Website` AS `Website`,
+  `jorg`.`JOrg_Created_DT` AS `Created`,
+  `jorg`.`JOrg_Modified_DT` AS `Modified`,
+  `jorg`.`JOrg_Desc` AS `Description`,
+  `jorg`.`JOrg_Main_Addr1` AS `MainAddress1`,
+  `jorg`.`JOrg_Main_Addr2` AS `MainAddress2`,
+  `jorg`.`JOrg_Main_Addr3` AS `MainAddress3`,
+  `jorg`.`JOrg_Main_City` AS `MainCity`,
+  `jorg`.`JOrg_Main_State` AS `MainState`,
+  `jorg`.`JOrg_Main_Country` AS `MainCountry`,
+  `jorg`.`JOrg_Main_Longitude_d` AS `MainLongitude`,
+  `jorg`.`JOrg_Main_Latitude_d` AS `MainLatitude`,
+  `jorg`.`JOrg_Main_PostalCode` AS `MainPostalCode`,
+  `jorg`.`JOrg_Ship_Addr1` AS `ShipAddress1`,
+  `jorg`.`JOrg_Ship_Addr2` AS `ShipAddress2`,
+  `jorg`.`JOrg_Ship_Addr3` AS `ShipAddress3`,
+  `jorg`.`JOrg_Ship_City` AS `ShipCity`,
+  `jorg`.`JOrg_Ship_State` AS `ShipState`,
+  `jorg`.`JOrg_Ship_PostalCode` AS `ShipPostalCode`,
+  `jorg`.`JOrg_Ship_Country` AS `ShipCountry`,
+  `jorg`.`JOrg_Ship_Longitude_d` AS `ShipLongitude`,
+  `jorg`.`JOrg_Ship_Latitude_d` AS `ShipLatitude`,
+  `jorg`.`JOrg_Customer_b` AS `Customer`,
+  `jorg`.`JOrg_Vendor_b` AS `Vendor`,
+  `jperson`.`JPers_NameSalutation` AS `PrimaryPersonNameSalutation`,
+  `jperson`.`JPers_NameFirst` AS `PrimaryPersonNameFirst`,
+  `jperson`.`JPers_NameMiddle` AS `PrimaryPersonNameMiddle`,
+  `jperson`.`JPers_NameLast` AS `PrimaryPersonNameLast`,
+  `jperson`.`JPers_NameSuffix` AS `PrimaryPersonNameSuffix`,
+  `jperson`.`JPers_NameDear` AS `PrimaryPersonNameDear`,
+  `jperson`.`JPers_Gender` AS `PrimaryPersonGender`,
+  `jperson`.`JPers_Private_b` AS `PrimaryPersonPrivate`,
+  `jperson`.`JPers_Work_Phone` AS `PrimaryPersonWorkPhone`,
+  `jperson`.`JPers_Work_Email` AS `PrimaryPersonWorkEmail`,
+  `jperson`.`JPers_Mobile_Phone` AS `PrimaryPersonMobile`,
+  `jperson`.`JPers_Desc` AS `PrimaryPersonDescription`,
+  `jperson`.`JPers_Home_Email` AS `PrimaryPersonHomeEmail`,
+  `jperson`.`JPers_Home_Phone` AS `PrimaryPersonHomePhone`,
+  `jperson`.`JPers_Addr1` AS `PrimaryPersonAddress1`,
+  `jperson`.`JPers_Addr2` AS `PrimaryPersonAddress2`,
+  `jperson`.`JPers_Addr3` AS `PrimaryPersonAddress3`,
+  `jperson`.`JPers_City` AS `PrimaryPersonCity`,
+  `jperson`.`JPers_State` AS `PrimaryPersonState`,
+  `jperson`.`JPers_PostalCode` AS `PrimaryPersonPostalCode`,
+  `jorg2`.`JOrg_Name` AS `PrimaryOrgName`,
+  `jorg3`.`JOrg_Name` AS `ParentOrgName`,
+  `juser`.`JUser_Name` AS `Owner`,
+  `juser2`.`JUser_Name` AS `CreatedBy`,
+  `juser3`.`JUser_Name` AS `ModifiedBy` from
+
+  ((((((`jorg` left join `jperson` on((`jperson`.`JPers_JPerson_UID` = `jorg`.`JOrg_Primary_Person_ID`)))
+  left join `jorg` `jorg2` on((`jperson`.`JPers_Primary_Org_ID` = `jorg2`.`JOrg_jorg_UID`)))
+  left join `jorg` `jorg3` on((`jorg`.`JOrg_Parent_ID` = `jorg3`.`JOrg_jorg_UID`)))
+  left join `juser` on((`juser`.`JUser_JUser_UID` = `jorg`.`JOrg_Owner_JUser_ID`)))
+  left join `juser` `juser2` on((`juser2`.`JUser_JUser_UID` = `jorg`.`JOrg_CreatedBy_JUser_ID`)))
+  left join `juser` `juser3` on((`juser3`.`JUser_JUser_UID` = `jorg`.`JOrg_ModifiedBy_JUser_ID`)))
+
+  where ((`jorg`.`JOrg_Deleted_b` <> 1) or isnull(`jorg`.`JOrg_Deleted_b`)) order by `jorg`.`JOrg_Name`

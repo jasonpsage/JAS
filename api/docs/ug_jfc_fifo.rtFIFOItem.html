@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfc_fifo: record rtFIFOItem</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="rtFIFOItem"></a><h1 class="cio">record rtFIFOItem</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Hierarchy</td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td>Methods</td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfc_fifo.html">ug_jfc_fifo</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type rtFIFOItem = record</code></p>
+<h2 class="description">Description</h2>
+<p>
+The Data Structure for our FIFO Message Queue's messages.</p>
+<h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#bBroadCast">bBroadCast</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#dtSent">dtSent</a></b>: TDateTime;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#lpDestObj">lpDestObj</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#lpSrcObj">lpSrcObj</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#saMsg">saMsg</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#u2DestEntity">u2DestEntity</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#u2MsgType">u2MsgType</a></b>: word;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#u2SrcEntity">u2SrcEntity</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#uDestID">uDestID</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#uSrcID">uSrcID</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfc_fifo.rtFIFOItem.html#UID">UID</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bBroadCast"></a><code><b>bBroadCast</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Flag to <a class="normal" href="uc_sageui.html#BROADCAST">broadcast</a> the message to all potential listeners</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="dtSent"></a><code><b>dtSent</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+DateTime Sent</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpDestObj"></a><code><b>lpDestObj</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Pointer to Destination Entity/object</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpSrcObj"></a><code><b>lpSrcObj</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Pointer to Source Entity/object</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saMsg"></a><code><b>saMsg</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+iMsg: Integer;//&lt; Message Data - Integer i8Msg: int64;//&lt; Message Data - Int64 lpMsg: pointer;//&lt; Message Data - Pointer fMsg: single;//&lt; Message Data - 32bit float dMsg: double;//&lt; Message Data - 64bit float cMsg: char;//&lt; Message Data Char (byte width) bMsg: boolean;//&lt; Message Data - Boolean</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2DestEntity"></a><code><b>u2DestEntity</b>: word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Destination Entity (type)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2MsgType"></a><code><b>u2MsgType</b>: word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Message Type</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2SrcEntity"></a><code><b>u2SrcEntity</b>: word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Source Entity (Type)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uDestID"></a><code><b>uDestID</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Destination Entity ID</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uSrcID"></a><code><b>uSrcID</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Source Entity ID</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="UID"></a><code><b>UID</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Unique Message Identifier within FIFO.</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

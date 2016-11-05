@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfilesys: packed record rtJFSFile</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="rtJFSFile"></a><h1 class="cio">packed record rtJFSFile</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Hierarchy</td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td>Methods</td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfilesys.html">ug_jfilesys</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type rtJFSFile = packed record</code></p>
+<h2 class="description">Description</h2>
+&nbsp;<h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#bBufModified">bBufModified</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#bFileOpen">bFileOpen</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#F">F</a></b>: file;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#lpBuffer">lpBuffer</a></b>: pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#lpRecord">lpRecord</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#saFileName">saFileName</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u1Mode">u1Mode</a></b>: byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u2IOResult">u2IOResult</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u4BufRow">u4BufRow</a></b>: LongWord;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u4BufSize">u4BufSize</a></b>: LongWord;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u4RecSize">u4RecSize</a></b>: LongWord;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#u4RowsInBuffer">u4RowsInBuffer</a></b>: LongWord;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#uRawOffset">uRawOffset</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.rtJFSFile.html#uRow">uRow</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bBufModified"></a><code><b>bBufModified</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+True if Records in Buffer Modified and the buffer needs to be written.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bFileOpen"></a><code><b>bFileOpen</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+true if file open.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="F"></a><code><b>F</b>: file;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpBuffer"></a><code><b>lpBuffer</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+pointer to Buffer</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpRecord"></a><code><b>lpRecord</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+rJFS: &circ;<a class="normal" href="ug_jfilesys.rtJFS.html">rtJFS</a>; rJFSHdr: &circ;<a class="normal" href="ug_jfilesys.rtJFSHdr.html">rtJFSHdr</a>; rJFSRaw: &circ;<a class="normal" href="ug_jfilesys.rtJFSStream.html">rtJFSStream</a>;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saFileName"></a><code><b>saFileName</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u1Mode"></a><code><b>u1Mode</b>: byte;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+0=read 1=write 2=read/write</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2IOResult"></a><code><b>u2IOResult</b>: word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Last Error Result captured from IOResult</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u4BufRow"></a><code><b>u4BufRow</b>: LongWord;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Offset - Starts at Zero</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u4BufSize"></a><code><b>u4BufSize</b>: LongWord;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Size of Buffer Block</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u4RecSize"></a><code><b>u4RecSize</b>: LongWord;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Size of records - Must be =&lt; buffer size</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u4RowsInBuffer"></a><code><b>u4RowsInBuffer</b>: LongWord;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+How many actual records in the buffer</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uRawOffset"></a><code><b>uRawOffset</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+For use with WriteStream bytes out as RAW records. You can start a new batch by &quot;writebuffernow&quot; to reset everything in the buffer, but for continuous stream - just keep calling WriteStream. Leave this field alone - it tracks where it is in each record as it moves along. Fast append is used internally to handle the buffers in memory and when to write them the Write Raw handles chunking the data into each &quot;record&quot; within its &quot;size&quot; constraints, BUT returns &quot;unfinished&quot; waiting for more data. If you are addressing writing out raw binary in streams - note there isn'<a class="normal" href="t.html">t</a> anything multi user about it yet, nor is it ok to do some of this, then something else, then comeback (concerning your JFS file) Before you start, write buffers or invalidate them, seek a position in the file - and GO!!!!!!!! keeping streaming data until you have no more by looping and calling the WriteStream routine. when your stream is done writebuffernow to commit what ya have.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uRow"></a><code><b>uRow</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Current ROW, First record = 1</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

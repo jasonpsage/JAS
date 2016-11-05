@@ -1,0 +1,1597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: uc_sageui: Class TWindow</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="TWindow"></a><h1 class="cio">Class TWindow</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="uc_sageui.html">uc_sageui</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TWindow = class(TObject)</code></p>
+<h2 class="description">Description</h2>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">TWindow</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#C">C</a></b>: <a  href="uc_sageui.tc.html">tC</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#SELFOBJECTITEM">SELFOBJECTITEM</a></b>: <a  href="ug_jfc_xxdl.jfc_XXDLITEM.html">JFC_XXDLITEM</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#bRedraw">bRedraw</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4BCloseX">i4BCloseX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4BMaxX">i4BMaxX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4BMinX">i4BMinX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4ControlWithFocusUID">i4ControlWithFocusUID</a></b>: longint;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4MinX">i4MinX</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4MinY">i4MinY</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4RHeight">i4RHeight</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#i4RWidth">i4RWidth</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#rW">rW</a></b>: <a  href="uc_sageui.rtCreateWindow.html">rtCreateWindow</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameBG">u1FrameBG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameCaptionBG">u1FrameCaptionBG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameCaptionFG">u1FrameCaptionFG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameDragBG">u1FrameDragBG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameDragFG">u1FrameDragFG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameFG">u1FrameFG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameSizeBG">u1FrameSizeBG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameSizeFG">u1FrameSizeFG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameWindowBG">u1FrameWindowBG</a></b>: Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uc_sageui.TWindow.html#u1FrameWindowFG">u1FrameWindowFG</a></b>: Byte;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="uc_sageui.TWindow.html#create">create</a></b>(p_RCW: <a  href="uc_sageui.rtCreateWindow.html">rtCreateWindow</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="uc_sageui.TWindow.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#ControlCTLPTR">ControlCTLPTR</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#CurrentCTLID">CurrentCTLID</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#HasFocus">HasFocus</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#i4MinimizedWidth">i4MinimizedWidth</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_i4MinX">Read_i4MinX</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_i4MinY">Read_i4MinY</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bAlwaysOnTop">Read_RW_bAlwaysOnTop</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bCaption">Read_RW_bCaption</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bCloseButton">Read_RW_bCloseButton</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bEnabled">Read_RW_bEnabled</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bFrame">Read_RW_bFrame</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bMaximizeButton">Read_RW_bMaximizeButton</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bMinimizeButton">Read_RW_bMinimizeButton</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bSizable">Read_RW_bSizable</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_bVisible">Read_RW_bVisible</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_Height">Read_RW_Height</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_lpfnWndProc">Read_RW_lpfnWndProc</a></b>:pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_saCaption">Read_RW_saCaption</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_Width">Read_RW_Width</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_WindowState">Read_RW_WindowState</a></b>:Cardinal;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_X">Read_RW_X</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_RW_Y">Read_RW_Y</a></b>:LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameBG">Read_u1FrameBG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionBG">Read_u1FrameCaptionBG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionFG">Read_u1FrameCaptionFG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameDragBG">Read_u1FrameDragBG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameDragFG">Read_u1FrameDragFG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameFG">Read_u1FrameFG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameSizeBG">Read_u1FrameSizeBG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameSizeFG">Read_u1FrameSizeFG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameWindowBG">Read_u1FrameWindowBG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_u1FrameWindowFG">Read_u1FrameWindowFG</a></b>:Byte;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="uc_sageui.TWindow.html#Read_VCUID">Read_VCUID</a></b>: Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#CalcRelativeSize">CalcRelativeSize</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#CntlChangeFocus">CntlChangeFocus</a></b>(p_Forward,p_Keypress:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#PaintWindow">PaintWindow</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#ProcessKeyboard">ProcessKeyboard</a></b>(p_u4Key: Cardinal);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#ProcessMouse">ProcessMouse</a></b>(p_bMouseIdle: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#PvtSetFrameColors">PvtSetFrameColors</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#SetFocus">SetFocus</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_bAlwaysOnTop">Write_bAlwaysOnTop</a></b>(p_bAlwaysOnTop:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_i4MinX">Write_i4MinX</a></b>(p_i4MinX:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_i4MinY">Write_i4MinY</a></b>(p_i4MinY:LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bCaption">Write_RW_bCaption</a></b>(p_bCaption:Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bCloseButton">Write_RW_bCloseButton</a></b>(p_bCloseButton:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bEnabled">Write_RW_bEnabled</a></b>(p_bEnabled:Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bFrame">Write_RW_bFrame</a></b>(p_bFrame:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bMaximizeButton">Write_RW_bMaximizeButton</a></b>(p_bMaximizeButton:Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bMinimizeButton">Write_RW_bMinimizeButton</a></b>(p_bMinimizeButton:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bSizable">Write_RW_bSizable</a></b>(p_bSizable:Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_bVisible">Write_RW_bVisible</a></b>(p_bVisible:Boolean);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_Height">Write_RW_Height</a></b>(p_Height:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_saCaption">Write_RW_saCaption</a></b>(p_saCaption:AnsiString);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_Width">Write_RW_Width</a></b>(p_Width:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_WindowState">Write_RW_WindowState</a></b>(p_WindowState:Cardinal);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_X">Write_RW_X</a></b>(p_X:LongInt);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_RW_Y">Write_RW_Y</a></b>(p_Y:LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameBG">Write_u1FrameBG</a></b>(p_u1FrameBG:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionBG">Write_u1FrameCaptionBG</a></b>(p_u1FrameCaptionBG:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionFG">Write_u1FrameCaptionFG</a></b>(p_u1FrameCaptionFG:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameDragBG">Write_u1FrameDragBG</a></b>(p_u1FrameDragBG:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameDragFG">Write_u1FrameDragFG</a></b>(p_u1FrameDragFG:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameFG">Write_u1FrameFG</a></b>(p_u1FrameFG:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameSizeBG">Write_u1FrameSizeBG</a></b>(p_u1FrameSizeBG:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameSizeFG">Write_u1FrameSizeFG</a></b>(p_u1FrameSizeFG:Byte);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameWindowBG">Write_u1FrameWindowBG</a></b>(p_u1FrameWindowBG:Byte);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uc_sageui.TWindow.html#Write_u1FrameWindowFG">Write_u1FrameWindowFG</a></b>(p_u1FrameWindowFG:Byte);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#AlwaysOnTop">AlwaysOnTop</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bAlwaysOnTop">Read_RW_bAlwaysOnTop</a> Write <a  href="uc_sageui.TWindow.html#Write_bAlwaysOnTop">Write_bAlwaysOnTop</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Caption">Caption</a></b>: AnsiString Read <a  href="uc_sageui.TWindow.html#Read_RW_saCaption">Read_RW_saCaption</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_saCaption">Write_RW_saCaption</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#CaptionVisible">CaptionVisible</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bCaption">Read_RW_bCaption</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bCaption">Write_RW_bCaption</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#CloseButton">CloseButton</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bCloseButton">Read_RW_bCloseButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bCloseButton">Write_RW_bCloseButton</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Enabled">Enabled</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bEnabled">Read_RW_bEnabled</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bEnabled">Write_RW_bEnabled</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Frame">Frame</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bFrame">Read_RW_bFrame</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bFrame">Write_RW_bFrame</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameBG">FrameBG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameBG">Read_u1FrameBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameBG">Write_u1FrameBG</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameCaptionBG">FrameCaptionBG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionBG">Read_u1FrameCaptionBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionBG">Write_u1FrameCaptionBG</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameCaptionFG">FrameCaptionFG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionFG">Read_u1FrameCaptionFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionFG">Write_u1FrameCaptionFG</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameDragBG">FrameDragBG</a></b>: Byte reAd <a  href="uc_sageui.TWindow.html#Read_u1FrameDragBG">Read_u1FrameDragBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameDragBG">Write_u1FrameDragBG</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameDragFG">FrameDragFG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameDragFG">Read_u1FrameDragFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameDragFG">Write_u1FrameDragFG</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameFG">FrameFG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameFG">Read_u1FrameFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameFG">Write_u1FrameFG</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameSizeBG">FrameSizeBG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameSizeBG">Read_u1FrameSizeBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameSizeBG">Write_u1FrameSizeBG</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameSizeFG">FrameSizeFG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameSizeFG">Read_u1FrameSizeFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameSizeFG">Write_u1FrameSizeFG</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameWindowBG">FrameWindowBG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameWindowBG">Read_u1FrameWindowBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameWindowBG">Write_u1FrameWindowBG</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#FrameWindowFG">FrameWindowFG</a></b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameWindowFG">Read_u1FrameWindowFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameWindowFG">Write_u1FrameWindowFG</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Height">Height</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Height">Read_RW_Height</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Height">Write_RW_Height</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#MaximizeButton">MaximizeButton</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bMaximizeButton">Read_RW_bMaximizeButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bMaximizeButton">Write_RW_bMaximizeButton</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#MinimizeButton">MinimizeButton</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bMinimizeButton">Read_RW_bMinimizeButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bMinimizeButton">Write_RW_bMinimizeButton</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#MinX">MinX</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_i4MinX">Read_i4MinX</a> Write <a  href="uc_sageui.TWindow.html#Write_i4MinX">Write_i4MinX</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#MinY">MinY</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_i4MinY">Read_i4MinY</a> Write <a  href="uc_sageui.TWindow.html#Write_i4MinY">Write_i4MinY</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#MsgHandlerAddr">MsgHandlerAddr</a></b>: pointer read <a  href="uc_sageui.TWindow.html#Read_RW_lpfnWndProc">Read_RW_lpfnWndProc</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Sizable">Sizable</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bSizable">Read_RW_bSizable</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bSizable">Write_RW_bSizable</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#VC">VC</a></b>: Int64 read <a  href="uc_sageui.TWindow.html#Read_VCUID">Read_VCUID</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Visible">Visible</a></b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bVisible">Read_RW_bVisible</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bVisible">Write_RW_bVisible</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Width">Width</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Width">Read_RW_Width</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Width">Write_RW_Width</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#WindowState">WindowState</a></b>: Cardinal read <a  href="uc_sageui.TWindow.html#Read_RW_WindowState">Read_RW_WindowState</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_WindowState">Write_RW_WindowState</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#X">X</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_X">Read_RW_X</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_X">Write_RW_X</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="uc_sageui.TWindow.html#Y">Y</a></b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Y">Read_RW_Y</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Y">Write_RW_Y</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="C"></a><code><b>C</b>: <a  href="uc_sageui.tc.html">tC</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Control List</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SELFOBJECTITEM"></a><code><b>SELFOBJECTITEM</b>: <a  href="ug_jfc_xxdl.jfc_XXDLITEM.html">JFC_XXDLITEM</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This is ACTUAL element/item in <a class="normal" href="uc_sageui.html#OBJECTSXXDL">OBJECTSXXDL</a></p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bRedraw"></a><code><b>bRedraw</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Redraw window/control flag</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4BCloseX"></a><code><b>i4BCloseX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to store button hot spots in window <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a>, button hot spots</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4BMaxX"></a><code><b>i4BMaxX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to store button hot spots in window <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a>, button hot spots</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4BMinX"></a><code><b>i4BMinX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to store button hot spots in window <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a>, button hot spots</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4ControlWithFocusUID"></a><code><b>i4ControlWithFocusUID</b>: longint;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4MinX"></a><code><b>i4MinX</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to store button hot spots in window <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a>, Minimized Coords</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4MinY"></a><code><b>i4MinY</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to store button hot spots in window <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a>, Minimized Coords</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4RHeight"></a><code><b>i4RHeight</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+these act as a speed dial too - related to effect</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4RWidth"></a><code><b>i4RWidth</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+these act as a speed dial too - related to effect</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="rW"></a><code><b>rW</b>: <a  href="uc_sageui.rtCreateWindow.html">rtCreateWindow</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Contains properties related to the window. See <a class="normal" href="uc_sageui.rtCreateWindow.html">rtCreateWindow</a> record structure</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameBG"></a><code><b>u1FrameBG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameCaptionBG"></a><code><b>u1FrameCaptionBG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameCaptionFG"></a><code><b>u1FrameCaptionFG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameDragBG"></a><code><b>u1FrameDragBG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameDragFG"></a><code><b>u1FrameDragFG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameFG"></a><code><b>u1FrameFG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameSizeBG"></a><code><b>u1FrameSizeBG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameSizeFG"></a><code><b>u1FrameSizeFG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameWindowBG"></a><code><b>u1FrameWindowBG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u1FrameWindowFG"></a><code><b>u1FrameWindowFG</b>: Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Colors</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>(p_RCW: <a  href="uc_sageui.rtCreateWindow.html">rtCreateWindow</a>);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>Destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ControlCTLPTR"></a><code>Function <b>ControlCTLPTR</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CurrentCTLID"></a><code>Function <b>CurrentCTLID</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="HasFocus"></a><code>Function <b>HasFocus</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4MinimizedWidth"></a><code>Function <b>i4MinimizedWidth</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+returns minimized <a class="normal" href="uc_sageui.TWindow.html#Width">width</a> of the window</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_i4MinX"></a><code>Function <b>Read_i4MinX</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read the minimum <a class="normal" href="uc_sageui.TWindow.html#X">X</a> (<a class="normal" href="uc_sageui.TWindow.html#Width">width</a>?)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_i4MinY"></a><code>Function <b>Read_i4MinY</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read the minimum <a class="normal" href="uc_sageui.TWindow.html#Y">Y</a> (<a class="normal" href="uc_sageui.TWindow.html#Height">height</a>?)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bAlwaysOnTop"></a><code>Function <b>Read_RW_bAlwaysOnTop</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bCaption"></a><code>Function <b>Read_RW_bCaption</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bCloseButton"></a><code>Function <b>Read_RW_bCloseButton</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bEnabled"></a><code>Function <b>Read_RW_bEnabled</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bFrame"></a><code>Function <b>Read_RW_bFrame</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bMaximizeButton"></a><code>Function <b>Read_RW_bMaximizeButton</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bMinimizeButton"></a><code>Function <b>Read_RW_bMinimizeButton</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bSizable"></a><code>Function <b>Read_RW_bSizable</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_bVisible"></a><code>Function <b>Read_RW_bVisible</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_Height"></a><code>Function <b>Read_RW_Height</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_lpfnWndProc"></a><code>Function <b>Read_RW_lpfnWndProc</b>:pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_saCaption"></a><code>Function <b>Read_RW_saCaption</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_Width"></a><code>Function <b>Read_RW_Width</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_WindowState"></a><code>Function <b>Read_RW_WindowState</b>:Cardinal;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_X"></a><code>Function <b>Read_RW_X</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_RW_Y"></a><code>Function <b>Read_RW_Y</b>:LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameBG"></a><code>Function <b>Read_u1FrameBG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Read <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameCaptionBG"></a><code>Function <b>Read_u1FrameCaptionBG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Read <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> <a class="normal" href="uc_sageui.TWindow.html#Caption">Caption</a> background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameCaptionFG"></a><code>Function <b>Read_u1FrameCaptionFG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> <a class="normal" href="uc_sageui.TWindow.html#Caption">caption</a> foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameDragBG"></a><code>Function <b>Read_u1FrameDragBG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameDragFG"></a><code>Function <b>Read_u1FrameDragFG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameFG"></a><code>Function <b>Read_u1FrameFG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+REad <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> Foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameSizeBG"></a><code>Function <b>Read_u1FrameSizeBG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read the <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> sizing border background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameSizeFG"></a><code>Function <b>Read_u1FrameSizeFG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read the <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> sizing border foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameWindowBG"></a><code>Function <b>Read_u1FrameWindowBG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Read <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> window background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_u1FrameWindowFG"></a><code>Function <b>Read_u1FrameWindowFG</b>:Byte;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read <a class="normal" href="uc_sageui.TWindow.html#Frame">Frame</a> window foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Read_VCUID"></a><code>Function <b>Read_VCUID</b>: Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+read the Virtual Console UID</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CalcRelativeSize"></a><code>Procedure <b>CalcRelativeSize</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Calculates relative size of window</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CntlChangeFocus"></a><code>Procedure <b>CntlChangeFocus</b>(p_Forward,p_Keypress:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function gets called to move the focus forward or backward from whatever control has focus when this is called.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PaintWindow"></a><code>Procedure <b>PaintWindow</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ProcessKeyboard"></a><code>Procedure <b>ProcessKeyboard</b>(p_u4Key: Cardinal);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Handles keypresses</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ProcessMouse"></a><code>Procedure <b>ProcessMouse</b>(p_bMouseIdle: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+handles mouse</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PvtSetFrameColors"></a><code>Procedure <b>PvtSetFrameColors</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Called from <a class="normal" href="uc_sageui.TWindow.html#PaintWindow">PaintWindow</a> Only</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SetFocus"></a><code>Procedure <b>SetFocus</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_bAlwaysOnTop"></a><code>Procedure <b>Write_bAlwaysOnTop</b>(p_bAlwaysOnTop:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_i4MinX"></a><code>Procedure <b>Write_i4MinX</b>(p_i4MinX:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write the minimum <a class="normal" href="uc_sageui.TWindow.html#X">X</a> (<a class="normal" href="uc_sageui.TWindow.html#Width">width</a>?)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_i4MinY"></a><code>Procedure <b>Write_i4MinY</b>(p_i4MinY:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write the minimum <a class="normal" href="uc_sageui.TWindow.html#Y">Y</a> (<a class="normal" href="uc_sageui.TWindow.html#Height">height</a>?)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bCaption"></a><code>Procedure <b>Write_RW_bCaption</b>(p_bCaption:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bCloseButton"></a><code>Procedure <b>Write_RW_bCloseButton</b>(p_bCloseButton:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bEnabled"></a><code>Procedure <b>Write_RW_bEnabled</b>(p_bEnabled:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bFrame"></a><code>Procedure <b>Write_RW_bFrame</b>(p_bFrame:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bMaximizeButton"></a><code>Procedure <b>Write_RW_bMaximizeButton</b>(p_bMaximizeButton:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bMinimizeButton"></a><code>Procedure <b>Write_RW_bMinimizeButton</b>(p_bMinimizeButton:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bSizable"></a><code>Procedure <b>Write_RW_bSizable</b>(p_bSizable:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_bVisible"></a><code>Procedure <b>Write_RW_bVisible</b>(p_bVisible:Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_Height"></a><code>Procedure <b>Write_RW_Height</b>(p_Height:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_saCaption"></a><code>Procedure <b>Write_RW_saCaption</b>(p_saCaption:AnsiString);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_Width"></a><code>Procedure <b>Write_RW_Width</b>(p_Width:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_WindowState"></a><code>Procedure <b>Write_RW_WindowState</b>(p_WindowState:Cardinal);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_X"></a><code>Procedure <b>Write_RW_X</b>(p_X:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_RW_Y"></a><code>Procedure <b>Write_RW_Y</b>(p_Y:LongInt);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameBG"></a><code>Procedure <b>Write_u1FrameBG</b>(p_u1FrameBG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameCaptionBG"></a><code>Procedure <b>Write_u1FrameCaptionBG</b>(p_u1FrameCaptionBG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> <a class="normal" href="uc_sageui.TWindow.html#Caption">caption</a> background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameCaptionFG"></a><code>Procedure <b>Write_u1FrameCaptionFG</b>(p_u1FrameCaptionFG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> <a class="normal" href="uc_sageui.TWindow.html#Caption">caption</a> foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameDragBG"></a><code>Procedure <b>Write_u1FrameDragBG</b>(p_u1FrameDragBG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameDragFG"></a><code>Procedure <b>Write_u1FrameDragFG</b>(p_u1FrameDragFG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameFG"></a><code>Procedure <b>Write_u1FrameFG</b>(p_u1FrameFG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameSizeBG"></a><code>Procedure <b>Write_u1FrameSizeBG</b>(p_u1FrameSizeBG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameSizeFG"></a><code>Procedure <b>Write_u1FrameSizeFG</b>(p_u1FrameSizeFG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write the <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> sizing border foreground color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameWindowBG"></a><code>Procedure <b>Write_u1FrameWindowBG</b>(p_u1FrameWindowBG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> window background color</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Write_u1FrameWindowFG"></a><code>Procedure <b>Write_u1FrameWindowFG</b>(p_u1FrameWindowFG:Byte);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+write <a class="normal" href="uc_sageui.TWindow.html#Frame">frame</a> window foreground color</p>
+</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AlwaysOnTop"></a><code>property <b>AlwaysOnTop</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bAlwaysOnTop">Read_RW_bAlwaysOnTop</a> Write <a  href="uc_sageui.TWindow.html#Write_bAlwaysOnTop">Write_bAlwaysOnTop</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Caption"></a><code>property <b>Caption</b>: AnsiString Read <a  href="uc_sageui.TWindow.html#Read_RW_saCaption">Read_RW_saCaption</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_saCaption">Write_RW_saCaption</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CaptionVisible"></a><code>property <b>CaptionVisible</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bCaption">Read_RW_bCaption</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bCaption">Write_RW_bCaption</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CloseButton"></a><code>property <b>CloseButton</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bCloseButton">Read_RW_bCloseButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bCloseButton">Write_RW_bCloseButton</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Enabled"></a><code>property <b>Enabled</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bEnabled">Read_RW_bEnabled</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bEnabled">Write_RW_bEnabled</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Frame"></a><code>property <b>Frame</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bFrame">Read_RW_bFrame</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bFrame">Write_RW_bFrame</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameBG"></a><code>property <b>FrameBG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameBG">Read_u1FrameBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameBG">Write_u1FrameBG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameCaptionBG"></a><code>property <b>FrameCaptionBG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionBG">Read_u1FrameCaptionBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionBG">Write_u1FrameCaptionBG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameCaptionFG"></a><code>property <b>FrameCaptionFG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameCaptionFG">Read_u1FrameCaptionFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameCaptionFG">Write_u1FrameCaptionFG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameDragBG"></a><code>property <b>FrameDragBG</b>: Byte reAd <a  href="uc_sageui.TWindow.html#Read_u1FrameDragBG">Read_u1FrameDragBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameDragBG">Write_u1FrameDragBG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameDragFG"></a><code>property <b>FrameDragFG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameDragFG">Read_u1FrameDragFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameDragFG">Write_u1FrameDragFG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameFG"></a><code>property <b>FrameFG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameFG">Read_u1FrameFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameFG">Write_u1FrameFG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameSizeBG"></a><code>property <b>FrameSizeBG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameSizeBG">Read_u1FrameSizeBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameSizeBG">Write_u1FrameSizeBG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameSizeFG"></a><code>property <b>FrameSizeFG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameSizeFG">Read_u1FrameSizeFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameSizeFG">Write_u1FrameSizeFG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameWindowBG"></a><code>property <b>FrameWindowBG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameWindowBG">Read_u1FrameWindowBG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameWindowBG">Write_u1FrameWindowBG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FrameWindowFG"></a><code>property <b>FrameWindowFG</b>: Byte read <a  href="uc_sageui.TWindow.html#Read_u1FrameWindowFG">Read_u1FrameWindowFG</a> Write <a  href="uc_sageui.TWindow.html#Write_u1FrameWindowFG">Write_u1FrameWindowFG</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Height"></a><code>property <b>Height</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Height">Read_RW_Height</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Height">Write_RW_Height</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MaximizeButton"></a><code>property <b>MaximizeButton</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bMaximizeButton">Read_RW_bMaximizeButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bMaximizeButton">Write_RW_bMaximizeButton</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MinimizeButton"></a><code>property <b>MinimizeButton</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bMinimizeButton">Read_RW_bMinimizeButton</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bMinimizeButton">Write_RW_bMinimizeButton</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MinX"></a><code>property <b>MinX</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_i4MinX">Read_i4MinX</a> Write <a  href="uc_sageui.TWindow.html#Write_i4MinX">Write_i4MinX</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MinY"></a><code>property <b>MinY</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_i4MinY">Read_i4MinY</a> Write <a  href="uc_sageui.TWindow.html#Write_i4MinY">Write_i4MinY</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MsgHandlerAddr"></a><code>property <b>MsgHandlerAddr</b>: pointer read <a  href="uc_sageui.TWindow.html#Read_RW_lpfnWndProc">Read_RW_lpfnWndProc</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Sizable"></a><code>property <b>Sizable</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bSizable">Read_RW_bSizable</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bSizable">Write_RW_bSizable</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="VC"></a><code>property <b>VC</b>: Int64 read <a  href="uc_sageui.TWindow.html#Read_VCUID">Read_VCUID</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Visible"></a><code>property <b>Visible</b>: Boolean read <a  href="uc_sageui.TWindow.html#Read_RW_bVisible">Read_RW_bVisible</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_bVisible">Write_RW_bVisible</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Width"></a><code>property <b>Width</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Width">Read_RW_Width</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Width">Write_RW_Width</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="WindowState"></a><code>property <b>WindowState</b>: Cardinal read <a  href="uc_sageui.TWindow.html#Read_RW_WindowState">Read_RW_WindowState</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_WindowState">Write_RW_WindowState</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="X"></a><code>property <b>X</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_X">Read_RW_X</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_X">Write_RW_X</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Y"></a><code>property <b>Y</b>: LongInt read <a  href="uc_sageui.TWindow.html#Read_RW_Y">Read_RW_Y</a> Write <a  href="uc_sageui.TWindow.html#Write_RW_Y">Write_RW_Y</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

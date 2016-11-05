@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: uc_library</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<h1 class="unit">Unit uc_library</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+Routines for programs using the Console Unit</p>
+<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
+<ul class="useslist"><li>sysutils</li><li><a  href="uc_console.html">uc_console</a></li><li><a  href="ug_common.html">ug_common</a></li><li><a  href="ug_jegas.html">ug_jegas</a></li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#DrawKeyBoard">DrawKeyBoard</a></b>(X, Y: LongInt);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#DrawKeyPressOnKeyBoard">DrawKeyPressOnKeyBoard</a></b>(X, Y: LongInt; rKey: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#DrawKeypressRecord">DrawKeypressRecord</a></b>(x,y: LongInt; rKey: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>; p_FG, p_BG, p_DataFG, p_DataBG: Byte );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#DrawMouseEventRecord">DrawMouseEventRecord</a></b>(x,y: LongInt; rMevent: <a  href="uc_console.rtMEvent.html">rtMEvent</a>; p_FG, p_BG, p_DataFG, p_DataBG: Byte );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#JegasLogo">JegasLogo</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#JegasLogoFramed">JegasLogoFramed</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uc_library.html#SpinCursor">SpinCursor</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uc_library.html#u2CShell">u2CShell</a></b>(p_saCommand: AnsiString; p_saParam: AnsiString): word;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DrawKeyBoard"></a><code>Procedure <b>DrawKeyBoard</b>(X, Y: LongInt);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Relies on Current <a class="normal" href="uc_console.html#VC">VC</a> FGC and BGC</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DrawKeyPressOnKeyBoard"></a><code>Procedure <b>DrawKeyPressOnKeyBoard</b>(X, Y: LongInt; rKey: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Relies on Current <a class="normal" href="uc_console.html#VC">VC</a> FGC and BGC</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DrawKeypressRecord"></a><code>Procedure <b>DrawKeypressRecord</b>(x,y: LongInt; rKey: <a  href="uc_console.rtKeyPress.html">rtKeyPress</a>; p_FG, p_BG, p_DataFG, p_DataBG: Byte );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Overrides Current <a class="normal" href="uc_console.html#VC">VC</a> FGC and BGC with the color parameters passed. On return, at time of putting this routine in this unit, the colors set on return will be p_FG, p_BG.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DrawMouseEventRecord"></a><code>Procedure <b>DrawMouseEventRecord</b>(x,y: LongInt; rMevent: <a  href="uc_console.rtMEvent.html">rtMEvent</a>; p_FG, p_BG, p_DataFG, p_DataBG: Byte );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Overrides Current <a class="normal" href="uc_console.html#VC">VC</a> FGC and BGC with the color parameters passed. On return, at time of putting this routine in this unit, the colors set on return will be p_FG, p_BG.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JegasLogo"></a><code>Procedure <b>JegasLogo</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Displays the Jegas Logo in Text - prepared for console unit, for the current console <a class="normal" href="uc_console.html#VC">vc</a>, current cursor location, and color settings.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JegasLogoFramed"></a><code>Procedure <b>JegasLogoFramed</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Displays the Jegas Logo in Text - prepared for console unit, for the current console <a class="normal" href="uc_console.html#VC">vc</a>, current cursor location, and color settings.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="SpinCursor"></a><code>Procedure <b>SpinCursor</b>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Changes FGC, and uses current PenXY on Entry for position. Updates Console repeatedly while waiting for <a class="normal" href="uc_console.html#KeyHit">keyhit</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u2CShell"></a><code>Function <b>u2CShell</b>(p_saCommand: AnsiString; p_saParam: AnsiString): word;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns ExitCode - Works for DOS and Linux. Note: Linux just appends the two parameters with a space separator. Using this gives you a platform independant way to execute shell commands. See uxxg_library.i4Shell function</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

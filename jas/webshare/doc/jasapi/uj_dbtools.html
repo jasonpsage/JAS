@@ -1,0 +1,625 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS/JegasCRM Developer Reference: uj_dbtools</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS/JegasCRM Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JegasAPI - Jegas, LLC - Copyright(c)2016
+<h1 class="unit">Unit uj_dbtools</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+JAS Database Tools</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_EmptyTrash">DBM_EmptyTrash</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_KillOrphans">DBM_KillOrphans</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_SyncDBMSColumns">DBM_SyncDBMSColumns</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_SyncScreenFields">DBM_SyncScreenFields</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_JCaptionFlagOrphans">DBM_JCaptionFlagOrphans</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_JNoteFlagOrphans">DBM_JNoteFlagOrphans</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_DiffTool">DBM_DiffTool</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_WipeAllRecordLocks">DBM_WipeAllRecordLocks</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_UpdateJCompanyMember">DBM_UpdateJCompanyMember</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_FindDupeUID">DBM_FindDupeUID</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_LearnTables">DBM_LearnTables</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#CSVUpload">CSVUpload</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#CSVMapfields">CSVMapfields</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#CSVImport">CSVImport</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#JASSync">JASSync</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#FileUpload">FileUpload</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#FileDownload">FileDownload</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JBlok">bPreDel_JBlok</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JScreen">bPreDel_JScreen</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JCase">bPreDel_JCase</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JTask">bPreDel_JTask</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JFile">bPreDel_JFile</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JCompany">bPreDel_JCompany</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JFilterSave">bPreDel_JFilterSave</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JIconContext">bPreDel_JIconContext</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JInvoice">bPreDel_JInvoice</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JLead">bPreDel_JLead</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JInstalled">bPreDel_JInstalled</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JModuleSetting">bPreDel_JModuleSetting</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JModule">bPreDel_JModule</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JPerson">bPreDel_JPerson</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JProject">bPreDel_JProject</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JProduct">bPreDel_JProduct</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JSecGrp">bPreDel_JSecGrp</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JSecPerm">bPreDel_JSecPerm</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JSession">bPreDel_JSession</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JSysModule">bPreDel_JSysModule</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JSysModuleLink">bPreDel_JSysModuleLink</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JTable">bPreDel_JTable</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JTeam">bPreDel_JTeam</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bPreDel_JUser">bPreDel_JUser</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_FlagJasRow">DBM_FlagJasRow</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_FlagJasRowExecute">DBM_FlagJasRowExecute</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#u8NewConAndDB">u8NewConAndDB</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saName: ansistring ): UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bDBMasterUtility">bDBMasterUtility</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_DBC: JADO_CONNECTION; var p_JDCon_JDConnection_UID: UInt64; p_saName: ansistring; p_bLeadJet: boolean ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bSetDefaultSecuritySettings">bSetDefaultSecuritySettings</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_dbtools.html#DBM_RemoveJet">DBM_RemoveJet</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bDBM_DatabaseScrub">bDBM_DatabaseScrub</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#DBM_JIPList">DBM_JIPList</a></b>(p_Con: JADO_CONNECTION; p_saAction: ansistring; p_sIP: string; p_sReason: string; p_u8UserID: UInt64):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_dbtools.html#bDeleteRecord">bDeleteRecord</a></b>( p_Con: JADO_Connection; p_sTable: string; p_sColumnPrefix: string; p_saWhereClause: ansistring; p_u8UserID: UInt64 ): boolean;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_EmptyTrash"></a><code>procedure <b>DBM_EmptyTrash</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete all records in tables with _Deleted_b flag set to true.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_KillOrphans"></a><code>procedure <b>DBM_KillOrphans</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete all orphaned records in the database.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_SyncDBMSColumns"></a><code>procedure <b>DBM_SyncDBMSColumns</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function goes thru DBMS schema and corrects jcolumn Records if it can EACH DBMS will need to be addressed as the techniques and data will vary. Starting with MySQL and using the information schema.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_SyncScreenFields"></a><code>procedure <b>DBM_SyncScreenFields</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function examines jblokfield records system wide. If they have a column associated with then (i.e. not a custom jblokfield) and the properties aren't set for max width, length and height - this function adjusts them based on the associated database columns.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_JCaptionFlagOrphans"></a><code>procedure <b>DBM_JCaptionFlagOrphans</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_JNoteFlagOrphans"></a><code>procedure <b>DBM_JNoteFlagOrphans</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_DiffTool"></a><code>procedure <b>DBM_DiffTool</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This procedure compares JAS Database info against actual database</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_WipeAllRecordLocks"></a><code>procedure <b>DBM_WipeAllRecordLocks</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete all records in tables with _Deleted_b flag set to true.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_UpdateJCompanyMember"></a><code>procedure <b>DBM_UpdateJCompanyMember</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Updates jcompanymember by interrogating the jperson table and the jcompany table to find members that may not of been added.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_FindDupeUID"></a><code>procedure <b>DBM_FindDupeUID</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Diagnostic looking for Duplicate UID's. Shouldn't be any, but if there are, the table should be altered to have the UID column set as the primary key after the data is scrubbed accordingly.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_LearnTables"></a><code>procedure <b>DBM_LearnTables</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This tool allows you to point to a connected database connection and select one or more tables and submit your selection. Once submitted this function will add table records and column records into JAS' meta data allowing you to later view them, and make screens for them from the JTable Search screen or from the record/detail view of any one of those tables.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CSVUpload"></a><code>procedure <b>CSVUpload</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Routine that does the actual importing of CSV files</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CSVMapfields"></a><code>procedure <b>CSVMapfields</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Routine To Handle the process of mapping fields from the CSV to the target table</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="CSVImport"></a><code>procedure <b>CSVImport</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+First step int the CSV import process -starts here</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JASSync"></a><code>procedure <b>JASSync</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function literally synchronizes Itself with another JAS Installation connected as a Datasource. It doesn't work over the web via some sort of webbrowser connection. A web browser is the default way to invoke the synchronization however.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="FileUpload"></a><code>procedure <b>FileUpload</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+handles uploaded files to system</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="FileDownload"></a><code>procedure <b>FileDownload</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function is for downloading files from the file repository and it takes permissions and ownership into consideration. Ownership first, if the user is not the Owner (Created By) then the user must have the permission assigned to the file. If they do not have the permission, or the permission is NULL or ZERO - then access is denied.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JBlok"></a><code>function <b>bPreDel_JBlok</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JBlok children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JScreen"></a><code>function <b>bPreDel_JScreen</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JScreen children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JCase"></a><code>function <b>bPreDel_JCase</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JCase children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JTask"></a><code>function <b>bPreDel_JTask</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JTask children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JFile"></a><code>function <b>bPreDel_JFile</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Rename JFile Records File to Linux &quot;hidden&quot;; prepend period to name.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JCompany"></a><code>function <b>bPreDel_JCompany</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JCompany Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JFilterSave"></a><code>function <b>bPreDel_JFilterSave</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JFilterSave Children (defaults)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JIconContext"></a><code>function <b>bPreDel_JIconContext</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JIconContext Children (jiconmaster)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JInvoice"></a><code>function <b>bPreDel_JInvoice</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JInvoice Children (jinvoicelines)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JLead"></a><code>function <b>bPreDel_JLead</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JLead Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JInstalled"></a><code>function <b>bPreDel_JInstalled</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JInstalled Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JModuleSetting"></a><code>function <b>bPreDel_JModuleSetting</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JModuleSetting Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JModule"></a><code>function <b>bPreDel_JModule</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JModule Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JPerson"></a><code>function <b>bPreDel_JPerson</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JPerson Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JProject"></a><code>function <b>bPreDel_JProject</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JProject Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JProduct"></a><code>function <b>bPreDel_JProduct</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JProduct Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JSecGrp"></a><code>function <b>bPreDel_JSecGrp</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JSecGrp Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JSecPerm"></a><code>function <b>bPreDel_JSecPerm</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JSecPerm Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JSession"></a><code>function <b>bPreDel_JSession</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JSession Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JSysModule"></a><code>function <b>bPreDel_JSysModule</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JSysModule Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JSysModuleLink"></a><code>function <b>bPreDel_JSysModuleLink</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JSysModuleLink Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JTable"></a><code>function <b>bPreDel_JTable</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JTable Children (columns)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JTeam"></a><code>function <b>bPreDel_JTeam</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JTeam Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bPreDel_JUser"></a><code>function <b>bPreDel_JUser</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saUID: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Delete JUser Children</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_FlagJasRow"></a><code>procedure <b>DBM_FlagJasRow</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function is only for the main JAS database and is for preparing for distribution of new upgrades, making new JAS databases and new Jet databases.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_FlagJasRowExecute"></a><code>procedure <b>DBM_FlagJasRowExecute</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function does the actual work that DBM_FlagJasRow commands.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="u8NewConAndDB"></a><code>function <b>u8NewConAndDB</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saName: ansistring ): UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Makes new user, password and database and makes a JAS connection for it using same info. This routin passes back the JDConnection UID when successful or a ZERO if it fails. Note the connection IS NOT ENABLED so the next step to make the database etc would be to load the info into an instance of JDCON, Doo all you have to do then SAVE the connection as ENABLED and send the Cycle command into the JobQueue of the Squadron Leader databse.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bDBMasterUtility"></a><code>function <b>bDBMasterUtility</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_DBC: JADO_CONNECTION; var p_JDCon_JDConnection_UID: UInt64; p_saName: ansistring; p_bLeadJet: boolean ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+DBC - Main DB Connection (SOURCE) JDCon_JDConnection_UID: Database connection in source DB to use Name to use making a connection if JDCon_JDConnection_UID is ZERO on entry bLeadJet: If True treat as Master Database, otherwise like a JET database.
+
+<p>Makes New Master databses or Jet databases and also upgrades existing databases.
+
+<p>Make Tables (jtable info) or Alter NOTE: if not exist (Use JAS_Row_b Column Records for info) Add Rows or Update from master flagged JAS_Row_b Note: Tables without JAS_Row_b - Add rows (e.g. jasident, juserpref) TODO: Add VIEW SQL to jtable - for each DBMS - Use to make Views)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bSetDefaultSecuritySettings"></a><code>function <b>bSetDefaultSecuritySettings</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Make Default Security Settings</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_RemoveJet"></a><code>procedure <b>DBM_RemoveJet</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bDBM_DatabaseScrub"></a><code>function <b>bDBM_DatabaseScrub</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DBM_JIPList"></a><code>function <b>DBM_JIPList</b>(p_Con: JADO_CONNECTION; p_saAction: ansistring; p_sIP: string; p_sReason: string; p_u8UserID: UInt64):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Quick way to take immediate charge of the JIPLIST for banning, unbanning etc This effect both the database and memory. No Cycling. B = Ban P = Promote or Whitelist F = Forget or Remove from jiplist</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bDeleteRecord"></a><code>function <b>bDeleteRecord</b>( p_Con: JADO_Connection; p_sTable: string; p_sColumnPrefix: string; p_saWhereClause: ansistring; p_u8UserID: UInt64 ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Using this takes into account the configuration setting grJASConfig.bSafeDelete which decides if records get flagged as deleted or just deleted outright</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

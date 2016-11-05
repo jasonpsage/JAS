@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_ipc_ez</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<h1 class="unit">Unit ug_ipc_ez</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td><a class="section" href="#PasDoc-Classes">Classes, Interfaces, Objects and Records</a></td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td><a class="section" href="#PasDoc-Constants">Constants</a></td><td><a class="section" href="#PasDoc-Variables">Variables</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+This unit serves as a simple Interprocess Communication unit - it attempts to simplify the coding required to get information from one process to another. It's not the fastest solution in the world but it's not slow either and its performance is highly dependent on the amount of information being passed. It's a filebased solution.
+
+<p>&mdash;- Sample Config File (Name: jegas_ipc.cfg)
+
+<p>IPCFIFOINDIR=c:/sample/in/ &lt;&ndash;NOTE &quot;In to Program 1&quot; IPCFIFOOUTDIR==c:/sample/out/ &lt;&ndash;NOTE &quot;Oout to Program 2&quot;
+
+<p>Remember to think of the whole &quot;Program1&quot; and &quot;Program2&quot; bit to make sense of the direction of data flow.
+
+<p>Change the debug code to not use sagelog, but to use what we use now - text out in (IO) uxxg_common.pp &mdash;&mdash;-</p>
+<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
+<ul class="useslist"><li>sysutils</li><li><a  href="ug_common.html">ug_common</a></li><li><a  href="ug_ipc_recv_file.html">ug_ipc_recv_file</a></li><li><a  href="ug_ipc_send_file.html">ug_ipc_send_file</a></li><li><a  href="ug_ipc_wait_file.html">ug_ipc_wait_file</a></li><li><a  href="ug_jegas.html">ug_jegas</a></li><li><a  href="ug_jfc_tokenizer.html">ug_jfc_tokenizer</a></li><li><a  href="ug_misc.html">ug_misc</a></li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Classes"></a><h3 class="cio">Classes, Interfaces, Objects and Records</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Name</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">record&nbsp;<a class="bold" href="ug_ipc_ez.rtIPCConfig.html"><code>rtIPCConfig</code></a></td>
+<td class="itemdesc">this structure holds the configuration information required for the unit to operate.</td>
+</tr>
+</table>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#bIPCLoadConfigFile">bIPCLoadConfigFile</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#ipc_getmsg1">ipc_getmsg1</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#ipc_getmsg2">ipc_getmsg2</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#ipc_init">ipc_init</a></b>:Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#ipc_sendmsg1">ipc_sendmsg1</a></b>(p_saMsg: AnsiString): LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="ug_ipc_ez.html#ipc_sendmsg2">ipc_sendmsg2</a></b>(p_saMsg: AnsiString): LongInt;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Constants"></a><h3 class="summary">Constants</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_ipc_ez.html#csIPCConfigFileName">csIPCConfigFileName</a></b>='jegas_ipc.cfg';</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_ipc_ez.html#csIPCExt">csIPCExt</a></b>='FIFO';</code></td>
+</tr>
+</table>
+<a name="PasDoc-Variables"></a><h3 class="summary">Variables</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_ipc_ez.html#grIPCConfig">grIPCConfig</a></b>: <a  href="ug_ipc_ez.rtIPCConfig.html">rtIPCConfig</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_ipc_ez.html#gsaIPC_MessageBufferIn">gsaIPC_MessageBufferIn</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_ipc_ez.html#gsaIPC_MessageBufferOut">gsaIPC_MessageBufferOut</a></b>: AnsiString;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bIPCLoadConfigFile"></a><code>Function <b>bIPCLoadConfigFile</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Loads this unit's configuration file</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ipc_getmsg1"></a><code>Function <b>ipc_getmsg1</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This unit is designed to allow TWO applications to talk to one another. Therefore one application should be decidedly &quot;App 1&quot; and the other &quot;App 2&quot; then this function should be used for &quot;App 1&quot; to get a message from &quot;App 2&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ipc_getmsg2"></a><code>Function <b>ipc_getmsg2</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This unit is designed to allow TWO applications to talk to one another. Therefore one application should be decidedly &quot;App 1&quot; and the other &quot;App 2&quot; then this function should be used for &quot;App 2&quot; to get a message from &quot;App 1&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ipc_init"></a><code>Function <b>ipc_init</b>:Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Initializes this unit</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ipc_sendmsg1"></a><code>Function <b>ipc_sendmsg1</b>(p_saMsg: AnsiString): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This unit is designed to allow TWO applications to talk to one another. Therefore one application should be decidedly &quot;App 1&quot; and the other &quot;App 2&quot; then this function should be used for &quot;App 1&quot; to send a message to &quot;App 2&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ipc_sendmsg2"></a><code>Function <b>ipc_sendmsg2</b>(p_saMsg: AnsiString): LongInt;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This unit is designed to allow TWO applications to talk to one another. Therefore one application should be decidedly &quot;App 1&quot; and the other &quot;App 2&quot; then this function should be used for &quot;App 2&quot; to send a message to &quot;App 1&quot;</p>
+</td></tr>
+</table>
+<h3 class="detail">Constants</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csIPCConfigFileName"></a><code><b>csIPCConfigFileName</b>='jegas_ipc.cfg';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Name of the configuration file used by the unit.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="csIPCExt"></a><code><b>csIPCExt</b>='FIFO';</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+File extension of drop files created and read by this unit.</p>
+</td></tr>
+</table>
+<h3 class="detail">Variables</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="grIPCConfig"></a><code><b>grIPCConfig</b>: <a  href="ug_ipc_ez.rtIPCConfig.html">rtIPCConfig</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+global instance of the configuration record</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gsaIPC_MessageBufferIn"></a><code><b>gsaIPC_MessageBufferIn</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Ansistring Message Buffer - inbound</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="gsaIPC_MessageBufferOut"></a><code><b>gsaIPC_MessageBufferOut</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+ansistring Message Buffer - outbound</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

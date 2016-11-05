@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS/JegasCRM Developer Reference: uj_locking</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS/JegasCRM Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JegasAPI - Jegas, LLC - Copyright(c)2016
+<h1 class="unit">Unit uj_locking</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+JAS Specific Functions</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uj_locking.html#bJAS_LockRecord">bJAS_LockRecord</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_locking.html#bJAS_RecordLockValid">bJAS_RecordLockValid</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_locking.html#bJAS_UnlockRecord">bJAS_UnlockRecord</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_locking.html#bJAS_PurgeLocks">bJAS_PurgeLocks</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_iMinutesOld: integer):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_locking.html#JAS_DeleteRecordLocks">JAS_DeleteRecordLocks</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_locking.html#bJAS_DeleteRecord">bJAS_DeleteRecord</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saTable: ansistring; p_saUID: ansistring ): boolean;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJAS_LockRecord"></a><code>Function <b>bJAS_LockRecord</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Lock Works like this: PART 1-A: Blast ANY OLD LOCKS PART 1-B: Locks without corresponding Session ID's
+
+<p>PART 2: First TRY to LOCK entire Table - if can't - someone else has it. (Loop to try a couple times) (TABLE LOCK= TABLE ID, ROWID=0)
+
+<p>PART 3: Once Table Lock Established, IF ROWID=0 - see if other locks row level exist, if they do - lose the table lock... keeping table locked not permitted, others own rows.
+
+<p>PART 4: If a ROW ID is Specified, lock the ROW and then Lose the Table Lock.
+
+<p>PART 5: If a COL ID is Specified, lock the COL and then Lose the Table Lock.
+
+<p>PART 6: If a ROW and COL ID Are Specified, lock the COL and then Lose the Table Lock.
+
+<p>PART 7: return true or false to indicate lock granted</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJAS_RecordLockValid"></a><code>function <b>bJAS_RecordLockValid</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function just validates that the LOCK indeed belongs to this session.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJAS_UnlockRecord"></a><code>function <b>bJAS_UnlockRecord</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JLock_JDConnection_ID: ansistring; p_JLock_TableName: ansistring; p_JLock_Row_ID: ansistring; p_JLock_Col_ID: ansistring; p_u8Caller: Uint64 ):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Do to the Nature of this function, the result is not as important as the lockrecord one. Note: that there are no protections in place from folks deleting records belonging to others and or other data connections so the responsibility of data integrity remains with the programmer.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJAS_PurgeLocks"></a><code>function <b>bJAS_PurgeLocks</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_iMinutesOld: integer):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+like its name says - it purges locks older than p_iMinutesOld from jlock table</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JAS_DeleteRecordLocks"></a><code>procedure <b>JAS_DeleteRecordLocks</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This procedure is called primarily from the error page when a user encounters problems performing an action and chooses to try deleting their own record locks as a way of remedying a problem themselves before contacting their administrator. An error will result if the session is not valid. To Be clear: This function deletes all locks associated with the current session.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJAS_DeleteRecord"></a><code>function <b>bJAS_DeleteRecord</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_TGT: JADO_CONNECTION; p_saTable: ansistring; p_saUID: ansistring ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>
