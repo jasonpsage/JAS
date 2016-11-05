@@ -3,14 +3,14 @@ Tested on the following operating systems:
 ===============
     32 Bit 
 ===============
-Windows XP                      32Bit       )
+Windows XP                     
 ===============
 
 
 ===============
     64 Bit 
 ===============
-Win7
+Windows 7, 8 and 10
 CentOS-7
 KuBuntu 15.04
 Fedora 22
@@ -22,6 +22,8 @@ Mageia 4.1 x86_64
 PC Linux OS 64
 LuBuntu 15.04 Desktop amd64
 SUSE Linux Enterprise Server 12
+BackBox 4.x
+Linux Mint 17.3
 ===============
 
 
