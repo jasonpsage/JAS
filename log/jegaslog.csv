@@ -1,0 +1,4 @@
+"JLOGT_DateNTime_dt","JLOGT_Severity_u1","JLOGT_Entry_ID","JLOGT_EntryData_s","JLOGT_SourceFile_s","JLOGT_User_ID","JLOGT_OS_Login_s","JLOGT_CmdLine_s"
+2016-11-07 2:05:13,5,201203091110,"Deleted Log File as instructed in JAS configuration.","uj_config.pp",0,"(?)","/jegas/jas/src/jas"
+2016-11-07 2:05:13,5,201210170806,"Single Host Mode","uj_config.pp",0,"(?)","/jegas/jas/src/jas"
+2016-11-07 2:05:25,1,201210171304,"bJAS_CreateSession Credential Query: select   JUser_JUser_UID , JUser_Enabled_b, JUser_AllowedSessions_u, JUser_Login_First_DT, JUser_Logins_Successful_u, JUser_DefaultPage_Login, JUser_DefaultPage_Logout , JUser_Logins_Failed_u , JUser_Headers_b , JUser_QuickLinks_b , JUser_Headers_b , JUser_Theme , JUser_Background , JUser_BackgroundRepeat_b , JUser_Admin_b from juser where ((JUser_Deleted_b<>1) or (JUser_Deleted_b IS NULL)) AND (JUser_Name='admin') and (JUser_Password='PqmniBfh=') MORE INFO: ","uj_sessions.pp",0,"(?)","/jegas/jas/src/jas"

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS Developer Reference: uj_webwidgets</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JAS API - Jegas Application Server - Jegas, LLC  - Copyright(c)2016  
+<h1 class="unit">Unit uj_webwidgets</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+Consolidation of Severside Internet controls</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetBoolean">WidgetBoolean</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: ansiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bEditMode: Boolean; p_bFilter: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_bMultiple: boolean; p_bBlankSelected: boolean; p_bNULLSelected: boolean; p_bTrueSelected: boolean; p_bFalseSelected: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetComboBox">WidgetComboBox</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bIfInReadOnly_UseDefaultValueOnly: boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetDateTime">WidgetDateTime</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_bWidgetDate: boolean; p_bWidgetTime: boolean; p_saWidgetMask: AnsiString; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetDropDown">WidgetDropDown</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bMultiple: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bIfInReadOnly_UseDefaultValueOnly: boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetEMail">WidgetEMail</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetHidden">WidgetHidden</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saDefaultValue: AnsiString );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetInputBox">WidgetInputBox</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: Ansistring; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: UInt64; p_u2Size: word; p_bPassword: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetList">WidgetList</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bMultiple: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetPhone">WidgetPhone</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saSIPURL: AnsiString; p_saValue: ansistring; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetTextArea">WidgetTextArea</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Cols: word; p_u2Rows: word; p_bEditMode: Boolean; p_bRequired: boolean; p_bShowToolButtons: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_webwidgets.html#WidgetURL">WidgetURL</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_u2WidgetWidth: word; p_saDefaultValue: AnsiString; p_u8MaxLen: UInt64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetBoolean"></a><code>Procedure <b>WidgetBoolean</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: ansiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bEditMode: Boolean; p_bFilter: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_bMultiple: boolean; p_bBlankSelected: boolean; p_bNULLSelected: boolean; p_bTrueSelected: boolean; p_bFalseSelected: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetComboBox"></a><code>Procedure <b>WidgetComboBox</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bIfInReadOnly_UseDefaultValueOnly: boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user. XDL Reference reference: name=caption, value=returned, u8User bit flags: (b0)1=selectable, (b1)2=selected, (b2)4=default</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetDateTime"></a><code>Procedure <b>WidgetDateTime</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_bWidgetDate: boolean; p_bWidgetTime: boolean; p_saWidgetMask: AnsiString; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetDropDown"></a><code>Procedure <b>WidgetDropDown</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bMultiple: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bIfInReadOnly_UseDefaultValueOnly: boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user. XDL Reference reference: name=caption, value=returned, u8User bit flags: (b0)1=selectable, (b1)2=selected, (b2)4=default</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetEMail"></a><code>Procedure <b>WidgetEMail</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetHidden"></a><code>Procedure <b>WidgetHidden</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saDefaultValue: AnsiString );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user. Use to make hidden input elements.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetInputBox"></a><code>Procedure <b>WidgetInputBox</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: Ansistring; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u8MaxLen: UInt64; p_u2Size: word; p_bPassword: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetList"></a><code>Procedure <b>WidgetList</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Size: word; p_bMultiple: boolean; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_XDL: JFC_XDL; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user. XDL Reference reference: name=caption, value=returned, i8User bit flags: (b0)1=selectable, (b1)2=selected, (b2)4=default</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetPhone"></a><code>Procedure <b>WidgetPhone</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saSIPURL: AnsiString; p_saValue: ansistring; p_u8MaxLen: uint64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetTextArea"></a><code>Procedure <b>WidgetTextArea</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_saDefaultValue: AnsiString; p_u2Cols: word; p_u2Rows: word; p_bEditMode: Boolean; p_bRequired: boolean; p_bShowToolButtons: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user. This Version places the Caption OVER the datafield.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="WidgetURL"></a><code>Procedure <b>WidgetURL</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saWidgetName: AnsiString; p_saWidgetCaption: AnsiString; p_u2WidgetWidth: word; p_saDefaultValue: AnsiString; p_u8MaxLen: UInt64; p_u2Size: word; p_bEditMode: Boolean; p_bDataOnRight: Boolean; p_bRequired: boolean; p_bFilterTools: boolean; p_bFilterNot: boolean; p_saOnBlur: ansistring; p_saOnChange: ansistring; p_saOnClick: ansistring; p_saOnDblClick: ansistring; p_saOnFocus: ansistring; p_saOnKeyDown: ansistring; p_saOnKeypress: ansistring; p_saOnKeyUp: ansistring; p_saOnSelect: ansistring );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Creates a widget that gets inserted into outgoing web pages via the JAS SNR mechanisms. So, if you make a widget named MyTest in code, then whan that page is served there will be the necessary code for that widget in the SNR list. When your outout is about to leave the server, any instance of [#MyTest#] will be replaced by the code created by this function. Additionally, if this widget is placed correctly, then when the user submits their page back the the server, you will have your MyTest's submitted value in the incoming post or get variables from the user.</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

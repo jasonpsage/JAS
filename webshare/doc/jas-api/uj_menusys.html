@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS Developer Reference: uj_menusys</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JAS API - Jegas Application Server - Jegas, LLC  - Copyright(c)2016  
+<h1 class="unit">Unit uj_menusys</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+JAS Specific Functions</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uj_menusys.html#bCreateAndLoadJMenuIntoDL">bCreateAndLoadJMenuIntoDL</a></b>(Var p_DL: JFC_DL; p_DBC: JADO_CONNECTION):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uj_menusys.html#bEmptyAndDestroyJMenuDL">bEmptyAndDestroyJMenuDL</a></b>(Var p_DL: JFC_DL):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uj_menusys.html#bJMenuRender">bJMenuRender</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; Var p_saResult: AnsiString; Var p_saPanel: AnsiString; Var p_saMenutitle: AnsiString; p_MENUDL: JFC_DL; p_u8MenuID: Uint64; p_u8UserID: Uint64; p_u8Method: UInt64; p_u8MenuRootID: Uint64 ): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Procedure <b><a  href="uj_menusys.html#LoadJMenuPath">LoadJMenuPath</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; Var p_PATHXDL: JFC_XDL; p_MenuDL: JFC_DL; p_u8MenuID: Uint64 );</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Procedure <b><a  href="uj_menusys.html#ReplaceJASMenuWithMenu">ReplaceJASMenuWithMenu</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bCreateAndLoadJMenuIntoDL"></a><code>Function <b>bCreateAndLoadJMenuIntoDL</b>(Var p_DL: JFC_DL; p_DBC: JADO_CONNECTION):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function Instantiates and loads the the PASSED JFC_XDL class with the jmenu table from the default global connection information loaded and assigned to gaJCon in the jcore module.
+
+<p>Again - Call this function with a UN-INSTANTIATED JFC_XDL NOTE: To Properly Clean Up This JFC_XDL, Call the oppposite routine bEmptyAndDestroyJMenuDL which handles the house work. The house work has to do with the rtJMenu structure being allocated in memory dynamically, and the pointers are maintained in the JFC_XDL.Item_lpPtr.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bEmptyAndDestroyJMenuDL"></a><code>Function <b>bEmptyAndDestroyJMenuDL</b>(Var p_DL: JFC_DL):Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOTE: This function does Check that the passed p_DL is not NILL upon entry and will return false (failed) if that is the case but the nature of pointers in general is that if you aren't caustious and call this function when the class wasn't instantiated properly you will bomb out of the program likely. See: bCreateAndLoadJMenuIntoDL</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJMenuRender"></a><code>Function <b>bJMenuRender</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; Var p_saResult: AnsiString; Var p_saPanel: AnsiString; Var p_saMenutitle: AnsiString; p_MENUDL: JFC_DL; p_u8MenuID: Uint64; p_u8UserID: Uint64; p_u8Method: UInt64; p_u8MenuRootID: Uint64 ): Boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This routine &quot;primes the pump&quot; for a recursive loop that does the traversing thorugh the menu hierarchy.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="LoadJMenuPath"></a><code>Procedure <b>LoadJMenuPath</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; Var p_PATHXDL: JFC_XDL; p_MenuDL: JFC_DL; p_u8MenuID: Uint64 );</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+NOTE: This Menu PATH DL is not Related to the gJMenuDL or the rContext.JMenuDL (copies of the master gJMenuDL), and is actually for storing information about the full path of a given MENU ID. The storage mechanism is &quot;Use a lean JFC_DL, but typecast the JFC_DL.Item_lpPTR field as an LongInt, and store the JMenu_JMenu_UID's there.
+
+<p>This function is recursive so it is important that the menu it's diciphering is correct or you get into an infinate loop. The menu needs to be hierarchial.
+
+<p>You need to call this procedure with: p_Context structure alive and well as done by JAS when creating CGI threads. p_PATHDL instantiated as JFC_DL to be loaded with menu ids in lpPTR field p_JMenuDL either NIL (Then it uses the p_Context.JMenuDL) or a JFC_DL instantiated specifically by the bCreateAndLoadJMenuIntoDL function. p_iMenuID to begin bottom up path interrogation.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="ReplaceJASMenuWithMenu"></a><code>Procedure <b>ReplaceJASMenuWithMenu</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function handles rendering and caching the global nav menu
+
+<p>Drawing method used for GlobalNav (S-N-R &lt;!&ndash;@JAS-MENU--&gt;) is method 3 Horizontal - 2 level Tab navigation (Worked with original JAS theme) Horizontal - 3 TRaditional Menu Navigation</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

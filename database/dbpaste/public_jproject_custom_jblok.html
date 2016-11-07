@@ -1,0 +1,24 @@
+&nbsp<b>Tasks</b></br>
+<script language="javascript">
+  function viewtask(p_s){
+    var s='[@SERVERURL@]/.?SCREENID=1605101829342590207&bfs1605101828178770063U=1'+
+     '&bfs1605101828178770063P=2&bfs1605101828178820066U=1'+
+     '&bfs1605101828178820066P=1&bfs1605101828178830067U=1'+
+     '&bfs1605101828178830067P=3';
+
+    if(p_s=='pending'){ s=s+'&FBLOK1605101829343030230=2'+
+      '&FBLOK1605101829343030230=1&FBLOK1605101829343030230=4'
+      '&FBLOK1605101829343030230=6&FBLOK1605101829343030230=8';
+    }else if(p_s=='complete') s=s+'&FBLOK1605101829343030230=3';
+    NewWindow(s);
+  };
+</script>
+&nbsp<a href="javascript: viewtask('pending');">View Pending</a><br />
+&nbsp<a href="javascript: viewtask('complete');">View Completed</a><br />
+&nbsp<a href="javascript: viewtask('all');">View All</a><br />
+
+
+
+
+
+

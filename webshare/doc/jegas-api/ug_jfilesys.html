@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfilesys</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<h1 class="unit">Unit ug_jfilesys</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Uses">Uses</a></td><td><a class="section" href="#PasDoc-Classes">Classes, Interfaces, Objects and Records</a></td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td><a class="section" href="#PasDoc-Constants">Constants</a></td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+Jegas' own file storage system. Powerful - but not fully realized. Currently only supports block data and streamed data. Designed to be a fixed width block file system with speed being paramount goal.</p>
+<a name="PasDoc-Uses"></a><h2 class="uses">Uses</h2>
+<ul class="useslist"><li>sysutils</li><li><a  href="ug_common.html">ug_common</a></li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Classes"></a><h3 class="cio">Classes, Interfaces, Objects and Records</h3>
+<table class="classestable wide_list">
+<tr class="listheader">
+<th class="itemname">Name</th>
+<th class="itemdesc">Description</th>
+</tr>
+<tr class="list">
+<td class="itemname">packed record&nbsp;<a class="bold" href="ug_jfilesys.rtJFS.html"><code>rtJFS</code></a></td>
+<td class="itemdesc">Makes DEFAULT &quot;Always Safe&quot; Descriptor Every &quot;Record&quot; has one</td>
+</tr>
+<tr class="list2">
+<td class="itemname">packed record&nbsp;<a class="bold" href="ug_jfilesys.rtJFSFile.html"><code>rtJFSFile</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list">
+<td class="itemname">packed record&nbsp;<a class="bold" href="ug_jfilesys.rtJFSHdr.html"><code>rtJFSHdr</code></a></td>
+<td class="itemdesc">&nbsp;</td>
+</tr>
+<tr class="list2">
+<td class="itemname">packed record&nbsp;<a class="bold" href="ug_jfilesys.rtJFSStream.html"><code>rtJFSStream</code></a></td>
+<td class="itemdesc">IMPORTANT TO MAKE CORRECT FOR NOW UNTIL Logic put in place to calc where the <a class="normal" href="ug_jfilesys.rtJFSStream.html#achStream">achStream</a> thing is.</td>
+</tr>
+</table>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSEOF">bJFSEOF</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSFastAppend">bJFSFastAppend</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSFastRead">bJFSFastRead</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSMoveFirst">bJFSMoveFirst</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSMoveLast">bJFSMoveLast</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSMoveNext">bJFSMoveNext</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSMovePrevious">bJFSMovePrevious</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSOpen">bJFSOpen</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSReadStream">bJFSReadStream</a></b>( var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>; p_ptrDest: pointer; var p_uHowMany: UInt64 ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSSeek">bJFSSeek</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>;p_uSeekRecord:UInt64): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSWriteBufferNow">bJFSWriteBufferNow</a></b>(p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>):boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#bJFSWriteStream">bJFSWriteStream</a></b>( var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>; p_ptrSrc: pointer; p_uHowMany: UInt64 ): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="ug_jfilesys.html#DebugJFSFile">DebugJFSFile</a></b>(p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="ug_jfilesys.html#JFSClearFileInfo">JFSClearFileInfo</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="ug_jfilesys.html#JFSClose">JFSClose</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="ug_jfilesys.html#lpJFSCurrentRecord">lpJFSCurrentRecord</a></b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): pointer;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Constants"></a><h3 class="summary">Constants</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFSMode_Read">cnJFSMode_Read</a></b>=0;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFSMode_ReadWrite">cnJFSMode_ReadWrite</a></b>=2;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFSMode_Write">cnJFSMode_Write</a></b>=1;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFSSTREAMREC_HDROFFSET">cnJFSSTREAMREC_HDROFFSET</a></b>=7;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_Base">cnJFS_Base</a></b>=128;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_BufSizeDefault">cnJFS_BufSizeDefault</a></b>=<a  href="ug_jfilesys.html#cnJFS_RecSizeDefault">cnJFS_RecSizeDefault</a>*16384;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_RecSizeDefault">cnJFS_RecSizeDefault</a></b>=<a  href="ug_jfilesys.html#cnJFS_Base">cnJFS_Base</a>*8;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_RecSizeMinimum">cnJFS_RecSizeMinimum</a></b>=<a  href="ug_jfilesys.html#cnJFS_Base">cnJFS_Base</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_RecType_Header">cnJFS_RecType_Header</a></b>=0;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="ug_jfilesys.html#cnJFS_RecType_Stream">cnJFS_RecType_Stream</a></b>=1;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSEOF"></a><code>function <b>bJFSEOF</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSFastAppend"></a><code>function <b>bJFSFastAppend</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This Appends a Record in Buffer, then when full writes entire buffer, and reset the counter for the next buffer full. Very Fast - not a multi-user thing... great for cranking out data though.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSFastRead"></a><code>function <b>bJFSFastRead</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is similiar to fast append - and is great for reading a lot of records quickly. Every time it is called, if the buffer is empty, it loads it, and sets the record position to the first record in the buffer, subsequent calls move record pointers to the next record. Once it cant go any further, the process starts over again.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSMoveFirst"></a><code>function <b>bJFSMoveFirst</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSMoveLast"></a><code>function <b>bJFSMoveLast</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSMoveNext"></a><code>function <b>bJFSMoveNext</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSMovePrevious"></a><code>function <b>bJFSMovePrevious</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSOpen"></a><code>function <b>bJFSOpen</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Opens the file - and the work you need to do to make this work right is this:
+
+<p>1st: Set up a <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a> record as a variable. e.g.: var rJFSFile: <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>;
+
+<p>2nd: Make sure you initialize your new record structure to defaults. e.g. InitJFS(rJFSFile);
+
+<p>3rd: Assign a VALID filename (For reads, it should exist already obviously) e.g. rJFSFile.saFilename:='testfile.bin';
+
+<p>4th: Give it a mode e.g. rJFSFile.u1Mode:=<a class="normal" href="ug_jfilesys.html#cnJFSMode_Read">cnJFSMode_Read</a>;
+
+<p>IMPORTANT: you can override the default (compiled contants values) for the record size and buffersizes by changing the values of these fields before opening the file. The call to <code>bJFSOpen</code> will allocate the memory for you. bJFSClose will release the memory for you.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSReadStream"></a><code>function <b>bJFSReadStream</b>( var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>; p_ptrDest: pointer; var p_uHowMany: UInt64 ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+So in theory you can start calling this when rJFSFile.uRawOffset=0 This does the very opposite of bJFSWrite Raw, but the important difference is that this call only returns what is available up to the ammount you indicate you want in the p_u4HowMany variable.
+
+<p>upon return, p_u4HowMany contains the value that was actually read.
+
+<p>Note: just like the <a class="normal" href="ug_jfilesys.html#bJFSWriteStream">bJFSWriteStream</a>, this function does direct memory moving - so - you better know what you're doing when you pass it a pointer and have a valid destination for the amount of bytes you want moved from the file into your memory area.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSSeek"></a><code>function <b>bJFSSeek</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>;p_uSeekRecord:UInt64): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is an index into the file. Low Level FPC uses 0 to indicate first record. We use 1 to indicate the first record to stay alligned with the u4Row variable in the <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a> record structure. This also seems intuitive to me when thinking in terms of databases. The first record is always referred to as record 1 in my experience. The fact that we use a header record doesn'<a class="normal" href="t.html">t</a> change this because this lib is at that level.
+
+<p>This function is only called internally (and should only be called by you, when you want to force going to a specific record in the file, in preperation for reloading the buffer. Using this function to get around is only efficient when you know where you MUST go and WHY!
+
+<p>MoveFirst and MoveNext are a bit more refined and are a little higher level and have some logic built in to them to make them work as you would expect. At least I'm planning on making them do so next - 2006-07-21 Jason P Sage</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSWriteBufferNow"></a><code>function <b>bJFSWriteBufferNow</b>(p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>):boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+From WHERE ever the file position is, write records known to be in buffer starting with first in the buffer
+
+<p>This means if you have 4 records in the buffer, but only really manipulated any one of them, all the records get written in the buffer. It doesn'<a class="normal" href="t.html">t</a> matter which record in the buffer you were on when you called this routine, the buffer gets written.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bJFSWriteStream"></a><code>function <b>bJFSWriteStream</b>( var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>; p_ptrSrc: pointer; p_uHowMany: UInt64 ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+(<code>bJFSWriteStream</code> function description) This is a wonderful function, however you need to be aware of its inner workings to really get the most of it. BASICALLY - it allows you to send big or small streams of data to the file. How it works, is meant to make this operation as simple as possible for storing streams of data. I'm not sure my use of the word stream is technically accurate, but this function allows you to send big or small blocks of information, BYTES, to the open file, without being REQUIRED to worry about the current buffer size, or the record size. This function is the only record structure so far (as of 2006-07-22) in this unit that has its own support built in. Seeing how the goal of this unit is to stay lean, there probably won'<a class="normal" href="t.html">t</a> be to much more - except maybe some multi user stuff added to what exists now.
+
+<p>I'm trying to summerize what this function does &quot;mechanically&quot;. ahh.. First thing to remember is that with a clean slate, (after a call to <a class="normal" href="ug_jfilesys.html#bJFSWriteBufferNow">bJFSWriteBufferNow</a>, opening the file, or setting <a class="normal" href="ug_jfilesys.rtJFSFile.html#uRawOffset">rtJFSFile.uRawOffset</a>=0 this function starts writing into the current record, past the record header bytes + uRawOffset. This means basically that when uRawOffset=0 that the next call to here starts copying the data from uRawOffset for as far as it can before reaching the end of the record size, at which point it automatically advances to the next record and continues. (When the buffer gets full, it gets written.)
+
+<p>Anyway, an important thing to remember, is that when this function leaves, you might of happened to stop writing right smack in the middle of a record. That is ok. Thats what the uRawOffset is for, its a bookmark. This means you can call this function again, with more data, and it will manage when to move to the next record and when to write the buffer out etc. As far as your written data appears, it will be contiguous.
+
+<p>IMPORTANT: Each record written out, using this method has a record type of RAW. The RAW Record Type Header has a field named BYTES REMAINING. This is only 100% accurate WHEN this VALUE is less than or EQUAL to (RECORDSIZE-HEADERSIZE). The VALUE has a purpose on other records also. Let's say you saved one stream of data spanning two records. on the first record, the BYTES REMAINING value is guaranteed to be larger than (RECORDSIZE-HEADERSIZE). That is how the function named <a class="normal" href="ug_jfilesys.html#bJFSReadStream">bJFSReadStream</a> knows it can keep going during a read (direct opposite of this function). In the 2nd record, the BYTEREMAINING field (in <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>) is 100% accurate.
+
+<p>You could say that a contigous stream of bytes can be written using this function as if you were just appending a raw binary file.
+
+<p>The <a class="normal" href="ug_jfilesys.html#bJFSReadStream">bJFSReadStream</a> does exactly the opposite.
+
+<p>Note: One application of this would be to save what are referred to as MEMO fields or BLOBs in database nomenclature. I personally plan on using this as a way of storing various data fields in a stream in such a manner so that I can read them back and recreate them in memory.
+
+<p>For instance.. to store two ansistrings, I might write the 4 bytes to indicate a 32bit length, and then stream in the whole ansistring.
+
+<p>when reading the information back, I'll snag the length value (4 bytes) and then use that to read the ansistring back from the disk! phew - enough on this function. 2006-07-21 Jason P Sage
+
+<p>Wait one more comment - remember internally this routine does direct memory moving - so - you better know what your doing when you pass it a pointer to where your data is and the length you want written.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="DebugJFSFile"></a><code>procedure <b>DebugJFSFile</b>(p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+writes many of the <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a> record structure values to stdout for debugging. To save bytes, don'<a class="normal" href="t.html">t</a> call this routine unless you must in your compiled program, I mean, don'<a class="normal" href="t.html">t</a> even refer to it.. this way the smartlinker won'<a class="normal" href="t.html">t</a> include the code (which has text in it) in your compiled application. (This statement relies on FPC smartlinking)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JFSClearFileInfo"></a><code>procedure <b>JFSClearFileInfo</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Initializes the passed <a class="normal" href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a> structure with defaults. Override them before calling open if you want the system to performa correctly with, for example, larger record sizes.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JFSClose"></a><code>procedure <b>JFSClose</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function obviously closes the file, but also releases the allocated memory for the file buffer.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpJFSCurrentRecord"></a><code>function <b>lpJFSCurrentRecord</b>(var p_rJFSFile: <a  href="ug_jfilesys.rtJFSFile.html">rtJFSFile</a>): pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Unlike a normal &quot;Current&quot; record function, this function returns a calculated pointer that points to the first byte of the current record. You can type cast record structures over this value.</p>
+</td></tr>
+</table>
+<h3 class="detail">Constants</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFSMode_Read"></a><code><b>cnJFSMode_Read</b>=0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+FPC FileMode matches</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFSMode_ReadWrite"></a><code><b>cnJFSMode_ReadWrite</b>=2;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+FPC FileMode matches</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFSMode_Write"></a><code><b>cnJFSMode_Write</b>=1;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+FPC FileMode matches</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFSSTREAMREC_HDROFFSET"></a><code><b>cnJFSSTREAMREC_HDROFFSET</b>=7;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_Base"></a><code><b>cnJFS_Base</b>=128;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_BufSizeDefault"></a><code><b>cnJFS_BufSizeDefault</b>=<a  href="ug_jfilesys.html#cnJFS_RecSizeDefault">cnJFS_RecSizeDefault</a>*16384;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_RecSizeDefault"></a><code><b>cnJFS_RecSizeDefault</b>=<a  href="ug_jfilesys.html#cnJFS_Base">cnJFS_Base</a>*8;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_RecSizeMinimum"></a><code><b>cnJFS_RecSizeMinimum</b>=<a  href="ug_jfilesys.html#cnJFS_Base">cnJFS_Base</a>;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_RecType_Header"></a><code><b>cnJFS_RecType_Header</b>=0;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+const <a class="normal" href="ug_jfilesys.html#cnJFS_BufSizeDefault">cnJFS_BufSizeDefault</a>=<a class="normal" href="ug_jfilesys.html#cnJFS_RecSizeDefault">cnJFS_RecSizeDefault</a>*3;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="cnJFS_RecType_Stream"></a><code><b>cnJFS_RecType_Stream</b>=1;</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

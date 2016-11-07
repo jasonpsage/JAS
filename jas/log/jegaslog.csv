@@ -1,5 +1,0 @@
-"JLOGT_DateNTime_dt","JLOGT_Severity_u1","JLOGT_Entry_ID","JLOGT_EntryData_s","JLOGT_SourceFile_s","JLOGT_User_ID","JLOGT_OS_Login_s","JLOGT_CmdLine_s"
-2016-11-04 20:17:15,5,201203091110,"Deleted Log File as instructed in JAS configuration.","uj_config.pp",0,"(?)","/jegas/jas/src/jas"
-2016-11-04 20:17:15,5,201210170806,"Single Host Mode","uj_config.pp",0,"(?)","/jegas/jas/src/jas"
-2016-11-04 20:19:05,3,201609231203,"bJAS_ValidateSession unable to load JSession Record. MORE INFO: ","uj_sessions.pp",0,"(?)","/jegas/jas/src/jas"
-2016-11-04 20:19:05,3,201210291331,"Invalid Session MORE INFO: ","uj_xml.pp",0,"(?)","/jegas/jas/src/jas"

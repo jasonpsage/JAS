@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jado: Class JADO_RECORDSET</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JADO_RECORDSET"></a><h1 class="cio">Class JADO_RECORDSET</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jado.html">ug_jado</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JADO_RECORDSET = class(<a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>)</code></p>
+<h2 class="description">Description</h2>
+<div class="nodescription">no description available, JFC_XDL description follows</div><p>
+Base <code>JFC_XDL</code> class</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a></li>
+<li class="thisitem">JADO_RECORDSET</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#ActiveConnection">ActiveConnection</a></b>: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#aRowBuf">aRowBuf</a></b>: MYSQL_ROW;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#Fields">Fields</a></b>: <a  href="ug_jado.JADO_FIELDS.html">JADO_FIELDS</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#i4EditMode">i4EditMode</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#i4LockType">i4LockType</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#i4State">i4State</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#i4Status">i4Status</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#lpMySQLHost">lpMySQLHost</a></b>:pointer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#lpMySQLPtr">lpMySQLPtr</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#lpMySQLResults">lpMySQLResults</a></b>: PMYSQL_RES;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#ODBCCommandType">ODBCCommandType</a></b>: longint;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#pvt_bEOL">pvt_bEOL</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#rMySQL">rMySQL</a></b>: st_mysql;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#sMySQLPasswd">sMySQLPasswd</a></b>:string[32];</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#sMySQLUser">sMySQLUser</a></b>: string[32];</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u4Columns">u4Columns</a></b>: dword;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u4Rows">u4Rows</a></b>: dword;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u4RowsLeft">u4RowsLeft</a></b>: dword;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u4RowsRead">u4RowsRead</a></b>: dword;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u8DbmsID">u8DbmsID</a></b>: uint64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u8MaxRecords">u8MaxRecords</a></b>: Uint64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jado.JADO_RECORDSET.html#u8DriverID">u8DriverID</a></b>: uint64;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jado.JADO_RECORDSET.html#create">create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jado.JADO_RECORDSET.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#bMySQLFetchRecord">bMySQLFetchRecord</a></b>(Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jado.JADO_RECORDSET.html#bSaveResultsAsCSVFile">bSaveResultsAsCSVFile</a></b>(p_saFilename: ansistring; p_sTextDelimiter: string; var p_u2IOresult: word): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#Close">Close</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#MoveNext">MoveNext</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#Open">Open</a></b>( p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#Open">Open</a></b>(p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#OpenMySQL">OpenMySQL</a></b>(p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#pvt_CreateItem">pvt_CreateItem</a></b>: <a  href="ug_jado.JADO_RECORD.html">JADO_RECORD</a>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_RECORDSET.html#pvt_read_eol">pvt_read_eol</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jado.JADO_RECORDSET.html#MySQLShowRecord">MySQLShowRecord</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jado.JADO_RECORDSET.html#pvt_DestroyItem">pvt_DestroyItem</a></b>(p_lp:pointer); override;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jado.JADO_RECORDSET.html#EOL">EOL</a></b>: Boolean read <a  href="ug_jado.JADO_RECORDSET.html#pvt_read_eol">pvt_read_eol</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ActiveConnection"></a><code><b>ActiveConnection</b>: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="aRowBuf"></a><code><b>aRowBuf</b>: MYSQL_ROW;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Fields"></a><code><b>Fields</b>: <a  href="ug_jado.JADO_FIELDS.html">JADO_FIELDS</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4EditMode"></a><code><b>i4EditMode</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+ADODB.EditModeEnum</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4LockType"></a><code><b>i4LockType</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+LOCKTYPE: VB ADODB.LockTypeEnum;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4State"></a><code><b>i4State</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+VB ADODB.State (Probably ADODB.ObjectStateENum Values)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4Status"></a><code><b>i4Status</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+VB ADODB.Status ADODB.RecordStatusEnum</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpMySQLHost"></a><code><b>lpMySQLHost</b>:pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpMySQLPtr"></a><code><b>lpMySQLPtr</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpMySQLResults"></a><code><b>lpMySQLResults</b>: PMYSQL_RES;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+TMYSQL;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ODBCCommandType"></a><code><b>ODBCCommandType</b>: longint;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_bEOL"></a><code><b>pvt_bEOL</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="rMySQL"></a><code><b>rMySQL</b>: st_mysql;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+NOTE: This WAS a connection THING, but has been moved HERE for Thread Safety in MySQL4 Driver mode. Note, other things about sharing connections between threads may be problematic.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sMySQLPasswd"></a><code><b>sMySQLPasswd</b>:string[32];</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sMySQLUser"></a><code><b>sMySQLUser</b>: string[32];</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u4Columns"></a><code><b>u4Columns</b>: dword;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+TMySQL_ROW;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u4Rows"></a><code><b>u4Rows</b>: dword;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u4RowsLeft"></a><code><b>u4RowsLeft</b>: dword;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u4RowsRead"></a><code><b>u4RowsRead</b>: dword;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u8DbmsID"></a><code><b>u8DbmsID</b>: uint64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u8MaxRecords"></a><code><b>u8MaxRecords</b>: Uint64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+ADO_LONGPTR (in vb) This field The maximum number Of records To return To a recordset from a query. MaxRecords Property Return Values: Sets OR returns a Long value. Default is zero (no limit). MaxRecords Property Remarks: Use the MaxRecords Property To limit the number Of records the provider returns from the data source. The Default setting Of this Property is zero, which means the provider returns all requested records. The MaxRecords Property is read/Write when the recordset is closed AND read-only when it is <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">open</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u8DriverID"></a><code><b>u8DriverID</b>: uint64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+when a recordset is <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">OPEN</a>, this is copied from the Connection object - as a reference on how to behave while <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">open</a>. When the recordset is CLOSED, it is cleared to ZERO.</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE BUT INHERIT</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>Destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+OVERRIDE BUT INHERIT</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMySQLFetchRecord"></a><code>Function <b>bMySQLFetchRecord</b>(Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bSaveResultsAsCSVFile"></a><code>function <b>bSaveResultsAsCSVFile</b>(p_saFilename: ansistring; p_sTextDelimiter: string; var p_u2IOresult: word): boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function just saves an <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">open</a> recordset (current record position to end) to a CSV file.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Close"></a><code>Function <b>Close</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MoveNext"></a><code>Function <b>MoveNext</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Open"></a><code>Function <b>Open</b>( p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Generic <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">Open</a> RecordSet</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Open"></a><code>Function <b>Open</b>(p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Generic <code>Open</code> Record Set with third parameter to allow LOGGING ERRORS (true) or not logging errors (false). Example: Record Locking doesn'<a class="normal" href="t.html">t</a> need error log report - its expected to fail if a lock already in place. Note that errors with the connection not being <code>open</code> or the recordset being already in use - errors like that will still be reported. just SQL errors will be stiffled in p_bLogError is set to true.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="OpenMySQL"></a><code>Function <b>OpenMySQL</b>(p_saCMD: AnsiString; Var p_oADOC: <a  href="ug_jado.JADO_CONNECTION.html">JADO_CONNECTION</a>; p_bLogError: boolean; p_u8Caller: UInt64):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+PRIVATE - Use <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">OPEN</a>. PRIVATE - Use <a class="normal" href="ug_jado.JADO_RECORDSET.html#Open">OPEN</a>.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_CreateItem"></a><code>Function <b>pvt_CreateItem</b>: <a  href="ug_jado.JADO_RECORD.html">JADO_RECORD</a>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_read_eol"></a><code>Function <b>pvt_read_eol</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MySQLShowRecord"></a><code>Procedure <b>MySQLShowRecord</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+private, does dump to std out</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_DestroyItem"></a><code>Procedure <b>pvt_DestroyItem</b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="EOL"></a><code>property <b>EOL</b>: Boolean read <a  href="ug_jado.JADO_RECORDSET.html#pvt_read_eol">pvt_read_eol</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jado: Class JADO_FIELDS</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JADO_FIELDS"></a><h1 class="cio">Class JADO_FIELDS</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td>Fields</td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jado.html">ug_jado</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JADO_FIELDS = class(<a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>)</code></p>
+<h2 class="description">Description</h2>
+<p>
+Manages list of <a class="normal" href="ug_jado.JADO_FIELD.html">JADO_FIELD</a></p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a></li>
+<li class="thisitem">JADO_FIELDS</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jado.JADO_FIELDS.html#create">create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jado.JADO_FIELDS.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jado.JADO_FIELDS.html#Get_Field">Get_Field</a></b>(p_sName: string): <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; inline;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jado.JADO_FIELDS.html#Get_FieldCS">Get_FieldCS</a></b>(p_sName: string): <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; inline;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jado.JADO_FIELDS.html#pvt_CreateItem">pvt_CreateItem</a></b>: <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jado.JADO_FIELDS.html#pvt_get_bisnull">pvt_get_bisnull</a></b>: boolean; inline;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jado.JADO_FIELDS.html#pvt_DestroyItem">pvt_DestroyItem</a></b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="ug_jado.JADO_FIELDS.html#pvt_set_bisnull">pvt_set_bisnull</a></b>(p_b: boolean); inline;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jado.JADO_FIELDS.html#Item_bIsNull">Item_bIsNull</a></b>: boolean read <a  href="ug_jado.JADO_FIELDS.html#pvt_get_bisnull">pvt_get_bisnull</a> write <a  href="ug_jado.JADO_FIELDS.html#pvt_set_bisnull">pvt_set_bisnull</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>Destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Get_Field"></a><code>function <b>Get_Field</b>(p_sName: string): <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; inline;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Get_FieldCS"></a><code>function <b>Get_FieldCS</b>(p_sName: string): <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; inline;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_CreateItem"></a><code>Function <b>pvt_CreateItem</b>: <a  href="ug_jado.JADO_FIELD.html">JADO_FIELD</a>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Override these two if you make descendant of <a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a> with more fields or something.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_get_bisnull"></a><code>function <b>pvt_get_bisnull</b>: boolean; inline;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_DestroyItem"></a><code>Procedure <b>pvt_DestroyItem</b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_set_bisnull"></a><code>procedure <b>pvt_set_bisnull</b>(p_b: boolean); inline;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_bIsNull"></a><code>property <b>Item_bIsNull</b>: boolean read <a  href="ug_jado.JADO_FIELDS.html#pvt_get_bisnull">pvt_get_bisnull</a> write <a  href="ug_jado.JADO_FIELDS.html#pvt_set_bisnull">pvt_set_bisnull</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

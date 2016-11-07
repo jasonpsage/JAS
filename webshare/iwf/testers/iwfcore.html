@@ -1,0 +1,200 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<style>
+			.altrow { background-color: lightgrey; }
+		</style>
+
+		<script type='text/javascript' src='../iwfcore.js'></script>
+
+		<script type='text/javascript'>
+
+			function testError(s){
+					alert("Test page error: Could not locate element with id of '" + s + "'");
+					return false;
+			}
+
+			function getSource(id){
+				var el = iwfGetById(id);
+				if (!el){
+					return testError(id);
+				} else {
+					return el;
+				}
+			}
+
+			function getTarget(id){
+				var el = getSource(id);
+				if (el){
+					var tgt = iwfGetById(el.value);
+					if (!tgt){
+						alert('No element exists on this page with an id attribute of "' + el.value + '"');
+						return false;
+					} else {
+						return tgt;
+					}
+				}
+				return false;
+			}
+
+			function testGetById(){
+				var tgt = getTarget('txtGetById');
+				if (tgt){
+					alert(iwfElementToString(tgt));
+				}
+			}
+
+			function testXmlEncode(){
+				var el = getSource('txtXmlEncode');
+				alert(iwfText(el));
+				if (el){
+					alert(iwfXmlEncode(iwfText(el)));
+				}
+
+			}
+		</script>
+
+	</head>
+	<body>
+		<form>
+		<h1>Tester for iwfcore.js</h1>
+		<p>
+
+		</p>
+		<table width='80%' cellpadding='5' cellspacing='0' border='0'>
+			<tr>
+				<th>function</th>
+				<th>result</th>
+			</tr>
+			<tr class='altrow'>
+				<td>iwfGetById(idOfElement)</td>
+				<td><input type='text' id='txtGetById' value='txtGetById' /><br /><input type='button' onclick='javascript:testGetById();' value='Test' /></td>
+			</tr>
+			<tr>
+				<td>iwfXmlEncode(textToEncode)</td>
+				<td><textarea id='txtXmlEncode' rows='5' cols='40'>This isn't a "cool" test harness, but it is > worthless && < awesome.</textarea><br /><input type='button' onclick='javascript:testXmlEncode();' value='Test' /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

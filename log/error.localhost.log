@@ -1,0 +1,98 @@
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:37:23 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:37:23 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:37:23 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611051005222540786
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:37:23 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611051005222590787
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:37:23 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611051005222590787
+[Sun Nov 06 20:37:23 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:37:23 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611051022501220128
+[Sun Nov 06 20:38:07 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:38:07 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:38:07 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:38:07 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:38:07 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:55:41 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:55:41 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412550003
+[Sun Nov 06 20:55:41 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:55:41 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412510002
+[Sun Nov 06 20:55:41 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:55:41 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412600004
+[Sun Nov 06 20:55:41 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:55:41 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412550003
+[Sun Nov 06 20:57:48 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:57:48 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:57:48 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:57:48 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:57:48 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:57:48 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:57:48 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412550003
+[Sun Nov 06 20:57:48 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:57:48 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412510002
+[Sun Nov 06 20:57:49 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:57:49 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412600004
+[Sun Nov 06 20:57:49 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:57:49 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412550003
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:59:35 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:59:35 2016] [notice] [client 127.0.0.1] Unable to save to Organization Members Table.
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Problem updating jorgpers in during update-members call. 
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:59:35 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412550003
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:59:35 2016] [warning] [client 127.0.0.1] Trouble deleting jorgpers record UID: 1611062055412510002
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:59:35 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412600004
+[Sun Nov 06 20:59:35 2016] [error] [client 127.0.0.1] Trouble deleting record.
+[Sun Nov 06 20:59:35 2016] [notice] [client 127.0.0.1] Trouble deleting jorgpers record during update org members UID: 1611062055412550003
+[Mon Nov 07 00:02:10 2016] [warning] [client 127.0.0.1] File Not Found :../webroot/file
+[Mon Nov 07 00:02:10 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//script.js
+[Mon Nov 07 00:02:10 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//jas_custom.css
+[Mon Nov 07 00:02:10 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//style.css
+[Mon Nov 07 00:02:11 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//script.js
+[Mon Nov 07 00:02:11 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//64/status/dialog-error.png
+[Mon Nov 07 00:02:11 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//32/actions/document-close.png
+[Mon Nov 07 00:02:11 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//jas_custom.css
+[Mon Nov 07 00:02:12 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//64/status/dialog-error.png
+[Mon Nov 07 00:02:12 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//32/actions/document-close.png
+[Mon Nov 07 00:02:16 2016] [warning] [client 127.0.0.1] Requested Dir not found:../webroot/file/
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//script.js
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//style.css
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//jas_custom.css
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//64/status/dialog-error.png
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//32/actions/document-close.png
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//style.css
+[Mon Nov 07 00:02:17 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//script.js
+[Mon Nov 07 00:02:18 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/themes//jas_custom.css
+[Mon Nov 07 00:02:19 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//64/status/dialog-error.png
+[Mon Nov 07 00:02:19 2016] [warning] [client 127.0.0.1] File Not Found :../webshare/img/icon/themes//32/actions/document-close.png
+[Mon Nov 07 00:10:01 2016] [error] [client 127.0.0.1] Detail Screen - Dynamic Query Failed.
+[Mon Nov 07 00:12:20 2016] [error] [client 127.0.0.1] Detail Screen - Dynamic Query Failed.
+[Mon Nov 07 00:12:49 2016] [error] [client 127.0.0.1] Detail Screen - Dynamic Query Failed.
+[Mon Nov 07 00:14:10 2016] [error] [client 127.0.0.1] Detail Screen - Dynamic Query Failed.
+[Mon Nov 07 00:31:24 2016] [error] [client 127.0.0.1] You are not authorized to view data from the table in this screen.
+[Mon Nov 07 00:37:02 2016] [error] [client 127.0.0.1] You are not authorized to view data from the table in this screen.
+[Mon Nov 07 00:37:19 2016] [error] [client 127.0.0.1] You are not authorized to view data from the table in this screen.
+[Mon Nov 07 00:39:58 2016] [error] [client 127.0.0.1] You are not authorized to view data from the table in this screen.
+[Mon Nov 07 00:52:50 2016] [error] [client 127.0.0.1] Access Denied - Permission ID: 1212041011118220540 User: guest Caller: 201608101656
+[Mon Nov 07 00:57:04 2016] [error] [client 127.0.0.1] Access Denied
+[Mon Nov 07 01:12:53 2016] [error] [client 127.0.0.1] You are not authorized to ADD records in this screen.Screen ID:2012042910012189283 Name: jfile Data
+[Mon Nov 07 01:15:39 2016] [error] [client 127.0.0.1] You are not authorized to perform this action.
+[Mon Nov 07 01:20:32 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:20:32 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_CreatedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:20:32 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:20:32 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_ModifiedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:20:40 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:20:40 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_CreatedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:20:40 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:20:40 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_ModifiedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:29:42 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:29:42 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_CreatedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:29:49 2016] [warning] [client 127.0.0.1] Unable to load target lookup column UID: 0
+[Mon Nov 07 01:29:49 2016] [warning] [client 127.0.0.1] TCONTEXT.bPopulateLookUpList had trouble with query. Column Name: JFile_CreatedBy_JUser_ID saLD_Column_SQL:  saLU_LUF_Value: 
+[Mon Nov 07 01:40:23 2016] [error] [client 127.0.0.1] This RECORD LOCK could not be verified. Mode: Save <a href="javascript: window.history.back()">Go Back To View Mode.</a> <br /><br />Diagnostic Info: Table:jfile UID:1611062116510370157 JSess_JSession_UID:1611070124207190453 Session Valid:Yes

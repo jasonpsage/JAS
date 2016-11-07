@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfc_cgienv: Class JFC_CGIENV</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JFC_CGIENV"></a><h1 class="cio">Class JFC_CGIENV</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfc_cgienv.html">ug_jfc_cgienv</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JFC_CGIENV = class(TObject)</code></p>
+<h2 class="description">Description</h2>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">JFC_CGIENV</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#bPost">bPost</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#CKYIN">CKYIN</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#CKYOUT">CKYOUT</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#DATAIN">DATAIN</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#ENVVAR">ENVVAR</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#FILESIN">FILESIN</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">HEADER</a></b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#iTimeZoneOffset">iTimeZoneOffset</a></b>: integer;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saPostContentType">saPostContentType</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saPostData">saPostData</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saServerSoftware">saServerSoftware</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#uHTTPResponse">uHTTPResponse</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#uPostContentLength">uPostContentLength</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#create">create</a></b>( p_saServerSoftware: ansistring; p_iTimeZoneOffset: integer );</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#destroy">destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saGetHeaders">saGetHeaders</a></b>( p_sMimeType: string; p_u4ContentLength: cardinal; p_sCacheControl: string; p_sServerSoftware: string; p_sServerIdent: string ): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saHTTPResponse">saHTTPResponse</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saHttpServerError500">saHttpServerError500</a></b>( p_u8CodeID: int64; p_saMsg: ansistring; p_saMoreInfo: ansistring; var p_OUT_sMimeType: string ): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saNPHCGITEST">saNPHCGITEST</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saRequestURIPath">saRequestURIPath</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#saRequestURIWithoutParam">saRequestURIWithoutParam</a></b>:AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#AddCookie">AddCookie</a></b>( p_saName, p_saValue, p_saPath: AnsiString; p_dt: TDATETIME; p_bSecure: Boolean );</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_Cookies">Header_Cookies</a></b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_Date">Header_Date</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_Html">Header_Html</a></b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_HtmlNoCookies">Header_HtmlNoCookies</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_PlainText">Header_PlainText</a></b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_Redirect">Header_Redirect</a></b>(p_saURL: ansistring; p_sServerIdent: string);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Header_Xml">Header_Xml</a></b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#ParseMultiPartData">ParseMultiPartData</a></b>(var p_saPostDataToParse: ansistring; p_saContentType: ansistring);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#PopulateMeWith">PopulateMeWith</a></b>(p_rCGI: <a  href="ug_common.rtCGI.html">rtCGI</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#Reset">Reset</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#TokenizeURI">TokenizeURI</a></b>(p_PlacesDataIntoThisXDL:<a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_sa: AnsiString; p_saDesc: AnsiString);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_cgienv.JFC_CGIENV.html#TranslateParameters">TranslateParameters</a></b>( var p_saPostDataToInterrogate: ansistring ;p_saContentType: ansistring );</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bPost"></a><code><b>bPost</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Whether request coming in was get or post</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CKYIN"></a><code><b>CKYIN</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CKYOUT"></a><code><b>CKYOUT</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DATAIN"></a><code><b>DATAIN</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ENVVAR"></a><code><b>ENVVAR</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FILESIN"></a><code><b>FILESIN</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="HEADER"></a><code><b>HEADER</b>: <a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="iTimeZoneOffset"></a><code><b>iTimeZoneOffset</b>: integer;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+offset from GMT timezone. Example: Eastern standard time is usually -5</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saPostContentType"></a><code><b>saPostContentType</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+content type (mime) coming in</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saPostData"></a><code><b>saPostData</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+raw posted data.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saServerSoftware"></a><code><b>saServerSoftware</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used for many out going headers</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uHTTPResponse"></a><code><b>uHTTPResponse</b>: word;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Used for building http headers going out and also by JAS to track status of a given thread. e.g. starts at ZERO when a thread starts, and stays ZERO until the request has been handled one way or another e.g. error or otherwise .. like a successful page.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uPostContentLength"></a><code><b>uPostContentLength</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+length of post data when a post</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>( p_saServerSoftware: ansistring; p_iTimeZoneOffset: integer );</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="destroy"></a><code>Destructor <b>destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saGetHeaders"></a><code>function <b>saGetHeaders</b>( p_sMimeType: string; p_u4ContentLength: cardinal; p_sCacheControl: string; p_sServerSoftware: string; p_sServerIdent: string ): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saHTTPResponse"></a><code>function <b>saHTTPResponse</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns the <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> text for various HTTP Responses. If unsupported code passed, &quot;xxx Unexpected Error Code&quot; is returned where xxx = to the http response code passed to it. This maybe should be referred to as the server response codes.. it uses CGIENV.iHTTPResponse value to get the right return error or success code. Such as: &quot;200 OK&quot; or &quot;403 Forbidden&quot; or &quot;404 File not Found&quot;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saHttpServerError500"></a><code>function <b>saHttpServerError500</b>( p_u8CodeID: int64; p_saMsg: ansistring; p_saMoreInfo: ansistring; var p_OUT_sMimeType: string ): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saNPHCGITEST"></a><code>Function <b>saNPHCGITEST</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This returns the Content for the NPH-CGITEST that has been around a long time in this library. The biggest change is now the HTTP <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> is generaated and placed into the CGIENV.Header XDL - so some work needs to be done before you send this out.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestURIPath"></a><code>Function <b>saRequestURIPath</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestURIWithoutParam"></a><code>Function <b>saRequestURIWithoutParam</b>:AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AddCookie"></a><code>Procedure <b>AddCookie</b>( p_saName, p_saValue, p_saPath: AnsiString; p_dt: TDATETIME; p_bSecure: Boolean );</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Function appends &quot;cookie&quot; data into the CKYOUY XDL class for later use when building outgoing http headers.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_Cookies"></a><code>Procedure <b>Header_Cookies</b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function takes the cookies in the <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#CKYOUT">CKYOUT</a> xdl and appends them to the HEADERS XDL</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_Date"></a><code>Procedure <b>Header_Date</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+previously: Function saCGIFormatedDate(p_dtLocalTime: TDATETIME): AnsiString;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_Html"></a><code>Procedure <b>Header_Html</b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shortcut method to build a complete <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> for HTML output. Make sure CGIENV.iHTTPResponse is set properly (to a server response code) before calling.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_HtmlNoCookies"></a><code>Procedure <b>Header_HtmlNoCookies</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shortcut method to build a complete <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> for HTML output without the cookies-n-milk.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_PlainText"></a><code>Procedure <b>Header_PlainText</b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shortcut method creates all that's needed for sending out a plain text file.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_Redirect"></a><code>Procedure <b>Header_Redirect</b>(p_saURL: ansistring; p_sServerIdent: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shortcut method to <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#create">create</a> a redirect <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> that will Send the user's Browser to the web page you specify. Note: <a class="normal" href="ug_common.html#cnHTTP_RESPONSE_302">cnHTTP_RESPONSE_302</a> is the PROPER Code according to RFC but Apache doesn'<a class="normal" href="t.html">t</a> recognize correctly, so jas-cgi doesn'<a class="normal" href="t.html">t</a> work right. So... use <a class="normal" href="ug_common.html#cnHTTP_RESPONSE_301">cnHTTP_RESPONSE_301</a> for redirects (or test first if you use another to make sure the browser is honoring your request(s))</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Header_Xml"></a><code>Procedure <b>Header_Xml</b>(p_sServerIdent: string);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Shortcut method to build a complete <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#HEADER">header</a> for XML output. Make sure CGIENV.iHTTPResponse is set properly (to a server response code) before calling.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ParseMultiPartData"></a><code>procedure <b>ParseMultiPartData</b>(var p_saPostDataToParse: ansistring; p_saContentType: ansistring);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+convert post data for multi-part form encoded data. This is typically for file uploading, but variables akin form variables can be embedded also. This function only needs the p_saContentType sent so it can figure out the separator string that sepearates variables and files from each other</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PopulateMeWith"></a><code>procedure <b>PopulateMeWith</b>(p_rCGI: <a  href="ug_common.rtCGI.html">rtCGI</a>);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+copies data from <a class="normal" href="ug_common.rtCGI.html">rtCGI</a> structure to this class. Purpose is the <a class="normal" href="ug_common.rtCGI.html">rtCGI</a> structure is a LEAN LEAN version of this class used just to &quot;grab&quot; true CGI info passed from webserver CGI requests.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Reset"></a><code>Procedure <b>Reset</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="TokenizeURI"></a><code>Procedure <b>TokenizeURI</b>(p_PlacesDataIntoThisXDL:<a  href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>; p_sa: AnsiString; p_saDesc: AnsiString);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="TranslateParameters"></a><code>Procedure <b>TranslateParameters</b>( var p_saPostDataToInterrogate: ansistring ;p_saContentType: ansistring );</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Converts URL Encoded to Human readable. Note: Because the postdata might come from outside structure (<a class="normal" href="ug_common.rtCGI.html">rtCGI</a>), we don'<a class="normal" href="t.html">t</a> use the internal <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#saPostData">saPostData</a> variable directly because it the postdata is very large. This is why we don'<a class="normal" href="t.html">t</a> copy the postdata in the <a class="normal" href="ug_jfc_cgienv.JFC_CGIENV.html#PopulateMeWith">PopulateMeWith</a> method into this class; it could be a 100 meg file or data post in theory! So - we implicitly pass WHICH postdata ansistring we want to interrogate.</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

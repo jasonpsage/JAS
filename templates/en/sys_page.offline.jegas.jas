@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head><meta charset="UTF-8"><title>sys_page.jas</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+</head>
+<body>
+<!--SECTION MAIN BEGIN-->
+<!--JASCID 201211270247-->
+<!--PAGETITLE "Jegas,LLC - Home Page"-->
+
+
+  <!--<p>&JSID=<b>[@JSID@]</b> Theme: <b>[@JASTHEME@]</b>  IconTheme:<b>[@JASDIRICONTHEME@]</b> Alias: <b>[@ALIAS@]</b></p>-->
+  <div id="jaslogodiv">
+    <center>
+      <table width="100%">
+      <tr>
+        <td valign="top" align="left" width="30%">
+          <ul class="jas-blok-buttons">
+          <li>
+            <a href=".?MT=1&MID=1602140113503020000&JSID=[@JSID@]">
+              <img class="image" src="[@JASDIRWEBSHARE@]img/icon/JAS/products/jas/64/jas_logo.png" /><span class="jasbutspan">&nbsp;Jegas CRM</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+            <a href="/.?page=page_video&JSID=[@JSID@]">
+              <img class="image" src="[@JASDIRICONTHEME@]64/devices/video-display.png" /><span class="jasbutspan">&nbsp;Jegas Video</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+            <a href="mailto://contact@jegas.com">
+              <img class="image" src="[@JASDIRICONTHEME@]64/apps/internet-email-client.png" /><span class="jasbutspan">&nbsp;Contact Us</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          </ul>
+        </td>
+        <td align="center" width="40%">
+          <script>
+          if('[@SESSIONVALID@]'!=='No '){
+            document.write('<center><h3>Welcome to --=/ [@SERVERNAME@] /=--</h3><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/jasjet6.png" /></center>');
+          }else{
+            document.write('<center><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/jjet3_readyforwebcircle.png" /><h4>Get out of the mainstream... Jump into the Jetstream! &trade;</h4></center>');
+          };
+          </script>
+        </td>
+        <td valign="top" align="left" width="30%">
+          <ul class="jas-blok-buttons">
+          <li>
+            <a href="/?MT=1&MID=1512090834342530004&JSID=[@JSID@]">
+              <img class="image" src="[@JASDIRICONTHEME@]64/places/html-folder.png" /><span class="jasbutspan">&nbsp;Jegas Downloads</span>
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+            <a href="https://www.secureserver.net/?prog_id=442191">
+              <span class="jasbutspan">&nbsp;Jegas Hosting</span><img class="image" src="/jws/img/logo/jegas/jas-jetv.png" width="128px" />
+            </a>
+            <br /><br /><br />
+          </li>
+          <li>
+            <a href=".?MT=1&MID=1605162356472350002&JSID=[@JSID@]">
+              <span class="jasbutspan">&nbsp;Blog</span><img class="image" src="[@JASDIRICONTHEME@]64/apps/accessories-text-editor.png" />
+            </a>
+            <br /><br /><br />
+          </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+      <br />
+    </center>
+  </div>
+  <script>
+    var el=document.getElementById("jaslogodiv");
+    if ('[@JASHASPANELS@]'=='TRUE'){el.style.display="none";};
+  </script>
+<!--SECTION MAIN END-->
+
+<!--SECTION BLANK BEGIN-->
+<!--SECTION BLANK END-->
+</body>
+</html>

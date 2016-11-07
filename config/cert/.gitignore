@@ -1,0 +1,24 @@
+#==============================================================================
+#|    _________ _______  _______  ______  ______|  Jegas Application Server 
+#|   /___  ___// _____/ / _____/ / __  / / _____/  
+#|      / /   / /__    / / ___  / /_/ / / /____ |  By: Jegas, LLC
+#|     / /   / ____/  / / /  / / __  / /____  / | 
+#|____/ /   / /___   / /__/ / / / / / _____/ /  |  FILE: .gitignore file
+#/_____/   /______/ /______/ /_/ /_/ /______/   |
+#|            Virtually Everything IT™          |
+#==============================================================================
+# Copyright(c)2010 Jegas, LLC - All Rights Reserved   
+# 
+#==============================================================================
+# This File is just used as a placeholder file in some places. 
+#
+# Some version control systems (GIT for example) will not track a directory in 
+# the software unless said directory contains at least one file. Copies of this 
+# file are used specifically for this purpose.
+#==============================================================================
+# Files to Exclude from GIT in this directory
+#==============================================================================
+
+#==============================================================================
+# EOF - JASCID: 201012270052
+#==============================================================================

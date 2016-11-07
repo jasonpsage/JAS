@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: uc_sageui: record rtSageMsg</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="rtSageMsg"></a><h1 class="cio">record rtSageMsg</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Hierarchy</td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td>Methods</td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="uc_sageui.html">uc_sageui</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type rtSageMsg = record</code></p>
+<h2 class="description">Description</h2>
+<p>
+Record Structure to hold messages NOTE These are all declared as CARDINALs but they get stored and retrieved in the <a class="normal" href="uc_sageui.html#MQ">MQ</a> (Message Queue) as Integers. This should work - just pay attention. (Endian Width)</p>
+<h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#lpPTR">lpPTR</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#saDescOldPackedTime">saDescOldPackedTime</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#uMsg">uMsg</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#uObjType">uObjType</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#uParam1">uParam1</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#uParam2">uParam2</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code><b><a  href="uc_sageui.rtSageMsg.html#uUID">uUID</a></b>: UInt64;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="lpPTR"></a><code><b>lpPTR</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+MQ.Item_lpPtr (To Associated Class Or Object) (AS STORED in OBJECTSXXDL.lpPTR)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saDescOldPackedTime"></a><code><b>saDescOldPackedTime</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Was Where a Packed TimeStamp was Stuffed I doubt its used, but it could come in handy for process handling. Though all things seem to point (regarding dates) that there isn'<a class="normal" href="t.html">t</a> a GetSystemTimeStamp(): TTimeStamp; Function so this may have a limit to its usefulness out the gate. Currently, <a class="normal" href="ug_jfc_xdl.JFC_XDLITEM.html#create">JFC_XDLITEM.Create</a> makes the new <a class="normal" href="ug_jfc_xdl.JFC_XDLITEM.html#TS">JFC_XDLITEM.TS</a> = DateTimeToTimeStamp(now) which may lose the granular milli seconds I want.. not sure... not an issue yet. 2006-09-15 Jason P Sage</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uMsg"></a><code><b>uMsg</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+MQ.Item_ID[4]</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uObjType"></a><code><b>uObjType</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+MQ.Item_ID[3] <a class="normal" href="ug_jfc_xxdl.jfc_XXDLITEM.html">JFC_XXDLITEM</a>(OBJECTSXXDL.lpITem).ID[3]</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uParam1"></a><code><b>uParam1</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+MQ.Item_ID[1]</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uParam2"></a><code><b>uParam2</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+MQ.Item_ID[2]</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="uUID"></a><code><b>uUID</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+=============================================================================</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

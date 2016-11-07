@@ -1,8 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
-<head><title>410 Gone</title></head>
-<body>
-<table><tr><td><h1>410 Gone</h1></td></tr><tr><td>&nbsp;</td></tr><tr><td>4xx Client Error - The request contains bad syntax or cannot be fulfilled. The 4xx class of status code is intended for cases in which the client seems to have erred. Except when responding to a HEAD request, the server should include an objectcontaining an explanation of the error situation, and whether it is a temporary or permanent condition. These status codes are applicable to any request method. User agents should display any included entity to the user. These are typically the most common error codes encountered while online. Indicates that the resource requested is no longer available and will not be available again. This should be used when a resource has been intentionally removed; however, it is not necessary to return this code and a 404 Not Found can be issued instead. Upon receiving a 410 status code, the client should not request the resource again in the future. Clients such as search engines should remove the resource from their indexes.</td></tr></table>
-</body>
-</html>
-

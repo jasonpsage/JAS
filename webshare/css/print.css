@@ -1,0 +1,30 @@
+@page {
+  size: 8.5in 11in;  /* width height */
+}
+
+.pagebreak { page-break-before: always; }
+
+
+TABLE {
+	BACKGROUND-COLOR: #FFFFFF;
+    font: 900 12px Arial, Helvetica, sans-serif;
+    font-weight=normal;
+	LINE-HEIGHT: .9em;
+	FONT-SIZE: 12; 
+}
+
+TABLE.TABLEFRAME { border-top: #000000 1px solid; border-left: #000000 1px solid; border-right: #000000 1px solid; border-bottom: #000000 1px solid }
+
+
+FONT {
+	BACKGROUND: fixed #FFFFFF;
+	COLOR: #000000; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+FONT.FIXEDDATA {
+	BACKGROUND: fixed #FFFFFF;
+	COLOR: #000000; 
+    font-family: courier;
+    font-weight: bold;
+}

@@ -1,0 +1,2130 @@
+/* begin Page */
+
+/* Generated with Artisteer version 2.5.0.29918, file checksum is 43D73E01. */
+
+body, p
+{
+  margin: 0.5em 0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans-Serif;
+  font-size: 16px;
+}
+
+body
+{
+  margin: 0 auto;
+  padding: 0;
+  color: #E8E8E8;
+  background-color: #000000;
+  background-image: url('images/5.jpg');
+  background-repeat: repeat;
+
+  /* background-attachment: scroll; */ /* default */
+  background-attachment: fixed; /* force image to stay put */
+}
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited,
+.jas-postheader, .jas-postheader a, .jas-postheader a:link, .jas-postheader a:visited, .jas-postheader a:hover,
+.jas-blockheader .t, .jas-vmenublockheader .t, .jas-logo-text, .jas-logo-text a,
+h1.jas-logo-name, h1.jas-logo-name a, h1.jas-logo-name a:link, h1.jas-logo-name a:visited, h1.jas-logo-name a:hover
+{
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans-Serif;
+  font-size: 32px;
+}
+
+a,
+.jas-post li a
+{
+  text-decoration: none;
+  color: #F7EC50;
+}
+
+a:link,
+.jas-post li a:link
+{
+  text-decoration: none;
+  color: #F7EC50;
+}
+
+a:visited, a.visited,
+.jas-post li a:visited, .jas-post li a.visited
+{
+
+  color: #FAF38F;
+}
+
+a:hover, a.hover,
+.jas-post li a:hover, .jas-post li a.hover
+{
+
+
+  color: #E5D60B;
+}
+
+h1, h1 a, h1 a:link, h1 a:visited, h1 a:hover
+{
+  margin: 0.67em 0;
+
+  color: #F5E832;
+}
+
+h2, h2 a, h2 a:link, h2 a:visited, h2 a:hover
+{
+  margin: 0.8em 0;
+  font-size: 24px;
+  color: #F7ED59;
+}
+
+h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover
+{
+   margin: 1em 0;
+  font-size: 19px;
+  color: #F8EE68;
+}
+
+h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover
+{
+  margin: 1.25em 0;
+  font-size: 16px;
+  color: #F8EE68;
+}
+
+h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover
+{
+  margin: 1.67em 0;
+  font-size: 13px;
+  color: #F8EE68;
+}
+
+h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+  margin: 2.33em 0;
+  font-size: 11px;
+  color: #F8EE68;
+}
+
+h1 a, h1 a:link, h1 a:visited, h1 a:hover,
+h2 a, h2 a:link, h2 a:visited, h2 a:hover,
+h3 a, h3 a:link, h3 a:visited, h3 a:hover,
+h4 a, h4 a:link, h4 a:visited, h4 a:hover,
+h5 a, h5 a:link, h5 a:visited, h5 a:hover,
+h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+    margin:0;
+}
+
+#jas-main
+{
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  cursor:default;
+}
+
+#jas-page-background-glare
+{
+  position: absolute;
+  width: 100%;
+  height: 422px;
+  left: 0;
+  top: 0;
+}
+
+#jas-page-background-glare-image
+{
+  background-image: url('images/page_gl.png');
+  background-repeat: no-repeat;
+  height: 422px;
+  width: 973px;
+  margin: 0;
+}
+
+html:first-child #jas-page-background-glare
+{
+  border: 1px solid transparent;/* Opera fix */
+}
+
+
+
+
+.cleared
+{
+  float: none;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1px;
+}
+
+form
+{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/*
+table.position
+{
+  position: relative;
+  width: 100%;
+  table-layout: fixed;
+}
+*/
+
+/* end Page */
+
+/* begin Box, Sheet */
+.jas-sheet
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  width: 1300px;
+  min-width: 95px;
+  min-height: 95px;
+}
+
+.jas-sheet-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 7px;
+}
+
+.jas-sheet-tr, .jas-sheet-tl, .jas-sheet-br, .jas-sheet-bl, .jas-sheet-tc, .jas-sheet-bc,.jas-sheet-cr, .jas-sheet-cl
+{
+  position: absolute;
+  z-index: -1;
+}
+
+.jas-sheet-tr, .jas-sheet-tl, .jas-sheet-br, .jas-sheet-bl
+{
+  width: 106px;
+  height: 106px;
+  background-image: url('images/sheet_s.png');
+}
+
+.jas-sheet-tl
+{
+  top: 0;
+  left: 0;
+  clip: rect(auto, 53px, 53px, auto);
+}
+
+.jas-sheet-tr
+{
+  top: 0;
+  right: 0;
+  clip: rect(auto, auto, 53px, 53px);
+}
+
+.jas-sheet-bl
+{
+  bottom: 0;
+  left: 0;
+  clip: rect(53px, 53px, auto, auto);
+}
+
+.jas-sheet-br
+{
+  bottom: 0;
+  right: 0;
+  clip: rect(53px, auto, auto, 53px);
+}
+
+.jas-sheet-tc, .jas-sheet-bc
+{
+  left: 53px;
+  right: 53px;
+  height: 106px;
+  background-image: url('images/sheet_h.png');
+}
+
+.jas-sheet-tc
+{
+  top: 0;
+  clip: rect(auto, auto, 53px, auto);
+}
+
+.jas-sheet-bc
+{
+  bottom: 0;
+  clip: rect(53px, auto, auto, auto);
+}
+
+.jas-sheet-cr, .jas-sheet-cl
+{
+  top: 53px;
+  bottom: 53px;
+  width: 106px;
+  background-image: url('images/sheet_v.png');
+}
+
+.jas-sheet-cr
+{
+  right: 0;
+  clip: rect(auto, auto, auto, 53px);
+}
+
+.jas-sheet-cl
+{
+  left: 0;
+  clip: rect(auto, 53px, auto, auto);
+}
+
+.jas-sheet-cc
+{
+  position: absolute;
+  z-index: -1;
+  top: 53px;
+  left: 53px;
+  right: 53px;
+  bottom: 53px;
+  background-image: url('images/sheet_c.png');
+}
+
+.jas-sheet
+{
+  margin-top: 50px !important;
+  cursor:auto;
+}
+
+#jas-page-background-simple-gradient, #jas-page-background-gradient, #jas-page-background-glare
+{
+  min-width: 1300px;
+}
+
+/* end Box, Sheet */
+
+/* begin Header */
+div.jas-header
+{
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  width: 1286px;
+  height: 175px;
+  overflow: hidden;
+}
+
+div.jas-header-png
+{
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 1286px;
+  height: 175px;
+  background-image: url('images/header.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+div.jas-header-jpeg
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 1286px;
+  height: 175px;
+  background-image: url('images/header.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* end Header */
+
+/* begin Logo */
+.jas-logo
+{
+  display: block;
+  position: absolute;
+  left: 11px;
+  top: 52px;
+  width: 1265px;
+}
+
+h1.jas-logo-name
+{
+  display: block;
+  text-align: center;
+}
+
+h1.jas-logo-name, h1.jas-logo-name a, h1.jas-logo-name a:link, h1.jas-logo-name a:visited, h1.jas-logo-name a:hover
+{
+  font-size: 35px;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: #2E2E2E !important;
+}
+
+.jas-logo-text
+{
+  display: block;
+  text-align: center;
+}
+
+.jas-logo-text, .jas-logo-text a
+{
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  color: #2E2E2E !important;
+}
+/* end Logo */
+
+/* begin Menu */
+/* menu structure */
+
+.jas-menu a, .jas-menu a:link, .jas-menu a:visited, .jas-menu a:hover
+{
+  text-align: left;
+  text-decoration: none;
+  outline: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+.jas-menu, .jas-menu ul
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style-type: none;
+  display: block;
+}
+
+.jas-menu li
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 5;
+  background: none;
+}
+
+.jas-menu li:hover
+{
+  z-index: 10000;
+  white-space: normal;
+}
+
+.jas-menu li li
+{
+  float: none;
+}
+
+.jas-menu ul
+{
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background: none;
+}
+
+.jas-menu li:hover>ul
+{
+  visibility: visible;
+  top: 100%;
+}
+
+.jas-menu li li:hover>ul
+{
+  top: 0;
+  left: 100%;
+}
+
+.jas-menu:after, .jas-menu ul:after
+{
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+  clear: both;
+}
+.jas-menu, .jas-menu ul
+{
+  min-height: 0;
+}
+
+.jas-menu ul
+{
+  background-image: url(images/spacer.gif);
+  padding: 10px 30px 30px 30px;
+  margin: -10px 0 0 -30px;
+}
+
+.jas-menu ul ul
+{
+  padding: 30px 30px 30px 10px;
+  margin: -30px 0 0 -10px;
+}
+
+
+
+
+/* menu structure */
+
+.jas-menu
+{
+  padding: 0 0 0 0;
+}
+
+.jas-nav
+{
+  position: relative;
+  height: 28px;
+  z-index: 100;
+}
+
+
+/* end Menu */
+
+/* begin MenuItem */
+.jas-menu a
+{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 28px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.jas-menu .jas-menu-li-separator
+{
+  display: block;
+  width: 0;
+  height: 28px;
+}
+
+.jas-menu ul li
+{
+    margin:0;
+    clear: both;
+}
+
+
+.jas-menu a .r, .jas-menu a .l
+{
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: -1;
+  height: 84px;
+  background-image: url('images/menuitem.png');
+}
+
+.jas-menu a .l
+{
+  left: 0;
+  right: 0;
+}
+
+.jas-menu a .r
+{
+  width: 400px;
+  right: 0;
+  clip: rect(auto, auto, auto, 400px);
+}
+
+.jas-menu a .t
+{
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #C7C7C7;
+  padding: 0 12px;
+  margin: 0 0;
+  line-height: 28px;
+  text-align: center;
+}
+
+.jas-menu a:hover .l, .jas-menu a:hover .r
+{
+  top: -28px;
+}
+
+.jas-menu li:hover>a .l, .jas-menu li:hover>a .r
+{
+  top: -28px;
+}
+
+.jas-menu li:hover a .l, .jas-menu li:hover a .r
+{
+  top: -28px;
+}
+.jas-menu a:hover .t
+{
+  color: #E3E3E3;
+}
+
+.jas-menu li:hover a .t
+{
+  color: #E3E3E3;
+}
+
+.jas-menu li:hover>a .t
+{
+  color: #E3E3E3;
+}
+
+/* end MenuItem */
+
+/* begin MenuSeparator */
+.jas-nav .jas-menu-separator
+{
+  display: block;
+  margin:0 auto;
+  width: 1px;
+  height: 28px;
+  background-image: url('images/menuseparator.png');
+}
+/* end MenuSeparator */
+
+/* begin MenuSubItem */
+.jas-menu ul a
+{
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  height: 20px;
+  width: 180px;
+  overflow: hidden;
+  line-height: 20px;
+  background-image: url('images/subitem.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+  border-width: 0;
+  border-style: solid;
+}
+
+.jas-nav ul.jas-menu ul span, .jas-nav ul.jas-menu ul span span
+{
+  display: inline;
+  float: none;
+  margin: inherit;
+  padding: inherit;
+  background-image: none;
+  text-align: inherit;
+  text-decoration: inherit;
+}
+
+.jas-menu ul a, .jas-menu ul a:link, .jas-menu ul a:visited, .jas-menu ul a:hover, .jas-menu ul a:active, .jas-nav ul.jas-menu ul span, .jas-nav ul.jas-menu ul span span
+{
+  text-align: left;
+  text-indent: 12px;
+  text-decoration: none;
+  line-height: 20px;
+  color: #F0F0F0;
+  margin-right: 10px;
+  margin-left: 10px;
+  /* font-size: 13px; */
+  font-size: 16px;
+  margin:0;
+  padding:0;
+}
+
+.jas-menu ul li a:hover
+{
+  color: #F5F5F5;
+  background-position: 0 -20px;
+}
+
+.jas-menu ul li:hover>a
+{
+  color: #F5F5F5;
+  background-position: 0 -20px;
+}
+
+.jas-nav .jas-menu ul li a:hover span, .jas-nav .jas-menu ul li a:hover span span
+{
+  color: #F5F5F5;
+}
+
+.jas-nav .jas-menu ul li:hover>a span, .jas-nav .jas-menu ul li:hover>a span span
+{
+  color: #F5F5F5;
+}
+
+
+/* end MenuSubItem */
+
+/* begin Layout */
+.jas-content-layout
+{
+  display: table;
+  padding: 0;
+  border: none;
+  width: 1240px;
+  /* width: 1286px */;
+}
+
+.jas-content-layout .jas-content-layout
+{
+  width: auto;
+  margin:0;
+}
+
+div.jas-content-layout div.jas-layout-cell, div.jas-content-layout div.jas-layout-cell div.jas-content-layout div.jas-layout-cell
+{
+   display: table-cell;
+}
+
+div.jas-layout-cell div.jas-layout-cell
+{
+   display: block;
+}
+
+div.jas-content-layout-row
+{
+  display: table-row; 
+}
+
+.jas-content-layout
+{
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: Transparent;
+  border: none !important;
+  padding:0 !important;
+}
+
+.jas-layout-cell, .jas-content-layout-row
+{
+  background-color: Transparent;
+  vertical-align: top;
+  text-align: left;
+  border: none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+/* end Layout */
+
+/* begin Box, Block, VMenuBlock */
+.jas-vmenublock
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.jas-vmenublock-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+
+.jas-vmenublock
+{
+  margin: 5px;
+}
+
+/* end Box, Block, VMenuBlock */
+
+/* begin BlockHeader, VMenuBlockHeader */
+.jas-vmenublockheader
+{
+  position: relative;
+  z-index: 0;
+  height: 44px;
+  margin-bottom: 0;
+}
+
+.jas-vmenublockheader .t
+{
+  height: 44px;
+  color: #E5D60B;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  margin:0;
+  padding: 0 10px 0 31px;
+  white-space: nowrap;
+  line-height: 44px;	
+}
+
+.jas-vmenublockheader .l, .jas-vmenublockheader .r
+{
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 44px;
+  background-image: url('images/vmenublockheader.png');
+}
+
+.jas-vmenublockheader .l
+{
+  left: 0;
+  right: 25px;
+}
+
+.jas-vmenublockheader .r
+{
+  width: 1292px;
+  right: 0;
+  clip: rect(auto, auto, auto, 1267px);
+}
+
+/* end BlockHeader, VMenuBlockHeader */
+
+/* begin Box, Box, VMenuBlockContent */
+.jas-vmenublockcontent
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.jas-vmenublockcontent-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 1px;
+}
+
+.jas-vmenublockcontent-tr, .jas-vmenublockcontent-tl, .jas-vmenublockcontent-br, .jas-vmenublockcontent-bl, .jas-vmenublockcontent-tc, .jas-vmenublockcontent-bc,.jas-vmenublockcontent-cr, .jas-vmenublockcontent-cl
+{
+  position: absolute;
+  z-index: -1;
+}
+
+.jas-vmenublockcontent-tr, .jas-vmenublockcontent-tl, .jas-vmenublockcontent-br, .jas-vmenublockcontent-bl
+{
+  width: 14px;
+  height: 14px;
+  background-image: url('images/vmenublockcontent_s.png');
+}
+
+.jas-vmenublockcontent-tl
+{
+  top: 0;
+  left: 0;
+  clip: rect(auto, 7px, 7px, auto);
+}
+
+.jas-vmenublockcontent-tr
+{
+  top: 0;
+  right: 0;
+  clip: rect(auto, auto, 7px, 7px);
+}
+
+.jas-vmenublockcontent-bl
+{
+  bottom: 0;
+  left: 0;
+  clip: rect(7px, 7px, auto, auto);
+}
+
+.jas-vmenublockcontent-br
+{
+  bottom: 0;
+  right: 0;
+  clip: rect(7px, auto, auto, 7px);
+}
+
+.jas-vmenublockcontent-tc, .jas-vmenublockcontent-bc
+{
+  left: 7px;
+  right: 7px;
+  height: 14px;
+  background-image: url('images/vmenublockcontent_h.png');
+}
+
+.jas-vmenublockcontent-tc
+{
+  top: 0;
+  clip: rect(auto, auto, 7px, auto);
+}
+
+.jas-vmenublockcontent-bc
+{
+  bottom: 0;
+  clip: rect(7px, auto, auto, auto);
+}
+
+.jas-vmenublockcontent-cr, .jas-vmenublockcontent-cl
+{
+  top: 7px;
+  bottom: 7px;
+  width: 14px;
+  background-image: url('images/vmenublockcontent_v.png');
+}
+
+.jas-vmenublockcontent-cr
+{
+  right: 0;
+  clip: rect(auto, auto, auto, 7px);
+}
+
+.jas-vmenublockcontent-cl
+{
+  left: 0;
+  clip: rect(auto, 7px, auto, auto);
+}
+
+.jas-vmenublockcontent-cc
+{
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background-color: #000000;
+}
+
+.jas-vmenublockcontent
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.jas-vmenublockcontent-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 1px;
+}
+
+.jas-vmenublockcontent-tr, .jas-vmenublockcontent-tl, .jas-vmenublockcontent-br, .jas-vmenublockcontent-bl, .jas-vmenublockcontent-tc, .jas-vmenublockcontent-bc,.jas-vmenublockcontent-cr, .jas-vmenublockcontent-cl
+{
+  position: absolute;
+  z-index: -1;
+}
+
+.jas-vmenublockcontent-tr, .jas-vmenublockcontent-tl, .jas-vmenublockcontent-br, .jas-vmenublockcontent-bl
+{
+  width: 14px;
+  height: 14px;
+  background-image: url('images/vmenublockcontent_s.png');
+}
+
+.jas-vmenublockcontent-tl
+{
+  top: 0;
+  left: 0;
+  clip: rect(auto, 7px, 7px, auto);
+}
+
+.jas-vmenublockcontent-tr
+{
+  top: 0;
+  right: 0;
+  clip: rect(auto, auto, 7px, 7px);
+}
+
+.jas-vmenublockcontent-bl
+{
+  bottom: 0;
+  left: 0;
+  clip: rect(7px, 7px, auto, auto);
+}
+
+.jas-vmenublockcontent-br
+{
+  bottom: 0;
+  right: 0;
+  clip: rect(7px, auto, auto, 7px);
+}
+
+.jas-vmenublockcontent-tc, .jas-vmenublockcontent-bc
+{
+  left: 7px;
+  right: 7px;
+  height: 14px;
+  background-image: url('images/vmenublockcontent_h.png');
+}
+
+.jas-vmenublockcontent-tc
+{
+  top: 0;
+  clip: rect(auto, auto, 7px, auto);
+}
+
+.jas-vmenublockcontent-bc
+{
+  bottom: 0;
+  clip: rect(7px, auto, auto, auto);
+}
+
+.jas-vmenublockcontent-cr, .jas-vmenublockcontent-cl
+{
+  top: 7px;
+  bottom: 7px;
+  width: 14px;
+  background-image: url('images/vmenublockcontent_v.png');
+}
+
+.jas-vmenublockcontent-cr
+{
+  right: 0;
+  clip: rect(auto, auto, auto, 7px);
+}
+
+.jas-vmenublockcontent-cl
+{
+  left: 0;
+  clip: rect(auto, 7px, auto, auto);
+}
+
+.jas-vmenublockcontent-cc
+{
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background-color: #000000;
+}
+
+/* end Box, Box, VMenuBlockContent */
+
+/* begin VMenu */
+ul.jas-vmenu, ul.jas-vmenu li
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  line-height: 0;
+}
+
+ul.jas-vmenu ul
+{
+  display: none;
+}
+
+ul.jas-vmenu ul.active
+{
+  display: block;
+}
+/* end VMenu */
+
+/* begin VMenuItem */
+ul.jas-vmenu a
+{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 30px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul.jas-vmenu li.jas-vmenu-separator
+{
+  display: block;
+  padding: 0 0 0 0;
+  margin: 0;
+  font-size: 1px;
+}
+
+ul.jas-vmenu .jas-vmenu-separator-span
+{
+  display: block;
+  padding: 0;
+  font-size: 1px;
+  height: 0;
+  line-height: 0;
+  border: none;
+}
+
+ul.jas-vmenu a .r, ul.jas-vmenu a .l
+{
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: -1;
+  height: 90px;
+  background-image: url('images/vmenuitem.png');
+}
+
+ul.jas-vmenu a .l
+{
+  left: 0;
+  right: 0;
+}
+
+ul.jas-vmenu a .r
+{
+  width: 1300px;
+  right: 0;
+  clip: rect(auto, auto, auto, 1300px);
+}
+
+ul.jas-vmenu a .t
+{
+  display: block;
+  line-height: 30px;
+  color: #A6A6A6;
+  padding: 0 10px 0 20px;
+  font-size: 14px;
+  margin-left:0;
+  margin-right:0;
+}
+
+ul.jas-vmenu a:hover .l, ul.jas-vmenu a:hover .r
+{
+  top: -30px;
+}
+
+ul.jas-vmenu a:hover .t
+{
+  color: #E0E0E0;
+}
+
+ul.jas-vmenu a.active .l, ul.jas-vmenu a.active .r
+{
+  top: -60px;
+}
+
+ul.jas-vmenu a.active .t
+{
+  color: #A6A6A6;
+}
+/* end VMenuItem */
+
+/* begin VMenuSubItem */
+ul.jas-vmenu ul, ul.jas-vmenu ul li
+{
+  margin: 0;
+  padding: 0;
+}
+
+ul.jas-vmenu ul a
+{
+  display: block;
+  white-space: nowrap;
+  height: 20px;
+  overflow: visible;
+  background-image: url('images/vsubitem.gif');
+  background-position: 25px 0;
+  background-repeat: repeat-x;
+  padding-left: 42px;
+}
+
+ul.jas-vmenu ul li
+{
+  padding: 0;
+}
+
+ul.jas-vmenu ul span, ul.jas-vmenu ul span span
+{
+  display: inline;
+  float: none;
+  margin: inherit;
+  padding: inherit;
+  background-image: none;
+  text-align: inherit;
+  text-decoration: inherit;
+}
+
+ul.jas-vmenu ul a, ul.jas-vmenu ul a:link, ul.jas-vmenu ul a:visited, ul.jas-vmenu ul a:hover, ul.jas-vmenu ul a:active, ul.jas-vmenu ul span, ul.jas-vmenu ul span span
+{
+  line-height: 20px;
+  color: #E8E8E8;
+  font-size: 11px;
+  margin-left: 0;
+}
+
+ul.jas-vmenu ul
+{
+    margin:0 0 0 0;
+}
+
+ul.jas-vmenu ul ul
+{
+  margin:0 0 0 0;
+}
+
+ul.jas-vmenu ul li.jas-vsubmenu-separator
+{ 
+  display: block;
+  margin: 0;
+  font-size: 1px;
+  padding: 0 0 0 0;
+ }
+
+ul.jas-vmenu ul .jas-vsubmenu-separator-span
+{
+  display: block;
+  padding: 0;
+  font-size: 1px;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  border: none;
+}
+
+ul.jas-vmenu ul li li a
+{
+  background-position: 50px 0;
+  padding-left: 67px;
+}
+
+ul.jas-vmenu ul li li li a
+{
+  background-position: 75px 0;
+  padding-left: 92px;
+}
+
+ul.jas-vmenu ul li li li li a
+{
+  background-position: 100px 0;
+  padding-left: 117px;
+}
+
+ul.jas-vmenu ul li li li li li a
+{
+  background-position: 125px 0;
+  padding-left: 142px;
+}
+
+
+ul.jas-vmenu ul li a.active
+{
+  color: #E8E8E8;
+  background-position: 25px -40px;
+}
+
+ul.jas-vmenu ul li li a.active
+{
+  background-position: 50px -40px;
+}
+
+ul.jas-vmenu ul li li li a.active
+{
+  background-position: 75px -40px;
+}
+
+ul.jas-vmenu ul li li li li a.active
+{
+  background-position: 100px -40px;
+}
+
+ul.jas-vmenu ul li li li li li a.active
+{
+  background-position: 125px -40px;
+}
+
+
+
+ul.jas-vmenu ul li a:hover, ul.jas-vmenu ul li a:hover.active
+{
+  color: #F5F5F5;
+  background-position: 25px -20px;
+}
+
+
+ul.jas-vmenu ul li li a:hover, ul.jas-vmenu ul li li a:hover.active
+{
+  background-position: 50px -20px;
+}
+
+ul.jas-vmenu ul li li li a:hover, ul.jas-vmenu ul li li li a:hover.active
+{
+  background-position: 75px -20px;
+}
+
+ul.jas-vmenu ul li li li li a:hover, ul.jas-vmenu ul li li li li a:hover.active
+{
+  background-position: 100px -20px;
+}
+
+ul.jas-vmenu ul li li li li li a:hover, ul.jas-vmenu ul li li li li li a:hover.active
+{
+  background-position: 125px -20px;
+}
+/* end VMenuSubItem */
+
+/* begin Box, Block */
+.jas-block
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.jas-block-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+
+.jas-block
+{
+  margin: 5px;
+}
+
+/* end Box, Block */
+
+/* begin BlockHeader */
+.jas-blockheader
+{
+  position: relative;
+  z-index: 0;
+  height: 44px;
+  margin-bottom: 0;
+}
+
+.jas-blockheader .t
+{
+  height: 44px;
+  color: #E5D60B;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  margin:0;
+  padding: 0 10px 0 31px;
+  white-space: nowrap;
+  line-height: 44px;	
+}
+
+.jas-blockheader .l, .jas-blockheader .r
+{
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 44px;
+  background-image: url('images/blockheader.png');
+}
+
+.jas-blockheader .l
+{
+  left: 0;
+  right: 25px;
+}
+
+.jas-blockheader .r
+{
+  width: 1292px;
+  right: 0;
+  clip: rect(auto, auto, auto, 1267px);
+}
+
+/* end BlockHeader */
+
+/* begin Box, BlockContent */
+.jas-blockcontent
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.jas-blockcontent-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+}
+
+.jas-blockcontent-tr, .jas-blockcontent-tl, .jas-blockcontent-br, .jas-blockcontent-bl, .jas-blockcontent-tc, .jas-blockcontent-bc,.jas-blockcontent-cr, .jas-blockcontent-cl
+{
+  position: absolute;
+  z-index: -1;
+}
+
+.jas-blockcontent-tr, .jas-blockcontent-tl, .jas-blockcontent-br, .jas-blockcontent-bl
+{
+  width: 14px;
+  height: 14px;
+  background-image: url('images/blockcontent_s.png');
+}
+
+.jas-blockcontent-tl
+{
+  top: 0;
+  left: 0;
+  clip: rect(auto, 7px, 7px, auto);
+}
+
+.jas-blockcontent-tr
+{
+  top: 0;
+  right: 0;
+  clip: rect(auto, auto, 7px, 7px);
+}
+
+.jas-blockcontent-bl
+{
+  bottom: 0;
+  left: 0;
+  clip: rect(7px, 7px, auto, auto);
+}
+
+.jas-blockcontent-br
+{
+  bottom: 0;
+  right: 0;
+  clip: rect(7px, auto, auto, 7px);
+}
+
+.jas-blockcontent-tc, .jas-blockcontent-bc
+{
+  left: 7px;
+  right: 7px;
+  height: 14px;
+  background-image: url('images/blockcontent_h.png');
+}
+
+.jas-blockcontent-tc
+{
+  top: 0;
+  clip: rect(auto, auto, 7px, auto);
+}
+
+.jas-blockcontent-bc
+{
+  bottom: 0;
+  clip: rect(7px, auto, auto, auto);
+}
+
+.jas-blockcontent-cr, .jas-blockcontent-cl
+{
+  top: 7px;
+  bottom: 7px;
+  width: 14px;
+  background-image: url('images/blockcontent_v.png');
+}
+
+.jas-blockcontent-cr
+{
+  right: 0;
+  clip: rect(auto, auto, auto, 7px);
+}
+
+.jas-blockcontent-cl
+{
+  left: 0;
+  clip: rect(auto, 7px, auto, auto);
+}
+
+.jas-blockcontent-cc
+{
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background-color: #000000;
+}
+
+.jas-blockcontent-body,
+jast-blockcontent-body a,
+jast-blockcontent-body li a
+{
+  color: #E8E8E8;
+
+}
+
+.jas-blockcontent-body a,
+.jas-blockcontent-body li a
+{
+  color: #A6A6A6;
+
+}
+
+.jas-blockcontent-body a:link,
+.jas-blockcontent-body li a:link
+{
+  color: #A6A6A6;
+
+}
+
+.jas-blockcontent-body a:visited, .jas-blockcontent-body a.visited,
+.jas-blockcontent-body li a:visited, .jas-blockcontent-body li a.visited
+{
+  color: #E0E0E0;
+  text-decoration: none;
+}
+
+.jas-blockcontent-body a:hover, .jas-blockcontent-body a.hover,
+.jas-blockcontent-body li a:hover, .jas-blockcontent-body li a.hover
+{
+  color: #C2C2C2;
+  text-decoration: none;
+
+}
+
+.jas-blockcontent-body ul
+{
+  list-style-type: none;
+  color: #D4D4D4;
+  margin: 0;
+  padding: 0;
+}
+
+.jas-blockcontent-body ul li
+{
+  line-height: 1.25em;
+  overflow:hidden;
+  padding: 0 0 0 13px;
+  background-image: url('images/blockcontentbullets.png');
+  background-repeat: no-repeat;
+}
+
+
+/* end Box, BlockContent */
+
+/* begin Button */
+.jas-button-wrapper .jas-button
+{
+
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none !important;
+  color: #C4C4C4 !important;
+  width: auto;
+  outline: none;
+  border: none;
+  background: none;
+  line-height: 32px;
+  height: 32px;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  overflow: visible;
+  cursor: default;
+  z-index: 0;
+}
+
+.jas-button img, .jas-button-wrapper img
+{
+  margin: 0;
+  vertical-align: middle;
+}
+
+.jas-button-wrapper
+{
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+.firefox2 .jas-button-wrapper
+{
+  display: block;
+  float: left;
+}
+
+input, select, textarea, select
+{
+  vertical-align: middle;
+
+}
+
+.jas-block select
+{
+    width:96%;
+}
+
+jast-button-wrapper.hover .jas-button, .jas-button:hover
+{
+  color: #F2F2F2 !important;
+  text-decoration: none !important;
+}
+
+.jas-button-wrapper.active .jas-button
+{
+  color: #F5F5F5 !important;
+}
+
+.jas-button-wrapper .l, .jas-button-wrapper .r
+{
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/button.png');
+}
+
+.jas-button-wrapper .l
+{
+  left: 0;
+  right: 4px;
+}
+
+.jas-button-wrapper .r
+{
+  width: 409px;
+  right: 0;
+  clip: rect(auto, auto, auto, 405px);
+}
+
+.jas-button-wrapper.hover .l, .jas-button-wrapper.hover .r
+{
+  top: -32px;
+}
+
+.jas-button-wrapper.active .l, .jas-button-wrapper.active .r
+{
+  top: -64px;
+}
+
+.jas-button-wrapper input
+{
+  float: none !important;
+}
+/* end Button */
+
+/* begin Box, Post */
+.jas-post
+{
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-width: 31px;
+  min-height: 31px;
+}
+
+.jas-post-body
+{
+  position: relative;
+  z-index: 1;
+  padding: 13px;
+}
+
+.jas-post-tr, .jas-post-tl, .jas-post-br, .jas-post-bl, .jas-post-tc, .jas-post-bc,.jas-post-cr, .jas-post-cl
+{
+  position: absolute;
+  z-index: -1;
+}
+
+.jas-post-tr, .jas-post-tl, .jas-post-br, .jas-post-bl
+{
+  width: 38px;
+  height: 38px;
+  background-image: url('images/post_s.png');
+}
+
+.jas-post-tl
+{
+  top: 0;
+  left: 0;
+  clip: rect(auto, 19px, 19px, auto);
+}
+
+.jas-post-tr
+{
+  top: 0;
+  right: 0;
+  clip: rect(auto, auto, 19px, 19px);
+}
+
+.jas-post-bl
+{
+  bottom: 0;
+  left: 0;
+  clip: rect(19px, 19px, auto, auto);
+}
+
+.jas-post-br
+{
+  bottom: 0;
+  right: 0;
+  clip: rect(19px, auto, auto, 19px);
+}
+
+.jas-post-tc, .jas-post-bc
+{
+  left: 19px;
+  right: 19px;
+  height: 38px;
+  background-image: url('images/post_h.png');
+}
+
+.jas-post-tc
+{
+  top: 0;
+  clip: rect(auto, auto, 19px, auto);
+}
+
+.jas-post-bc
+{
+  bottom: 0;
+  clip: rect(19px, auto, auto, auto);
+}
+
+.jas-post-cr, .jas-post-cl
+{
+  top: 19px;
+  bottom: 19px;
+  width: 38px;
+  background-image: url('images/post_v.png');
+}
+
+.jas-post-cr
+{
+  right: 0;
+  clip: rect(auto, auto, auto, 19px);
+}
+
+.jas-post-cl
+{
+  left: 0;
+  clip: rect(auto, 19px, auto, auto);
+}
+
+.jas-post-cc
+{
+  position: absolute;
+  z-index: -1;
+  top: 19px;
+  left: 19px;
+  right: 19px;
+  bottom: 19px;
+  background-color: #000000;
+}
+
+.jas-post
+{
+  margin: 7px;
+}
+
+a img
+{
+  border: 0;
+}
+
+.jas-article img, img.jas-article
+{
+  border: solid 1px #7A7A7A;
+  margin: 7px;
+}
+
+.jas-metadata-icons img
+{
+  border: none;
+  vertical-align: middle;
+  margin: 2px;
+}
+
+
+
+.jas-article table, table.jas-article
+{
+  border-collapse: collapse;
+  margin: 1px;
+  width: auto;
+}
+
+
+.jas-article table, table.jas-article .jas-article tr, .jas-article th, .jas-article td
+{
+  background-color: Transparent;
+  border: none;
+}
+
+
+.jas-article th, .jas-article td
+{
+  padding: 2px;
+  border: none;
+  /*border: ridge 2px #696969;*/
+  vertical-align: top;
+  text-align: left;
+}
+
+
+.jas-article th
+{
+  text-align: center;
+  vertical-align: middle;
+  padding: 7px;
+}
+
+pre
+{
+  overflow: auto;
+  padding: 0.1em;
+}
+
+/* end Box, Post */
+
+/* begin PostHeaderIcon */
+.jas-post h2.jas-postheader,
+jast-post h2.jas-postheader a,
+jast-post h2.jas-postheader a:link,
+jast-post h2.jas-postheader a:visited,
+jast-post h2.jas-postheader a.visited,
+jast-post h2.jas-postheader a:hover,
+jast-post h2.jas-postheader a.hovered
+{
+  margin: 0.2em 0;
+  padding: 0;
+  font-size: 26px;
+  color: #F4E61F;
+}
+
+.jas-post h2.jas-postheader a,
+jast-post h2.jas-postheader a:link,
+jast-post h2.jas-postheader a:visited,
+jast-post h2.jas-postheader a.visited,
+jast-post h2.jas-postheader a:hover,
+jast-post h2.jas-postheader a.hovered
+{
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  color: #F7EC50;
+}
+
+.jas-post h2.jas-postheader a:visited,
+jast-post h2.jas-postheader a.visited
+{
+
+  color: #FAF38F;
+}
+
+
+.jas-post h2.jas-postheader a:hover,
+jast-post h2.jas-postheader a.hovered
+{
+
+
+  color: #E5D60B;
+}
+
+.jas-post h2.jas-postheader img
+{
+  border: none;
+  vertical-align: middle;
+  margin: 0;
+}
+/* end PostHeaderIcon */
+
+/* begin PostBullets */
+.jas-post ol, .jas-post ul
+{
+  color: #949494;
+  margin: 1em 0 1em 2em;
+  padding: 0;
+
+}
+
+.jas-post li ol, .jas-post li ul
+{
+  margin: 0.5em 0 0.5em 2em;
+  padding: 0;
+}
+
+.jas-post li
+{
+  margin: 0.2em 0;
+  padding: 0;
+  overflow:hidden;
+}
+
+.jas-post ul
+{
+  list-style-type: none;
+}
+
+.jas-post ol
+{
+  list-style-position: inside;
+
+}
+
+
+
+.jas-post li
+{
+  padding: 0 0 0 13px;
+  line-height: 1em;
+}
+
+.jas-post ol li, .jas-post ul ol li
+{
+  background: none;
+  padding-left: 0;
+}
+
+.jas-post ul li, .jas-post ol ul li
+{
+  background-image: url('images/postbullets.png');
+  background-repeat: no-repeat;
+  padding-left: 13px;
+}
+
+
+/* end PostBullets */
+
+/* begin PostQuote */
+blockquote,
+blockquote p,
+.jas-postcontent blockquote p
+{
+  color: #1A1A1A;
+
+}
+
+blockquote,
+.jas-postcontent blockquote
+{
+  overflow:hidden;
+  border: solid 1px #7A7A7A;
+  margin: 10px 10px 10px 50px;
+  padding: 5px 5px 5px 28px;
+  background-color: #949494;
+  background-image: url('images/postquote.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+/* end PostQuote */
+
+/* begin Footer */
+.jas-footer
+{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.jas-footer-b
+{
+  position: absolute;
+  left:37px;
+  right:37px;
+  bottom:0;
+  height:50px;
+  background-image: url('images/footer_b.png');
+}
+
+jast-footer-r, .jas-footer-l
+{
+  position: absolute;
+  height:50px;
+  background-image: url('images/footer_s.png');
+  bottom: 0;
+}
+
+.jas-footer-l
+{
+  left: 0;
+  width:37px;
+}
+
+.jas-footer-r
+{
+  right: 0;
+  width:74px;
+  clip: rect(auto, auto, auto, 37px);
+}
+
+.jas-footer-t
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  background-image: url('images/footer_t.png');
+  background-position: left bottom;
+}
+
+.jas-footer-body
+{
+    position:relative;
+    padding: 10px;
+    min-height: 30px;
+}
+
+
+.jas-rss-tag-icon
+{
+  position: absolute;
+  display: block;
+  background-image: url('images/rssicon.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  left:   10px;
+  bottom:10px;
+  height: 30px;
+  width: 30px;
+  cursor: default;
+}
+
+
+.jas-footer .jas-footer-text p
+{
+  margin: 0;
+  padding: 0;
+}
+
+.jas-footer,
+jast-footer p,
+.jas-footer div,
+.jas-footer li
+{
+  color: #B2B2B2;
+  text-align: center;
+}
+
+
+
+.jas-footer-text
+{
+  margin: 0 10px 0 10px;
+}
+
+.jas-footer a,
+.jas-footer a:link
+{
+  color: #919191;
+  text-decoration: none;
+}
+
+.jas-footer a:visited
+{
+  color: #ABABAB;
+
+}
+
+.jas-footer a:hover
+{
+  color: #757575;
+
+
+}/* end Footer */
+
+/* begin PageFooter */
+.jas-page-footer, .jas-page-footer a, .jas-page-footer a:link, .jas-page-footer a:visited, .jas-page-footer a:hover
+{
+  font-family: Arial;
+  font-size: 10px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #999999;
+}
+
+.jas-page-footer
+{
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+  color: #999999;
+}
+/* end PageFooter */
+
+/* begin LayoutCell, sidebar1 */
+.jas-content-layout .jas-sidebar1
+{
+  width: 25%;
+}
+/* end LayoutCell, sidebar1 */
+
+/* begin LayoutCell, content */
+.jas-content-layout .jas-content
+{
+  width: 50%;
+}
+.jas-content-layout .jas-content-sidebar1
+{
+  width: 75%;
+}
+.jas-content-layout .jas-content-sidebar2
+{
+  width: 75%;
+}
+.jas-content-layout .jas-content-wide
+{
+  width: 100%;
+}
+/* end LayoutCell, content */
+
+/* begin LayoutCell, sidebar2 */
+.jas-content-layout .jas-sidebar2
+{
+  width: 25%;
+}
+/* end LayoutCell, sidebar2 */
+
+
+
+
+.overview-table .jas-layout-cell
+{
+    width:33%;
+}
+
+
+.overview-table-inner 
+{
+    margin:10px;
+}
+
+table.table
+{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    text-align:left;
+    vertical-align:top;
+}
+
+table.table, table.table tr, table.table td
+{
+    border:none;
+    margin:0;
+    padding:0;
+    background-color:Transparent;
+}
+
+img.image
+{
+    margin:0;
+    padding:0;
+    border:none;
+}

@@ -1,0 +1,72 @@
+
+
+<!--JEGAS MENU RENDERER START-->
+<!--JEGAS MENU ID: 1-->
+<!--JEGAS USER ID: 0-->
+<!--JEGAS PATHDL.ListCount:1-->
+<!--JEGAS Initial MENU PARENT ID to Traverse:1-->
+<ul class="jas-menu"><li><a href=".?JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Home</span></a></li>
+<li><a href="/.?page=page_topmenu_crm&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">CRM</span></a><ul><li><a href="/?[@MT@]&MID=1083&JSID=[@JSID@]">Work</a><ul><li><a href="/?[@MT@]&MID=2012040311472718006&JSID=[@JSID@]#First_Glance">First Glance</a><ul><li><a href="/.?screen=public_view_jtask%20Search&JSID=[@JSID@]" target="_blank">Public Project Tasks</a></li>
+<li><a href="/.?screen=public_view_jproject%20Search&JSID=[@JSID@]" target="_blank">Public Projects</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_products&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Products</span></a><ul><li><a href="/.?MT=1&MID=1602140113503020000&JSID=[@JSID@]">JAS / JegasCRM</a><ul><li><a href="[@ALIAS@].?MT=1&MID=1608161007201480276&JSID=[@JSID@]#What_Is_JAS">What Is JAS</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1608161007201480276">What Is JAS Anyway?</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1512090923129990013&JSID=[@JSID@]#Get_JAS_Fast">Get JAS FAST</a><ul><li><a href="/products/jas/jas-2016-11-04.iso" target="_blank">ITS IN HERE</a></li>
+<li><a href="/jws/doc/jasapi/index.html?JSID=[@JSID@]" target="_blank">JAS Reference Manual</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1511231929335240017&JSID=[@JSID@]#Open_Source">Open Source</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1511231950161030018&JSID=[@JSID@]">JegasCRM Project</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1183&JSID=[@JSID@]">JAS Credits</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1184&JSID=[@JSID@]#JAS">JAS</a><ul><li><a href="[@ALIAS@]?[@MT@]&MID=1186&JSID=[@JSID@]">JAS Logo</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1185&JSID=[@JSID@]">Jegas Application Server</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1187&JSID=[@JSID@]#Credits">Credits</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1207&JSID=[@JSID@]#Free_Pascal">Free Pascal</a><ul><li><a href="http://www.freepascal.org" target="_blank">FreePascal</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1208&JSID=[@JSID@]#IWF">IWF</a><ul><li><a href="http://sourceforge.net/projects/iwf/" target="_blank">IWF - Interactive Web Framework</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1209&JSID=[@JSID@]#Synapse">Synapse</a><ul><li><a href="http://synapse.ararat.cz" target="_blank">Synapse</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1440&JSID=[@JSID@]#Date_Time_Picker">Date Time Picker</a><ul><li><a href="http://www.rainforestnet.com" target="_blank">My Date Time Picker</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1211&JSID=[@JSID@]#Free_Business_Desktop_Icons">Free Business Desktop Icons</a><ul><li><a href="http://www.desktop-icon.com/stock-icons/free-business-desktop-icons.htm" target="_blank">Free Business Desktop Icons</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1605051723414110002&JSID=[@JSID@]">JegasAPI</a><ul><li><a href="/products/jegasapi/jegasapi-2016-05-05.zip&JSID=[@JSID@]" target="_blank">JegasAPI</a><ul><li><a href="/products/jegasapi/jegasapi-2016-10-03.zip">Download JegasAPI</a></li>
+<li><a href="/products/jegasapi/reference-manual/index.html" target="_blank">Jegas API Reference Manual</a></li>
+<li><a href="https://github.com/jasonpsage/JegasAPI" target="_blank">JegasAPI on GIT-Hub</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?MT=1&MID=1512090834342530004&JSID=[@JSID@]">Utilities</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1512191516515350005&JSID=[@JSID@]#JegasBackup">JegasBackup</a><ul><li><a href="/products/jegasbackup/jegas-backup-2016-07-12.zip">Linux x86_64 and Win32 Bundle - 2016-07-12</a></li>
+<li><a href="https://github.com/jasonpsage/JegasBackup" target="_blank">JegasBackup on Git-Hub</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1512090834342530004&JSID=[@JSID@]#JegasEdit">JegasEdit</a><ul><li><a href="/products/jegasedit/jegasedit-2016-10-18-x86_64-linux.tar.gz">Linux 64 Bit - 2016-10-18</a></li>
+<li><a href="/products/jegasedit/jegasedit.0.67.tar.gz?JSID=[@JSID@]">Linux 32 - Old but works</a></li>
+<li><a href="/products/jegasedit/highcontrast_jegasedit.cfg" target="_blank">Dark Theme</a></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1512291802048680021&JSID=[@JSID@]#RecurseCmd">RecurseCmd</a><ul><li><a href="/products/recursecmd/jegas-recurse-commander-posix-x86_64.0.0.2.zip">Linux x86_64</a></li>
+<li><a href="/products/recursecmd/jegas-recurse-commander-windows-n-linux-2016-05-20.zip">Recurse Commander Bundle 2016-05-20</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1610032006217660138&JSID=[@JSID@]#Jegas_Recursive_FTP">Jegas Recursive FTP</a><ul><li><a href="/products/jegasftp/jegasftp.x86_64-2016-10-07.tar.gz">jegasftp.x86_64.2016-10-07.tar.gz</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1611031717452140246&JSID=[@JSID@]">Springli Timer</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_archives&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Archives</span></a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1605171324373630004&JSID=[@JSID@]" target="_blank">Blog</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1605171324373630004&JSID=[@JSID@]#Blog" target="_blank">Blog</a><ul><li><a href="[@ALIAS@]?UID=1609130803429230336&SCREENID=1605162005101550049&JSID=[@JSID@]" target="_blank">Current Article</a></li>
+<li><a href="/.?screen=jblog%20Search&JSID=[@JSID@]">History</a></li>
+</ul></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1609201232586490215&JSID=[@JSID@]">Linux</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1610261033403400672&JSID=[@JSID@]#Odds-N-Ends">Odds-N-Ends</a><ul><li><a href="/products/linux/ufwfire.sh">UBuntu FireWall Tinkering</a></li>
+<li><a href="/products/linux/freshclam.conf">tahrPuppy and ClamAV</a></li>
+<li><a href="/products/colored.bashrc">Colored Shell Prompts</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1609201101450860255&JSID=[@JSID@]#Lean-Buntu_Scripts">Lean-Buntu Scripts</a><ul><li><a href="/products/linux/lean-buntu/lean-buntu-2016-10-31.tar.gz">lean-buntu-2016-10-31.tar.gz</a></li>
+<li><a href="/products/linux/lean-buntu/lean-buntu-2016-10-31.iso">lean-buntu-2016-10-31.iso</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="[@ALIAS@].?action=login&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Login</span></a></li>
+</ul>
+<!--JEGAS MENU RENDERER END-->

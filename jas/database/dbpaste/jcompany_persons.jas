@@ -1,7 +1,0 @@
-<!--jcompany - jcompanypers search - members-->
-<div id="members" style="display: none;" >
-[@CAPTION@]<br />
-<a href=".?screen=jcompanypers+Search&FBLOK3511=[@UID@]&BFS232U=1&BFS232P=1" target="_blank">Members</a>
-</div>
-<script>if([@UID@]>0){ var el=document.getElementById('members'); el.style.display="";};</script>
-

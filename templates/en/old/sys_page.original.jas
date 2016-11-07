@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <title>sys_page.jas</title>
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+  <!--      _________ _______  _______  ______  _______                        -->
+  <!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+  <!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+  <!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+  <!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+  <!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+  <!--                                                                         -->
+  <!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+</head>
+<body>
+<!--SECTION MAIN BEGIN-->
+<!--JASCID 201211270247-->
+  <div id="jaslogodiv">
+  <center><h3>Welcome to [@JASNAME@]</h3>
+  <!--<center><img class="image" src="/jws/img/icon/JAS/products/jas/256/jas_logo.png" /></center>-->
+    <table>
+    <tr>
+      <td><a href="/"><img class="image" style="padding: 30px" src="[@JASDIRWEBSHARE@]img/logo/jegas/Jegas_26182_Narrow_small_flat.png" alt="" /></a></td>
+      <td>
+        <script>
+        if('[@SESSIONVALID@]'!=='No '){
+          document.write('<center><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/jasjet6.png" /></center>');
+        }else{
+          document.write('<center><img class="image" width="70%" src="[@JASDIRWEBSHARE@]img/logo/jegas/Jjet3_ReadyForWebCircle.png" /></center>');
+        };
+        </script>
+        <center><h2>Jegas Application Server</h2></center>
+      </td>
+      <td><a href="http://www.bbb.org/connecticut/business-reviews/computer-software-publishers-and-developers/jegas-in-ellington-ct-87070681" target="_blank" >
+        <img class="image" style="padding: 30px" src="[@JASDIRWEBSHARE@]img/logo/bbb/accred_bus_black_04.png" alt="Click to see our BBB Rating" /></a>
+      </td>
+    </tr>
+    </table>
+  </center>
+  </div>
+  <script>
+    var el=document.getElementById("jaslogodiv");
+    if ('[@JASHASPANELS@]'=='TRUE'){el.style.display="none";};
+  </script>
+<!--SECTION MAIN END-->
+
+<!--SECTION BLANK BEGIN-->
+<!--SECTION BLANK END-->
+</body>
+</html>

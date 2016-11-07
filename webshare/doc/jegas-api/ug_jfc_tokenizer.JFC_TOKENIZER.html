@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JegasAPI 2016-10-03: ug_jfc_tokenizer: Class JFC_TOKENIZER</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="tipuesearch/jquery.min.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch_data.js"></script>
+<link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+<script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JegasAPI 2016-10-03</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p><p><form class="search-form" action="_tipue_results.html"><div class="search-input"><input type="text" name="q" id="tipue_search_input"></div><div class="search-button"><input type="button" id="tipue_search_button" onclick="this.form.submit();"></div></form>
+<div style="clear: both"></div>
+
+<script>
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        /* 10 items to display seems standard */
+        'show': 10,
+        /* For PasDoc docs, showing urls is not very useful,
+           since the page title already shows the unit and identifier. */
+        'showURL': false
+    });
+});
+</script>
+</p></td><td class="content">
+JegasAPI - www.jegas.com
+<a name="JFC_TOKENIZER"></a><h1 class="cio">Class JFC_TOKENIZER</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="ug_jfc_tokenizer.html">ug_jfc_tokenizer</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type JFC_TOKENIZER = class(<a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a>)</code></p>
+<h2 class="description">Description</h2>
+<p>
+This version allows multi-character &quot;quotes&quot; and allows continuing a previous <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Tokenize">tokenize</a> process if you call <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#TokenizeMore">TokenizeMore</a>. (For say - multi line file processing - very important if multi-line &quot;quotes&quot; allowed.</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DLITEM.html">JFC_DLITEM</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a></li>
+<li class="ancestor"><a class="normal" href="ug_jfc_xdl.JFC_XDL.html">JFC_XDL</a></li>
+<li class="thisitem">JFC_TOKENIZER</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#bCaseSensitive">bCaseSensitive</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#bKeepDebugInfo">bKeepDebugInfo</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#iQuoteMode">iQuoteMode</a></b>: Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#QuotesXDL">QuotesXDL</a></b>: <a  href="ug_jfc_tokenizer.JFC_QUOTEXDL.html">JFC_QUOTEXDL</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#saLastOne">saLastOne</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#sQuotes">sQuotes</a></b>: String;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#sSeparators">sSeparators</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#sWhiteSpace">sWhiteSpace</a></b>: AnsiString;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Constructor <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#create">create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Destructor <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#destroy">destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#DumpToTextFile">DumpToTextFile</a></b>(p_saFileName: AnsiString): word;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#FNextItem_saToken">FNextItem_saToken</a></b>(p_sa:AnsiString;p_bCaseSensitive:Boolean):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#FoundItem_iQuoteID">FoundItem_iQuoteID</a></b>(p_i: Int64):Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#FoundItem_saToken">FoundItem_saToken</a></b>(p_sa:AnsiString;p_bCaseSensitive:Boolean):Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#NthItem_saToken">NthItem_saToken</a></b>(p_i: Int64): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#pvt_CreateItem">pvt_CreateItem</a></b>: <a  href="ug_jfc_tokenizer.JFC_TOKENITEM.html">JFC_TOKENITEM</a>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_i8Pos">read_Item_i8Pos</a></b>:Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_iQuoteID">read_Item_iQuoteID</a></b>:Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_item_saToken">read_item_saToken</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Tokenize">Tokenize</a></b>(p_sa: AnsiString): Int64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Function <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#TokenizeMore">TokenizeMore</a></b>(p_sa: AnsiString): Int64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#pvt_DestroyItem">pvt_DestroyItem</a></b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#SetDefaults">SetDefaults</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_i8Pos">write_Item_i8Pos</a></b>(p_i8: Int64);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_iQuoteID">write_Item_iQuoteID</a></b>(p_i: Int64);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_item_saToken">write_item_saToken</a></b>(p_sa: AnsiString);</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Item_i8Pos">Item_i8Pos</a></b>: Int64 read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_i8Pos">read_Item_i8Pos</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_i8Pos">write_Item_i8Pos</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Item_iQuoteID">Item_iQuoteID</a></b>: Int64 read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_iQuoteID">read_Item_iQuoteID</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_iQuoteID">write_Item_iQuoteID</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Item_saToken">Item_saToken</a></b>: AnsiString read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_item_saToken">read_Item_saToken</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_item_saToken">write_item_saToken</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Token">Token</a></b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uN">uN</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Tokens">Tokens</a></b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uItems">uItems</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bCaseSensitive"></a><code><b>bCaseSensitive</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default FALSE</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bKeepDebugInfo"></a><code><b>bKeepDebugInfo</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Default FALSE (But you better check!)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="iQuoteMode"></a><code><b>iQuoteMode</b>: Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+0 = not in quote mode, otherwise - points to QUOTE mode last in. NEGATIVE Value Means In Single Quote Mode From <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#sQuotes">sQuotes</a>. Value *-1 in this case tels you WHICH Quote.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="QuotesXDL"></a><code><b>QuotesXDL</b>: <a  href="ug_jfc_tokenizer.JFC_QUOTEXDL.html">JFC_QUOTEXDL</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Name Field Has Start Quote, Desc Field has End Quote Load Up With Start and End Quotes - This is designed for Multi Character Start and END Quotes. CAVEATS: (or Blessings) if There is a blank start quote - in the list Tokenizing Starts with the End Quote If there is a Blank End Quote tokenizing starts with the start quote If there is quote item with both - Tokenization stops</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saLastOne"></a><code><b>saLastOne</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sQuotes"></a><code><b>sQuotes</b>: String;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This is designed for SINGLE QUOTE pairs - Where Start and End Quote ARE the SAME Character. These can be Escaped by having two in a row. There are checked AFTER the <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#QuotesXDL">QuotesXDL</a> list is checked due to its &quot;Blank&quot; Quote paradigm. (For Ignoring Stuff) Like These Freepascal Double Slashes for comments! ;)</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sSeparators"></a><code><b>sSeparators</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Separators START New <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Tokens">Tokens</a> Load Up with separators</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sWhiteSpace"></a><code><b>sWhiteSpace</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+<a class="normal" href="uc_console.html#White">White</a> Space Characters Don'<a class="normal" href="t.html">t</a> Make it into <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Tokens">TOKENS</a> unless within quotes. Whitespace shouldn'<a class="normal" href="t.html">t</a> be in quotes. Load Up With WhiteSpace Chars (Get Dropped)</p>
+</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>Constructor <b>create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="destroy"></a><code>Destructor <b>destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DumpToTextFile"></a><code>Function <b>DumpToTextFile</b>(p_saFileName: AnsiString): word;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+dumps the contents of the <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html">JFC_TOKENIZER</a>, great for analysis and debugging.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FNextItem_saToken"></a><code>Function <b>FNextItem_saToken</b>(p_sa:AnsiString;p_bCaseSensitive:Boolean):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundItem_iQuoteID"></a><code>Function <b>FoundItem_iQuoteID</b>(p_i: Int64):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FoundItem_saToken"></a><code>Function <b>FoundItem_saToken</b>(p_sa:AnsiString;p_bCaseSensitive:Boolean):Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="NthItem_saToken"></a><code>Function <b>NthItem_saToken</b>(p_i: Int64): AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+SAFE method - Give me the &quot;<a class="normal" href="ug_jfc_dl.JFC_DL.html#N">N</a>'th&quot; record</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_CreateItem"></a><code>Function <b>pvt_CreateItem</b>: <a  href="ug_jfc_tokenizer.JFC_TOKENITEM.html">JFC_TOKENITEM</a>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_Item_i8Pos"></a><code>Function <b>read_Item_i8Pos</b>:Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_Item_iQuoteID"></a><code>Function <b>read_Item_iQuoteID</b>:Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="read_item_saToken"></a><code>Function <b>read_item_saToken</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Tokenize"></a><code>Function <b>Tokenize</b>(p_sa: AnsiString): Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Deletes <a class="normal" href="ug_jfc_tokenizer.JFC_TOKENIZER.html#Token">Token</a> List</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="TokenizeMore"></a><code>Function <b>TokenizeMore</b>(p_sa: AnsiString): Int64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Continues where it left off</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="pvt_DestroyItem"></a><code>Procedure <b>pvt_DestroyItem</b>(p_lp:pointer); override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SetDefaults"></a><code>Procedure <b>SetDefaults</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_Item_i8Pos"></a><code>Procedure <b>write_Item_i8Pos</b>(p_i8: Int64);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_Item_iQuoteID"></a><code>Procedure <b>write_Item_iQuoteID</b>(p_i: Int64);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="write_item_saToken"></a><code>Procedure <b>write_item_saToken</b>(p_sa: AnsiString);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_i8Pos"></a><code>property <b>Item_i8Pos</b>: Int64 read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_i8Pos">read_Item_i8Pos</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_i8Pos">write_Item_i8Pos</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_iQuoteID"></a><code>property <b>Item_iQuoteID</b>: Int64 read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_Item_iQuoteID">read_Item_iQuoteID</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_Item_iQuoteID">write_Item_iQuoteID</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Item_saToken"></a><code>property <b>Item_saToken</b>: AnsiString read <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#read_item_saToken">read_Item_saToken</a> Write <a  href="ug_jfc_tokenizer.JFC_TOKENIZER.html#write_item_saToken">write_item_saToken</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Token"></a><code>property <b>Token</b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uN">uN</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+same as &quot;<a class="normal" href="ug_jfc_dl.JFC_DL.html#N">N</a>&quot; - The Sequential Position in <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> for example.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Tokens"></a><code>property <b>Tokens</b>: UInt64 read <a  href="ug_jfc_dl.JFC_DL.html#uItems">uItems</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+same as <a class="normal" href="ug_jfc_dl.JFC_DL.html#ListCount">listcount</a> in <a class="normal" href="ug_jfc_dl.JFC_DL.html">JFC_DL</a> for example.</p>
+</td></tr>
+</table>
+JegasAPI - www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

@@ -1,0 +1,302 @@
+
+
+<!--JEGAS MENU RENDERER START-->
+<!--JEGAS MENU ID: 1-->
+<!--JEGAS USER ID: 1-->
+<!--JEGAS PATHDL.ListCount:1-->
+<!--JEGAS Initial MENU PARENT ID to Traverse:1-->
+<ul class="jas-menu"><li><a href=".?JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Home</span></a></li>
+<li><a href="/.?page=page_topmenu_crm&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">CRM</span></a><ul><li><a href="/?[@MT@]&MID=2012040619171326425&JSID=[@JSID@]">World</a><ul><li><a href="/?[@MT@]&MID=2012040612530252231&JSID=[@JSID@]#Entities">Entities</a><ul><li><a href="/?screen=jlead%20Search&JSID=[@JSID@]" target="_blank">Leads</a></li>
+<li><a href="/?Screen=jorgpers%20Search&JSID=[@JSID@]" target="_blank">Members</a></li>
+<li><a href="/?Screen=jorg%20Search&JSID=[@JSID@]" target="_blank">Organizations</a></li>
+<li><a href="/?screen=jperson%20Search&JSID=[@JSID@]" target="_blank">People</a></li>
+<li><a href="/?Screen=jpersonskill%20Search&JSID=[@JSID@]" target="_blank">People and Skills</a></li>
+<li><a href="/?Screen=jteam%20Search&JSID=[@JSID@]" target="_blank">Teams</a></li>
+<li><a href="/?screen=jteammember%20Search&JSID=[@JSID@]" target="_blank">Team Members</a></li>
+<li><a href="/?action=updateorgmembers&JSID=[@JSID@]" target="_blank">Update Members</a></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1605271621512070006&JSID=[@JSID@]#Inventory">Inventory</a><ul><li><a href="/?Screen=jproductgrp%20Search&JSID=[@JSID@]" target="_blank">Product Groups</a></li>
+<li><a href="/?Screen=jproductqty%20Search&JSID=[@JSID@]" target="_blank">Product Quantities</a></li>
+<li><a href="/?screen=jproduct%20Search&JSID=[@JSID@]" target="_blank">Products</a></li>
+<li><a href="/?screen=jperson+Search&BFS435U=1&BFS435P=1&FBLOK2012041619373695994=TRUE&JSID=[@JSID@]" target="_blank">Vendor Individuals</a></li>
+<li><a href="/?screen=jorg+Search&BFS217U=1&BFS217P=1&FBLOK2012041619095617775=TRUE&JSID=[@JSID@]" target="_blank">Vendor Organizations</a></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1605271619524190005&JSID=[@JSID@]#Sales">Sales</a><ul><li><a href="/?screen=jinvoicelines+Search&JSID=[@JSID@]" target="_blank">Invoice Lines</a></li>
+<li><a href="/?screen=jinvoice%20Search&JSID=[@JSID@]" target="_blank">Invoices</a></li>
+<li><a href="/?screen=jlead%20Search&JSID=[@JSID@]" target="_blank">Leads</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=2012040611143935307&JSID=[@JSID@]">Export</a><ul><li><a href="/?[@MT@]&MID=2012040611152833992&JSID=[@JSID@]#Views">Views</a><ul><li><a href="/?screen=view_case+Search&JSID=[@JSID@]" target="_blank">Case Export</a></li>
+<li><a href="[@ALIAS@].?Screen=view%5Forg%20Search&JSID=[@JSID@]" target="_blank">Organization Export</a></li>
+<li><a href="/?screen=view_inventory+Search&JSID=[@JSID@]" target="_blank">Inventory Export</a></li>
+<li><a href="/?screen=view_invoice+Search&JSID=[@JSID@]" target="_blank">Invoice Export</a></li>
+<li><a href="/?screen=view_lead+Search&JSID=[@JSID@]" target="_blank">Lead Export</a></li>
+<li><a href="/?screen=view_person+Search&JSID=[@JSID@]" target="_blank">People Export</a></li>
+<li><a href="/?screen=view_project+Search&JSID=[@JSID@]" target="_blank">Project Export</a></li>
+<li><a href="/?screen=view_task+Search&JSID=[@JSID@]" target="_blank">Task Export</a></li>
+<li><a href="/?screen=view_team+Search&JSID=[@JSID@]" target="_blank">Team Export</a></li>
+<li><a href="/?screen=view_time+Search&JSID=[@JSID@]" target="_blank">Timecard Export</a></li>
+<li><a href="/?screen=view_vendor+Search&JSID=[@JSID@]" target="_blank">Vendor Export</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1083&JSID=[@JSID@]">Work</a><ul><li><a href="/?[@MT@]&MID=2012040311472718006&JSID=[@JSID@]#First_Glance">First Glance</a><ul><li><a href="/?action=JAS_Calendar&JSID=[@JSID@]" target="_blank">Calendar</a></li>
+<li><a href="/.?screen=public_view_jtask%20Search&JSID=[@JSID@]" target="_blank">Public Project Tasks</a></li>
+<li><a href="/.?screen=public_view_jproject%20Search&JSID=[@JSID@]" target="_blank">Public Projects</a></li>
+<li><a href="[@ALIAS@].?page=sys_page_emailsend&JSID=[@JSID@]" target="_blank">Send Email</a></li>
+<li><a href="/?Screen=jtimecard+Search&JSID=[@JSID@]" target="_blank">Timecard</a></li>
+<li><a href="[@ALIAS@].?screen=jtask+Search&JSID=[@JSID@]" target="_blank">Tasks</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1609102151482630190&JSID=[@JSID@]&screen=jproject%20Search" target="_blank">Projects</a></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1370&JSID=[@JSID@]#Tools">Tools</a><ul><li><a href="/?screen=jfile+Search&JSID=[@JSID@]" target="_blank">Files</a></li>
+<li><a href="/?Screen=jjobq Search&JSID=[@JSID@]" target="_blank">Job Queue</a></li>
+<li><a href="/?screen=jnote+Search&JSID=[@JSID@]" target="_blank">Notes</a></li>
+<li><a href="/?screen=jpassword+Search&JSID=[@JSID@]" target="_blank">Passwords</a></li>
+<li><a href="/?Screen=jquicklink%20Search&JSID=[@JSID@]" target="_blank">Quick Links</a></li>
+<li><a href="/?AREA=sys_area&PAGE=dev_view_html&JSID=[@JSID@]" target="_blank">Render HTML</a></li>
+<li><a href="/?screen=jscreen%20Search&JSID=[@JSID@]" target="_blank">Screens</a></li>
+<li><a href="/?MT=1271&JSID=[@JSID@]" target="_blank">System Folders</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_admin&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Admin</span></a><ul><li><a href="/?[@MT@]&MID=1245&JSID=[@JSID@]">Appearance</a><ul><li><a href="/?[@MT@]&MID=1065&JSID=[@JSID@]#Icon_Helper">Icon Helper</a><ul><li><a href="/?Screen=jiconcontext%20Search&JSID=[@JSID@]" target="_blank">Category</a></li>
+<li><a href="/jws/img/icon/&JSID=[@JSID@]" target="_blank">Icon Library</a></li>
+<li><a href="/?Screen=jiconmaster%20Search&JSID=[@JSID@]" target="_blank">Master List</a></li>
+<li><a href="/?Action=JIconHelper&subaction=themetools&JSID=[@JSID@]" target="_blank">Theme Tools</a></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1053&JSID=[@JSID@]#Screens">Screens</a><ul><li><a href="/?Screen=jcaption%20Search&JSID=[@JSID@]" target="_blank">Captions</a></li>
+<li><a href="/?screen=jclickaction+Search&JSID=[@JSID@]" target="_blank">Clickaction Types</a></li>
+<li><a href="/.?screen=jthemecolor%20Search&JSID=[@JSID@]" target="_blank">Color Themes</a></li>
+<li><a href="/.?screen=jhelp+Search&JSID=[@JSID@]" target="_blank">Help</a></li>
+<li><a href="/?Screen=jblok%20Search&JSID=[@JSID@]" target="_blank">jblok</a></li>
+<li><a href="/?Screen=jblokbutton%20Search&JSID=[@JSID@]" target="_blank">jblokbutton</a></li>
+<li><a href="/?Screen=jblokfield%20Search&JSID=[@JSID@]" target="_blank">jblokfield</a></li>
+<li><a href="/?Screen=jbloktype%20Search&JSID=[@JSID@]" target="_blank">jbloktype</a></li>
+<li><a href="/?Screen=jbuttontype%20Search&JSID=[@JSID@]" target="_blank">jbuttontype</a></li>
+<li><a href="/?Screen=jscreentype%20Search&JSID=[@JSID@]" target="_blank">jscreentype</a></li>
+<li><a href="/?ACTION=MenuEditor&JSID=[@JSID@]" target="_blank">Menu Editor</a></li>
+<li><a href="/?screen=view_menu+Search&JSID=[@JSID@]" target="_blank">Menu Export</a></li>
+<li><a href="/?screen=jmenu+Search&JSID=[@JSID@]" target="_blank">Menu Items</a></li>
+<li><a href="/?screen=jscreen%20Search&JSID=[@JSID@]" target="_blank">Screen Search</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=233&JSID=[@JSID@]">Configuration</a><ul><li><a href="/.?[@MT@]&MID=1605271359525410002&JSID=[@JSID@]#Lookups">Lookups</a><ul><li><a href="/?screen=jcasecategory%20Search&JSID=[@JSID@]" target="_blank">Case Categories</a></li>
+<li><a href="/?screen=jcasesource%20Search&JSID=[@JSID@]" target="_blank">Case Sources</a></li>
+<li><a href="/?screen=jcasesubject%20Search&JSID=[@JSID@]" target="_blank">Case Subjects</a></li>
+<li><a href="/?screen=jcasetype%20Search&JSID=[@JSID@]" target="_blank">Case Types</a></li>
+<li><a href="/?screen=jdtype+Search&JSID=[@JSID@]" target="_blank">Data Types</a></li>
+<li><a href="/?Screen=jlookup+Search&FBLOK2012041419564034089=Department&JSID=[@JSID@]" target="_blank">Departments</a></li>
+<li><a href="/?screen=jindustry+Search&JSID=[@JSID@]" target="_blank">Industries</a></li>
+<li><a href="/?screen=jinterface+Search&JSID=[@JSID@]" target="_blank">Interfaces</a></li>
+<li><a href="/.?screen=jiplistlu+Search&JSID=[@JSID@]" target="_blank">IP List Types</a></li>
+<li><a href="/?screen=jjobtype+Search&JSID=[@JSID@]" target="_blank">JobQ Types</a></li>
+<li><a href="/?screen=jlanguage Search&JSID=[@JSID@]" target="_blank">Languages</a></li>
+<li><a href="/?screen=jleadsource+Search&JSID=[@JSID@]" target="_blank">Lead Sources</a></li>
+<li><a href="/?screen=jlogtype+Search&JSID=[@JSID@]" target="_blank">Log Entry Types</a></li>
+<li><a href="/?screen=jlookup+Search&JSID=[@JSID@]" target="_blank">Lookups</a></li>
+<li><a href="/?Screen=jmime+Search&JSID=[@JSID@]" target="_blank">MIME Types</a></li>
+<li><a href="/?screen=jpriority%20Search&JSID=[@JSID@]" target="_blank">Priorities</a></li>
+<li><a href="/?screen=jpriority%20Search&JSID=[@JSID@]" target="_blank">Priority Lookup List</a></li>
+<li><a href="/?Screen=jprojectcategory%20Search&JSID=[@JSID@]" target="_blank">Project Categories</a></li>
+<li><a href="/?screen=jprojectstatus%20Search&JSID=[@JSID@]" target="_blank">Project Status Lookup List</a></li>
+<li><a href="/?screen=jredirectlu%20Search&JSID=[@JSID@]" target="_blank">Redirect Lookup Table</a></li>
+<li><a href="/?screen=jsessiontype+Search&JSID=[@JSID@]" target="_blank">Session Types</a></li>
+<li><a href="/?screen=jskill+Search&JSID=[@JSID@]" target="_blank">Skills</a></li>
+<li><a href="/?Screen=jstatus+Search&JSID=[@JSID@]" target="_blank">Statuses</a></li>
+<li><a href="/?screen=jtabletype+Search&JSID=[@JSID@]" target="_blank">Table Types</a></li>
+<li><a href="/?screen=jtaskcategory+Search&JSID=[@JSID@]" target="_blank">Task Categories</a></li>
+<li><a href="/?screen=jwidget+Search&JSID=[@JSID@]" target="_blank">Web Widgets</a></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1023&JSID=[@JSID@]#Modules">Modules</a><ul><li><a href="/?screen=jmoduleconfig%20Search&JSID=[@JSID@]" target="_blank">Configuration</a></li>
+<li><a href="/?screen=jinstalled%20Search&JSID=[@JSID@]" target="_blank">Installations</a></li>
+<li><a href="/?screen=jmodule%20Search&JSID=[@JSID@]" target="_blank">Modules</a></li>
+<li><a href="/?screen=jmodc+Search&JSID=[@JSID@]" target="_blank">Module Columns</a></li>
+<li><a href="/?screen=jmodulesetting%20Search&JSID=[@JSID@]" target="_blank">Settings</a></li>
+<li><a href="/?screen=jsysmodule+Search&JSID=[@JSID@]" target="_blank">System Modules</a></li>
+<li><a href="/?screen=jsysmodulelink+Search&JSID=[@JSID@]" target="_blank">System Module Links</a></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1699&JSID=[@JSID@]#Settings">Settings</a><ul><li><a href="/?screen=jalias+Search&JSID=[@JSID@]" target="_blank">Aliases</a></li>
+<li><a href="/?screen=jthemecolor+Search&JSID=[@JSID@]" target="_blank">Color Themes</a></li>
+<li><a href="/?screen=jthemeicon+Search&JSID=[@JSID@]" target="_blank">Icon Themes</a></li>
+<li><a href="/?screen=jindexfile+Search&JSID=[@JSID@]" target="_blank">Index File Names</a></li>
+<li><a href="/?screen=jasident+Search&JSID=[@JSID@]" target="_blank">JAS IDENT</a></li>
+<li><a href="/?screen=jredirect%20Search&JSID=[@JSID@]" target="_blank">Redirection Table</a></li>
+<li><a href="/?screen=jvhost+Search&JSID=[@JSID@]" target="_blank">Virtual Hosts</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1493&JSID=[@JSID@]#User_Preferences">User Preferences</a><ul><li><a href="/?screen=jfiltersave+Search&JSID=[@JSID@]" target="_blank">Filters</a></li>
+<li><a href="/?screen=jfiltersavedef+Search&JSID=[@JSID@]" target="_blank">Filter Defaults</a></li>
+<li><a href="/?screen=jfiltersave+Search&JSID=[@JSID@]" target="_blank">Saved Filters</a></li>
+<li><a href="/?screen=juserpreflink%20Search&JSID=[@JSID@]" target="_blank">User Preferences</a></li>
+<li><a href="/?Screen=juserpref Search&JSID=[@JSID@]" target="_blank">User Preference Types</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=220&JSID=[@JSID@]">Database</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=221&JSID=[@JSID@]#Administration">Administration</a><ul><li><a href="[@ALIAS@].?Screen=jtable%20Search&SORTCOLUMN=JTabl_Name&SORTASCENDING=true&JSID=[@JSID@]" target="_blank">Tables</a></li>
+<li><a href="[@ALIAS@].?Screen=jcolumn%20Search&Sortcolumn=JColu_Name&SortAscending=true&JSID=[@JSID@]" target="_blank">Columns</a></li>
+<li><a href="[@ALIAS@].?screen=jscreen%20Search&JSID=[@JSID@]" target="_blank">Screens</a></li>
+<li><a href="[@ALIAS@].?action=DBM_LearnTables&JSID=[@JSID@]" target="_blank">Learn Tables</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1267&JSID=[@JSID@]#Analysis">Analysis</a><ul><li><a href="[@ALIAS@].?Action=DBM_FindDupeUID&JSID=[@JSID@]" target="_blank">Check for UID Duplicates</a></li>
+<li><a href="[@ALIAS@].?ACTION=JASSQLTool&JSID=[@JSID@]" target="_blank">SQL Query Tool</a></li>
+<li><a href="javascript: if(confirm('Syncronize screen fields with the JAS columns?')){NewWindow('[@ALIAS@].?Action=SyncScreenFields&JSID=[@JSID@]');};">Sync Screen Fields With JAS Column</a></li>
+<li><a href="javascript: if(confirm('Syncronize JAS columns with the database fields?')){NewWindow('[@ALIAS@].?action=syncdbmscolumns&JSID=[@JSID@]');};">Syncronize JAS Columns with DBMS</a></li>
+<li><a href="[@ALIAS@].?Action=csvimport&JSID=[@JSID@]" target="_blank">Upload Data to JAS</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1055&JSID=[@JSID@]#Connections">Connections</a><ul><li><a href="[@ALIAS@].?screen=jadodriver%20Search&JSID=[@JSID@]" target="_blank">DBMS Drivers</a></li>
+<li><a href="[@ALIAS@].?screen=jadodbms%20Search&JSID=[@JSID@]" target="_blank">DBMS Systems</a></li>
+<li><a href="[@ALIAS@].?Action=DBM_DiffTool&JSID=[@JSID@]" target="_blank">Diff Tool</a></li>
+<li><a href="[@ALIAS@].?screen=jdconnection+Search&JSID=[@JSID@]" target="_blank">Manage Connections</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1722&JSID=[@JSID@]#Orphans">Orphans</a><ul><li><a href="javascript: if(confirm('Kill Orphans? (You Animal!)')){NewWindow('[@ALIAS@].?Action=KillOrphans&JSID=[@JSID@]');};">Delete Orphaned Records</a></li>
+<li><a href="javascript: if(confirm('Flag Orphan Caption Record?')){NewWindow('[@ALIAS@].?action=jcaptionflagorphans&JSID=[@JSID@]');};">Flag Orphan Captions</a></li>
+<li><a href="javascript: if(confirm('Flag Orphan Note Records?')){NewWindow('/?action=jnoteflagorphans&JSID=[@JSID@]');};">Flag Orphan Notes</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=2012100222593146605&JSID=[@JSID@]#Record_Locking">Record Locking</a><ul><li><a href="/?screen=jlock%20Search&JSID=[@JSID@]" target="_blank">Manage Record Locks</a></li>
+<li><a href="javascript: if(confirm('Wipe ALL record locks  currently in the system?')){NewWindow('[@ALIAS@].?action=wipeallrecordlocks&JSID=[@JSID@]');};">Wipe ALL Record Locks</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1605031936381460050&JSID=[@JSID@]">Logs Trash N Cache</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1027&JSID=[@JSID@]#Logs">Logs</a><ul><li><a href="/.?screen=jaccesslog%20Search&JSID=[@JSID@]" target="_blank">Access Log Imports</a></li>
+<li><a href="/.?screen=jerrorlog%20Search&JSID=[@JSID@]" target="_blank">Error Log Imports</a></li>
+<li><a href="/?screen=jegaslog%20Search&JSID=[@JSID@]" target="_blank">JegasLog.csv Imports</a></li>
+<li><a href="/?screen=jlog%20Search&JSID=[@JSID@]" target="_blank">JLog - Table</a></li>
+<li><a href="/.?Screen=jrequestlog%20Search&JSID=[@JSID@]" target="_blank">Server Request Log</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1605031939514920073&JSID=[@JSID@]#Trash_N_Cache">Trash N Cache</a><ul><li><a href="javascript: if(confirm('Empty the Cache?')){NewWindow('[@ALIAS@].?action=emptycache&JSID=[@JSID@]');};">Empty Cache</a></li>
+<li><a href="javascript: if(confirm('Empty the Trash?')){NewWindow('[@ALIAS@].?Action=EmptyTrash&JSID=[@JSID@]');};">Empty the Trash</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=222&JSID=[@JSID@]">Security</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1449&JSID=[@JSID@]#Permissions">Permissions</a><ul><li><a href="/?screen=jsecgrplink%20Search&JSID=[@JSID@]" target="_blank">Group Permissions</a></li>
+<li><a href="/?screen=jsecperm Search&JSID=[@JSID@]" target="_blank">System Permissions</a></li>
+<li><a href="/?screen=jsecpermuserlink%20Search&JSID=[@JSID@]" target="_blank">User Permissions</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1104&JSID=[@JSID@]#Security_Maintenance">Security Maintenance</a><ul><li><a href="javascript: if(confirm('ARE YOU POSITIVELY SURE YOU WANT TO GENERATE NEW SECURITY KEYS?')){NewWindow('[@ALIAS@].?action=generateseckeys&JSID=[@JSID@]');};">Generate Security Keys</a></li>
+<li><a href="/?screen=jiplist+Search&JSID=[@JSID@]" target="_blank">IP Lists</a></li>
+<li><a href="/.?screen=jpunkbait%20Search&JSID=[@JSID@]" target="_blank">PunkBait</a></li>
+<li><a href="/?screen=jseckey+Search&JSID=[@JSID@]" target="_blank">Security Keys</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1072&JSID=[@JSID@]#System_Usage">System Usage</a><ul><li><a href="/?screen=jsession%20Search&JSID=[@JSID@]" target="_blank">Active Sessions</a></li>
+<li><a href="/?Screen=jtrak%20Search&JSID=[@JSID@]" target="_blank">JTrak Audit</a></li>
+<li><a href="/?Screen=jdownloadfilelist Search&JSID=[@JSID@]">Monitored Downloads</a></li>
+<li><a href="/?screen=jsessiondata+Search&JSID=[@JSID@]" target="_blank">Session Data</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=223&JSID=[@JSID@]#Users">Users</a><ul><li><a href="/?screen=jsecgrpuserlink%20Search&JSID=[@JSID@]" target="_blank">Group Members</a></li>
+<li><a href="/?screen=jsecgrp%20Search&JSID=[@JSID@]" target="_blank">Groups</a></li>
+<li><a href="/?screen=juser%20Search&JSID=[@JSID@]" target="_blank">Users</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1156&JSID=[@JSID@]">Utilities</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=386&JSID=[@JSID@]#Development">Development</a><ul><li><a href="[@ALIAS@].?page=sys_page_dbmaster&JSID=[@JSID@]" target="_blank">DB Master Utility</a></li>
+<li><a href="/?screen=jdebug+Search&JSID=[@JSID@]" target="_blank">Debug Entries</a></li>
+<li><a href="/?ACTION=DiagnosticHtmlDump&area=sys_area&page=sys_messages&section=DIAGNOSTIC_HTMLDUMP&JSID=[@JSID@]" target="_blank">Forced Diagnostic HTML Dump</a></li>
+<li><a href="[@ALIAS@]?AREA=sys_area&PAGE=sys_page_dev_view_html&JSID=[@JSID@]" target="_blank">Interpret HTML</a></li>
+<li><a href="javascript: if(confirm('Revert to the default security settings?')){NewWindow('[@ALIAS@].?jasapi=setdefaultsecuritysettings&JSID=[@JSID@]');};">Set Default Security Settings</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=2012102708301155507&JSID=[@JSID@]#Distribution" target="_blank">Distribution</a><ul><li><a href="/jws/doc/.?JSID=[@JSID@]" target="_blank">Help</a></li>
+<li><a href="/.?[@MT@]&MID=1211290039278150069&screen=jhelp+Search&JSID=[@JSID@]" target="_blank">Help Authoring</a></li>
+<li><a href="javascript: if(confirm('Flag JAS Rows?')){NewWindow('[@ALIAS@].?page=sys_page_flagjasrow&JSID=[@JSID@]');};">Flag JAS Rows</a></li>
+<li><a href="javascript: if(confirm('Scrub Database?')){NewWindow('[@ALIAS@].?action=databasescrub&JSID=[@JSID@]');};">Scrub Database</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1605271648388390010&JSID=[@JSID@]#Other">Other</a><ul><li><a href="[@ALIAS@].?Screen=jdownloadfilelist Search&JSID=[@JSID@]">Download File List</a></li>
+<li><a href="[@ALIAS@].?page=sys_page_admin_utility_cycleorshutdown&JSID=[@JSID@]" target="_blank">Cycle or Restart</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_preferences&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Preferences</span></a><ul><li><a href="/?[@MT@]&MID=1720&JSID=[@JSID@]">Visuals</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1235&JSID=[@JSID@]#Display">Display</a><ul><li><a href="javascript: HeadersOn('[@JSID@]');">Headers On</a></li>
+<li><a href="javascript: HeadersOff('[@JSID@]');">Headers Off</a></li>
+<li><a href="javascript: QuickLinksOn('[@JSID@]');">Quicklinks On</a></li>
+<li><a href="javascript: QuickLinksOff('[@JSID@]');">Quicklinks Off</a></li>
+<li><a href="[@ALIAS@].?action=userbackground&JSID=[@JSID@]" target="_blank">Choose Background</a></li>
+<li><a href="javascript: BackgroundRepeatOn('[@JSID@]');">Background Repeat On</a></li>
+<li><a href="javascript: BackgroundRepeatOff('[@JSID@]');">Background Repeat Off</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1214&JSID=[@JSID@]#Icon_Themes">Icon Themes</a><ul><li><a href="javascript: seticontheme('CrystalClear','[@JSID@]');">CrystalClear</a></li>
+<li><a href="javascript: seticontheme('Nuvola','[@JSID@]');">Nuvola</a></li>
+<li><a href="javascript: seticontheme('NuoveXT','[@JSID@]');">NuoveXT</a></li>
+<li><a href="javascript: seticontheme('VistaInspirate','[@JSID@]');">VistaInspirate</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1215&JSID=[@JSID@]#Themes">Themes</a><ul><li><a href="javascript: settheme('aquabluenebula','[@JSID@]');">Aqua-Blue Nebula</a></li>
+<li><a href="javascript: settheme('black','[@JSID@]');">Black</a></li>
+<li><a href="javascript: settheme('blue','[@JSID@]');">Blue</a></li>
+<li><a href="javascript: settheme('bluenebula','[@JSID@]');">Blue Nebula</a></li>
+<li><a href="javascript: settheme('bluesky','[@JSID@]');">Blue Sky</a></li>
+<li><a href="javascript: settheme('brown','[@JSID@]');">Brown</a></li>
+<li><a href="javascript: settheme('crimsonnebula','[@JSID@]');">Crimson Nebula</a></li>
+<li><a href="javascript: settheme('darkbluenebula','[@JSID@]');">Darkblue Nebula</a></li>
+<li><a href="javascript: settheme('green','[@JSID@]');">Green</a></li>
+<li><a href="javascript: settheme('greennebula','[@JSID@]');">Green Nebula</a></li>
+<li><a href="javascript: settheme('industrial','[@JSID@]');">Industrial</a></li>
+<li><a href="javascript: settheme('outerspace','[@JSID@]');">Outerspace</a></li>
+<li><a href="javascript: settheme('peach','[@JSID@]');">Peach</a></li>
+<li><a href="javascript: settheme('pink','[@JSID@]');">Pink</a></li>
+<li><a href="javascript: settheme('purplehaze','[@JSID@]');">Purple Haze</a></li>
+<li><a href="javascript: settheme('purplenebula','[@JSID@]');">Purple Nebula</a></li>
+<li><a href="javascript: settheme('royalblue','[@JSID@]');">Royal Blue</a></li>
+<li><a href="javascript: settheme('wood','[@JSID@]');">Wood</a></li>
+<li><a href="javascript: settheme('yellow','[@JSID@]');">Yellow</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1717&JSID=[@JSID@]">System</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1718&JSID=[@JSID@]#General">General</a><ul><li><a href="[@ALIAS@].?screen=juserpreflink%20Search&FBLOK2502=0&JSID=[@JSID@]" target="_blank">System Settings</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_products&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Products</span></a><ul><li><a href="/.?MT=1&MID=1602140113503020000&JSID=[@JSID@]">JAS / JegasCRM</a><ul><li><a href="[@ALIAS@].?MT=1&MID=1608161007201480276&JSID=[@JSID@]#What_Is_JAS">What Is JAS</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1608161007201480276">What Is JAS Anyway?</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1512090923129990013&JSID=[@JSID@]#Get_JAS_Fast">Get JAS FAST</a><ul><li><a href="/products/jas/jas-2016-11-04.iso" target="_blank">ITS IN HERE</a></li>
+<li><a href="/jws/doc/jasapi/index.html?JSID=[@JSID@]" target="_blank">JAS Reference Manual</a></li>
+<li><a href="[@ALIAS@].?action=createjet&JSID=[@JSID@]" target="_blank">JAS Jet</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1608250855434260295&JSID=[@JSID@]&action=removejet">SHOOT JET OUT OF THE AIR</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1511231929335240017&JSID=[@JSID@]#Open_Source">Open Source</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1511231950161030018&JSID=[@JSID@]">JegasCRM Project</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/?[@MT@]&MID=1183&JSID=[@JSID@]">JAS Credits</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1184&JSID=[@JSID@]#JAS">JAS</a><ul><li><a href="[@ALIAS@]?[@MT@]&MID=1186&JSID=[@JSID@]">JAS Logo</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1185&JSID=[@JSID@]">Jegas Application Server</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1187&JSID=[@JSID@]#Credits">Credits</a></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1207&JSID=[@JSID@]#Free_Pascal">Free Pascal</a><ul><li><a href="http://www.freepascal.org" target="_blank">FreePascal</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1208&JSID=[@JSID@]#IWF">IWF</a><ul><li><a href="http://sourceforge.net/projects/iwf/" target="_blank">IWF - Interactive Web Framework</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1209&JSID=[@JSID@]#Synapse">Synapse</a><ul><li><a href="http://synapse.ararat.cz" target="_blank">Synapse</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1440&JSID=[@JSID@]#Date_Time_Picker">Date Time Picker</a><ul><li><a href="http://www.rainforestnet.com" target="_blank">My Date Time Picker</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1211&JSID=[@JSID@]#Free_Business_Desktop_Icons">Free Business Desktop Icons</a><ul><li><a href="http://www.desktop-icon.com/stock-icons/free-business-desktop-icons.htm" target="_blank">Free Business Desktop Icons</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1605051723414110002&JSID=[@JSID@]">JegasAPI</a><ul><li><a href="/products/jegasapi/jegasapi-2016-05-05.zip&JSID=[@JSID@]" target="_blank">JegasAPI</a><ul><li><a href="/products/jegasapi/jegasapi-2016-10-03.zip">Download JegasAPI</a></li>
+<li><a href="/products/jegasapi/reference-manual/index.html" target="_blank">Jegas API Reference Manual</a></li>
+<li><a href="https://github.com/jasonpsage/JegasAPI" target="_blank">JegasAPI on GIT-Hub</a></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?MT=1&MID=1512090834342530004&JSID=[@JSID@]">Utilities</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1512191516515350005&JSID=[@JSID@]#JegasBackup">JegasBackup</a><ul><li><a href="/products/jegasbackup/jegas-backup-2016-07-12.zip">Linux x86_64 and Win32 Bundle - 2016-07-12</a></li>
+<li><a href="https://github.com/jasonpsage/JegasBackup" target="_blank">JegasBackup on Git-Hub</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1512090834342530004&JSID=[@JSID@]#JegasEdit">JegasEdit</a><ul><li><a href="/products/jegasedit/jegasedit-2016-07-12-setup-win32.zip">Windows 32Bit - 2016-07-12</a></li>
+<li><a href="/products/jegasedit/jegasedit-2016-10-18-x86_64-linux.tar.gz">Linux 64 Bit - 2016-10-18</a></li>
+<li><a href="/products/jegasedit/jegasedit.0.67.tar.gz?JSID=[@JSID@]">Linux 32 - Old but works</a></li>
+<li><a href="/products/jegasedit/highcontrast_jegasedit.cfg" target="_blank">Dark Theme</a></li>
+</ul></li>
+<li><a href="/.?[@MT@]&MID=1512291802048680021&JSID=[@JSID@]#RecurseCmd">RecurseCmd</a><ul><li><a href="/products/recursecmd/jegas-recurse-commander-posix-x86_64.0.0.2.zip">Linux x86_64</a></li>
+<li><a href="/products/recursecmd/jegas-recurse-commander-windows-n-linux-2016-05-20.zip">Recurse Commander Bundle 2016-05-20</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1610032006217660138&JSID=[@JSID@]#Jegas_Recursive_FTP">Jegas Recursive FTP</a><ul><li><a href="/products/jegasftp/jegasftp.x86_64-2016-10-07.tar.gz">jegasftp.x86_64.2016-10-07.tar.gz</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1611031717452140246&JSID=[@JSID@]">Springli Timer</a><ul><li><a href="/products/springlitimer/springlitimer-2016-11-03-x86_64.tar.gz">Springli Timer 2016-11-03-x86_64.tar.gz</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="/.?page=page_topmenu_archives&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Archives</span></a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1605171324373630004&JSID=[@JSID@]" target="_blank">Blog</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1605171324373630004&JSID=[@JSID@]#Blog" target="_blank">Blog</a><ul><li><a href="[@ALIAS@]?UID=1609130803429230336&SCREENID=1605162005101550049&JSID=[@JSID@]" target="_blank">Current Article</a></li>
+<li><a href="/.?screen=jblog%20Search&JSID=[@JSID@]">History</a></li>
+</ul></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1609201232586490215&JSID=[@JSID@]">Linux</a><ul><li><a href="[@ALIAS@].?[@MT@]&MID=1610261033403400672&JSID=[@JSID@]#Odds-N-Ends">Odds-N-Ends</a><ul><li><a href="/products/linux/ufwfire.sh">UBuntu FireWall Tinkering</a></li>
+<li><a href="/products/linux/freshclam.conf">tahrPuppy and ClamAV</a></li>
+<li><a href="/products/colored.bashrc">Colored Shell Prompts</a></li>
+</ul></li>
+<li><a href="[@ALIAS@].?[@MT@]&MID=1609201101450860255&JSID=[@JSID@]#Lean-Buntu_Scripts">Lean-Buntu Scripts</a><ul><li><a href="/products/linux/lean-buntu/lean-buntu-2016-10-31.tar.gz">lean-buntu-2016-10-31.tar.gz</a></li>
+<li><a href="/products/linux/lean-buntu/lean-buntu-2016-10-31.iso">lean-buntu-2016-10-31.iso</a></li>
+<li><a href="/products/linux/lean-buntu/lean-buntu-2016-10-31.iso-md5.txt">lean-buntu-2016-10-31.iso-md5.txt</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="[@ALIAS@].?Action=Logout&JSID=[@JSID@]"><span class="l"></span><span class="r"></span><span class="t">Log Out</span></a></li>
+</ul>
+<!--JEGAS MENU RENDERER END-->

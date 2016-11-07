@@ -1,6 +1,0 @@
-<a target="_blank" href="" id="link2012091604451620016" name="link2012091604451620016">[@VRVID_VRVID_Filename@]</a>
-<script language="javascript">
-  var el2012091604451620016=document.getElementById("link2012091604451620016");
-  el2012091604451620016.href=sVRoosterVideoPath('[@VRVID_VREvent_ID@]')+encodeURI('[@VRVID_Filename@]');
-</script>
- 

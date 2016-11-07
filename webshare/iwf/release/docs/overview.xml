@@ -1,0 +1,140 @@
+<response>
+	<action type='html' target='iwfContent'>
+		<a name='overview' />
+		<h2>Overview</h2>
+		<p>
+		<a href='http://iwf.sourceforge.net'>Interactive Website Framework</a>, or IWF, is essentially a set of javascripts which encapsulate a large
+		portion of the "grunt work" required when making highly interactive websites.  A highly interactive
+		website can be defined as a site which performs background http requests (Ajax), permits smooth
+		transitioning of elements' visibility and location (Animation), and immediate form validation.
+		</p>
+		<h3>Intuitive API</h3>
+		<p>
+		IWF has been designed from the ground up to allow for a "typical" web developer to be able to
+		harness its power without changing his or her methodologies drastically.
+		</p>
+		<p>
+		All IWF-related javascript and HTML has '<code>iwf</code>' as the prefix -- <code>iwfRequest()</code>, <code>iwfGetById()</code>, <code>iwfOnRequestError()</code>, etc.
+		The only exception to this are 'private' functions which should be used internally by IWF itself -- these have a '<code>_iwf</code>' prefix.
+		This '<code>iwf</code>' prefixing minimizes name clashing and makes it very obvious when calling into IWF.  
+		</p>
+		<p>
+		The primary limitation IWF imposes is that all HTML it handles <b>must</b> be XHTML compliant.
+		However, I do not believe this is a very stringent requirement with disciplined developers.
+		</p>
+		<p>
+		IWF also includes and uses its own xml parser, <code>iwfXmlDoc</code> and <code>iwfXmlNode</code>.
+		I wrote this xml parser to have more intuitive javascript when manipulating xml on the client.
+		For example, let's say we have the following xml:
+		<pre>
+&lt;internet&gt;
+	&lt;site url='www.sourceforge.net'&gt;
+		&lt;description&gt;Great place for open source projects!&lt;/description&gt;
+	&lt;/site&gt;
+	&lt;site url='iwf.sourceforge.net'&gt;
+		&lt;description&gt;IWF Project Home&lt;/description&gt;
+	&lt;/site&gt;
+&lt;/internet&gt;
+		</pre>
+		To pull the description for the IWF site using the typical DOM:<br />
+		<pre>var desc = doc.documentElement.lastChild().firstChild().innerText;</pre>
+		To pull the same node using the custom IWF implementation:<br />
+		<pre>var desc = doc.internet.site[1].description[0].getText();</pre>
+		</p>
+		<p>
+		As you can see, the IWF implementation produces very readable and maintainable javascript,
+		albeit a non-standard way of accessing xml data.
+		</p>
+
+		<h3>Xml At Heart</h3>
+		<p>
+		IWF only understands xml.  In fact, IWF has a very specific xml format it requires to enable
+		one to fully utilize its capabilities.
+		</p>
+		<p>
+		A typical xml stream that IWF understands and can automatically process looks like the following:
+		</p>
+		<p>
+		<pre>
+&lt;response&gt;
+	&lt;action type='html' target='divResponse' errorCode='' errorMessage='' &gt;
+		&lt;h1&gt;This is text within an H1 element.
+		All data within this action node will be populated into the innerHTML 
+		attribute of the element with the id matching the one specified by the 
+		target attribute above, which is 'divResponse'.&lt;/h1&gt;
+	&lt;/action&gt;
+&lt;/response&gt;
+		</pre>
+		</p>
+		<p>
+		Things to note:
+		<ul>
+			<li>A <code>response</code> node wraps the entire thing, but does nothing else.</li>
+			<li>There may be multiple <code>action</code> nodes.</li>
+			<li>The <code>action</code> node causes the browser to do different things based on the <code>type</code> attribute.</li>
+			<li>If the <code>errorCode</code> is specified and != 0, the javascript function iwfOnRequestError will be called if it exists, and processing of this <code>action</code> node is aborted.</li>
+			<li>The values for the <code>type</code> attribute are:
+				<ul>
+					<li>html == contents of node are XHTML</li>
+					<li>javascript == contents of node are javascript</li>
+					<li>xml == contents of node are xml</li>
+				</ul>
+			</li>
+			<li>The <code>target</code> only applies when <code>type</code> is 'html'.  This specifies the id of the element which will be populated with the contents of the node.</li>
+			<li>When <code>type</code> is javascript, the contents of the node are parsed and executed as javascript.  It will be made available to the browser so other javascript already in the document can call this javascript.</li>
+			<li>When <code>type</code> is xml, an <code>iwfXmlNode</code> object is passed to the <code>callback</code> function defined when <code>iwfRequest</code> was called.  If none exists, this action is ignored.</li>
+		</ul>
+		</p>
+		<h3>Thread Safe Requests</h3>
+		<p>
+		IWF uses a javascript feature called an inner function to handle multiple requests simultaneously.
+		An inner function is simply a function defined within another function.  What makes it special is the
+		inner function has visibility to the outer function's local variables.  Those local variables do not
+		fall out of scope until after all items in the outer function's activation context has completed.  By
+		setting the XmlHttpRequest object's <code>onreadystatechange</code> callback to our inner function,
+		it causes the inner function to stay activated -- which means the outer function's local variables are 
+		still available until that inner function has executed.  When the XmlHttpRequest has completed, the
+		inner function uses the outer function's variables to determine what method to callback (if any), 
+		which target was specified (if any), etc.
+		</p>
+		<p>
+		If that was a little too much at once, don't sweat it.  Essentially, your users can click multiple links
+		rapidly and all requests will be performed and processed, without the worry of "missing" or "dropping" any.
+		</p>
+		<h3>As Flexibile As Needed</h3>
+		<p>
+		As mentioned above, IWF uses xml for all of its responses.  That xml is inspected, and IWF acts
+		according to how the xml specifies.  So if you want to have your server kicking back XHTML and injecting
+		it into an element in the browser, you can.  If you want the server kicking back javascript and executing
+		it, you can.  If you want the server kicking back straight xml, which the client will be responsible for
+		parsing and acting upon, you can.
+		</p>
+		<p>
+		</p>
+		<h3>Browser Independent</h3>
+		<p>
+		IWF is heavily reliant upon client-side javascript.  In fact, if the user does not have a
+		javascript-capable browser, or javascript is disabled, IWF simply will not work.
+		</p>
+		<p>
+		However, all javascript has been written / tested / verified on Firefox 1.0.3 and IE 6.0 running under Win XP.
+		Most of what IWF does is fairly basic, so most other major browsers should work fine.  If not, <a href='mailto:brockweaver&#64;sourceforge.net'>drop me a line</a> and I'll see if I can get it working.
+<pre>
+&lt;plug type='shameless'&gt;
+	If you want IWF to start supporting Safari, 
+        <a href='http://sourceforge.net/donate/index.php?group_id=140835'>donate to IWF</a>!
+&lt;/plug&gt;
+</pre>
+		</p>
+		<h3>Server Platform Independent</h3>
+		<p>
+		Since IWF is primarily a client-side technology, any web server which can kick out ASCII will work perfectly -- and by definition, any web server
+		can do this.  All IWF requires from the server is a valid xml stream in IWF format.
+		</p>
+		<p>
+		PHP is my favorite web scripting language, so I have implemented a very simple class for emitting
+		IWF-copmliant xml from a PHP server.  This could very easily be ported to ASP, but since the release
+		of ASP.NET, my focus has shifted away from it.
+		</p>
+	</action>
+</response>

@@ -1,0 +1,32 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2016 -->
+<!-- JASCID: 201601091113 jassig -->
+<script>
+var sPBG='<center><p class="jas-page-footer" style="margin-bottom: 2px;" >Guarded By <b>Punk-Be-Gone Premptive Defense System</b><br />Blocked Attacks since server started: <b>'+
+         '<? echo $PUNKSBLKSINCESTART; ?></b> Banned Since Server Started: <b><? echo $PUNKSBANNEDSINCESTART; ?></b> Currently Banned: <b><? echo $PUNKSBANNED; ?></b> Server Started: '+
+         '<b><? echo $JASSERVERSTART; ?></b></p><img title="This is the ethereal Punk-Be-Gone Sprite; she does not hesitate summoning the Reaper as needed." '+
+         'src="<? echo $JASDIRWEBSHARE; ?>img/logo/jegas/punkbegone.png" class="image" /><br /></center>';
+</script>
+
+<center><div id="jas-quicklinks"></div></center>
+<table border="0" width="100%">
+<tr>
+<td width="25%"><p  class="jas-page-footer" style="margin-bottom: 2px;" >Server: <b>[@SERVERNAME@]</b>  &nbsp;&nbsp; User: <b>[@USERNAME@]</b></p></td>
+<td>
+  <p  class="jas-page-footer" style="margin-bottom: 2px;" >Powered by <a target="_blank" href="http://www.jegas.com"><img class="image" style="position: relative; top: 14px;"
+    src="<? echo $JASDIRWEBSHARE; ?>img/logo/jegas/Logo.png" title="Jegas, LLC Homepage Link" /></a> Software.</p>
+  <p  class="jas-page-footer">Copyright&copy;2016 Jegas, LLC - All Rights Reserved.<br />
+    Compatible Browsers: SeaMonkey, PaleMoon, Firefox, Opera, Chrome, Edge, Lynx and Tor</p>
+  <script>if('[@PUNKBEGONEENABLED@]'=='True '){document.write(sPBG);};</script>
+</td>
+<td width="25%"><p  class="jas-page-footer" style="margin-bottom: 2px;" >Page Serve in Milli Seconds: <b>[@PTMILLI@]</b> &nbsp;&nbsp; Time: <b>[@NOW@]</b></p></td>
+</tr>
+</table>
+<script>
+  function callbackajax_quicklinks(doc){try{document.getElementById('jas-quicklinks').innerHTML=decodeURIComponent(String(doc.QuickLinks[0].getText()));}catch(eX){};};
+  function ajax_quicklinks(){var sURL='[@ALIAS@].?jasapi=renderquicklinks&JSID=[@JSID@]';iwfRequest(sURL,null,null,callbackajax_quicklinks,false);};
+  if('[@JASQUICKLINKS@]'=='Yes'){ajax_quicklinks();};
+</script>
+<div style="display: none;"><input id="ftrcal" type="text" /></div>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2016 -->
+<br />
+

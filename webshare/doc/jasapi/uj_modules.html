@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS/JegasCRM Developer Reference: uj_modules</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS/JegasCRM Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JegasAPI - Jegas, LLC - Copyright(c)2016
+<h1 class="unit">Unit uj_modules</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+JAS Specific Functions</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Module_ID_With_Name">bGet_Module_ID_With_Name</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; var p_JModu_JModule_UID: ansistring ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Module_Name_With_ID">bGet_Module_Name_With_ID</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; var p_JModu_Name: ansistring ): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Installed_Instances_For_Given_Module_ID">bGet_Installed_Instances_For_Given_Module_ID</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; p_bReturnEnabledInstalledInstancesOnly: boolean; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Installed_Instances_For_Given_Module_Name">bGet_Installed_Instances_For_Given_Module_Name</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; p_bReturnEnabledInstalledInstancesOnly: boolean; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Setting_List_For_Given_Module_Name">bGet_Setting_List_For_Given_Module_Name</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_Setting_List_For_Given_Module_ID">bGet_Setting_List_For_Given_Module_ID</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_ModuleConfig_Values_For_Given_Install">bGet_ModuleConfig_Values_For_Given_Install</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JInst_JInstalled_UID: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>function <b><a  href="uj_modules.html#bGet_ModuleConfig_Value_For_Given_Install">bGet_ModuleConfig_Value_For_Given_Install</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JInst_JInstalled_UID: ansistring; p_JMSet_Name: ansistring; var p_saValue: ansistring; var p_saNotes: ansistring ): boolean;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Module_ID_With_Name"></a><code>function <b>bGet_Module_ID_With_Name</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; var p_JModu_JModule_UID: ansistring ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the JModule.JModu_JModule_UID of the requested JModule.JModu_Name. The search is exact. If data permits multiple rows that match the criteria, only the first row is returned. Duplicates should not be present. Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Module_Name_With_ID"></a><code>function <b>bGet_Module_Name_With_ID</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; var p_JModu_Name: ansistring ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the JModule.JModu_Name of the requested JModule.JModu_JModule_UID. Exact Match. Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Installed_Instances_For_Given_Module_ID"></a><code>function <b>bGet_Installed_Instances_For_Given_Module_ID</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; p_bReturnEnabledInstalledInstancesOnly: boolean; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This function returns an instantiated JFC_XDL. Upon entry, if the p_XDL parameter is not nil a p_XDL.Destroy will be executed upon it assuming it is an instantiated JFC_XDL object. So be sure to set your JFC_XDL variable to nil before calling this function or expect an exception when this function tries to blast your unintialized pointer thinking it's an Instantiated JFC_XDL Object. The p_ReturnEnabledInstalledInstancesOnly parameter is how you indicate if you want the function to only return results for a given Installed Module instance if it's in fact enabled. If an error occurs, the p_XDL object will be destroyed and returned as nil. If this function returns True (No Error) - It WILL return an instantiated JFC_XDL object.. with ZERO items in it. JFC_XDL object.. with ZERO items in it. JFC_XDL.Item_saName = 'Name of Module' (which you already probably know) JFC_XDL.Item_saValue = jinstalled.JInst_JModule_UID Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Installed_Instances_For_Given_Module_Name"></a><code>function <b>bGet_Installed_Instances_For_Given_Module_Name</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; p_bReturnEnabledInstalledInstancesOnly: boolean; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns the JModule.JModu_Name of the requested JModule.JModu_JModule_UID. Exact Match. This function returns an instantiated JFC_XDL. Upon entry, if the p_XDL parameter is not nil a p_XDL.Destroy will be executed upon it assuming it is an instantiated JFC_XDL object. So be sure to set your JFC_XDL variable to nil before calling this function or expect an exception when this function tries to blast your unintialized pointer thinking it's an Instantiated JFC_XDL Object. The p_ReturnEnabledInstalledInstancesOnly parameter is how you indicate if you want the function to only return results for a given Installed Module instance if it's in fact enabled. Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Setting_List_For_Given_Module_Name"></a><code>function <b>bGet_Setting_List_For_Given_Module_Name</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_Name: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns a Populated JFC_XDL object of all the settings possible for a given module name. This doesn't return the setting values for a particular Module's Installation Instance.. just the settings the given Module has associated with it. This function returns an instantiated JFC_XDL. Upon entry, if the p_XDL parameter is not nil a p_XDL.Destroy will be executed upon it assuming it is an instantiated JFC_XDL object. So be sure to set your JFC_XDL variable to nil before calling this function or expect an exception when this function tries to blast your unintialized pointer thinking it's an Instantiated JFC_XDL Object. Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_Setting_List_For_Given_Module_ID"></a><code>function <b>bGet_Setting_List_For_Given_Module_ID</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JModu_JModule_UID: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns a Populated JFC_XDL object of all the settings possible for a given module ID. This doesn't return the setting values for a particular Module's Installation Instance.. just the settings the given Module has associated with it. This function returns an instantiated JFC_XDL. Upon entry, if the p_XDL parameter is not nil a p_XDL.Destroy will be executed upon it assuming it is an instantiated JFC_XDL object. So be sure to set your JFC_XDL variable to nil before calling this function or expect an exception when this function tries to blast your unintialized pointer thinking it's an Instantiated JFC_XDL Object. Returns true if successful, false if not. p_XDL.Item_i8User:=i8Val(rs.fields.Get_saValue('JMSet_JCaption_ID')); p_XDL.Item_saName:=rs.fields.Get_saValue('JMSet_Name'); p_XDL.Item_saValue:=rs.fields.Get_saValue('JMSet_JModuleSetting_UID'); p_XDL.Item_saDesc:=i8Val(rs.fields.Get_saValue('JMSet_JNote_ID'));</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_ModuleConfig_Values_For_Given_Install"></a><code>function <b>bGet_ModuleConfig_Values_For_Given_Install</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JInst_JInstalled_UID: ansistring; var p_XDL: JFC_XDL ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns a Populated JFC_XDL object of all the settings for a given Module Install instance. This function returns actual configuration values for each setting. This function returns an instantiated JFC_XDL. Upon entry, if the p_XDL parameter is not nil a p_XDL.Destroy will be executed upon it assuming it is an instantiated JFC_XDL object. So be sure to set your JFC_XDL variable to nil before calling this function or expect an exception when this function tries to blast your unintialized pointer thinking it's an Instantiated JFC_XDL Object. Returns true if successful, false if not.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="bGet_ModuleConfig_Value_For_Given_Install"></a><code>function <b>bGet_ModuleConfig_Value_For_Given_Install</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_JInst_JInstalled_UID: ansistring; p_JMSet_Name: ansistring; var p_saValue: ansistring; var p_saNotes: ansistring ): boolean;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+Returns specific setting's configuration value for a given Module Install instance and setting name combination. This function returns an instantiated JFC_XDL. Returns true if successful, false if not or if anything is missing. E.G. p_JInst_JInstalled_UID can't be found p_JMSet_Name can't be found or Actual setting value record can not be found.</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

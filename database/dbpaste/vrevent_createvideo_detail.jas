@@ -1,0 +1,27 @@
+<div id="makevideodiv" style="display: none;">
+  <table>
+    <tr><td colspan="2">Switch Camera Time (Milli Seconds - 2000=2 Seconds)</td></tr>
+    <tr><td colspan="2"><input id="switchcamtime" name="switchcamtime" value="2000" /></td></tr>
+    <tr><td colspan="2"><br /></td></tr>
+    <tr><td colspan="2">Movie Screen Resolution</td>
+    <tr>
+      <td>
+        <select id="resolution" name="resolution">
+        <option selected value="0">640x480</option>
+        <option value="1">1280x720 - HD - 720</option>
+        <option value="2">1920x1080 - HD - 1080</option>
+        </select>
+      </td>
+      <td><input type="button" onclick="javascript: createvideo();" value="Create Video" />
+    </tr>
+    </table>
+</div>
+<script language="javascript">
+  if( (parseInt("[@UID@]")>0) && ( "[@VEVNT_Processing_b@]" != "1" ) ){
+    var el=document.getElementById("makevideodiv");
+    el.style.display='';
+  };
+  function createvideo(){
+     ajax_createvideo('[@UID@]','[@JSID@]',document.getElementById('switchcamtime').value, document.getElementById('resolution').value);
+  };
+</script>

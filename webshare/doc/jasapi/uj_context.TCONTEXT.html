@@ -1,0 +1,1517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS/JegasCRM Developer Reference: uj_context: Class TCONTEXT</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS/JegasCRM Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JegasAPI - Jegas, LLC - Copyright(c)2016
+<a name="TCONTEXT"></a><h1 class="cio">Class TCONTEXT</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td>Properties</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="uj_context.html">uj_context</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TCONTEXT = class(TObject)</code></p>
+<h2 class="description">Description</h2>
+<p>
+The CONTEXT class holds the CONTEXT of each thread's state; whether just serving in the WebServer mode or running complex custom applications. Each Thread has its own instance of this object. It serves as a easy way to pass thread based contextual data to singleton functions in a way that makes writing functions to interact with the JAS TWORKER threads defined in uxxj_jcore.pp possible.</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">TCONTEXT</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#lpWorker">lpWorker</a></b>: pointer;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bSessionValid">bSessionValid</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bErrorCondition">bErrorCondition</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u8ErrNo">u8ErrNo</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saErrMsg">saErrMsg</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saErrMsgMoreInfo">saErrMsgMoreInfo</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sServerIP">sServerIP</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sServerPort">sServerPort</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sServerIPCGI">sServerIPCGI</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sServerPortCGI">sServerPortCGI</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saPage">saPage</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bLoginAttempt">bLoginAttempt</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#PAGESNRXDL">PAGESNRXDL</a></b>: JFC_XDL;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saPageTitle">saPageTitle</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JADOC">JADOC</a></b>: array of JADO_CONNECTION;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#dtRequested">dtRequested</a></b>: TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#dtServed">dtServed</a></b>: TDATETIME;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#dtFinished">dtFinished</a></b>: TDATETIME;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sLang">sLang</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bOutputRaw">bOutputRaw</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saHTMLRIPPER_Area">saHTMLRIPPER_Area</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saHTMLRIPPER_Page">saHTMLRIPPER_Page</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saHTMLRIPPER_Section">saHTMLRIPPER_Section</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u8MenuTopID">u8MenuTopID</a></b>: Uint64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saUserCacheDir">saUserCacheDir</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sHelpID">sHelpID</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u2ErrorReportingMode">u2ErrorReportingMode</a></b>: word;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u2DebugMode">u2DebugMode</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMIME_execute">bMIME_execute</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMIME_execute_Jegas">bMIME_execute_Jegas</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMIME_execute_JegasWebService">bMIME_execute_JegasWebService</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMIME_execute_php">bMIME_execute_php</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMIME_execute_perl">bMIME_execute_perl</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sMimeType">sMimeType</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMimeSNR">bMimeSNR</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saFileSoughtNoExt">saFileSoughtNoExt</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sFileSoughtExt">sFileSoughtExt</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sFileNameOnly">sFileNameOnly</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sFileNameOnlyNoExt">sFileNameOnlyNoExt</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saIN">saIN</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saOut">saOut</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#REQVAR_XDL">REQVAR_XDL</a></b>: JFC_XDL;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#uBytesRead">uBytesRead</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#uBytesSent">uBytesSent</a></b>: UInt64;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestedHost">saRequestedHost</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestedHostRootDir">saRequestedHostRootDir</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sRequestMethod">sRequestMethod</a></b>: String;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sRequestType">sRequestType</a></b>: String;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestURI">saRequestURI</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestedFile">saRequestedFile</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saOriginallyRequestedFile">saOriginallyRequestedFile</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestedName">saRequestedName</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saRequestedDir">saRequestedDir</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saFileSought">saFileSought</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saQueryString">saQueryString</a></b>: AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u2HttpErrorCode">u2HttpErrorCode</a></b>: LongInt;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saLogFile">saLogFile</a></b>: Ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bJASCGI">bJASCGI</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#XML">XML</a></b>: JFC_XML;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#CGIENV">CGIENV</a></b>: JFC_CGIENV;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sActionType">sActionType</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#MATRIX">MATRIX</a></b>: JFC_MATRIX;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#LogXXDL">LogXXDL</a></b>: JFC_XXDL;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#rJSession">rJSession</a></b>: <a  href="uj_definitions.rtJSession.html">rtJSession</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#rJUser">rJUser</a></b>: <a  href="uj_definitions.rtJUser.html">rtJUser</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#iSessionResultCode">iSessionResultCode</a></b>: longint;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JThread">JThread</a></b>: TJTHREAD;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#SessionXDL">SessionXDL</a></b>: JFC_XDL;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bSaveSessionData">bSaveSessionData</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bInternalJob">bInternalJob</a></b>: boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrakXDL">JTrakXDL</a></b>: JFC_XDL;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_TableID">JTrak_TableID</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_u2JDType">JTrak_u2JDType</a></b>: word;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTRak_sPKeyCol">JTRak_sPKeyCol</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_DBConID">JTrak_DBConID</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_Row_ID">JTrak_Row_ID</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_bExist">JTrak_bExist</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#JTrak_sTable">JTrak_sTable</a></b>: string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sTheme">sTheme</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#i4VHost">i4VHost</a></b>: longint;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sAlias">sAlias</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#saServerURL">saServerURL</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bMenuHasPAnels">bMenuHasPAnels</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#PROCESS">PROCESS</a></b>: TPROCESS;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#sIconTheme">sIconTheme</a></b>: string;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#u2LogType_ID">u2LogType_ID</a></b>: word;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bNoWebCache">bNoWebCache</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code><b><a  href="uj_context.TCONTEXT.html#bWhiteListed">bWhiteListed</a></b>: boolean;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="uj_context.TCONTEXT.html#create">create</a></b>( p_sServerSoftware: string; p_iTimeZoneOffset: integer; p_JThread_Reference: TJTHREAD );</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <b><a  href="uj_context.TCONTEXT.html#destroy">destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="uj_context.TCONTEXT.html#reset">reset</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#bLoadContextWithXML">bLoadContextWithXML</a></b>(p_saXML: ansistring):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#bLoadContextWithXML">bLoadContextWithXML</a></b>(LXML: JFC_XML): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saXML">saXML</a></b>: ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#bRedirection">bRedirection</a></b>: boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#DBCON">DBCON</a></b>(p_sConnectionName: string): JADO_CONNECTION;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#DBCON">DBCON</a></b>(p_JDCon_JDConnection_UID: UINT64): JADO_CONNECTION;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="uj_context.TCONTEXT.html#JAS_SNR">JAS_SNR</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saJAS_PROCESS_SNR_LIST">saJAS_PROCESS_SNR_LIST</a></b>(p_bCaseSensitive: boolean; p_saPayLoad: ansistring): ANSISTRING;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uj_context.TCONTEXT.html#JTrakBegin">JTrakBegin</a></b>(p_DBCon: JADO_CONNECTION; p_sTable: string; p_sUID: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>Procedure <b><a  href="uj_context.TCONTEXT.html#JTrakEnd">JTrakEnd</a></b>(p_sUID: string; p_saSQL: ansistring);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="uj_context.TCONTEXT.html#DebugHtmlOutput">DebugHtmlOutput</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#bLoadXDLForMerge">bLoadXDLForMerge</a></b>( p_sTable: string; p_sUID: string; p_XDL: JFC_XDL; var p_uDupeScore: cardinal ): boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#bPopulateLookUpList">bPopulateLookUpList</a></b>( p_sTableName: string; p_sColumnName: string; ListXDL: JFC_XDL; p_sDefaultValue: string; p_bLookUp: boolean ):boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saLookUp">saLookUp</a></b>( p_sTableName: string; p_sColumnName: string; p_saValue: ansistring ): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saLookUpSQL">saLookUpSQL</a></b>( p_sTableName: string; p_sColumnName: string; var p_sLUTableName: string ): ansistring;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="uj_context.TCONTEXT.html#CreateIWFXML">CreateIWFXML</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="uj_context.TCONTEXT.html#DebugXMLOutput">DebugXMLOutput</a></b>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saJThemeHeader">saJThemeHeader</a></b>(p_sTheme: string): ansistring;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#sJLanguageLookup">sJLanguageLookup</a></b>(p_u8LangID: UInt64): string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#VHDBC">VHDBC</a></b>: JADO_CONNECTION;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="uj_context.TCONTEXT.html#saGetURL">saGetURL</a></b>(p_u: UInt64): ansistring;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="lpWorker"></a><code><b>lpWorker</b>: pointer;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bSessionValid"></a><code><b>bSessionValid</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This Ok for many operations not requiring login</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bErrorCondition"></a><code><b>bErrorCondition</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+True When an Error has occurred. Typically code should allow fall through because the OUTPUT page is rendered as an error HTML page.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u8ErrNo"></a><code><b>u8ErrNo</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+most RECENT Error.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saErrMsg"></a><code><b>saErrMsg</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+most recent Error Message</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saErrMsgMoreInfo"></a><code><b>saErrMsgMoreInfo</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+most recent Error Message - additional information if available</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sServerIP"></a><code><b>sServerIP</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sServerPort"></a><code><b>sServerPort</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sServerIPCGI"></a><code><b>sServerIPCGI</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sServerPortCGI"></a><code><b>sServerPortCGI</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saPage"></a><code><b>saPage</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Actual Output Page</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bLoginAttempt"></a><code><b>bLoginAttempt</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PAGESNRXDL"></a><code><b>PAGESNRXDL</b>: JFC_XDL;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+saLoginMsg: AnsiString; //&lt; primarily used for replacing [@JEGASLOGINMESSAGE@]</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saPageTitle"></a><code><b>saPageTitle</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+populated in saGetPage when &lt;!&ndash;PAGETITLE &quot;Title Here&quot;&ndash;&gt; Encountered. Note that last one wins if multiple apearances.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JADOC"></a><code><b>JADOC</b>: array of JADO_CONNECTION;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="dtRequested"></a><code><b>dtRequested</b>: TDATETIME;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Time thread kicked off</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="dtServed"></a><code><b>dtServed</b>: TDATETIME;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Time Thread done (captured as soon as possible to still be accessible by the result page. So there is some processing after this value is sought</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="dtFinished"></a><code><b>dtFinished</b>: TDATETIME;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sLang"></a><code><b>sLang</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Time sought AFTER page served</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bOutputRaw"></a><code><b>bOutputRaw</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Output raw is the first thing to set if you know the output is not to get a HTML/XHTML response. This allows sending completely controlled raw output. (files? :) ) This means you need to create your own headers. See the new JFC_CGIENV.saCGIHdrXml function which sends out a default HTTP header, for mime type text/xml</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saHTMLRIPPER_Area"></a><code><b>saHTMLRIPPER_Area</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Converting pages to static - the following variables are SET by the function saHTMLRIPPER The output is basically the SENT web page. Files names of the static templates (just files, you can edit them) are based on AREA, PAGE, SECTION separated by underscores. All Filenames are set to lowercase. &lt;&mdash; Hmm - I might look at this later. qqq</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saHTMLRIPPER_Page"></a><code><b>saHTMLRIPPER_Page</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Converting pages to static - the following variables are SET by the function saHTMLRIPPER The output is basically the SENT web page. Files names of the static templates (just files, you can edit them) are based on AREA, PAGE, SECTION separated by underscores. All Filenames are set to lowercase. &lt;&mdash; Hmm - I might look at this later. qqq</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saHTMLRIPPER_Section"></a><code><b>saHTMLRIPPER_Section</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Converting pages to static - the following variables are SET by the function saHTMLRIPPER The output is basically the SENT web page. Files names of the static templates (just files, you can edit them) are based on AREA, PAGE, SECTION separated by underscores. All Filenames are set to lowercase. &lt;&mdash; Hmm - I might look at this later. qqq</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u8MenuTopID"></a><code><b>u8MenuTopID</b>: Uint64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saUserCacheDir"></a><code><b>saUserCacheDir</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Ends up being cache + mac_dosslash + U????? + mac_dosslash</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sHelpID"></a><code><b>sHelpID</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u2ErrorReportingMode"></a><code><b>u2ErrorReportingMode</b>: word;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Used for Per request Resolve of ErrorReporting and Debug Security Mode</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u2DebugMode"></a><code><b>u2DebugMode</b>: word;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Used for Per request Resolve of ErrorReporting and Debug Security Mode</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMIME_execute"></a><code><b>bMIME_execute</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Executable MIME TYPE - (the word &quot;execute/&quot; is in the mime type name) could be *.exe, php, *.bat etc.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMIME_execute_Jegas"></a><code><b>bMIME_execute_Jegas</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMIME_execute_JegasWebService"></a><code><b>bMIME_execute_JegasWebService</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMIME_execute_php"></a><code><b>bMIME_execute_php</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMIME_execute_perl"></a><code><b>bMIME_execute_perl</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sMimeType"></a><code><b>sMimeType</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMimeSNR"></a><code><b>bMimeSNR</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saFileSoughtNoExt"></a><code><b>saFileSoughtNoExt</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+e.g: f:/somedir/myfile</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sFileSoughtExt"></a><code><b>sFileSoughtExt</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+e.g: html</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sFileNameOnly"></a><code><b>sFileNameOnly</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+e.g: myfile.html</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sFileNameOnlyNoExt"></a><code><b>sFileNameOnlyNoExt</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+e.g: myfile</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saIN"></a><code><b>saIN</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saOut"></a><code><b>saOut</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="REQVAR_XDL"></a><code><b>REQVAR_XDL</b>: JFC_XDL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uBytesRead"></a><code><b>uBytesRead</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="uBytesSent"></a><code><b>uBytesSent</b>: UInt64;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestedHost"></a><code><b>saRequestedHost</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestedHostRootDir"></a><code><b>saRequestedHostRootDir</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sRequestMethod"></a><code><b>sRequestMethod</b>: String;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sRequestType"></a><code><b>sRequestType</b>: String;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestURI"></a><code><b>saRequestURI</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+populated in bPArseJASCGI in uj_worker.pp</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestedFile"></a><code><b>saRequestedFile</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saOriginallyRequestedFile"></a><code><b>saOriginallyRequestedFile</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestedName"></a><code><b>saRequestedName</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saRequestedDir"></a><code><b>saRequestedDir</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saFileSought"></a><code><b>saFileSought</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saQueryString"></a><code><b>saQueryString</b>: AnsiString;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u2HttpErrorCode"></a><code><b>u2HttpErrorCode</b>: LongInt;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+HTTP Error Code usually 200 for OK</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saLogFile"></a><code><b>saLogFile</b>: Ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This is for deciding what log file to write out to.s</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bJASCGI"></a><code><b>bJASCGI</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+true only if web request is a JASCGI proxy request.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="XML"></a><code><b>XML</b>: JFC_XML;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Used for moving dynamic/arbitrary data around iwf data to be placed in the xml document in the action or code block if javascript is being sent to the client via ajax. Note: The XDL double linked list is how we handle abstract data passing around - and we will likely have functions that convert that information into saData (ansistring) information in xml format or javascript. The XDL's allow lists of lists and are suitable for hierarchial data structures. Double linked lists are more flexible but do suffer a speed penalty for searching etc. for this the JFC_MATRIX is better suited: dynamic array + able to hold dynamic table data Note: the JFC_XML class is a JFC_XDL descendant class.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CGIENV"></a><code><b>CGIENV</b>: JFC_CGIENV;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sActionType"></a><code><b>sActionType</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+iwf specific</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="MATRIX"></a><code><b>MATRIX</b>: JFC_MATRIX;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This can be used to arbitrarily place a &quot;TABLE&quot; of data into it so which ever render mechanism you need it for can render from it. the Advantage of the JFC_MATRIX is look up speed.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="LogXXDL"></a><code><b>LogXXDL</b>: JFC_XXDL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="rJSession"></a><code><b>rJSession</b>: <a  href="uj_definitions.rtJSession.html">rtJSession</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="rJUser"></a><code><b>rJUser</b>: <a  href="uj_definitions.rtJUser.html">rtJUser</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="iSessionResultCode"></a><code><b>iSessionResultCode</b>: longint;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JThread"></a><code><b>JThread</b>: TJTHREAD;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SessionXDL"></a><code><b>SessionXDL</b>: JFC_XDL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bSaveSessionData"></a><code><b>bSaveSessionData</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bInternalJob"></a><code><b>bInternalJob</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrakXDL"></a><code><b>JTrakXDL</b>: JFC_XDL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_TableID"></a><code><b>JTrak_TableID</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_u2JDType"></a><code><b>JTrak_u2JDType</b>: word;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTRak_sPKeyCol"></a><code><b>JTRak_sPKeyCol</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_DBConID"></a><code><b>JTrak_DBConID</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_Row_ID"></a><code><b>JTrak_Row_ID</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+JTrak_sUID: string;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_bExist"></a><code><b>JTrak_bExist</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrak_sTable"></a><code><b>JTrak_sTable</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+if record Exists at the onset</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sTheme"></a><code><b>sTheme</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="i4VHost"></a><code><b>i4VHost</b>: longint;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sAlias"></a><code><b>sAlias</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saServerURL"></a><code><b>saServerURL</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used for Alias that indicates a separate virtual host.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bMenuHasPAnels"></a><code><b>bMenuHasPAnels</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="PROCESS"></a><code><b>PROCESS</b>: TPROCESS;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+FreePascal Class for creating external processes in the OS</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sIconTheme"></a><code><b>sIconTheme</b>: string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This just holds the list of valid themes in use on the server.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="u2LogType_ID"></a><code><b>u2LogType_ID</b>: word;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bNoWebCache"></a><code><b>bNoWebCache</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bWhiteListed"></a><code><b>bWhiteListed</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="create"></a><code>constructor <b>create</b>( p_sServerSoftware: string; p_iTimeZoneOffset: integer; p_JThread_Reference: TJTHREAD );</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="destroy"></a><code>destructor <b>destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="reset"></a><code>procedure <b>reset</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bLoadContextWithXML"></a><code>function <b>bLoadContextWithXML</b>(p_saXML: ansistring):boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to populate this class with data derived from the passed xml</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bLoadContextWithXML"></a><code>function <b>bLoadContextWithXML</b>(LXML: JFC_XML): boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+used to populate this class with data derived from the passed JFC_XML class</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saXML"></a><code>function <b>saXML</b>: ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bRedirection"></a><code>function <b>bRedirection</b>: boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DBCON"></a><code>function <b>DBCON</b>(p_sConnectionName: string): JADO_CONNECTION;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function returns a REFERENCE to the JADO_CONNECTION with the name passed. If it fails, it RETURNS NIL! (USE CAUTION) The Main Database connection is always connected if JADO subsystem are compiled into the codebase. The need for this function arises from the fact that JAS now manages additional connections dynamically - and hardcoding the INDEX into the p_Context.JADOC[] array of JADO_CONNECTION class instances is not very adapatable where using name references allows managing multiple connections in the database with the same name and only enabling the one you wish to use with a given name so that recompiling isn't necessary or complicated management of how the connections are loaded; relying on their load sequence order.
+
+<p>Sample Usage:
+
+<p><code> procedure SomeProc(p_Context: TCONTEXT); </code><br> <code> var vTigerCon: JADO_CONNECTION; </code><br> <code> RS: JADO_RECORDSET; </code><br> <code> saQry: Ansistring; </code><br> <code> begin </code><br> <code> vTigerCon:=p_Context.DBCon('vtiger');</code><br> <code> RS:=JADO_RECORDSET.Create; </code><br> <code> saQry:='select * from test'; </code><br> <code> RS.Open(saQry, vTigerCon); </code><br>
+
+<p>Just remember to not DESTROY vTigerCon because it's just a reference to the actual connection class object pre-instantiated in the thread.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DBCON"></a><code>function <b>DBCON</b>(p_JDCon_JDConnection_UID: UINT64): JADO_CONNECTION;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function returns a REFERENCE to the JADO_CONNECTION with the JDCon_JDConnection_UID passed. If it fails, it RETURNS NIL! (USE CAUTION) The Main Database connection is always connected if JADO subsystem are compiled into the codebase. The need for this function arises from the fact that JAS now manages additional connections dynamically - and hardcoding the INDEX into the p_Context.JADOC[] array of JADO_CONNECTION class instances is not very adapatable where using name references allows managing multiple connections in the database with the same name and only enabling the one you wish to use with a given name so that recompiling isn't necessary or complicated management of how the connections are loaded; relying on their load sequence order.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JAS_SNR"></a><code>procedure <b>JAS_SNR</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+JAS SNR is where SYSTEM Tokens and data pairs prepared by user programs and JAS itself are applied to the payload on its way out the proverbial door.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saJAS_PROCESS_SNR_LIST"></a><code>function <b>saJAS_PROCESS_SNR_LIST</b>(p_bCaseSensitive: boolean; p_saPayLoad: ansistring): ANSISTRING;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+JAS_SNR is/was getting stuck in SNR Infinite loop at the moment 20101230, and the &quot;STUCK&quot; factor happens in JFC_XDL.SNR - So because I can't See what's going on in that low-level class - I'm putting the routine here where I can get some feedback and maybe even step through this thing.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrakBegin"></a><code>Procedure <b>JTrakBegin</b>(p_DBCon: JADO_CONNECTION; p_sTable: string; p_sUID: string);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="JTrakEnd"></a><code>Procedure <b>JTrakEnd</b>(p_sUID: string; p_saSQL: ansistring);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DebugHtmlOutput"></a><code>procedure <b>DebugHtmlOutput</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Renders all sorts of diagnostic information appended to HTML based output to help with development and troubleshooting. DebugMode set to Verbose causes this function to be called automatically.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bLoadXDLForMerge"></a><code>function <b>bLoadXDLForMerge</b>( p_sTable: string; p_sUID: string; p_XDL: JFC_XDL; var p_uDupeScore: cardinal ): boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+This function returns false if it fails. It loads the passed, pre-initialized JFC_XDL with a record's information along with each column's WEIGHT to be used with duplicate identification as well as the DupeScore (Score that when met indicates a duplicate.) The DupeScore comes from the jtable table. The Column Weight Scores come from the jcolumn table. See also the bMerge function located in ug_jegas.pp That function explains the format of the XDL data it requires. This function meets that requirement while reading a data row from the database.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="bPopulateLookUpList"></a><code>function <b>bPopulateLookUpList</b>( p_sTableName: string; p_sColumnName: string; ListXDL: JFC_XDL; p_sDefaultValue: string; p_bLookUp: boolean ):boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns list populated with entire resultset from specified TABLE, column name with desired lookup query in it. Provide default value so that the WebWidget can render the list appropriately. It will be contructed to be compatible with WebWidget List controls. LookUp Flag indicates whther to use lookup rules or LIST rules which are just a GROUP BY on the specified table.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saLookUp"></a><code>function <b>saLookUp</b>( p_sTableName: string; p_sColumnName: string; p_saValue: ansistring ): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns Single Value using Lookup rules/Captionrules Specify Table, ColumnName with desired lookup query in it and the UID value.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saLookUpSQL"></a><code>function <b>saLookUpSQL</b>( p_sTableName: string; p_sColumnName: string; var p_sLUTableName: string ): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns the SQL for the specified lookup and also returns by reference the lookup table's name</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CreateIWFXML"></a><code>procedure <b>CreateIWFXML</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Creates IWF friendly XML output for use with jasapi_????? xml functions This function expects a HTTP Result code to be set in p_Context.CGIENV.iHTTPResponse. If the function is called with p_Context.CGIENV.iHTTPResponse equal to zero, it will fail with error code 200912100012.
+
+<p>p_Context.saActionType must be set with either &quot;xml&quot; or &quot;javascript&quot;. This value are placed into the action tag's &quot;type&quot; property.
+
+<p>p_Context.i8ErrCode and p_Context.saErrMsg values are placed into the action tag's &quot;errorCode&quot; and &quot;errorMessage&quot; properties respectively.
+
+<p>If the p_Context.saActionType=&quot;javascript&quot;, then the payload of this function is wrapped in a CDATA xml tage because it is assumed that the payload contains javascript code.
+
+<p>If the p_Context.saActionType value is not javascript, then xml is assumed and no CDATA tags are used to wrap the payload.
+
+<p>The Payload can be any XML or HTML context that equates to an end result that the output is an acceptable XML output. The Payload is actually sent using the p_Context.DataXDL which is a JEGAS API JFC_XDL class.
+
+<p>The values(rows)for each p_Context.DataXDL element (JFC_XDLITEM) are as follows:
+
+<p>For JAVASCRIPT: Just load up p_Context.DATAXML with JFC_XDLITEM.saValue items containg javascript.
+
+<p>sample: p_Context.DATAXML.AppendItem_saValue('alert(&quot;hello mom&quot;);');
+
+<p>For XML and HTML... the same variable is used to supply the payload but it's a little more involved because you can created nested data structures so that full web pages and xml files can be represented is both a simple or advanced fashion. This is done using the p_Context.DataXDL.saXML function (see JFC_XDL.saXML function). This function spits out tags and recurses as well. To Summarize the concept, it works similar to the javascript explained above except all the values in JFC_XDLITEM are output as XML less the JFC_ITEM.lpPtr field. This field is used to attach CHILDNODES to p_Context.DATAXML. So You could make a JFC_XDL object, load it up with data, then do something like:
+
+<p>p_Context.DATAXML.AppendItem( MyChildrenXDL ); p_Context.DATAXML.Item_saName:='MyChildren';
+
+<p>And you'd get a tag named &lt;MyChildren&gt;, and inside it, the contents of MyChildrenXDL would be rendered as xml.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DebugXMLOutput"></a><code>procedure <b>DebugXMLOutput</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Dumps debug information as XDL node data into Context.DataXDL as a new node named JASDEBUDINFO. This allows JASAPIXML functions to return debug information like the HTML stock user interface does when DebugMode is set to verbose or verboselocal is the (jas)config/jas.cfg file.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saJThemeHeader"></a><code>function <b>saJThemeHeader</b>(p_sTheme: string): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Returns the HTML that appears between the HEADER tags for the theme specified</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="sJLanguageLookup"></a><code>function <b>sJLanguageLookup</b>(p_u8LangID: UInt64): string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Looks up the Current language code - based on current user's settings but can be the default if a setting is not found.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="VHDBC"></a><code>function <b>VHDBC</b>: JADO_CONNECTION;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Function to return the MAIN JADO_CONNECTION for the current VHOST.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="saGetURL"></a><code>function <b>saGetURL</b>(p_u: UInt64): ansistring;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+Return URL of specified VHOST</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

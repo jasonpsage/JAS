@@ -1,0 +1,8 @@
+<!--jproduct - MultiNotes-->
+<div id="multinotes" style="display: none;">
+[@CAPTION@]<br />
+<a href=".?screen=jnotes+Data&DBLOK509=46&DBLOK511=[@UID@]" target="_blank" title="Add Note">Add Note</a><br />
+<a href=".?screen=jnotes+Search&FBLOK485=46&FBLOK487=[@UID@]&BFS1109U=2&BFS1109P=1" target="_blank" title="View Notes">View Notes</a>
+</div>
+<script>if([@UID@]>0){ var el=document.getElementById('multinotes'); el.style.display="";};</script>
+

@@ -1,0 +1,20 @@
+<script language="javascript">
+
+function callbackajax_deletescreen[@UID@](doc){
+  if(doc.errorCode!=''){
+    alert(doc.errorCode+' '+doc.errorMessage);
+  }else{
+    alert('Success!');
+    location.reload();
+  };
+}
+
+function cdel[@UID@](){
+  if(confirm('Delete Screen [@JScrn_Name@]?  ID: [@UID@]')){
+    var sURL='.?Action=deletescreen&JScrn_JScreen_UID=[@UID@]';
+    iwfRequest(sURL,null,null,callbackajax_deletescreen[@UID@],false);
+  };
+}
+</script>
+
+<a href="javascript: cdel[@UID@]();" ><img class="image" src="[@JASDIRICONTHEME@]16/actions/edit-delete.png" /></a> 

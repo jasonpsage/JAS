@@ -1,0 +1,87 @@
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2016 -->
+<!--SECTION MAIN BEGIN-->
+<form name="JASFORM" id="JASFORM" method="POST" action="[@ALIAS@]?action=createjet&JSID=[@JSID@]">
+<script>
+  /* gaoReqFields[0]='name00'; */
+  gaoReqFields[0]='servername00';
+  gaoReqFields[1]='fromemail00';
+  function SubmitForm(){ if(bReqFields_Validate()){ document.getElementById("JASFORM").submit();}; };
+</script>
+<script>try{edit_init();}catch(eX){};</script>
+<div class="jas-layout-row jas-content">
+  <div class="jas-post">
+    <div class="jas-post-tl"></div>
+    <div class="jas-post-tr"></div>
+    <div class="jas-post-bl"></div>
+    <div class="jas-post-br"></div>
+    <div class="jas-post-tc"></div>
+
+    <div class="jas-post-bc"></div>
+    <div class="jas-post-cl"></div>
+    <div class="jas-post-cr"></div>
+    <div class="jas-post-cc"></div>
+    <div class="jas-post-body">
+      <div class="jas-post-inner jas-article">
+        <table>
+        <tr>
+          <td>
+            <h2 class="jas-postheader">Configure your new system</h2>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <a target="_blank" href="[@ALIAS@].?action=help&helpid=0&JSID=[@JSID@]" title="Configure New System Help">
+              <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+            </a>
+          </td>
+        </tr>
+        </table>
+        <p>This utility starts the process of creating a new "JAS Jet" which will be your own hosted version of JAS.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+
+<table>
+<tr>
+  <td>
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article">
+            <h2 class="jas-postheader">Configure settings below</h2>
+            <div class="jas-postcontent">
+              <table>
+              <!--<tr><td>Alias (Example: yourcompany): </td><td>&nbsp;</td><td><input name="name" id="name" value="[@NAME@]" /><font color="red" style="font: strong">&nbsp;*&nbsp;</font></td></tr>-->
+              <tr><td>Server Name (Example: Some-Company, LLC): </td><td>&nbsp;</td><td><input name="servername" id="servername" value="[@SERVERNAME@]" /><font color="red" style="font: strong">&nbsp;*&nbsp;</font></td></tr>
+              <tr><td>From Email Address: (Example: yourname@some-company.com): </td><td>&nbsp;</td><td><input name="fromemail" id="fromemail" value="[@FROMEMAIL@]" /><font color="red" style="font: strong">&nbsp;*&nbsp;</font></td></tr>
+              </table>
+            </div>
+            <h4>[@MESSAGE@]</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td valign="top">
+    <ul class="jas-blok-buttons">
+    <li><a href="javascript: self.close();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/document-close.png" class="image">
+    <span class="jasbutspan">&nbsp;Abort</span></a></li>
+    <li><a href="javascript: SubmitForm();"><img src="/jws/img/icon/themes/CrystalClear/32/actions/system-search.png" class="image"><span class="jasbutspan">&nbsp;Submit</span></a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+</form>
+<!--SECTION MAIN END-->

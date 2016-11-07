@@ -1,0 +1,63 @@
+    <table summary="Standard Contexts" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Name</th><th>Description</th><th>Directory</th></tr></thead><tbody><tr><td>Actions</td><td>
+Icons which are generally used in menus and dialogs for
+interacting with the user.
+	    </td><td>actions</td></tr><tr><td>Animations</td><td>
+Animated images used to represent loading web sites, or other
+background processing which may be less suited to more verbose
+progress reporting in the user interface. Animations should be a PNG with
+frames which are the size of the directory the animation is in, tiled in a
+WxH grid. Implementations should determine the number of frames by dividing
+the image into its frames, and iterating from left to right, wrapping to the
+first frame, after rendering the last.
+	    </td><td>animations</td></tr><tr><td>Applications</td><td>
+Icons that describe what an application is, for use in the
+Programs menu, window decorations, and the task list. These may
+or may not be generic depending on the application and its
+purpose. Applications which are to be considered part of the base desktop,
+such as the calculator or terminal, should use the generic icons specified in
+this specification, while more advanced applications such as web browsers and
+office applications should use branded icons which still give the user an idea
+of what function the application provides.
+	    </td><td>apps</td></tr><tr><td>Categories</td><td>
+Icons that are used for categories in the Programs menu, or
+the Control Center, for separating applications, preferences, and
+settings for display to the user.
+	    </td><td>categories</td></tr><tr><td>Devices</td><td>
+Icons for hardware that is contained within or connected to the
+computing device. Naming for extended devices in this group, is of the form
+&lt;primary function&gt;-&lt;manufacturer&gt;-&lt;model&gt;. This allows ease
+of fallback to the primary function device name, or ones more targeted for
+a specific series of models from a manufacturer. For example, a theme author
+may want to provide icons for different phones. The specific model icons could
+be named &#8220;<span class="quote">phone-samsung-t809</span>&#8221;, &#8220;<span class="quote">phone-motorola-rokr</span>&#8221;,
+and &#8220;<span class="quote">phone-motorola-pebl</span>&#8221;. However, the theme must provide a phone
+icon in the theme's style, so that devices not matching these models, will
+still have an appropriate icon. An exception to this rule is that the
+&#8220;<span class="quote">media</span>&#8221; icons do not need to include manufacturer names, as they
+are generic items, and may be available from many manufacturers. As a result,
+for media, the specific icons are to differentiate between different specific
+types of media. For exmaple, an artist may wish to provide icons for BluRay,
+DVD, HD-DVD, CD-ROM, and variations thereof. The specific media type icons
+should be named in the form, &lt;primary function&gt;-&lt;specific format&gt;.
+Some examples are &#8220;<span class="quote">media-optical</span>&#8221;, &#8220;<span class="quote">media-optical-bd</span>&#8221;
+and &#8220;<span class="quote">media-optical-dvd</span>&#8221;.
+	    </td><td>devices</td></tr><tr><td>Emblems</td><td>
+Icons for tags and properties of files, that are displayed in the
+file manager. This context contains emblems for such things as
+&#8220;<span class="quote">read-only</span>&#8221; or &#8220;<span class="quote">photos</span>&#8221;.
+	    </td><td>emblems</td></tr><tr><td>Emotes</td><td>
+Icons for emotions that are expressed through text chat
+applications such as :-) or :-P in IRC or instant messengers.
+	    </td><td>emotes</td></tr><tr><td>International</td><td>
+Icons for international denominations such as flags.
+	    </td><td>intl</td></tr><tr><td>MimeTypes</td><td>
+Icons for different types of data, such as audio or image files.
+	    </td><td>mimetypes</td></tr><tr><td>Places</td><td>
+Icons used to represent locations, either on the local
+filesystem, or through remote connections. Folders, trash, and
+workgroups are some examples.
+	    </td><td>places</td></tr><tr><td>Status</td><td>
+Icons for presenting status to the user. This context contains
+icons for warning and error dialogs, as well as for the current
+weather, appointment alarms, and battery status.
+	    </td><td>status</td></tr></tbody></table>

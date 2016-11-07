@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>JAS Developer Reference: uj_fileserv</title>
+<meta name="generator" content="PasDoc 0.14.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>JAS Developer Reference</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+JAS API - Jegas Application Server - Jegas, LLC  - Copyright(c)2016  
+<h1 class="unit">Unit uj_fileserv</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td>Uses</td><td>Classes, Interfaces, Objects and Records</td><td><a class="section" href="#PasDoc-FuncsProcs">Functions and Procedures</a></td><td>Types</td><td>Constants</td><td>Variables</td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="description">Description</h2>
+<p>
+Handles Serving Files in a webserver role</p>
+<a name="PasDoc-Uses"></a><h2 class="overview">Overview</h2>
+<a name="PasDoc-FuncsProcs"></a><h3 class="summary">Functions and Procedures</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uj_fileserv.html#getfile">getfile</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saFilename: AnsiString; var p_uHTTPResponse: word): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>procedure <b><a  href="uj_fileserv.html#JAS_NoteSecure">JAS_NoteSecure</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>procedure <b><a  href="uj_fileserv.html#JAS_RenderMindMap">JAS_RenderMindMap</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uj_fileserv.html#saGetPage">saGetPage</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saArea: AnsiString; p_saPage: AnsiString; p_saSection: AnsiString; p_bSectionOnly: Boolean; p_u8Caller: uint64 ): AnsiString;</code></td>
+</tr>
+<tr class="list">
+<td class="itemcode"><code>Function <b><a  href="uj_fileserv.html#saGetPage">saGetPage</a></b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saArea: AnsiString; p_saPage: AnsiString; p_saSection: AnsiString; p_bSectionOnly: Boolean; p_saCustomSection: AnsiString; p_u8Caller: uint64 ): AnsiString;</code></td>
+</tr>
+<tr class="list2">
+<td class="itemcode"><code>Function <b><a  href="uj_fileserv.html#saHtmlRipper">saHtmlRipper</a></b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_u8Caller: uint64): AnsiString;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Functions and Procedures</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="getfile"></a><code>Function <b>getfile</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saFilename: AnsiString; var p_uHTTPResponse: word): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is the internal function that serves all the webserver files. It works by simply passing in the filename you are after and you typically pass in a p_iHTTPResponse of 200 (see cnHTTP_RESPONSE_200 defined in uxxg_common.pp for sample response codes.) Upon return, the function returns the complete file as its result with a potentially different value in p_iHTTPResponse.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JAS_NoteSecure"></a><code>procedure <b>JAS_NoteSecure</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+returns Note providing session is valid and JNote_Table_ID points to jsecperm and JNote_Row_ID points to the required permission. If null or zero, no permission required to get it! So pay attention! LOL ;)
+
+<p>example: ?action=????&amp;decodeuri=yes&amp;uid=100
+
+<p>where UID = [JNote_JNote_UID]
+
+<p>Language is taken into consideration!</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="JAS_RenderMindMap"></a><code>procedure <b>JAS_RenderMindMap</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>);</code></td>
+</tr>
+<tr><td colspan="1">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saGetPage"></a><code>Function <b>saGetPage</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saArea: AnsiString; p_saPage: AnsiString; p_saSection: AnsiString; p_bSectionOnly: Boolean; p_u8Caller: uint64 ): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This is a shorterhand method of using saGetPAge. See the other one for the full description of saGetPage's functionality.
+
+<p>NOTE: Caller parameter added so you can track who called the function when debugging. Optimizations could include compiler directives to electively compile without the extra debugging code - then again - its helpful when you're LIVE too!</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saGetPage"></a><code>Function <b>saGetPage</b>( p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_saArea: AnsiString; p_saPage: AnsiString; p_saSection: AnsiString; p_bSectionOnly: Boolean; p_saCustomSection: AnsiString; p_u8Caller: uint64 ): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+This Function Call Has become a litle advanced. At least in that its time to Explain how it works. In short - it takes parameters that tell it how to build a HTML page from templates. It does this and returns the compiled HTML.
+
+<p>p_saArea: is the HTMLRIPPER template filename without the file name extension. If nothing is passed then the filename specified in grJASConfig.saDefaultPage is used (This file MUST Exist even if it is not actually used for SECTION ONLY calls Explained below) First this file is searched for in the same directory the JEGAS CGI THIN CLIENT is launched from. Then it looks in the configured JAS HTML directory for it. If an AREA file (Default or otherwise) cannot be located and loaded - an error is returned to the user. (Case Sensitive. Lowercase .html presumed)
+
+<p>p_saPage: This is the HTML file that has the SECTION you wish to load. It first search for this file in the directory the JEGAS CGI THIN CLIENT was launched in. If it is not there, it looks in the configured JAS HTML directory. If the file cannot be loaded, an error is generated. (Case Sensitive. Lowercase .html presumed) (Note: IF ANYTHING AT ALL IS PASSED in the p_saCustomSection parameter, then this PARAMETER is IGNORED!)
+
+<p>p_saSection: This is the NAME of the SECTION you want to RIP out of the p_saPage template. Sections are discerned from HTML comments that look like: &lt;!&ndash;SECTION SECTIONNAME BEGIN&ndash;&gt; &lt;!&ndash;SECTION SECTIONNAME END&ndash;&gt;
+
+<p>The above &quot;SECTIONAME&quot; is where you name your section. Do not use spaces, USE ALL UPPERCASE. The parameter you pass to look for the the section does not need to be in uppercase. This is done for you.
+
+<p>If the SECTION cannont be found in the html template file you specified in p_saPage, then the whole p_saPage data is sent. This is usually undesired, so make your HTML templates carefully.
+
+<p>(Note: IF ANYTHING AT ALL IS PASSED in the p_saCustomSection parameter, then this PARAMETER is IGNORED!)
+
+<p>p_bSectionOnly: If this parameter is passed as true, this function only returns the HTML in between the SECTION TAGS explained above or the p_saCustomSection value.
+
+<p>(optional) p_saCustomSection: This parameter allows you to send HTML and have it inserted into the AREA template. Because this overrides the p_saPage and p_saSection parameters, and allows you to pass your own CUSTOM SECTION into an AREA (htmlripper) template, you can get silly results by setting the p_bSectionOnly flag to true. Simply put, if you do that (not likely you should) this function will simply return your passed custom section. NOTE: Caller parameter added so you can track who called the function when debugging. Optimizations could include compiler directives to electively compile without the extra debugging code - then again - its helpful when you're LIVE too!</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="itemcode"><a name="saHtmlRipper"></a><code>Function <b>saHtmlRipper</b>(p_Context: <a  href="uj_context.TCONTEXT.html">TCONTEXT</a>; p_u8Caller: uint64): AnsiString;</code></td>
+</tr>
+<tr><td colspan="1">
+<p>
+HTMLRIPPER is the pet name for the JAS templating system. HTMLRIPPER was originally created as a tool to make creating websites easier by not needing to have repetitive HTML code throughout a website. It has since matured into a pretty powerful templating system. The core of this templating system is &quot;Function saGetPage&quot;.
+
+<p>This saHTMLRIPPER function is a wrapper for the basic HTMLRIPPER usage where you can have an AREA (template) and load content from a &quot;PAGE&quot; and selectively display a certain &quot;SECTION&quot; in the page as needed.
+
+<p>NOTE: Caller parameter added so you can track who called the function when debugging. Optimizations could include compiler directives to electively compile without the extra debugging code - then again - its helpful when you're LIVE too!</p>
+</td></tr>
+</table>
+http://www.jegas.com
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.14.0</a>. </em>
+</span>
+</td></tr></table></body></html>

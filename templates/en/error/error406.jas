@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head><title>406 Not Acceptable</title></head>
+<body>
+  <table>
+  <tr><td><h1>406 Not Acceptable</h1></td></tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr><td>4xx Client Error - The request contains bad syntax or cannot be fulfilled. The 4xx class of status code is intended for cases in which the client seems to have erred. Except when responding to a HEAD request, the server should include an objectcontaining an explanation of the error situation, and whether it is a temporary or permanent condition. These status codes are applicable to any request method. User agents should display any included entity to the user. These are typically the most common error codes encountered while online. The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request.</td></tr>
+  </table>
+  </body>
+</html>
+

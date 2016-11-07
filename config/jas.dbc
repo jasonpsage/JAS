@@ -1,0 +1,77 @@
+;==============================================================================
+;|    _________ _______  _______  ______  ______| This is a proprietary config-
+;|   /___  ___// _____/ / _____/ / __  / / _____/ uration file designed for use
+;|      / /   / /__    / / ___  / /_/ / / /____ | with Jegas, LLC Software
+;|     / /   / ____/  / / /  / / __  / /____  / |
+;|____/ /   / /___   / /__/ / / / / / _____/ /  |
+;/_____/   /______/ /______/ /_/ /_/ /______/   |    http://www.jegas.com
+;|         Virtually Everything IT(tm)          |
+;==============================================================================
+; This file WAS not designed to be edited manually, however if you do wish to
+; edit this file manually, remember that WHITESPACE is not permitted after the
+; EQUAL (=) sign: e.g. Variable=Value  (THIS IS OK)
+;                 e.g. Variable= Value (THIS IS NOT OK)
+;==============================================================================
+; Copyright  2015 Jegas, LLC  - All Rights Reserved
+;==============================================================================
+; Connection Name:         JAS
+; Connection Desc:         JAS Squadron Leader, Lead Jet, Master Database
+;==============================================================================
+; DBMSID IS DBMS Dialect Selection (0=Not Set Yet)
+;  1 =   Generic
+;  2 =   MS-SQL
+;  3 =   Access
+;  4 =   MySQL
+;  5 =   Excel
+;  6 =   dBase
+;  7 =   FoxPro
+;  8 =   Oracle
+;  9 =   Paradox
+; 10 =   Text
+; 11 =   PostGresSQL
+DbmsID=4
+
+
+
+; DrivID is DBMS Driver ID of NON ODBC Connections.
+;  1 =   ODBC
+;  2 =   MySql
+DrivID=2
+
+
+Name=JAS
+Desc=JAS Squadron Leader, Lead Jet, Master Database
+DSN=
+UserName=root
+Password=root
+Driver=
+Server=localhost
+Database=jas
+
+
+
+;FileBasedDSN has to do with the ODBC connection, not this file.
+FileBasedDSN=No 
+; Filebased Databases are handled in this way during the actual connection:
+; FIRST:  if the the Database Variable above has a value at all, that is the 
+;         filename that is used for the database when the FileBased Variable 
+;         above is set to Yes.
+; SECOND: if the Database Variable Above is EMPTY and the FileBased Variable
+;         above is set to Yes, then the FileName Variable's value (below) is 
+;         used. 
+; Therefore (psuedo-code to demonstrate logic): 
+; IF FILEBASEDDSN = YES and DATABASENAME = SOMETHING THEN
+;   DataBaseFileToOpen = SOMETHING
+; ELSE
+;   DataBaseFileToOpen=DSNFILENAME's VALUE
+; END IF
+
+
+
+DSNFileName=
+
+
+
+;==============================================================================
+; EOF
+;==============================================================================

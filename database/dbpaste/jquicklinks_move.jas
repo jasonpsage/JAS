@@ -1,0 +1,10 @@
+<!--jquicklink - grid - movequicklink-->
+<script>
+  function mq[@UID@](p_s){
+    var sURL='.?jasapi=movequicklink&UID=[@UID@]&direction='+p_s+'&private=[@JQLnk_Private_b@]';
+    iwfRequest(sURL,null,null,callbackajax_movequicklink,false);
+  };
+</script>
+<img onclick="mq[@UID@]('up');" class="image" src="[@JASDIRICONTHEME@]16/actions/go-up.png" title="Move Left" />
+<img onclick="mq[@UID@]('down');" class="image" src="[@JASDIRICONTHEME@]16/actions/go-down.png" title="Move Right" />
+

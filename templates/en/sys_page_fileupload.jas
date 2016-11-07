@@ -1,0 +1,126 @@
+<html><body>
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!--      _________ _______  _______  ______  _______                        -->
+<!--     /___  ___// _____/ / _____/ / __  / / _____/                        -->
+<!--        / /   / /__    / / ___  / /_/ / / /____                          -->
+<!--       / /   / ____/  / / /  / / __  / /____  /                          -->
+<!--  ____/ /   / /___   / /__/ / / / / / _____/ /                           -->
+<!-- /_____/   /______/ /______/ /_/ /_/ /______/                            -->
+<!--                                                                         -->
+<!-- www.jegas.com - Jegas, LLC-Virtually Everything IT(TM)-Copyright(C)2012 -->
+<!-- JASCID: 201204291037 sys -->
+
+  <!--SECTION FILEUPLOAD BEGIN-->
+  <!-- SECTION FILEUPLOAD ./templates/en/sys_fileupload.jas -->
+  <!--PAGETITLE "File Upload"-->
+
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article" id="divmain">
+            <h2 class="jas-postheader">
+              <img class="image" src="[@JASDIRICONTHEME@]64/apps/system-file-manager.png" title="[@PAGETITLE@]" />&nbsp;
+              <font size="6">[@PAGETITLE@]</font>
+              <a target="_blank" href="[@ALIAS@].?action=help&helpid=0&JSID=[@JSID@]" title="[@PAGETITLE@] Help">
+                <img class="image" src="<? echo $JASDIRICONTHEME; ?>32/actions/help-contents.png" />
+              </a>
+            </h2>
+            <form enctype="multipart/form-data" action=".?action=fileupload&JSID=[@JSID@]" method="POST">
+              <table>
+              <tr><td>Select file to upload. Max Upload Size: <strong>[@MAXFILESIZE@]</strong> <font color="red" style="font: strong">&nbsp;*&nbsp;</font></td></tr>
+              <tr><td><input name="fileupload" id="fileupload" type="file" /></td></tr>
+              <tr><td>&nbsp;</td></tr>
+              <tr><td>When you have made your selection you can click the button below to begin your upload.</td></tr>
+              <tr><td><input onclick="return ValidateForm();"  type="submit" value="Start Upload" /></td></tr>
+              </table>
+            </form>
+          </div>
+
+          <div class="jas-post-inner jas-article" id="divwait" style="display: none;">
+            <h2 class="jas-postheader"><a href="#" title="Uploading..." ><img class="image" src="[@JASDIRICONTHEME@]64/apps/accessories-archiver.png" title="Uploading..." />&nbsp;Uploading. Please Wait...</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <script language="javascript">
+    function ValidateForm(){
+      el = document.getElementById('fileupload');
+      var bOk = (el.value.length > 0);
+      if ( false == bOk ) {
+        alert('Please select a file to upload.');
+      };
+      if(bOk){
+        el=document.getElementById('divmain');
+        el.style.display='none';
+
+        el=document.getElementById('divwait');
+        el.style.display='';
+      };
+      return bOk;
+    };
+    </script>
+
+
+  <!--SECTION FILEUPLOAD END-->
+
+
+
+
+  <!--SECTION FILEUPLOADCOMPLETE BEGIN-->
+  <!-- SECTION FILEUPLOADCOMPLETE ./templates/en/sys_fileupload.jas -->
+
+    <div class="jas-layout-row jas-content">
+      <div class="jas-post">
+        <div class="jas-post-tl"></div>
+        <div class="jas-post-tr"></div>
+        <div class="jas-post-bl"></div>
+        <div class="jas-post-br"></div>
+        <div class="jas-post-tc"></div>
+
+        <div class="jas-post-bc"></div>
+        <div class="jas-post-cl"></div>
+        <div class="jas-post-cr"></div>
+        <div class="jas-post-cc"></div>
+        <div class="jas-post-body">
+          <div class="jas-post-inner jas-article" id="divok">
+            <h2 class="jas-postheader"><a href="#" title="[@PAGETITLE@]" ><img class="image" src="[@JASDIRICONTHEME@]64/apps/system-file-manager.png" title="[@PAGETITLE@]" />&nbsp;[@PAGETITLE@]</a></h2>
+            <p>Your file uploaded successfully!</p>
+            <a onclick="self.close()" title="Click to close this window or tab.">Click to close this window</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <script>
+      /* alert('before'); */
+      var myel = self.opener.document.getElementById('DBLOK2012042910012318690');myel.value="[@FILE@]";
+      alert('file: [@FILE@]');
+      myel = self.opener.document.getElementById('DBLOK2012042910012315075');myel.value="[@PATH@]";
+      /* alert('path: [@PATH@]'); */
+      myel = self.opener.document.getElementById('DBLOK2012042917172015050');myel.value="[@SIZE@]";
+      /* alert('after - all done size: [@SIZE@]'); */
+      self.close();
+    </script>
+
+
+  <!--SECTION FILEUPLOADCOMPLETE END-->
+
+
+
+
+
+
+</body></html>
