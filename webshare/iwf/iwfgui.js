@@ -104,7 +104,7 @@ function iwfShow(id, reserveSpace, displayMode){
 	var el = iwfGetById(id);
 	if (!el) { return false; }
 
-	iwfLog("current vis=" + iwfStyle(el, 'visbility') + "; current disp=" + iwfStyle(el, 'display'));
+	iwfLog("current vis=" + iwfStyle(el, 'visibility') + "; current disp=" + iwfStyle(el, 'display'));
 
 
 
